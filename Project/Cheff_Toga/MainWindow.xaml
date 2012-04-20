@@ -12,5 +12,6 @@
 			<ColumnDefinition Width="383.52"/>
 			<ColumnDefinition Width="368.48"/>
 		</Grid.ColumnDefinitions>
+		<Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Right" Margin="0,145.5,-108.48,130.5" Stroke="Black" Width="220"/>
 	</Grid>
 </Window>
