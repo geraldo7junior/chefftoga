@@ -1,0 +1,26 @@
+<H2 TEXT-ALIGN='CENTER'><b><FONT FACE="TIMES" SIZE="5"><p align="center">Requisitos Não Funcionais</p></font></b></H2>
+<hr>
+
+<p align="justify">“Os requisitos não funcionais, como o nome sugere, são aqueles não diretamente relacionados às funções específicas fornecidas pelo sistema. Eles podem estar relacionados às propriedades emergentes do sistema, como confiabilidade, tempo de resposta e espaço de armazenamento. Como alternativa, eles podem definir restrições, como a capacidade dos dispositivos de E/S (entrada/saída) e as representações de dados usadas nas interfaces do sistema.”</p>
+<p>(Sommerville, Ian; Engenharia de Software, 2007, p. 82)<br>
+<p>Os requisitos não-funcionais do sistema têm como meta:<br>
+•	RNF001: Ser simples para o operador;<br>
+•	RNF002: O leitor do Smart card, autenticação, deve realizar tal leitura rapidamente;<br>
+•	RNF003: O banco de dados deve ser atualizado em tempo real;<br>
+•	RNF004: O sistema deve ser seguro;<br>
+•	RNF005: O hardware do sistema deve ser assegurado por um gerador (no-break);<br>
+•	RNF006: Não deve revelar aos operadores todos os dados pessoais do cliente;<br>
+•	RNF007: Deve ser atrativo, simples e harmonioso para seus usuários e operadores.
+<br>
+<br>
+<hr>
+<hr>
+<br> 
+<a href="http://code.google.com/p/chefftoga/wiki/DescricaoDoProjeto">Descrição Do Projeto</a><br>
+<a href="http://code.google.com/p/chefftoga/wiki/Requisitosfuncionais">Requisitos Funcionais</a><br>
+<a href="http://code.google.com/p/chefftoga/wiki/RequisitosNaoFuncionais">Requisitos Não Funcionais</a><br>
+<a href="http://code.google.com/p/chefftoga/wiki/DetalhamentodosCasosdeUsoRUSystem">Detalhamento dos Casos de Uso R.U System</a><br>
+<a href="http://code.google.com/p/chefftoga/wiki/DetalhamentodosCasosdeUsoRUcom">Detalhamento dos Casos de Uso R.U.com</a><br>
+<a href="http://code.google.com/p/chefftoga/wiki/DiagramasDeCasosDeUso">Diagramas de Casos de Uso</a><br>
+<a href="http://code.google.com/p/chefftoga/wiki/Bibliografia">Bibliografia</a><br>
+<a href="http://code.google.com/p/chefftoga/wiki/Desenvolvedores">Desenvolvedores</a><br>
