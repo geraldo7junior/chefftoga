@@ -1,0 +1,10 @@
+C:\SVN\Project\Cheff_Toga\obj\Debug\ResolveAssemblyReference.cache
+C:\SVN\Project\Cheff_Toga\obj\Debug\login.baml
+C:\SVN\Project\Cheff_Toga\obj\Debug\MainWindow.baml
+C:\SVN\Project\Cheff_Toga\obj\Debug\Simple Styles.baml
+C:\SVN\Project\Cheff_Toga\obj\Debug\App.baml
+C:\SVN\Project\Cheff_Toga\obj\Debug\login.g.cs
+C:\SVN\Project\Cheff_Toga\obj\Debug\MainWindow.g.cs
+C:\SVN\Project\Cheff_Toga\obj\Debug\App.g.cs
+C:\SVN\Project\Cheff_Toga\obj\Debug\Cheff_Toga_MarkupCompile.cache
+C:\SVN\Project\Cheff_Toga\obj\Debug\Cheff_Toga.g.resources
