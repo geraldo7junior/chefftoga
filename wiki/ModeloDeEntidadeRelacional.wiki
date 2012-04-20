@@ -12,5 +12,6 @@
 <a href="http://code.google.com/p/chefftoga/wiki/DetalhamentodosCasosdeUsoRUSystem">Detalhamento dos Casos de Uso R.U System</a><br>
 <a href="http://code.google.com/p/chefftoga/wiki/DetalhamentodosCasosdeUsoRUcom">Detalhamento dos Casos de Uso R.U.com</a><br>
 <a href="http://code.google.com/p/chefftoga/wiki/DiagramasDeCasosDeUso">Diagramas de Casos de Uso</a><br>
+<a href="http://code.google.com/p/chefftoga/wiki/ModeloDeEntidadeRelacional">Modelo de Entidade Relacional</a><br>
 <a href="http://code.google.com/p/chefftoga/wiki/Bibliografia">Bibliografia</a><br>
 <a href="http://code.google.com/p/chefftoga/wiki/Desenvolvedores">Desenvolvedores</a><br>
