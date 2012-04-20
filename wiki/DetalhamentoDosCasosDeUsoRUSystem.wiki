@@ -67,8 +67,8 @@
 ||•	CPF (obrigatório);||
 ||•	Curso (obrigatório);||
 ||•	Período (obrigatório);||
-||•	Endereço (obrigatório);||
-||•	Rua; Número; Bairro; Cidade; UF e CEP;|| 
+||•	Endereço(Rua; Número; Bairro; Cidade; UF e CEP)(obrigatório);||
+||•	Foto (obrigatório);|| 
 ||•	Fone (obrigatório);||
 ||•	Bolsista (obrigatório);||
 ||•	Senha (obrigatório);||
