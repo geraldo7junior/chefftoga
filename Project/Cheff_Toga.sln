@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cheff_Toga", "Cheff_Toga\Cheff_Toga.csproj", "{6d91dc22-8c4b-40ad-897a-49de8f88c1fa}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D91DC22-8C4B-40AD-897A-49DE8F88C1FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D91DC22-8C4B-40AD-897A-49DE8F88C1FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D91DC22-8C4B-40AD-897A-49DE8F88C1FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D91DC22-8C4B-40AD-897A-49DE8F88C1FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
