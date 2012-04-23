@@ -1,6 +1,6 @@
 <H2><b><FONT FACE="TIMES" SIZE="5"><p align="center">Modelo de Entidade Relacional</p></font></b></H2>
 <hr>
-<p align="center"><img src="https://lh6.googleusercontent.com/-oSYgoRvCdvM/T5Fkcz1teRI/AAAAAAAABrw/T6qZDzsirM0/s912/Modelo_de_entidade_relacional_%252528R.U%252529%2520%25281%2529.png" align="center"><br>
+<p align="center"><img src="http://img703.imageshack.us/img703/9590/diagramachefftoga.png" align="center"><br>
 <br>
 <hr>
 <hr>
