@@ -1,16 +1,20 @@
 ﻿<Window
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:Controls="clr-namespace:AC.AvalonControlsLibrary.Controls;assembly=AvalonControlsLibrary"
+	xmlns:local="clr-namespace:Cheff_Toga" mc:Ignorable="d"
 	x:Class="Cheff_Toga.MainWindow"
 	x:Name="Window"
-	Title="Cheff Toga" WindowState="Maximized" Background="#FFFBFBFB" Topmost="True" WindowStartupLocation="CenterScreen" MinWidth="768" MinHeight="535" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+	Title="Cheff Toga" WindowState="Maximized" Topmost="True" WindowStartupLocation="CenterScreen" MinWidth="768" MinHeight="535" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ResizeMode="NoResize" Width="1366" Height="768">
+	<Window.Background>
+		<ImageBrush ImageSource="Images/bg.jpg" TileMode="Tile"/>
+	</Window.Background>
 
-	<Grid x:Name="LayoutRoot" HorizontalAlignment="Center" VerticalAlignment="Center" Height="496">
+	<Grid x:Name="LayoutRoot" Margin="-3,-14">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="383.52"/>
-			<ColumnDefinition Width="368.48"/>
+			<ColumnDefinition Width="Auto" MinWidth="752"/>
 		</Grid.ColumnDefinitions>
+		<local:login Margin="321,108,-269,160"/>
 	</Grid>
 </Window>

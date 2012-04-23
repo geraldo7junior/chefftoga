@@ -6,7 +6,9 @@
 	mc:Ignorable="d"
 	x:Class="Cheff_Toga.login"
 	x:Name="UserControl"
-	d:DesignWidth="640" d:DesignHeight="480">
+	d:DesignWidth="640" d:DesignHeight="480" Width="700" Height="500">
 
-	<Grid x:Name="LayoutRoot"/>
+	<Grid x:Name="LayoutRoot">
+		<Image Margin="174,58.983,174,0" Source="Images/ct.png" Stretch="Fill" Height="78.034" VerticalAlignment="Top"/>
+	</Grid>
 </UserControl>
