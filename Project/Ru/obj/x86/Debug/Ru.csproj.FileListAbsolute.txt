@@ -1,0 +1,26 @@
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\bin\Debug\Ru.exe
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\bin\Debug\Ru.pdb
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\ResolveAssemblyReference.cache
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.exe
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.pdb
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.fIndex.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.fLoginMan.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\bin\Debug\Ru.exe.config
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.fCadastro.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.fTelaLogin.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\bin\Debug\Ru.exe.config
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.exe
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.pdb
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\bin\Debug\Ru.exe
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\bin\Debug\Ru.pdb
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\ResolveAssemblyReference.cache
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.fCadastro.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.fTelaLogin.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.fIndex.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.fLoginMan.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
