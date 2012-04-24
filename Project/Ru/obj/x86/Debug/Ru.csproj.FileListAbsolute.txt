@@ -24,3 +24,6 @@ A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj
 A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
 A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
 A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\chefftoga\Project\Ru\bin\Debug\Ru.exe.config
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.exe
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.pdb
