@@ -58,6 +58,7 @@
             this.msMenu.Size = new System.Drawing.Size(1370, 24);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "Menu";
+            this.msMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.msMenu_ItemClicked);
             // 
             // msMenuCadastro
             // 
@@ -99,7 +100,7 @@
             // msMenuCadastroSair
             // 
             this.msMenuCadastroSair.Name = "msMenuCadastroSair";
-            this.msMenuCadastroSair.Size = new System.Drawing.Size(123, 22);
+            this.msMenuCadastroSair.Size = new System.Drawing.Size(152, 22);
             this.msMenuCadastroSair.Text = "&Sair";
             this.msMenuCadastroSair.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 

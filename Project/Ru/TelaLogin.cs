@@ -49,5 +49,15 @@ namespace Ru
 
         }
 
+        private void mtbLogin_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -38,5 +38,10 @@ namespace Ru
             }
         }
 
+        private void msMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
     }
 }

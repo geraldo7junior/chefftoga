@@ -64,6 +64,7 @@
             this.mtbLogin.Name = "mtbLogin";
             this.mtbLogin.Size = new System.Drawing.Size(100, 20);
             this.mtbLogin.TabIndex = 9;
+            this.mtbLogin.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbLogin_MaskInputRejected);
             // 
             // lblErroLogar
             // 
@@ -86,6 +87,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 10;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // lblSenha
             // 
@@ -104,7 +106,7 @@
             this.btnEntrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEntrar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEntrar.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(274, 151);
+            this.btnEntrar.Location = new System.Drawing.Point(265, 151);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(59, 23);
             this.btnEntrar.TabIndex = 12;

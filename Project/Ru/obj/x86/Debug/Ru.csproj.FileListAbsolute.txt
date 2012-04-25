@@ -40,3 +40,13 @@ C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\Ru.fLoginMan.resources
 C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
 C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\chefftoga\Project\Ru\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastro.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fTelaLogin.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fIndex.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fLoginMan.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\chefftoga\Project\Ru\bin\Debug\Ru.exe
+C:\chefftoga\Project\Ru\bin\Debug\Ru.pdb
