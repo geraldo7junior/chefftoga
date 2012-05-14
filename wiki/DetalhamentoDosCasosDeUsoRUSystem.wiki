@@ -27,33 +27,6 @@
 <br>
 <b><H3>Número do caso de uso: UC0002</H3></b><br>
 ||<b>Nome do caso de uso:</b>||
-||Gerenciar Entrada no Restaurante||
-||<b>Objetivos:</b>||
-||Controle da entrada dos alunos no restaurante, bem como a autenticação destes para entrar no estabelecimento.||
-||<b>Descrição:</b>||
-||O operador de caixa já “logado” no sistema poderá ter acesso à uma página de autenticação, nesta quando o aluno fazer a entrada com seu Smart Card(Com um ID implícito) o operador de caixa terá algumas informações avista como, por exemplo, Nome, Curso, Período e foto, Confirmada estas informações este poderá permitir ou não a entrada do aluno no restaurante.||
-||<b>Ator:</b>||
-||Operador de caixa||
-||<b>Prioridade:</b>||
-||Alta||
-||<b>Pré-condição:</b>||
-||Estar cadastrado no sistema.||
-||<b>Pós-condição:</b>||
-||Obter algumas informações do aluno, e a partir destas permiti acesso ao restaurante.||
-||<b>Cenários Principais dos casos de uso:</b>||
-||O operador de caixa vê as informações do aluno e permiti a entrada deste no restaurante.||
-||<b>Fluxos Alternativos:</b>||
-||1. Caso o cartão esteja sem crédito, a mensagem saldo insuficiente será exibida;||
-||2. Caso o cartão esteja cadastrado como aluno não matriculado, tal ação também será informada;||
-||3. Se o aluno perder o Smart  Card (ID implícito) terá um prazo para acessar o sistema com login e senha, dados no cadastramento, até adquirir o novo cartão;||
-||4. Se o aluno não for cadastrado no sistema deverá procurar o operador de cadastro.||
-<br>
-
-<hr>
-
-<br>
-<b><H3>Número do caso de uso: UC0003</H3></b><br>
-||<b>Nome do caso de uso:</b>||
 ||Gerenciar Cadastro||
 ||<b>Objetivos:</b>||
 ||Cadastrar, recadastrar e excluir alunos do sistema.||
@@ -90,7 +63,63 @@
 <hr>
 
 <br>
+<b><H3>Número do caso de uso: UC0003</H3></b><br>
+||<b>Nome do caso de uso:</b>||
+||Gerenciamento de Crédito Financeiro do Usuário||
+||<b>Objetivos:</b>||
+||Recarga de saldo e Visualização||
+||<b>Descrição:</b>||
+||O aluno entrará em contato com o operador de crédito, onde este poderá realizar a recarga de saldo do mesmo no sistema. Este também pode verificar saldo com sentido informativo e imprimir comprovante de recarga. ||
+||_A recarga de saldo do aluno ocorrerá frente ao fornecimento das informações:_||
+||•	ID (“Smart card”) (obrigatório);||
+||•	Pagamento (obrigatório).||
+||•	Identidade (obrigatório);||
+||<b>Ator:</b>||
+||Operador de cadastro e aluno||
+||<b>Prioridade:</b>||
+||Alta||
+||<b>Pré-condição:</b>||
+||O operador de recarga está cadastrado no sistema e o aluno esta devidamente matriculado na universidade e no sistema do restaurante.|| 
+||<b>Pós-condição:</b>||
+||Após confirmado o ID(“Smart Card”)  e o pagamento a recarga é realizada com sucesso.||
+||<b>Cenários Principais dos casos de uso:</b>||
+||O aluno consegue efetuar a recarga.||
+||<b>Fluxos Alternativos:</b>||
+||1. Caso haja algum problema com o ID(“Smart Card”) o aluno deverá procurar os órgãos responsáveis;||
+||2. Caso o aluno não esteja como matriculado na instituição deverá procurar os órgãos cabíveis para confirmação de tal matrícula.||
+<br>
+
+<hr>
+
+<br>
 <b><H3>Número do caso de uso: UC0004</H3></b><br>
+||<b>Nome do caso de uso:</b>||
+||Gerenciar Entrada no Restaurante||
+||<b>Objetivos:</b>||
+||Controle da entrada dos alunos no restaurante, bem como a autenticação destes para entrar no estabelecimento.||
+||<b>Descrição:</b>||
+||O operador de caixa já autenticado no sistema poderá ter acesso à uma página de autenticação, nesta quando o aluno fazer a entrada com seu Smart Card(Com um ID implícito) o operador de caixa terá algumas informações avista como, por exemplo, Nome, Curso, Período e foto, Confirmada estas informações este poderá permitir ou não a entrada do aluno no restaurante.||
+||<b>Ator:</b>||
+||Operador de caixa e Aluno||
+||<b>Prioridade:</b>|| 
+||Alta||
+||<b>Pré-condição:</b>||
+||O operador de recarga está cadastrado no sistema e o aluno esta devidamente matriculado na universidade e no sistema do restaurante.||
+||<b>Pós-condição:</b>||
+||Obter algumas informações do aluno, e a partir destas permiti acesso ao restaurante.||
+||<b>Cenários Principais dos casos de uso:</b>||
+||O operador de caixa vê as informações do aluno e permiti a entrada deste no restaurante.||
+||<b>Fluxos Alternativos:</b>||
+||1. Caso o cartão esteja sem crédito, a mensagem saldo insuficiente será exibida;||
+||2. Caso o cartão esteja cadastrado como aluno não matriculado, tal ação também será informada;||
+||3. Se o aluno perder o Smart  Card (ID implícito) terá um prazo para acessar o sistema com login e senha, dados no cadastramento, até adquirir o novo cartão;||
+||4. Se o aluno não for cadastrado no sistema deverá procurar o operador de cadastro.||
+<br>
+
+<hr>
+
+<br>
+<b><H3>Número do caso de uso: UC0005</H3></b><br>
 ||<b>Nome do caso de uso:</b>|| 
 ||Gerenciar Informações||
 ||<b>Objetivos:</b>||
@@ -114,7 +143,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0005</H3></b><br>
+<b><H3>Número do caso de uso: UC0006</H3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Gerenciar Finanças||
 ||<b>Objetivos:</b>||
