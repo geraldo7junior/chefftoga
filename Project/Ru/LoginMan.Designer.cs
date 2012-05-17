@@ -75,27 +75,30 @@
             // msMenuCadastroNovo
             // 
             this.msMenuCadastroNovo.Name = "msMenuCadastroNovo";
-            this.msMenuCadastroNovo.Size = new System.Drawing.Size(123, 22);
+            this.msMenuCadastroNovo.Size = new System.Drawing.Size(152, 22);
             this.msMenuCadastroNovo.Text = "&Novo";
             this.msMenuCadastroNovo.Click += new System.EventHandler(this.msMenuCadastroNovo_Click);
             // 
             // msMenuCadastroAlterar
             // 
             this.msMenuCadastroAlterar.Name = "msMenuCadastroAlterar";
-            this.msMenuCadastroAlterar.Size = new System.Drawing.Size(123, 22);
+            this.msMenuCadastroAlterar.Size = new System.Drawing.Size(152, 22);
             this.msMenuCadastroAlterar.Text = "&Alterar";
+            this.msMenuCadastroAlterar.Click += new System.EventHandler(this.msMenuCadastroAlterar_Click);
             // 
             // msMenuCadastroVisualizar
             // 
             this.msMenuCadastroVisualizar.Name = "msMenuCadastroVisualizar";
-            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(123, 22);
+            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(152, 22);
             this.msMenuCadastroVisualizar.Text = "&Visualizar";
+            this.msMenuCadastroVisualizar.Click += new System.EventHandler(this.msMenuCadastroVisualizar_Click);
             // 
             // msMenuCadastroExcluir
             // 
             this.msMenuCadastroExcluir.Name = "msMenuCadastroExcluir";
-            this.msMenuCadastroExcluir.Size = new System.Drawing.Size(123, 22);
+            this.msMenuCadastroExcluir.Size = new System.Drawing.Size(152, 22);
             this.msMenuCadastroExcluir.Text = "&Excluir";
+            this.msMenuCadastroExcluir.Click += new System.EventHandler(this.msMenuCadastroExcluir_Click);
             // 
             // msMenuCadastroSair
             // 

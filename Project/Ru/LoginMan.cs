@@ -11,6 +11,7 @@ namespace Ru
 {
     public partial class fLoginMan : Form
     {
+        String ControleDeTela;
         public fLoginMan()
         {
             InitializeComponent();
@@ -21,8 +22,7 @@ namespace Ru
             fCadastro _fCad;
             _fCad = new fCadastro();
             _fCad.Show();
-            Hide();
-
+         
             //fIndex _fLog;
             //_fLog = new fIndex();
             //_fLog.Show();
@@ -41,6 +41,31 @@ namespace Ru
         private void msMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        public void msMenuCadastroAlterar_Click(object sender, EventArgs e)
+        {
+            fAlterar _fAlt;
+            _fAlt = new fAlterar();
+            ControleDeTela = "alterar";
+            _fAlt.Show();
+            
+        }
+
+        public void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
+        {
+            fAlterar _fAlt;
+            _fAlt = new fAlterar();
+            ControleDeTela = "visualizar";
+            _fAlt.Show();
+        }
+
+        public void msMenuCadastroExcluir_Click(object sender, EventArgs e)
+        {
+            fAlterar _fAlt;
+            _fAlt = new fAlterar();
+            ControleDeTela = "excluir";
+            _fAlt.Show();
         }
 
     }

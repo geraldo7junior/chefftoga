@@ -197,6 +197,26 @@ namespace Ru
             
         }
 
+        private void msMenuCadastroNovo_Click(object sender, EventArgs e)
+        {
+            fCadastro _fCad;
+            _fCad = new fCadastro();
+            _fCad.Show();
+            Close();
+        }
+
+        private void msMenuCadastroAlterar_Click(object sender, EventArgs e)
+        {
+            fAlterar _fAlt;
+            _fAlt = new fAlterar();
+            _fAlt.Show();
+        }
+
+        private void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

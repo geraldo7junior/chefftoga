@@ -536,18 +536,21 @@
             this.msMenuCadastroNovo.Name = "msMenuCadastroNovo";
             this.msMenuCadastroNovo.Size = new System.Drawing.Size(123, 22);
             this.msMenuCadastroNovo.Text = "&Novo";
+            this.msMenuCadastroNovo.Click += new System.EventHandler(this.msMenuCadastroNovo_Click);
             // 
             // msMenuCadastroAlterar
             // 
             this.msMenuCadastroAlterar.Name = "msMenuCadastroAlterar";
             this.msMenuCadastroAlterar.Size = new System.Drawing.Size(123, 22);
             this.msMenuCadastroAlterar.Text = "&Alterar";
+            this.msMenuCadastroAlterar.Click += new System.EventHandler(this.msMenuCadastroAlterar_Click);
             // 
             // msMenuCadastroVisualizar
             // 
             this.msMenuCadastroVisualizar.Name = "msMenuCadastroVisualizar";
             this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(123, 22);
             this.msMenuCadastroVisualizar.Text = "&Visualizar";
+            this.msMenuCadastroVisualizar.Click += new System.EventHandler(this.msMenuCadastroVisualizar_Click);
             // 
             // msMenuCadastroExcluir
             // 
@@ -702,7 +705,7 @@
             this.gpbBolsista.Size = new System.Drawing.Size(115, 88);
             this.gpbBolsista.TabIndex = 65;
             this.gpbBolsista.TabStop = false;
-            this.gpbBolsista.Text = "Bolsista";
+            this.gpbBolsista.Text = "Gratuidade";
             // 
             // rbtnNao
             // 

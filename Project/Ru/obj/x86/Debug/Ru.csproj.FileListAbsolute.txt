@@ -50,3 +50,5 @@ C:\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\chefftoga\Project\Ru\bin\Debug\Ru.exe
 C:\chefftoga\Project\Ru\bin\Debug\Ru.pdb
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fAlterar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fVisualizarCadastro.resources

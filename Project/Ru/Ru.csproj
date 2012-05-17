@@ -52,6 +52,18 @@
     <Compile Include="Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alterar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alterar.Designer.cs">
+      <DependentUpon>Alterar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizarCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizarCadastro.Designer.cs">
+      <DependentUpon>VisualizarCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +92,12 @@
     <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alterar.resx">
+      <DependentUpon>Alterar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizarCadastro.resx">
+      <DependentUpon>VisualizarCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
