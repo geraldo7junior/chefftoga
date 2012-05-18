@@ -43,10 +43,8 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.msMenuCadastro = new System.Windows.Forms.ToolStripMenuItem();
-            this.msMenuCadastroNovo = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroVisualizar = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroAlterar = new System.Windows.Forms.ToolStripMenuItem();
-            this.msMenuCadastroExcluir = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroSair = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuImprimir = new System.Windows.Forms.ToolStripMenuItem();
             this.pctbRU = new System.Windows.Forms.PictureBox();
@@ -284,47 +282,31 @@
             // msMenuCadastro
             // 
             this.msMenuCadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.msMenuCadastroNovo,
             this.msMenuCadastroVisualizar,
             this.msMenuCadastroAlterar,
-            this.msMenuCadastroExcluir,
             this.msMenuCadastroSair});
             this.msMenuCadastro.Name = "msMenuCadastro";
-            this.msMenuCadastro.Size = new System.Drawing.Size(66, 20);
-            this.msMenuCadastro.Text = "&Cadastro";
-            // 
-            // msMenuCadastroNovo
-            // 
-            this.msMenuCadastroNovo.Name = "msMenuCadastroNovo";
-            this.msMenuCadastroNovo.Size = new System.Drawing.Size(205, 22);
-            this.msMenuCadastroNovo.Text = "&Novo";
-            this.msMenuCadastroNovo.Click += new System.EventHandler(this.msMenuCadastroNovo_Click);
+            this.msMenuCadastro.Size = new System.Drawing.Size(58, 20);
+            this.msMenuCadastro.Text = "&Crédito";
             // 
             // msMenuCadastroVisualizar
             // 
             this.msMenuCadastroVisualizar.Name = "msMenuCadastroVisualizar";
-            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(205, 22);
-            this.msMenuCadastroVisualizar.Text = "&Visualizar outro Cadastro";
+            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(192, 22);
+            this.msMenuCadastroVisualizar.Text = "&Visualizar Outro Saldo";
             this.msMenuCadastroVisualizar.Click += new System.EventHandler(this.msMenuCadastroVisualizar_Click);
             // 
             // msMenuCadastroAlterar
             // 
             this.msMenuCadastroAlterar.Name = "msMenuCadastroAlterar";
-            this.msMenuCadastroAlterar.Size = new System.Drawing.Size(205, 22);
-            this.msMenuCadastroAlterar.Text = "&Alterar Cadastro Atual";
+            this.msMenuCadastroAlterar.Size = new System.Drawing.Size(192, 22);
+            this.msMenuCadastroAlterar.Text = "&Creditar Neste Usuário";
             this.msMenuCadastroAlterar.Click += new System.EventHandler(this.msMenuCadastroAlterar_Click);
-            // 
-            // msMenuCadastroExcluir
-            // 
-            this.msMenuCadastroExcluir.Name = "msMenuCadastroExcluir";
-            this.msMenuCadastroExcluir.Size = new System.Drawing.Size(205, 22);
-            this.msMenuCadastroExcluir.Text = "&Excluir Cadastro Atual";
-            this.msMenuCadastroExcluir.Click += new System.EventHandler(this.msMenuCadastroExcluir_Click);
             // 
             // msMenuCadastroSair
             // 
             this.msMenuCadastroSair.Name = "msMenuCadastroSair";
-            this.msMenuCadastroSair.Size = new System.Drawing.Size(205, 22);
+            this.msMenuCadastroSair.Size = new System.Drawing.Size(192, 22);
             this.msMenuCadastroSair.Text = "&Fechar";
             this.msMenuCadastroSair.Click += new System.EventHandler(this.msMenuCadastroSair_Click);
             // 
@@ -496,10 +478,8 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastro;
-        private System.Windows.Forms.ToolStripMenuItem msMenuCadastroNovo;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroAlterar;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroVisualizar;
-        private System.Windows.Forms.ToolStripMenuItem msMenuCadastroExcluir;
         private System.Windows.Forms.ToolStripMenuItem msMenuImprimir;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroSair;
         private System.Windows.Forms.PictureBox pctbRU;

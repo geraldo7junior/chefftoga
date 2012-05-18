@@ -41,20 +41,27 @@ namespace Ru
 
         private void msMenuCadastroAlterar_Click(object sender, EventArgs e)
         {
-            fCadastroNovo _fCad;
-            _fCad = new fCadastroNovo();
-            //chamar todos os dados do banco de dados aqui
-            _fCad.Show();
-            Close();
+            if (MessageBox.Show("Deseja Realmente creditar em outro usuário e perder os valores não creditados no usuário atual?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                fAlterar _fAlt;
+                _fAlt = new fAlterar();
+                Utilidades.ControleDeTela = "creditar";
+                _fAlt.Show();
+            }
         }
 
         private void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
-            Utilidades.ControleDeTela = "visualizar";
-            _fAlt.Show();
+            if (MessageBox.Show("Deseja Realmente visualizar outro saldo e perder os valores não creditados?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                fAlterar _fAlt;
+                _fAlt = new fAlterar();
+                Utilidades.ControleDeTela = "visualizarsaldo";
+                _fAlt.Show();
+            }
+            
 
         }
 

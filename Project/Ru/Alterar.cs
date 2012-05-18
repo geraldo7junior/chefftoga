@@ -50,6 +50,9 @@ namespace Ru
                 if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     // criar função aqui para excluir cadastro do banco de dados
+                    _fVCad.Close();
+                    
+                    
                 }
             }
 

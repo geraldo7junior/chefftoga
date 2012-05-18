@@ -65,8 +65,8 @@
             this.msMenuCadastroAlterar,
             this.msMenuCadastroSair});
             this.msMenuCadastro.Name = "msMenuCadastro";
-            this.msMenuCadastro.Size = new System.Drawing.Size(66, 20);
-            this.msMenuCadastro.Text = "&Cadastro";
+            this.msMenuCadastro.Size = new System.Drawing.Size(58, 20);
+            this.msMenuCadastro.Text = "&Crédito";
             // 
             // msMenuCadastroVisualizar
             // 
@@ -86,7 +86,7 @@
             // 
             this.msMenuCadastroSair.Name = "msMenuCadastroSair";
             this.msMenuCadastroSair.Size = new System.Drawing.Size(155, 22);
-            this.msMenuCadastroSair.Text = "&Fechar";
+            this.msMenuCadastroSair.Text = "&Encerrar Sessão";
             this.msMenuCadastroSair.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // msMenuImprimir

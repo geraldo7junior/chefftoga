@@ -40,8 +40,8 @@ namespace Ru
 
         private void msMenuCadastroAlterar_Click(object sender, EventArgs e)
         {
-            fCadastroNovo _fCad;
-            _fCad = new fCadastroNovo();
+            fCreditoCreditar _fCad;
+            _fCad = new fCreditoCreditar();
             //chamar todos os dados do banco de dados aqui
             _fCad.Show();
             Close();
@@ -49,10 +49,11 @@ namespace Ru
 
         private void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
         {
+
             this.Close();
             fAlterar _fAlt;
             _fAlt = new fAlterar();
-            Utilidades.ControleDeTela = "visualizar";
+            Utilidades.ControleDeTela = "visualizarsaldo";
             _fAlt.Show();
 
         }
