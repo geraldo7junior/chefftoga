@@ -58,6 +58,18 @@
     <Compile Include="Alterar.Designer.cs">
       <DependentUpon>Alterar.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntradaRuGerenciar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntradaRuGerenciar.Designer.cs">
+      <DependentUpon>EntradaRuGerenciar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntradaRuAutorizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntradaRuAutorizar.Designer.cs">
+      <DependentUpon>EntradaRuAutorizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreditoCreditar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alterar.resx">
       <DependentUpon>Alterar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntradaRuGerenciar.resx">
+      <DependentUpon>EntradaRuGerenciar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntradaRuAutorizar.resx">
+      <DependentUpon>EntradaRuAutorizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreditoCreditar.resx">
       <DependentUpon>CreditoCreditar.cs</DependentUpon>

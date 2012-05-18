@@ -54,3 +54,5 @@ C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCreditoGerenciar.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroVisualizar.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroGerenciar.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCreditoCreditar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fEntradaRuGerenciar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fEntradaRuAutorizar.resources
