@@ -27,10 +27,18 @@ namespace Ru
             {
                 lblErroLogar.Text = "Usuário ou Senha incorretos!";
             }
-            else
+            else if (txtSenha.Text == "cadastro")
             {
-                fLoginMan _fLog;
-                _fLog = new fLoginMan();
+                fCadastroGerenciar _fLog;
+                _fLog = new fCadastroGerenciar();
+                _fLog.Show();
+                Hide();
+            }
+
+            else if (txtSenha.Text == "credito")
+            {
+                fCreditoGerenciar _fLog;
+                _fLog = new fCreditoGerenciar();
                 _fLog.Show();
                 Hide();
             }

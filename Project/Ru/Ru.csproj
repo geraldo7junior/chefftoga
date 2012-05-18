@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cadastro.cs">
+    <Compile Include="CadastroNovo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastro.Designer.cs">
-      <DependentUpon>Cadastro.cs</DependentUpon>
+    <Compile Include="CadastroNovo.Designer.cs">
+      <DependentUpon>CadastroNovo.cs</DependentUpon>
     </Compile>
     <Compile Include="Alterar.cs">
       <SubType>Form</SubType>
@@ -58,11 +58,29 @@
     <Compile Include="Alterar.Designer.cs">
       <DependentUpon>Alterar.cs</DependentUpon>
     </Compile>
-    <Compile Include="VisualizarCadastro.cs">
+    <Compile Include="CreditoCreditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VisualizarCadastro.Designer.cs">
-      <DependentUpon>VisualizarCadastro.cs</DependentUpon>
+    <Compile Include="CreditoCreditar.Designer.cs">
+      <DependentUpon>CreditoCreditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditoVisualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditoVisualizar.Designer.cs">
+      <DependentUpon>CreditoVisualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditoGerenciar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditoGerenciar.Designer.cs">
+      <DependentUpon>CreditoGerenciar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroVisualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroVisualizar.Designer.cs">
+      <DependentUpon>CadastroVisualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaLogin.cs">
       <SubType>Form</SubType>
@@ -70,43 +88,43 @@
     <Compile Include="TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Index.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Index.Designer.cs">
-      <DependentUpon>Index.cs</DependentUpon>
-    </Compile>
     <Compile Include="LocalDataCache1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LocalDataCache1.sync</DependentUpon>
     </Compile>
-    <Compile Include="LoginMan.cs">
+    <Compile Include="CadastroGerenciar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginMan.Designer.cs">
-      <DependentUpon>LoginMan.cs</DependentUpon>
+    <Compile Include="CadastroGerenciar.Designer.cs">
+      <DependentUpon>CadastroGerenciar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades.cs" />
-    <EmbeddedResource Include="Cadastro.resx">
-      <DependentUpon>Cadastro.cs</DependentUpon>
+    <EmbeddedResource Include="CadastroNovo.resx">
+      <DependentUpon>CadastroNovo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Alterar.resx">
       <DependentUpon>Alterar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisualizarCadastro.resx">
-      <DependentUpon>VisualizarCadastro.cs</DependentUpon>
+    <EmbeddedResource Include="CreditoCreditar.resx">
+      <DependentUpon>CreditoCreditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditoVisualizar.resx">
+      <DependentUpon>CreditoVisualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditoGerenciar.resx">
+      <DependentUpon>CreditoGerenciar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroVisualizar.resx">
+      <DependentUpon>CadastroVisualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Index.resx">
-      <DependentUpon>Index.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginMan.resx">
-      <DependentUpon>LoginMan.cs</DependentUpon>
+    <EmbeddedResource Include="CadastroGerenciar.resx">
+      <DependentUpon>CadastroGerenciar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
