@@ -93,5 +93,13 @@ namespace Ru
         {
 
         }
+
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnOk_Click(sender, e);
+            }
+        }
     }
 }

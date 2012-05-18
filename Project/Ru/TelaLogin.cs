@@ -16,7 +16,7 @@ namespace Ru
             InitializeComponent();
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        public void btnEntrar_Click(object sender, EventArgs e)
         {
             string login;
             string senha;
@@ -73,6 +73,14 @@ namespace Ru
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnEntrar_Click(sender, e);
+            }
         }
 
     }
