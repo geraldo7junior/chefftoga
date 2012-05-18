@@ -524,8 +524,8 @@
             // 
             this.msMenuCadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.msMenuCadastroNovo,
-            this.msMenuCadastroAlterar,
             this.msMenuCadastroVisualizar,
+            this.msMenuCadastroAlterar,
             this.msMenuCadastroExcluir,
             this.msMenuCadastroSair});
             this.msMenuCadastro.Name = "msMenuCadastro";
@@ -542,28 +542,29 @@
             // msMenuCadastroAlterar
             // 
             this.msMenuCadastroAlterar.Name = "msMenuCadastroAlterar";
-            this.msMenuCadastroAlterar.Size = new System.Drawing.Size(152, 22);
-            this.msMenuCadastroAlterar.Text = "&Alterar";
+            this.msMenuCadastroAlterar.Size = new System.Drawing.Size(205, 22);
+            this.msMenuCadastroAlterar.Text = "&Alterar outro Cadastro";
             this.msMenuCadastroAlterar.Click += new System.EventHandler(this.msMenuCadastroAlterar_Click);
             // 
             // msMenuCadastroVisualizar
             // 
             this.msMenuCadastroVisualizar.Name = "msMenuCadastroVisualizar";
-            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(152, 22);
-            this.msMenuCadastroVisualizar.Text = "&Visualizar";
+            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(205, 22);
+            this.msMenuCadastroVisualizar.Text = "&Visualizar outro Cadastro";
             this.msMenuCadastroVisualizar.Click += new System.EventHandler(this.msMenuCadastroVisualizar_Click);
             // 
             // msMenuCadastroExcluir
             // 
             this.msMenuCadastroExcluir.Name = "msMenuCadastroExcluir";
-            this.msMenuCadastroExcluir.Size = new System.Drawing.Size(152, 22);
-            this.msMenuCadastroExcluir.Text = "&Excluir";
+            this.msMenuCadastroExcluir.Size = new System.Drawing.Size(205, 22);
+            this.msMenuCadastroExcluir.Text = "&Excluir outro Cadastro";
+            this.msMenuCadastroExcluir.Click += new System.EventHandler(this.msMenuCadastroExcluir_Click);
             // 
             // msMenuCadastroSair
             // 
             this.msMenuCadastroSair.Name = "msMenuCadastroSair";
-            this.msMenuCadastroSair.Size = new System.Drawing.Size(152, 22);
-            this.msMenuCadastroSair.Text = "&Sair";
+            this.msMenuCadastroSair.Size = new System.Drawing.Size(205, 22);
+            this.msMenuCadastroSair.Text = "&Fechar";
             this.msMenuCadastroSair.Click += new System.EventHandler(this.msMenuCadastroSair_Click);
             // 
             // msMenuImprimir

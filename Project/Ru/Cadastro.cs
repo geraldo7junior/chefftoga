@@ -199,27 +199,54 @@ namespace Ru
 
         private void msMenuCadastroNovo_Click(object sender, EventArgs e)
         {
-            fCadastro _fCad;
-            _fCad = new fCadastro();
-            _fCad.Show();
-            Close();
+            if (MessageBox.Show("Deseja realmente realizar NOVO cadastro e perder os itens que não foram validados? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                fCadastro _fCad;
+                _fCad = new fCadastro();
+                _fCad.Show();
+                Close();
+            }
         }
 
         private void msMenuCadastroAlterar_Click(object sender, EventArgs e)
         {
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
-            _fAlt.Show();
+            if (MessageBox.Show("Deseja realmente alterar outro cadastro e perder os itens que não foram validados? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                fAlterar _fAlt;
+                _fAlt = new fAlterar();
+                Utilidades.ControleDeTela = "alterar";
+                _fAlt.Show();
+            }
         }
 
         private void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Deseja realmente visualizar outro cadastro e perder os itens que não foram validados? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                fAlterar _fAlt;
+                _fAlt = new fAlterar();
+                Utilidades.ControleDeTela = "visualizar";
+                _fAlt.Show();
+            }
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void msMenuCadastroExcluir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente excluir outro cadastro e perder os itens que não foram validados? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                fAlterar _fAlt;
+                _fAlt = new fAlterar();
+                Utilidades.ControleDeTela = "excluir";
+                _fAlt.Show();
+            }
         }
 
 

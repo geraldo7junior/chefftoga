@@ -46,7 +46,6 @@ namespace Ru
         {
             fAlterar _fAlt;
             _fAlt = new fAlterar();
-            lblAltVisExc.Text = "alterar";
             Utilidades.ControleDeTela = "alterar";
             _fAlt.Show();
             
@@ -56,7 +55,6 @@ namespace Ru
         {
             fAlterar _fAlt;
             _fAlt = new fAlterar();
-            lblAltVisExc.Text = "visualizar";
             Utilidades.ControleDeTela = "visualizar";
             _fAlt.Show();
         }
@@ -65,14 +63,9 @@ namespace Ru
         {
             fAlterar _fAlt;
             _fAlt = new fAlterar();
-            lblAltVisExc.Text = "excluir";
             Utilidades.ControleDeTela = "excluir";
             _fAlt.Show();
         }
 
-        public void lblAltVisExc_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

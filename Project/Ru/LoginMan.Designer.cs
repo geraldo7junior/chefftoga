@@ -42,7 +42,6 @@
             this.pctbRU = new System.Windows.Forms.PictureBox();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
             this.lblBSI = new System.Windows.Forms.Label();
-            this.lblAltVisExc = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbBoasVindas)).BeginInit();
@@ -65,8 +64,8 @@
             // 
             this.msMenuCadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.msMenuCadastroNovo,
-            this.msMenuCadastroAlterar,
             this.msMenuCadastroVisualizar,
+            this.msMenuCadastroAlterar,
             this.msMenuCadastroExcluir,
             this.msMenuCadastroSair});
             this.msMenuCadastro.Name = "msMenuCadastro";
@@ -76,35 +75,35 @@
             // msMenuCadastroNovo
             // 
             this.msMenuCadastroNovo.Name = "msMenuCadastroNovo";
-            this.msMenuCadastroNovo.Size = new System.Drawing.Size(152, 22);
+            this.msMenuCadastroNovo.Size = new System.Drawing.Size(123, 22);
             this.msMenuCadastroNovo.Text = "&Novo";
             this.msMenuCadastroNovo.Click += new System.EventHandler(this.msMenuCadastroNovo_Click);
             // 
             // msMenuCadastroAlterar
             // 
             this.msMenuCadastroAlterar.Name = "msMenuCadastroAlterar";
-            this.msMenuCadastroAlterar.Size = new System.Drawing.Size(152, 22);
+            this.msMenuCadastroAlterar.Size = new System.Drawing.Size(123, 22);
             this.msMenuCadastroAlterar.Text = "&Alterar";
             this.msMenuCadastroAlterar.Click += new System.EventHandler(this.msMenuCadastroAlterar_Click);
             // 
             // msMenuCadastroVisualizar
             // 
             this.msMenuCadastroVisualizar.Name = "msMenuCadastroVisualizar";
-            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(152, 22);
+            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(123, 22);
             this.msMenuCadastroVisualizar.Text = "&Visualizar";
             this.msMenuCadastroVisualizar.Click += new System.EventHandler(this.msMenuCadastroVisualizar_Click);
             // 
             // msMenuCadastroExcluir
             // 
             this.msMenuCadastroExcluir.Name = "msMenuCadastroExcluir";
-            this.msMenuCadastroExcluir.Size = new System.Drawing.Size(152, 22);
+            this.msMenuCadastroExcluir.Size = new System.Drawing.Size(123, 22);
             this.msMenuCadastroExcluir.Text = "&Excluir";
             this.msMenuCadastroExcluir.Click += new System.EventHandler(this.msMenuCadastroExcluir_Click);
             // 
             // msMenuCadastroSair
             // 
             this.msMenuCadastroSair.Name = "msMenuCadastroSair";
-            this.msMenuCadastroSair.Size = new System.Drawing.Size(152, 22);
+            this.msMenuCadastroSair.Size = new System.Drawing.Size(123, 22);
             this.msMenuCadastroSair.Text = "&Sair";
             this.msMenuCadastroSair.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -174,19 +173,6 @@
             this.lblBSI.TabIndex = 65;
             this.lblBSI.Text = "BSI";
             // 
-            // lblAltVisExc
-            // 
-            this.lblAltVisExc.AutoSize = true;
-            this.lblAltVisExc.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltVisExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAltVisExc.Location = new System.Drawing.Point(287, 165);
-            this.lblAltVisExc.Name = "lblAltVisExc";
-            this.lblAltVisExc.Size = new System.Drawing.Size(166, 13);
-            this.lblAltVisExc.TabIndex = 66;
-            this.lblAltVisExc.Text = "Alterar, Visualizar ou Excluir";
-            this.lblAltVisExc.Visible = false;
-            this.lblAltVisExc.Click += new System.EventHandler(this.lblAltVisExc_Click);
-            // 
             // fLoginMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,7 +181,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
-            this.Controls.Add(this.lblAltVisExc);
             this.Controls.Add(this.lblBSI);
             this.Controls.Add(this.pctbBoasVindas);
             this.Controls.Add(this.pctbRU);
@@ -233,7 +218,6 @@
         private System.Windows.Forms.PictureBox pctbRU;
         private System.Windows.Forms.PictureBox pctbBoasVindas;
         private System.Windows.Forms.Label lblBSI;
-        private System.Windows.Forms.Label lblAltVisExc;
 
 
 
