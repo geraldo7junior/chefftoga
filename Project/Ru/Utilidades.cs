@@ -7,6 +7,7 @@ namespace Ru
 {
     class Utilidades
     {
+        public static string ControleDeTela;
 
         public static Boolean validaData(String data)
         {
