@@ -19,168 +19,40 @@ namespace Ru
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            lblAstID.Text = Utilidades.PreencherCampos(txtID.Text);
+            lblAstNome.Text = Utilidades.PreencherCampos(txtNome.Text);
+            lblAstIdentidade.Text = Utilidades.PreencherCampos(txtIdenditade.Text);
+            lblAstDataNasc.Text = Utilidades.PreencherCampos(txtDataNasc.Text);
+            lblAstCpf.Text = Utilidades.PreencherCampos(txtCpf.Text);
+            lblAstCurso.Text = Utilidades.PreencherCampos(cbxCurso.Text);
+            lblAstPeriodo.Text = Utilidades.PreencherCampos(cbxPeriodo.Text);
+            lblAstRua.Text = Utilidades.PreencherCampos(txtRua.Text);
+            lblAstNum.Text = Utilidades.PreencherCampos(txtN.Text);
+            lblAstBairro.Text = Utilidades.PreencherCampos(txtBairro.Text);
+            lblAstCidade.Text = Utilidades.PreencherCampos(txtCidade.Text);
+            lblAstUf.Text = Utilidades.PreencherCampos(cbxUF.Text);
+            lblAstCep.Text = Utilidades.PreencherCampos(txtCep.Text);
+            lblAstFone.Text = Utilidades.PreencherCampos(txtFone.Text);
+            lblAstSenha.Text = Utilidades.PreencherCampos(txtSenha.Text);
+            lblAstConfirmeSenha.Text = Utilidades.PreencherCampos(txtConfirmeSenha.Text);
+
             //CONTROLE DA SENHA
             if (txtSenha.Text != txtConfirmeSenha.Text)
             {
                 MessageBox.Show("Senhas Diferentes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else if (lblAstBairro.Text == "*" || lblAstCep.Text == "*" || lblAstCidade.Text == "*" || lblAstConfirmeSenha.Text == "*" || lblAstCpf.Text == "*" || lblAstCurso.Text == "*" || lblAstDataNasc.Text == "*" || lblAstFone.Text == "*" || lblAstID.Text == "*" || lblAstIdentidade.Text == "*" || lblAstNome.Text == "*" || lblAstNum.Text == "*" || lblAstPeriodo.Text == "*" || lblAstRua.Text == "*" || lblAstSenha.Text == "*" || lblAstUf.Text == "*")
+            {
+                MessageBox.Show("Preencha os campos em asterisco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
             else
             {
-                if ((txtSenha.Text == txtConfirmeSenha.Text) && (txtConfirmeSenha.Text == ""))
-                {
-                    MessageBox.Show("Digite a senha e confirme!","Erro", MessageBoxButtons.OK , MessageBoxIcon.Exclamation);
-                }
-
-                else
-                {
-
-                    //CONTROLE DO NOME
-                    if (txtNome.Text == "")
-                    {
-                        MessageBox.Show("Preencha o campo Nome", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-
-                    else
-                    {
-
-                        //CONTROLE DE IDENTIDADE
-                        if (txtIdenditade.Text=="")
-                        {
-                            MessageBox.Show("Preencha o campo Identidade", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-
-                        else
-                        {
-
-                            //CONTROLE DA DATA DE NASCIMENTO
-                            if (!Utilidades.validaData(mtxtDataNasc.Text))
-                            {
-                                MessageBox.Show("Data de nascimento inválida!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                return;
-                            }
-
-                            else
-                            {
-
-                                //CONTROLE DO CPF
-                                if ((!Utilidades.validaCPF(mtxtCPF.Text)))
-                                {
-                                    MessageBox.Show("CPF Inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                }
-
-                                else
-                                {
-
-                                    //CONTROLE DO CURSO
-                                    if (cbxCurso.Text == "")
-                                    {
-                                        MessageBox.Show("Selecione o Curso", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    }
-
-                                    else
-                                    {
-
-                                        //CONTROLE DO PERÍODO
-                                        if (cbxPeriodo.Text == "")
-                                        {
-                                            MessageBox.Show("Selecione o Período", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                        }
-
-                                        else
-                                        {
-
-                                            //CONTROLE DO ENDEREÇO.RUA
-                                            if (txtRua.Text == "")
-                                            {
-                                                MessageBox.Show("No campo Endereço preencha o item Rua", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                            }
-
-                                            else
-                                            {
-
-                                                //CONTROLE DO ENDEREÇO.Nº
-                                                if (txtN.Text == "")
-                                                {
-                                                    MessageBox.Show("No campo Endereço preencha o item Nº", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                }
-
-                                                else
-                                                {
-
-                                                    //CONTROLE DO ENDEREÇO.BAIRRO
-                                                    if (txtBairro.Text == "")
-                                                    {
-                                                        MessageBox.Show("No campo Endereço preencha o item Bairro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                    }
-
-                                                    else
-                                                    {
-
-                                                        //CONTROLE DO ENDEREÇO.CIDADE
-                                                        if (txtCidade.Text == "")
-                                                        {
-                                                            MessageBox.Show("No campo Endereço preencha o item Cidade", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                        }
-
-                                                        else
-                                                        {
-
-                                                            //CONTROLE DO ENDEREÇO.UF
-                                                            if (cbxUF.Text == "")
-                                                            {
-                                                                MessageBox.Show("Selecione UF", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                            }
-
-                                                            else
-                                                            {
-
-                                                                //CONTROLE DO ENDEREÇO.CEP
-                                                                if (!Utilidades.validaCEP(mtxtCEP.Text))
-                                                                {
-                                                                    MessageBox.Show("CEP Inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                }
-
-                                                                else
-                                                                {
-
-                                                                    //CONTROLE DO FONE
-                                                                    if (!Utilidades.validaFone(mtxtFone.Text))
-                                                                    {
-                                                                        MessageBox.Show("Fone Inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                    }
-
-                                                                    //else
-                                                                    //{
-
-                                                                        //CONTROLE DA FOTO
-                                                                        //if (ptcbFoto == "")
-                                                                        //{
-                                                                        //    MessageBox.Show("Insira a Foto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                        //}
-
-                                                                        else
-                                                                        {
-                                                                            MessageBox.Show("Cadastro realizado com sucesso!","Validado");
-                                                                            fCadastroGerenciar _fLog;
-                                                                            _fLog = new fCadastroGerenciar();
-                                                                            _fLog.Show();
-                                                                            Hide();
-                                                                        }
-                                                                    //}
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                MessageBox.Show("Cadastro/Alteração realizado(a) com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                //funcao para cadastrar/alterar no DB
+                Close();
             }
+                
 
         }
 

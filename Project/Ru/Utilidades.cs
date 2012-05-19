@@ -7,7 +7,23 @@ namespace Ru
 {
     class Utilidades
     {
-        public static string ControleDeTela;
+        public static string ControleDeTela,asterisco;
+
+        
+        public static String PreencherCampos(String campo)
+        {
+            if (campo == "")
+            {
+                asterisco = "*";
+            }
+            else
+            {
+                asterisco = "";
+            }
+
+            return (asterisco);
+
+        }
 
         public static Boolean validaData(String data)
         {

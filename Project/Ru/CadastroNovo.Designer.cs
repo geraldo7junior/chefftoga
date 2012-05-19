@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCadastroNovo));
             this.cbxPeriodo = new System.Windows.Forms.ComboBox();
-            this.mtxtFone = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtCEP = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.lblFormCadastro = new System.Windows.Forms.Label();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.cbxUF = new System.Windows.Forms.ComboBox();
@@ -72,13 +69,32 @@
             this.txtConfirmeSenha = new System.Windows.Forms.TextBox();
             this.lblConfirmeSenha = new System.Windows.Forms.Label();
             this.lblDataNasc = new System.Windows.Forms.Label();
-            this.mtxtDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.pctbRU = new System.Windows.Forms.PictureBox();
             this.pctbFoto = new System.Windows.Forms.PictureBox();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.gpbBolsista = new System.Windows.Forms.GroupBox();
             this.rbtnNao = new System.Windows.Forms.RadioButton();
             this.rbtnSim = new System.Windows.Forms.RadioButton();
+            this.lblAstNome = new System.Windows.Forms.Label();
+            this.lblAstID = new System.Windows.Forms.Label();
+            this.lblAstIdentidade = new System.Windows.Forms.Label();
+            this.lblAstDataNasc = new System.Windows.Forms.Label();
+            this.lblAstCpf = new System.Windows.Forms.Label();
+            this.lblAstCurso = new System.Windows.Forms.Label();
+            this.lblAstPeriodo = new System.Windows.Forms.Label();
+            this.lblAstRua = new System.Windows.Forms.Label();
+            this.lblAstNum = new System.Windows.Forms.Label();
+            this.lblAstBairro = new System.Windows.Forms.Label();
+            this.lblAstCidade = new System.Windows.Forms.Label();
+            this.lblAstUf = new System.Windows.Forms.Label();
+            this.lblAstCep = new System.Windows.Forms.Label();
+            this.lblAstFone = new System.Windows.Forms.Label();
+            this.lblAstSenha = new System.Windows.Forms.Label();
+            this.lblAstConfirmeSenha = new System.Windows.Forms.Label();
+            this.txtDataNasc = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.txtCep = new System.Windows.Forms.TextBox();
+            this.txtFone = new System.Windows.Forms.TextBox();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -113,38 +129,6 @@
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(120, 24);
             this.cbxPeriodo.TabIndex = 6;
-            // 
-            // mtxtFone
-            // 
-            this.mtxtFone.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mtxtFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtFone.Location = new System.Drawing.Point(385, 522);
-            this.mtxtFone.Mask = "(00)0000-0000";
-            this.mtxtFone.Name = "mtxtFone";
-            this.mtxtFone.Size = new System.Drawing.Size(100, 22);
-            this.mtxtFone.TabIndex = 13;
-            // 
-            // mtxtCEP
-            // 
-            this.mtxtCEP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mtxtCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtCEP.Location = new System.Drawing.Point(443, 481);
-            this.mtxtCEP.Mask = "00.000-000";
-            this.mtxtCEP.Name = "mtxtCEP";
-            this.mtxtCEP.Size = new System.Drawing.Size(100, 22);
-            this.mtxtCEP.TabIndex = 12;
-            // 
-            // mtxtCPF
-            // 
-            this.mtxtCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mtxtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtCPF.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.mtxtCPF.Location = new System.Drawing.Point(385, 312);
-            this.mtxtCPF.Mask = "000.000.000-00";
-            this.mtxtCPF.Name = "mtxtCPF";
-            this.mtxtCPF.RejectInputOnFirstFailure = true;
-            this.mtxtCPF.Size = new System.Drawing.Size(100, 22);
-            this.mtxtCPF.TabIndex = 4;
             // 
             // lblFormCadastro
             // 
@@ -604,7 +588,7 @@
             this.btnOk.Location = new System.Drawing.Point(838, 694);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(150, 23);
-            this.btnOk.TabIndex = 17;
+            this.btnOk.TabIndex = 18;
             this.btnOk.Text = "&Validar Cadastro";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -642,23 +626,11 @@
             this.lblDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNasc.ForeColor = System.Drawing.Color.Black;
             this.lblDataNasc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDataNasc.Location = new System.Drawing.Point(536, 275);
+            this.lblDataNasc.Location = new System.Drawing.Point(545, 275);
             this.lblDataNasc.Name = "lblDataNasc";
             this.lblDataNasc.Size = new System.Drawing.Size(117, 22);
             this.lblDataNasc.TabIndex = 3;
             this.lblDataNasc.Text = "Data de Nasc.:";
-            // 
-            // mtxtDataNasc
-            // 
-            this.mtxtDataNasc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mtxtDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtDataNasc.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.mtxtDataNasc.Location = new System.Drawing.Point(647, 273);
-            this.mtxtDataNasc.Mask = "00 / 00 / 0000";
-            this.mtxtDataNasc.Name = "mtxtDataNasc";
-            this.mtxtDataNasc.Size = new System.Drawing.Size(91, 22);
-            this.mtxtDataNasc.TabIndex = 3;
-            this.mtxtDataNasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pctbRU
             // 
@@ -707,7 +679,7 @@
             this.gpbBolsista.Location = new System.Drawing.Point(66, 395);
             this.gpbBolsista.Name = "gpbBolsista";
             this.gpbBolsista.Size = new System.Drawing.Size(115, 88);
-            this.gpbBolsista.TabIndex = 65;
+            this.gpbBolsista.TabIndex = 17;
             this.gpbBolsista.TabStop = false;
             this.gpbBolsista.Text = "Gratuidade";
             // 
@@ -736,6 +708,241 @@
             this.rbtnSim.Text = "Sim";
             this.rbtnSim.UseVisualStyleBackColor = true;
             // 
+            // lblAstNome
+            // 
+            this.lblAstNome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstNome.AutoSize = true;
+            this.lblAstNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstNome.ForeColor = System.Drawing.Color.Red;
+            this.lblAstNome.Location = new System.Drawing.Point(837, 223);
+            this.lblAstNome.Name = "lblAstNome";
+            this.lblAstNome.Size = new System.Drawing.Size(0, 24);
+            this.lblAstNome.TabIndex = 67;
+            // 
+            // lblAstID
+            // 
+            this.lblAstID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstID.AutoSize = true;
+            this.lblAstID.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstID.ForeColor = System.Drawing.Color.Red;
+            this.lblAstID.Location = new System.Drawing.Point(526, 184);
+            this.lblAstID.Name = "lblAstID";
+            this.lblAstID.Size = new System.Drawing.Size(0, 24);
+            this.lblAstID.TabIndex = 68;
+            // 
+            // lblAstIdentidade
+            // 
+            this.lblAstIdentidade.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstIdentidade.AutoSize = true;
+            this.lblAstIdentidade.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstIdentidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstIdentidade.ForeColor = System.Drawing.Color.Red;
+            this.lblAstIdentidade.Location = new System.Drawing.Point(526, 262);
+            this.lblAstIdentidade.Name = "lblAstIdentidade";
+            this.lblAstIdentidade.Size = new System.Drawing.Size(0, 24);
+            this.lblAstIdentidade.TabIndex = 69;
+            // 
+            // lblAstDataNasc
+            // 
+            this.lblAstDataNasc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstDataNasc.AutoSize = true;
+            this.lblAstDataNasc.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstDataNasc.ForeColor = System.Drawing.Color.Red;
+            this.lblAstDataNasc.Location = new System.Drawing.Point(748, 264);
+            this.lblAstDataNasc.Name = "lblAstDataNasc";
+            this.lblAstDataNasc.Size = new System.Drawing.Size(0, 24);
+            this.lblAstDataNasc.TabIndex = 70;
+            // 
+            // lblAstCpf
+            // 
+            this.lblAstCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstCpf.AutoSize = true;
+            this.lblAstCpf.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstCpf.ForeColor = System.Drawing.Color.Red;
+            this.lblAstCpf.Location = new System.Drawing.Point(506, 306);
+            this.lblAstCpf.Name = "lblAstCpf";
+            this.lblAstCpf.Size = new System.Drawing.Size(0, 24);
+            this.lblAstCpf.TabIndex = 71;
+            // 
+            // lblAstCurso
+            // 
+            this.lblAstCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstCurso.AutoSize = true;
+            this.lblAstCurso.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstCurso.ForeColor = System.Drawing.Color.Red;
+            this.lblAstCurso.Location = new System.Drawing.Point(743, 344);
+            this.lblAstCurso.Name = "lblAstCurso";
+            this.lblAstCurso.Size = new System.Drawing.Size(0, 24);
+            this.lblAstCurso.TabIndex = 72;
+            // 
+            // lblAstPeriodo
+            // 
+            this.lblAstPeriodo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstPeriodo.AutoSize = true;
+            this.lblAstPeriodo.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstPeriodo.ForeColor = System.Drawing.Color.Red;
+            this.lblAstPeriodo.Location = new System.Drawing.Point(510, 379);
+            this.lblAstPeriodo.Name = "lblAstPeriodo";
+            this.lblAstPeriodo.Size = new System.Drawing.Size(0, 24);
+            this.lblAstPeriodo.TabIndex = 73;
+            // 
+            // lblAstRua
+            // 
+            this.lblAstRua.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstRua.AutoSize = true;
+            this.lblAstRua.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstRua.ForeColor = System.Drawing.Color.Red;
+            this.lblAstRua.Location = new System.Drawing.Point(874, 413);
+            this.lblAstRua.Name = "lblAstRua";
+            this.lblAstRua.Size = new System.Drawing.Size(0, 24);
+            this.lblAstRua.TabIndex = 74;
+            // 
+            // lblAstNum
+            // 
+            this.lblAstNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstNum.AutoSize = true;
+            this.lblAstNum.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstNum.ForeColor = System.Drawing.Color.Red;
+            this.lblAstNum.Location = new System.Drawing.Point(992, 420);
+            this.lblAstNum.Name = "lblAstNum";
+            this.lblAstNum.Size = new System.Drawing.Size(0, 24);
+            this.lblAstNum.TabIndex = 75;
+            // 
+            // lblAstBairro
+            // 
+            this.lblAstBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstBairro.AutoSize = true;
+            this.lblAstBairro.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstBairro.ForeColor = System.Drawing.Color.Red;
+            this.lblAstBairro.Location = new System.Drawing.Point(612, 445);
+            this.lblAstBairro.Name = "lblAstBairro";
+            this.lblAstBairro.Size = new System.Drawing.Size(0, 24);
+            this.lblAstBairro.TabIndex = 76;
+            // 
+            // lblAstCidade
+            // 
+            this.lblAstCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstCidade.AutoSize = true;
+            this.lblAstCidade.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstCidade.ForeColor = System.Drawing.Color.Red;
+            this.lblAstCidade.Location = new System.Drawing.Point(875, 445);
+            this.lblAstCidade.Name = "lblAstCidade";
+            this.lblAstCidade.Size = new System.Drawing.Size(0, 24);
+            this.lblAstCidade.TabIndex = 77;
+            // 
+            // lblAstUf
+            // 
+            this.lblAstUf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstUf.AutoSize = true;
+            this.lblAstUf.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstUf.ForeColor = System.Drawing.Color.Red;
+            this.lblAstUf.Location = new System.Drawing.Point(968, 453);
+            this.lblAstUf.Name = "lblAstUf";
+            this.lblAstUf.Size = new System.Drawing.Size(0, 24);
+            this.lblAstUf.TabIndex = 78;
+            // 
+            // lblAstCep
+            // 
+            this.lblAstCep.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstCep.AutoSize = true;
+            this.lblAstCep.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstCep.ForeColor = System.Drawing.Color.Red;
+            this.lblAstCep.Location = new System.Drawing.Point(552, 482);
+            this.lblAstCep.Name = "lblAstCep";
+            this.lblAstCep.Size = new System.Drawing.Size(0, 24);
+            this.lblAstCep.TabIndex = 79;
+            // 
+            // lblAstFone
+            // 
+            this.lblAstFone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstFone.AutoSize = true;
+            this.lblAstFone.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstFone.ForeColor = System.Drawing.Color.Red;
+            this.lblAstFone.Location = new System.Drawing.Point(471, 521);
+            this.lblAstFone.Name = "lblAstFone";
+            this.lblAstFone.Size = new System.Drawing.Size(0, 24);
+            this.lblAstFone.TabIndex = 80;
+            // 
+            // lblAstSenha
+            // 
+            this.lblAstSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstSenha.AutoSize = true;
+            this.lblAstSenha.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstSenha.ForeColor = System.Drawing.Color.Red;
+            this.lblAstSenha.Location = new System.Drawing.Point(466, 594);
+            this.lblAstSenha.Name = "lblAstSenha";
+            this.lblAstSenha.Size = new System.Drawing.Size(0, 24);
+            this.lblAstSenha.TabIndex = 81;
+            // 
+            // lblAstConfirmeSenha
+            // 
+            this.lblAstConfirmeSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstConfirmeSenha.AutoSize = true;
+            this.lblAstConfirmeSenha.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstConfirmeSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstConfirmeSenha.ForeColor = System.Drawing.Color.Red;
+            this.lblAstConfirmeSenha.Location = new System.Drawing.Point(512, 626);
+            this.lblAstConfirmeSenha.Name = "lblAstConfirmeSenha";
+            this.lblAstConfirmeSenha.Size = new System.Drawing.Size(0, 24);
+            this.lblAstConfirmeSenha.TabIndex = 82;
+            // 
+            // txtDataNasc
+            // 
+            this.txtDataNasc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDataNasc.BackColor = System.Drawing.Color.White;
+            this.txtDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataNasc.Location = new System.Drawing.Point(659, 272);
+            this.txtDataNasc.Name = "txtDataNasc";
+            this.txtDataNasc.Size = new System.Drawing.Size(84, 22);
+            this.txtDataNasc.TabIndex = 3;
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCpf.BackColor = System.Drawing.Color.White;
+            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.Location = new System.Drawing.Point(385, 311);
+            this.txtCpf.MaxLength = 11;
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(116, 22);
+            this.txtCpf.TabIndex = 4;
+            // 
+            // txtCep
+            // 
+            this.txtCep.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCep.BackColor = System.Drawing.Color.White;
+            this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCep.Location = new System.Drawing.Point(430, 484);
+            this.txtCep.MaxLength = 8;
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(116, 22);
+            this.txtCep.TabIndex = 12;
+            // 
+            // txtFone
+            // 
+            this.txtFone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFone.BackColor = System.Drawing.Color.White;
+            this.txtFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFone.Location = new System.Drawing.Point(350, 523);
+            this.txtFone.MaxLength = 10;
+            this.txtFone.Name = "txtFone";
+            this.txtFone.Size = new System.Drawing.Size(116, 22);
+            this.txtFone.TabIndex = 13;
+            // 
             // fCadastroNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -744,11 +951,25 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.txtFone);
+            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.txtCpf);
+            this.Controls.Add(this.txtDataNasc);
+            this.Controls.Add(this.lblAstConfirmeSenha);
+            this.Controls.Add(this.lblAstSenha);
+            this.Controls.Add(this.lblAstUf);
+            this.Controls.Add(this.lblAstNum);
+            this.Controls.Add(this.lblAstPeriodo);
+            this.Controls.Add(this.lblAstCurso);
+            this.Controls.Add(this.lblAstCpf);
+            this.Controls.Add(this.lblAstDataNasc);
+            this.Controls.Add(this.lblAstIdentidade);
+            this.Controls.Add(this.lblAstID);
+            this.Controls.Add(this.lblAstNome);
             this.Controls.Add(this.gpbBolsista);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.pctbFoto);
             this.Controls.Add(this.pctbRU);
-            this.Controls.Add(this.mtxtDataNasc);
             this.Controls.Add(this.lblDataNasc);
             this.Controls.Add(this.txtConfirmeSenha);
             this.Controls.Add(this.lblConfirmeSenha);
@@ -757,9 +978,6 @@
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.msMenu);
             this.Controls.Add(this.cbxPeriodo);
-            this.Controls.Add(this.mtxtFone);
-            this.Controls.Add(this.mtxtCEP);
-            this.Controls.Add(this.mtxtCPF);
             this.Controls.Add(this.lblFormCadastro);
             this.Controls.Add(this.cbxCurso);
             this.Controls.Add(this.cbxUF);
@@ -785,6 +1003,11 @@
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.lblIdentidade);
             this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.lblAstRua);
+            this.Controls.Add(this.lblAstBairro);
+            this.Controls.Add(this.lblAstCidade);
+            this.Controls.Add(this.lblAstCep);
+            this.Controls.Add(this.lblAstFone);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fCadastroNovo";
@@ -805,9 +1028,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cbxPeriodo;
-        private System.Windows.Forms.MaskedTextBox mtxtFone;
-        private System.Windows.Forms.MaskedTextBox mtxtCEP;
-        private System.Windows.Forms.MaskedTextBox mtxtCPF;
         private System.Windows.Forms.Label lblFormCadastro;
         private System.Windows.Forms.ComboBox cbxCurso;
         private System.Windows.Forms.ComboBox cbxUF;
@@ -846,7 +1066,6 @@
         private System.Windows.Forms.TextBox txtConfirmeSenha;
         private System.Windows.Forms.Label lblConfirmeSenha;
         private System.Windows.Forms.Label lblDataNasc;
-        private System.Windows.Forms.MaskedTextBox mtxtDataNasc;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroSair;
         private System.Windows.Forms.PictureBox pctbRU;
         private System.Windows.Forms.PictureBox pctbFoto;
@@ -854,5 +1073,25 @@
         private System.Windows.Forms.GroupBox gpbBolsista;
         private System.Windows.Forms.RadioButton rbtnNao;
         private System.Windows.Forms.RadioButton rbtnSim;
+        private System.Windows.Forms.Label lblAstNome;
+        private System.Windows.Forms.Label lblAstID;
+        private System.Windows.Forms.Label lblAstIdentidade;
+        private System.Windows.Forms.Label lblAstDataNasc;
+        private System.Windows.Forms.Label lblAstCpf;
+        private System.Windows.Forms.Label lblAstCurso;
+        private System.Windows.Forms.Label lblAstPeriodo;
+        private System.Windows.Forms.Label lblAstRua;
+        private System.Windows.Forms.Label lblAstNum;
+        private System.Windows.Forms.Label lblAstBairro;
+        private System.Windows.Forms.Label lblAstCidade;
+        private System.Windows.Forms.Label lblAstUf;
+        private System.Windows.Forms.Label lblAstCep;
+        private System.Windows.Forms.Label lblAstFone;
+        private System.Windows.Forms.Label lblAstSenha;
+        private System.Windows.Forms.Label lblAstConfirmeSenha;
+        private System.Windows.Forms.TextBox txtDataNasc;
+        private System.Windows.Forms.TextBox txtCpf;
+        private System.Windows.Forms.TextBox txtCep;
+        private System.Windows.Forms.TextBox txtFone;
     }
 }
