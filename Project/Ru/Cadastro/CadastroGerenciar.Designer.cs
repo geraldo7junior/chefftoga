@@ -195,6 +195,7 @@
             this.Name = "fCadastroGerenciar";
             this.Text = "Gerenciador de Cadastro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.fCadastroGerenciar_Load);
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).EndInit();

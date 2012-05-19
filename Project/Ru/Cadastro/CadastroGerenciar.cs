@@ -33,7 +33,7 @@ namespace Ru
         {
             if (MessageBox.Show("Deseja realmente encerrar a sessão?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                Close();
                 fTelaLogin _tela;
                 _tela = new fTelaLogin();
                 _tela.Show();
@@ -69,6 +69,11 @@ namespace Ru
             _fAlt = new fAlterar();
             Utilidades.ControleDeTela = "excluir";
             _fAlt.Show();
+        }
+
+        private void fCadastroGerenciar_Load(object sender, EventArgs e)
+        {
+            
         }
 
     }
