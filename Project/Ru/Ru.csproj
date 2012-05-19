@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadastroNovo.cs">
+    <Compile Include="Cadastro\CadastroNovo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroNovo.Designer.cs">
+    <Compile Include="Cadastro\CadastroNovo.Designer.cs">
       <DependentUpon>CadastroNovo.cs</DependentUpon>
     </Compile>
     <Compile Include="Alterar.cs">
@@ -58,40 +58,40 @@
     <Compile Include="Alterar.Designer.cs">
       <DependentUpon>Alterar.cs</DependentUpon>
     </Compile>
-    <Compile Include="EntradaRuGerenciar.cs">
+    <Compile Include="Entrada\EntradaRuGerenciar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EntradaRuGerenciar.Designer.cs">
+    <Compile Include="Entrada\EntradaRuGerenciar.Designer.cs">
       <DependentUpon>EntradaRuGerenciar.cs</DependentUpon>
     </Compile>
-    <Compile Include="EntradaRuAutorizar.cs">
+    <Compile Include="Entrada\EntradaRuAutorizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EntradaRuAutorizar.Designer.cs">
+    <Compile Include="Entrada\EntradaRuAutorizar.Designer.cs">
       <DependentUpon>EntradaRuAutorizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreditoCreditar.cs">
+    <Compile Include="Credito\CreditoCreditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreditoCreditar.Designer.cs">
+    <Compile Include="Credito\CreditoCreditar.Designer.cs">
       <DependentUpon>CreditoCreditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreditoVisualizar.cs">
+    <Compile Include="Credito\CreditoVisualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreditoVisualizar.Designer.cs">
+    <Compile Include="Credito\CreditoVisualizar.Designer.cs">
       <DependentUpon>CreditoVisualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreditoGerenciar.cs">
+    <Compile Include="Credito\CreditoGerenciar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreditoGerenciar.Designer.cs">
+    <Compile Include="Credito\CreditoGerenciar.Designer.cs">
       <DependentUpon>CreditoGerenciar.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroVisualizar.cs">
+    <Compile Include="Cadastro\CadastroVisualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroVisualizar.Designer.cs">
+    <Compile Include="Cadastro\CadastroVisualizar.Designer.cs">
       <DependentUpon>CadastroVisualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaLogin.cs">
@@ -105,43 +105,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LocalDataCache1.sync</DependentUpon>
     </Compile>
-    <Compile Include="CadastroGerenciar.cs">
+    <Compile Include="Cadastro\CadastroGerenciar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroGerenciar.Designer.cs">
+    <Compile Include="Cadastro\CadastroGerenciar.Designer.cs">
       <DependentUpon>CadastroGerenciar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Class\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilidades.cs" />
-    <EmbeddedResource Include="CadastroNovo.resx">
+    <Compile Include="Class\Utilidades.cs" />
+    <EmbeddedResource Include="Cadastro\CadastroNovo.resx">
       <DependentUpon>CadastroNovo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Alterar.resx">
       <DependentUpon>Alterar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EntradaRuGerenciar.resx">
+    <EmbeddedResource Include="Entrada\EntradaRuGerenciar.resx">
       <DependentUpon>EntradaRuGerenciar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EntradaRuAutorizar.resx">
+    <EmbeddedResource Include="Entrada\EntradaRuAutorizar.resx">
       <DependentUpon>EntradaRuAutorizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreditoCreditar.resx">
+    <EmbeddedResource Include="Credito\CreditoCreditar.resx">
       <DependentUpon>CreditoCreditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreditoVisualizar.resx">
+    <EmbeddedResource Include="Credito\CreditoVisualizar.resx">
       <DependentUpon>CreditoVisualizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreditoGerenciar.resx">
+    <EmbeddedResource Include="Credito\CreditoGerenciar.resx">
       <DependentUpon>CreditoGerenciar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroVisualizar.resx">
+    <EmbeddedResource Include="Cadastro\CadastroVisualizar.resx">
       <DependentUpon>CadastroVisualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroGerenciar.resx">
+    <EmbeddedResource Include="Cadastro\CadastroGerenciar.resx">
       <DependentUpon>CadastroGerenciar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -169,6 +169,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
