@@ -38,6 +38,7 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbRU = new System.Windows.Forms.PictureBox();
+            this.lblCheffToga = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelar.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(519, 354);
+            this.btnCancelar.Location = new System.Drawing.Point(519, 424);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(64, 23);
             this.btnCancelar.TabIndex = 15;
@@ -59,7 +60,7 @@
             this.mtbLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtbLogin.BackColor = System.Drawing.Color.White;
             this.mtbLogin.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.mtbLogin.Location = new System.Drawing.Point(492, 240);
+            this.mtbLogin.Location = new System.Drawing.Point(492, 310);
             this.mtbLogin.Mask = "000.000.000-00";
             this.mtbLogin.Name = "mtbLogin";
             this.mtbLogin.Size = new System.Drawing.Size(100, 20);
@@ -73,7 +74,7 @@
             this.lblErroLogar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblErroLogar.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErroLogar.ForeColor = System.Drawing.Color.Red;
-            this.lblErroLogar.Location = new System.Drawing.Point(667, 281);
+            this.lblErroLogar.Location = new System.Drawing.Point(667, 351);
             this.lblErroLogar.Name = "lblErroLogar";
             this.lblErroLogar.Size = new System.Drawing.Size(0, 11);
             this.lblErroLogar.TabIndex = 13;
@@ -82,7 +83,7 @@
             // 
             this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSenha.BackColor = System.Drawing.Color.White;
-            this.txtSenha.Location = new System.Drawing.Point(492, 287);
+            this.txtSenha.Location = new System.Drawing.Point(492, 357);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
@@ -96,7 +97,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(488, 263);
+            this.lblSenha.Location = new System.Drawing.Point(488, 333);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(51, 21);
             this.lblSenha.TabIndex = 11;
@@ -107,7 +108,7 @@
             this.btnEntrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEntrar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEntrar.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(454, 354);
+            this.btnEntrar.Location = new System.Drawing.Point(454, 424);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(59, 23);
             this.btnEntrar.TabIndex = 12;
@@ -121,7 +122,7 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(488, 216);
+            this.lblLogin.Location = new System.Drawing.Point(488, 286);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(44, 21);
             this.lblLogin.TabIndex = 8;
@@ -145,11 +146,23 @@
             this.pctbRU.BackColor = System.Drawing.Color.Transparent;
             this.pctbRU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbRU.BackgroundImage")));
             this.pctbRU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctbRU.Location = new System.Drawing.Point(407, 111);
+            this.pctbRU.Location = new System.Drawing.Point(407, 181);
             this.pctbRU.Name = "pctbRU";
             this.pctbRU.Size = new System.Drawing.Size(502, 457);
             this.pctbRU.TabIndex = 64;
             this.pctbRU.TabStop = false;
+            // 
+            // lblCheffToga
+            // 
+            this.lblCheffToga.AutoSize = true;
+            this.lblCheffToga.BackColor = System.Drawing.Color.Transparent;
+            this.lblCheffToga.Font = new System.Drawing.Font("Freestyle Script", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheffToga.ForeColor = System.Drawing.Color.Maroon;
+            this.lblCheffToga.Location = new System.Drawing.Point(514, 9);
+            this.lblCheffToga.Name = "lblCheffToga";
+            this.lblCheffToga.Size = new System.Drawing.Size(338, 112);
+            this.lblCheffToga.TabIndex = 65;
+            this.lblCheffToga.Text = "Cheff Toga";
             // 
             // fTelaLogin
             // 
@@ -159,6 +172,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.lblCheffToga);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.mtbLogin);
@@ -191,5 +205,6 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.PictureBox pctbRU;
+        private System.Windows.Forms.Label lblCheffToga;
     }
 }
