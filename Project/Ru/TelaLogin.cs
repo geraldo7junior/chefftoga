@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using RuBiz;
 
 namespace Ru
 {
@@ -18,38 +19,24 @@ namespace Ru
 
         public void btnEntrar_Click(object sender, EventArgs e)
         {
-            string login;
-            string senha;
-            login = mtbLogin.Text;
-            senha = txtSenha.Text;
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var linq = (from i in context.Usuario
+                            where i.CPF == this.mtbLogin.Text && i.Senha == this.txtSenha.Text
+                            select i.CPF).ToList();
 
-            if (txtSenha.Text == "123")
-            {
-                lblErroLogar.Text = "Usuário ou Senha incorretos!";
+                if (linq.ToList().Count() >= 1)
+                {
+                    fCadastroGerenciar form = new fCadastroGerenciar();
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    lblErroLogar.Text = "Usuário ou Senha incorretos!";
+                }
             }
-            else if (txtSenha.Text == "cad")
-            {
-                fCadastroGerenciar _fLog;
-                _fLog = new fCadastroGerenciar();
-                _fLog.Show();
-                Hide();
-            }
-
-            else if (txtSenha.Text == "cred")
-            {
-                fCreditoGerenciar _fLog;
-                _fLog = new fCreditoGerenciar();
-                _fLog.Show();
-                Hide();
-            }
-
-            else if (txtSenha.Text == "aut")
-            {
-                fEntradaRuGerenciar _fLog;
-                _fLog = new fEntradaRuGerenciar();
-                _fLog.Show();
-                Hide();
-            }
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

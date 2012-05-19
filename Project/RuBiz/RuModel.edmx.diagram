@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="316ae42307d14e0d95d6f40262e81ee9" Name="Diagram1">
+        <EntityTypeShape EntityType="RuModel.Cartao" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RuModel.Curso" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RuModel.InstituicaoEnsino" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RuModel.MovtoFinanceira" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RuModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RuModel.TipoUsuario" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="RuModel.FK_Cartao_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="RuModel.FK_Curso_InstituicaoEnsino" ManuallyRouted="false" />
+        <AssociationConnector Association="RuModel.FK_Usuario_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="RuModel.FK_MovtoFinanceira_MovtoFinanceira" ManuallyRouted="false" />
+        <AssociationConnector Association="RuModel.FK_Usuario_TipoUsuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

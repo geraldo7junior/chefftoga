@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RuModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CheffTogaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cartao" EntityType="RuModel.Cartao" />
+    <EntitySet Name="Curso" EntityType="RuModel.Curso" />
+    <EntitySet Name="InstituicaoEnsino" EntityType="RuModel.InstituicaoEnsino" />
+    <EntitySet Name="MovtoFinanceira" EntityType="RuModel.MovtoFinanceira" />
+    <EntitySet Name="sysdiagrams" EntityType="RuModel.sysdiagrams" />
+    <EntitySet Name="TipoUsuario" EntityType="RuModel.TipoUsuario" />
+    <EntitySet Name="Usuario" EntityType="RuModel.Usuario" />
+    <AssociationSet Name="FK_Cartao_Usuario" Association="RuModel.FK_Cartao_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cartao" EntitySet="Cartao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Curso_InstituicaoEnsino" Association="RuModel.FK_Curso_InstituicaoEnsino">
+      <End Role="InstituicaoEnsino" EntitySet="InstituicaoEnsino" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Curso" Association="RuModel.FK_Usuario_Curso">
+      <End Role="Curso" EntitySet="Curso" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovtoFinanceira_MovtoFinanceira" Association="RuModel.FK_MovtoFinanceira_MovtoFinanceira">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="MovtoFinanceira" EntitySet="MovtoFinanceira" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_TipoUsuario" Association="RuModel.FK_Usuario_TipoUsuario">
+      <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cartao">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+      <PropertyRef Name="Saldo" />
+    </Key>
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="Usuario" Relationship="RuModel.FK_Cartao_Usuario" FromRole="Cartao" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Curso">
+    <Key>
+      <PropertyRef Name="IdCurso" />
+    </Key>
+    <Property Name="IdCurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescricaoCurso" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Id_Instituicao" Type="Int32" Nullable="false" />
+    <Property Name="TotalPeriodo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="InstituicaoEnsino" Relationship="RuModel.FK_Curso_InstituicaoEnsino" FromRole="Curso" ToRole="InstituicaoEnsino" />
+    <NavigationProperty Name="Usuario" Relationship="RuModel.FK_Usuario_Curso" FromRole="Curso" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="InstituicaoEnsino">
+    <Key>
+      <PropertyRef Name="Id_Instituicao" />
+    </Key>
+    <Property Name="Id_Instituicao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="Curso" Relationship="RuModel.FK_Curso_InstituicaoEnsino" FromRole="InstituicaoEnsino" ToRole="Curso" />
+  </EntityType>
+  <EntityType Name="MovtoFinanceira">
+    <Key>
+      <PropertyRef Name="Id_Movto" />
+    </Key>
+    <Property Name="Id_Movto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="DataMovto" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Valor" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="Usuario" Relationship="RuModel.FK_MovtoFinanceira_MovtoFinanceira" FromRole="MovtoFinanceira" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="Id_TipoUsuario" />
+    </Key>
+    <Property Name="Id_TipoUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Usuario" Relationship="RuModel.FK_Usuario_TipoUsuario" FromRole="TipoUsuario" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="Id_TipoUsuario" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="RG" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="CPF" Type="String" Nullable="false" MaxLength="11" Unicode="true" FixedLength="true" />
+    <Property Name="Id_Curso" Type="Int32" />
+    <Property Name="Logradouro" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Numero" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Bairro" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Cidade" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UF" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="CEP" Type="String" Nullable="false" MaxLength="8" Unicode="true" FixedLength="true" />
+    <Property Name="Fone" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Bolsista" Type="Boolean" />
+    <Property Name="Senha" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Cartao" Relationship="RuModel.FK_Cartao_Usuario" FromRole="Usuario" ToRole="Cartao" />
+    <NavigationProperty Name="Curso" Relationship="RuModel.FK_Usuario_Curso" FromRole="Usuario" ToRole="Curso" />
+    <NavigationProperty Name="MovtoFinanceira" Relationship="RuModel.FK_MovtoFinanceira_MovtoFinanceira" FromRole="Usuario" ToRole="MovtoFinanceira" />
+    <NavigationProperty Name="TipoUsuario" Relationship="RuModel.FK_Usuario_TipoUsuario" FromRole="Usuario" ToRole="TipoUsuario" />
+    <Property Type="Int32" Name="Periodo" />
+    <Property Type="DateTime" Name="DataNascimento" />
+  </EntityType>
+  <Association Name="FK_Cartao_Usuario">
+    <End Role="Usuario" Type="RuModel.Usuario" Multiplicity="1" />
+    <End Role="Cartao" Type="RuModel.Cartao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="Cartao">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Curso_InstituicaoEnsino">
+    <End Role="InstituicaoEnsino" Type="RuModel.InstituicaoEnsino" Multiplicity="1" />
+    <End Role="Curso" Type="RuModel.Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstituicaoEnsino">
+        <PropertyRef Name="Id_Instituicao" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="Id_Instituicao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Curso">
+    <End Role="Curso" Type="RuModel.Curso" Multiplicity="0..1" />
+    <End Role="Usuario" Type="RuModel.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curso">
+        <PropertyRef Name="IdCurso" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Id_Curso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovtoFinanceira_MovtoFinanceira">
+    <End Role="Usuario" Type="RuModel.Usuario" Multiplicity="1" />
+    <End Role="MovtoFinanceira" Type="RuModel.MovtoFinanceira" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="MovtoFinanceira">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_TipoUsuario">
+    <End Role="TipoUsuario" Type="RuModel.TipoUsuario" Multiplicity="1" />
+    <End Role="Usuario" Type="RuModel.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoUsuario">
+        <PropertyRef Name="Id_TipoUsuario" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Id_TipoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RuModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="RuModelStoreContainer">
+    <EntitySet Name="Cartao" EntityType="RuModel.Store.Cartao" store:Type="Tables" store:Schema="dbo" store:Name="Cartao">
+      <DefiningQuery>SELECT 
+      [Cartao].[Id_Usuario] AS [Id_Usuario], 
+      [Cartao].[Saldo] AS [Saldo]
+      FROM [dbo].[Cartao] AS [Cartao]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Curso" EntityType="RuModel.Store.Curso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InstituicaoEnsino" EntityType="RuModel.Store.InstituicaoEnsino" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MovtoFinanceira" EntityType="RuModel.Store.MovtoFinanceira" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="RuModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoUsuario" EntityType="RuModel.Store.TipoUsuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="RuModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Cartao_Usuario" Association="RuModel.Store.FK_Cartao_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cartao" EntitySet="Cartao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Curso_InstituicaoEnsino" Association="RuModel.Store.FK_Curso_InstituicaoEnsino">
+      <End Role="InstituicaoEnsino" EntitySet="InstituicaoEnsino" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovtoFinanceira_MovtoFinanceira" Association="RuModel.Store.FK_MovtoFinanceira_MovtoFinanceira">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="MovtoFinanceira" EntitySet="MovtoFinanceira" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Curso" Association="RuModel.Store.FK_Usuario_Curso">
+      <End Role="Curso" EntitySet="Curso" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_TipoUsuario" Association="RuModel.Store.FK_Usuario_TipoUsuario">
+      <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CheffToga.dbo.Cartao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Cartao">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+      <PropertyRef Name="Saldo" />
+    </Key>
+    <Property Name="Id_Usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Saldo" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Curso">
+    <Key>
+      <PropertyRef Name="IdCurso" />
+    </Key>
+    <Property Name="IdCurso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DescricaoCurso" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Id_Instituicao" Type="int" Nullable="false" />
+    <Property Name="TotalPeriodo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InstituicaoEnsino">
+    <Key>
+      <PropertyRef Name="Id_Instituicao" />
+    </Key>
+    <Property Name="Id_Instituicao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Estado" Type="char" Nullable="false" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="MovtoFinanceira">
+    <Key>
+      <PropertyRef Name="Id_Movto" />
+    </Key>
+    <Property Name="Id_Movto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Usuario" Type="int" Nullable="false" />
+    <Property Name="DataMovto" Type="datetime" Nullable="false" />
+    <Property Name="Valor" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="Id_TipoUsuario" />
+    </Key>
+    <Property Name="Id_TipoUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="int" Nullable="false" />
+    <Property Name="Id_TipoUsuario" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="RG" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="CPF" Type="nchar" Nullable="false" MaxLength="11" />
+    <Property Name="Id_Curso" Type="int" />
+    <Property Name="Logradouro" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Bairro" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cidade" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UF" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="CEP" Type="nchar" Nullable="false" MaxLength="8" />
+    <Property Name="Fone" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Bolsista" Type="bit" />
+    <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Periodo" Type="int" />
+    <Property Name="DataNascimento" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Cartao_Usuario">
+    <End Role="Usuario" Type="RuModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Cartao" Type="RuModel.Store.Cartao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="Cartao">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Curso_InstituicaoEnsino">
+    <End Role="InstituicaoEnsino" Type="RuModel.Store.InstituicaoEnsino" Multiplicity="1" />
+    <End Role="Curso" Type="RuModel.Store.Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstituicaoEnsino">
+        <PropertyRef Name="Id_Instituicao" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="Id_Instituicao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovtoFinanceira_MovtoFinanceira">
+    <End Role="Usuario" Type="RuModel.Store.Usuario" Multiplicity="1" />
+    <End Role="MovtoFinanceira" Type="RuModel.Store.MovtoFinanceira" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="MovtoFinanceira">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Curso">
+    <End Role="Curso" Type="RuModel.Store.Curso" Multiplicity="0..1" />
+    <End Role="Usuario" Type="RuModel.Store.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curso">
+        <PropertyRef Name="IdCurso" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Id_Curso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_TipoUsuario">
+    <End Role="TipoUsuario" Type="RuModel.Store.TipoUsuario" Multiplicity="1" />
+    <End Role="Usuario" Type="RuModel.Store.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoUsuario">
+        <PropertyRef Name="Id_TipoUsuario" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Id_TipoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

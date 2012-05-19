@@ -1,0 +1,18 @@
+C:\Users\André\Desktop\Ru - Cinza\RuBiz\bin\Debug\RuBiz.dll.config
+C:\Users\André\Desktop\Ru - Cinza\RuBiz\bin\Debug\RuBiz.dll
+C:\Users\André\Desktop\Ru - Cinza\RuBiz\bin\Debug\RuBiz.pdb
+C:\Users\André\Desktop\Ru - Cinza\RuBiz\obj\Debug\RuBiz.dll
+C:\Users\André\Desktop\Ru - Cinza\RuBiz\obj\Debug\RuBiz.pdb
+C:\Users\André\Desktop\Ru - Cinza\RuBiz\obj\Debug\RuBiz.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Desktop\CT\chefftoga\Project\RuBiz\bin\Debug\RuBiz.dll.config
+C:\Users\Andre\Desktop\CT\chefftoga\Project\RuBiz\bin\Debug\RuBiz.dll
+C:\Users\Andre\Desktop\CT\chefftoga\Project\RuBiz\bin\Debug\RuBiz.pdb
+C:\Users\Andre\Desktop\CT\chefftoga\Project\RuBiz\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Andre\Desktop\CT\chefftoga\Project\RuBiz\obj\Debug\RuBiz.dll
+C:\Users\Andre\Desktop\CT\chefftoga\Project\RuBiz\obj\Debug\RuBiz.pdb
+C:\chefftoga\Project\RuBiz\bin\Debug\RuBiz.dll.config
+C:\chefftoga\Project\RuBiz\bin\Debug\RuBiz.dll
+C:\chefftoga\Project\RuBiz\bin\Debug\RuBiz.pdb
+C:\chefftoga\Project\RuBiz\obj\Debug\ResolveAssemblyReference.cache
+C:\chefftoga\Project\RuBiz\obj\Debug\RuBiz.dll
+C:\chefftoga\Project\RuBiz\obj\Debug\RuBiz.pdb
