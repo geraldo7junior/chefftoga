@@ -155,7 +155,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="LocalDataCache1.sync">
       <SubType>Designer</SubType>
       <Generator>MSDataSyncGenerator</Generator>

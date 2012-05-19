@@ -70,10 +70,10 @@
             // 
             this.lblErroLogar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblErroLogar.AutoSize = true;
-            this.lblErroLogar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblErroLogar.BackColor = System.Drawing.Color.Transparent;
             this.lblErroLogar.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErroLogar.ForeColor = System.Drawing.Color.Red;
-            this.lblErroLogar.Location = new System.Drawing.Point(632, 351);
+            this.lblErroLogar.Location = new System.Drawing.Point(396, 257);
             this.lblErroLogar.Name = "lblErroLogar";
             this.lblErroLogar.Size = new System.Drawing.Size(0, 11);
             this.lblErroLogar.TabIndex = 13;
