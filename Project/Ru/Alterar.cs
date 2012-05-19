@@ -49,6 +49,7 @@ namespace Ru
                 Close();
                 if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     // criar função aqui para excluir cadastro do banco de dados
                     _fVCad.Close();
                     
