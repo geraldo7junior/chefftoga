@@ -55,7 +55,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.msMenu.Size = new System.Drawing.Size(1370, 24);
+            this.msMenu.Size = new System.Drawing.Size(1300, 24);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "Menu";
             this.msMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.msMenu_ItemClicked);
@@ -120,7 +120,7 @@
             this.lblBemVindo.BackColor = System.Drawing.Color.Transparent;
             this.lblBemVindo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBemVindo.ForeColor = System.Drawing.Color.Red;
-            this.lblBemVindo.Location = new System.Drawing.Point(486, 84);
+            this.lblBemVindo.Location = new System.Drawing.Point(451, 84);
             this.lblBemVindo.Name = "lblBemVindo";
             this.lblBemVindo.Size = new System.Drawing.Size(475, 26);
             this.lblBemVindo.TabIndex = 4;
@@ -132,7 +132,7 @@
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(1157, 729);
+            this.lblCopyright.Location = new System.Drawing.Point(1122, 729);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(201, 12);
             this.lblCopyright.TabIndex = 18;
@@ -144,7 +144,7 @@
             this.pctbRU.BackColor = System.Drawing.Color.Transparent;
             this.pctbRU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbRU.BackgroundImage")));
             this.pctbRU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctbRU.Location = new System.Drawing.Point(1168, 27);
+            this.pctbRU.Location = new System.Drawing.Point(1133, 27);
             this.pctbRU.Name = "pctbRU";
             this.pctbRU.Size = new System.Drawing.Size(180, 194);
             this.pctbRU.TabIndex = 63;
@@ -156,7 +156,7 @@
             this.pctbBoasVindas.BackColor = System.Drawing.Color.Transparent;
             this.pctbBoasVindas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbBoasVindas.BackgroundImage")));
             this.pctbBoasVindas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctbBoasVindas.Location = new System.Drawing.Point(584, 165);
+            this.pctbBoasVindas.Location = new System.Drawing.Point(549, 165);
             this.pctbBoasVindas.Name = "pctbBoasVindas";
             this.pctbBoasVindas.Size = new System.Drawing.Size(279, 226);
             this.pctbBoasVindas.TabIndex = 64;
@@ -168,7 +168,7 @@
             this.lblBSI.AutoSize = true;
             this.lblBSI.BackColor = System.Drawing.Color.Lavender;
             this.lblBSI.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBSI.Location = new System.Drawing.Point(700, 244);
+            this.lblBSI.Location = new System.Drawing.Point(665, 244);
             this.lblBSI.Name = "lblBSI";
             this.lblBSI.Size = new System.Drawing.Size(28, 13);
             this.lblBSI.TabIndex = 65;
@@ -181,7 +181,7 @@
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(1300, 750);
             this.Controls.Add(this.lblBSI);
             this.Controls.Add(this.pctbBoasVindas);
             this.Controls.Add(this.pctbRU);

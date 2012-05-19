@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using RuBiz;
 
 namespace Ru
 {
@@ -15,8 +16,17 @@ namespace Ru
         {
             InitializeComponent();
             txtID.Text = "Ver função p/ ID";
+            CarregaCombobox();
         }
-
+        private void CarregaCombobox()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                this.cbxCurso.DataSource = from i in context.Curso select i;
+                this.cbxCurso.ValueMember = "IdCurso";
+                this.cbxCurso.DisplayMember = "DescricaoCurso";
+            }
+        }
         private void btnOk_Click(object sender, EventArgs e)
         {
             lblAstID.Text = Utilidades.PreencherCampos(txtID.Text);
@@ -48,12 +58,35 @@ namespace Ru
             }
             else
             {
-                MessageBox.Show("Cadastro/Alteração realizado(a) com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                //funcao para cadastrar/alterar no DB
-                Close();
-            }
-                
+                using (CheffTogaEntities context = new CheffTogaEntities())
+                {
+                    Usuario user = new Usuario();
+                    user.RG = this.txtIdenditade.Text;
+                    user.Nome = this.txtNome.Text;
+                    user.Logradouro = this.txtRua.Text;
+                    user.CPF = this.txtCpf.Text;
+                    //user.Periodo = Convert.ToInt32(this.cbxPeriodo.SelectedItem);
+                    //user.Logradouro = this
+                    var linq = (from i in context.Usuario select i.Id_Usuario).Max();
+                    user.Id_Usuario = linq + 1;
+                    user.Numero = this.txtN.Text;
+                    user.Bairro = this.txtBairro.Text;
+                    user.Cidade = this.txtCidade.Text;
+                    user.CEP = this.txtCep.Text;
+                    user.Fone = this.txtFone.Text;
+                    user.Senha = this.txtSenha.Text;
+                    user.Id_TipoUsuario = 1;
+                    user.UF = this.cbxUF.SelectedItem.ToString();
+                    context.AddObject("Usuario", user);
+                    context.SaveChanges();
+                    MessageBox.Show("Cadastro/Alteração realizado(a) com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //funcao para cadastrar/alterar no DB
+                    Close();
+                }
 
+
+
+            }
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
