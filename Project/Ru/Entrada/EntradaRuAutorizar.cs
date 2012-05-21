@@ -15,6 +15,7 @@ namespace Ru
         {
             InitializeComponent();
             txtID.Text = "Ver função p/ ID";
+            lblOperador.Text += Utilidades.NomeLogin;
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)

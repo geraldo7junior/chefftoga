@@ -15,6 +15,15 @@ namespace Ru
         {
             InitializeComponent();
             txtID.Text = "Ver função p/ ID";
+            lblOperador.Text += Utilidades.NomeLogin;
+
+            txtNome.Text = Utilidades.Nome();
+            mtxtCPF.Text = Utilidades.CpF();
+            //cbxCurso.Text = Utilidades.Curso();
+            //cbxPeriodo.Text = Utilidades.Periodo();
+            mtxtFone.Text = Utilidades.Fone();
+            //rbtnSim.Checked = Utilidades.Bolsista();
+            //txtSaldo.Text = Utilidades.Saldo();
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)

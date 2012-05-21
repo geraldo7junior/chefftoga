@@ -17,17 +17,42 @@ namespace Ru
             InitializeComponent();
             txtID.Text = "Ver função p/ ID";
             CarregaCombobox();
+            lblOperador.Text += Utilidades.NomeLogin;
+
+            if (Utilidades.ControleDeTela == "alterar")
+            {
+                txtNome.Text = Utilidades.Nome();
+                txtIdenditade.Text = Utilidades.Identidade();
+                //txtDataNasc.Text = Utilidades.DataNasc();
+                txtCpf.Text = Utilidades.CpF();
+                //cbxCurso.Text = Utilidades.Curso();
+                //cbxPeriodo.Text = Utilidades.Periodo();
+                txtRua.Text = Utilidades.Rua();
+                txtN.Text = Utilidades.Numero();
+                txtBairro.Text = Utilidades.Bairro();
+                txtCidade.Text = Utilidades.Cidade();
+                cbxUF.Text = Utilidades.Uf();
+                txtCep.Text = Utilidades.Cep();
+                txtFone.Text = Utilidades.Fone();
+                //rbtnSim.Checked = Utilidades.Bolsista();
+               
+            }
         }
+
         private void CarregaCombobox()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
+               //Filtro de Cursos apartir do DB:
                 this.cbxCurso.DataSource = from i in context.Curso select i;
                 this.cbxCurso.ValueMember = "IdCurso";
                 this.cbxCurso.DisplayMember = "DescricaoCurso";
+               
+               //Filtro de Periodo apartir do DB:
+                
             }
         }
-        private void btnOk_Click(object sender, EventArgs e)
+        public void btnOk_Click(object sender, EventArgs e)
         {
             lblAstID.Text = Utilidades.PreencherCampos(txtID.Text);
             lblAstNome.Text = Utilidades.PreencherCampos(txtNome.Text);
@@ -51,22 +76,27 @@ namespace Ru
             {
                 MessageBox.Show("Senhas Diferentes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
             else if (lblAstBairro.Text == "*" || lblAstCep.Text == "*" || lblAstCidade.Text == "*" || lblAstConfirmeSenha.Text == "*" || lblAstCpf.Text == "*" || lblAstCurso.Text == "*" || lblAstDataNasc.Text == "*" || lblAstFone.Text == "*" || lblAstID.Text == "*" || lblAstIdentidade.Text == "*" || lblAstNome.Text == "*" || lblAstNum.Text == "*" || lblAstPeriodo.Text == "*" || lblAstRua.Text == "*" || lblAstSenha.Text == "*" || lblAstUf.Text == "*")
             {
                 MessageBox.Show("Preencha os campos em asterisco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
-            else
+
+            else if (Utilidades.ControleDeTela == "novo")
             {
+
                 using (CheffTogaEntities context = new CheffTogaEntities())
-                {
+                {   
                     Usuario user = new Usuario();
                     user.RG = this.txtIdenditade.Text;
                     user.Nome = this.txtNome.Text;
                     user.Logradouro = this.txtRua.Text;
                     user.CPF = this.txtCpf.Text;
-                    //user.Periodo = Convert.ToInt32(this.cbxPeriodo.SelectedItem);
-                    //user.Logradouro = this
+                    //user.Periodo = this.cbxPeriodo;
+                    //curso
+                    user.Bolsista = this.rbtnSim.Checked;
+                    //data de nascimento
                     var linq = (from i in context.Usuario select i.Id_Usuario).Max();
                     user.Id_Usuario = linq + 1;
                     user.Numero = this.txtN.Text;
@@ -79,13 +109,17 @@ namespace Ru
                     user.UF = this.cbxUF.SelectedItem.ToString();
                     context.AddObject("Usuario", user);
                     context.SaveChanges();
-                    MessageBox.Show("Cadastro/Alteração realizado(a) com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    //funcao para cadastrar/alterar no DB
+                    MessageBox.Show("Cadastro realizado com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     Close();
-                }
+                }                
+            }
 
-
-
+            else if (Utilidades.ControleDeTela == "alterar")
+            {
+                //funcao para alterar no DB
+                MessageBox.Show("Cadastro alterado com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                Close();
+               
             }
         }
 
@@ -106,6 +140,7 @@ namespace Ru
         {
             if (MessageBox.Show("Deseja realmente realizar NOVO cadastro e perder os itens que não foram validados? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                Utilidades.ControleDeTela = "novo";
                 fCadastroNovo _fCad;
                 _fCad = new fCadastroNovo();
                 _fCad.Show();
@@ -165,6 +200,11 @@ namespace Ru
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbxCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

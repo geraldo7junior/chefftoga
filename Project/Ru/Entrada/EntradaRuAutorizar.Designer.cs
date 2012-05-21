@@ -51,6 +51,7 @@
             this.lblSaldo = new System.Windows.Forms.Label();
             this.btnAutorizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblOperador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
             this.gpbBolsista.SuspendLayout();
@@ -387,6 +388,19 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblOperador
+            // 
+            this.lblOperador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblOperador.AutoSize = true;
+            this.lblOperador.BackColor = System.Drawing.Color.Transparent;
+            this.lblOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperador.ForeColor = System.Drawing.Color.Red;
+            this.lblOperador.Location = new System.Drawing.Point(1106, 6);
+            this.lblOperador.Name = "lblOperador";
+            this.lblOperador.Size = new System.Drawing.Size(57, 13);
+            this.lblOperador.TabIndex = 84;
+            this.lblOperador.Text = "Operador: ";
+            // 
             // fEntradaRuAutorizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,6 +409,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.lblOperador);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAutorizar);
             this.Controls.Add(this.txtSaldo);
@@ -455,5 +470,6 @@
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Button btnAutorizar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblOperador;
     }
 }

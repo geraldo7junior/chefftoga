@@ -74,6 +74,7 @@
             this.gpbBolsista = new System.Windows.Forms.GroupBox();
             this.rbtnNao = new System.Windows.Forms.RadioButton();
             this.rbtnSim = new System.Windows.Forms.RadioButton();
+            this.lblOperador = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -138,7 +139,6 @@
             this.mtxtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtCPF.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
             this.mtxtCPF.Location = new System.Drawing.Point(385, 312);
-            this.mtxtCPF.Mask = "000.000.000-00";
             this.mtxtCPF.Name = "mtxtCPF";
             this.mtxtCPF.ReadOnly = true;
             this.mtxtCPF.RejectInputOnFirstFailure = true;
@@ -209,6 +209,7 @@
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(353, 24);
             this.cbxCurso.TabIndex = 5;
+            this.cbxCurso.SelectedIndexChanged += new System.EventHandler(this.cbxCurso_SelectedIndexChanged);
             // 
             // cbxUF
             // 
@@ -598,7 +599,6 @@
             this.mtxtDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtDataNasc.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
             this.mtxtDataNasc.Location = new System.Drawing.Point(647, 273);
-            this.mtxtDataNasc.Mask = "00 / 00 / 0000";
             this.mtxtDataNasc.Name = "mtxtDataNasc";
             this.mtxtDataNasc.ReadOnly = true;
             this.mtxtDataNasc.Size = new System.Drawing.Size(91, 22);
@@ -681,6 +681,19 @@
             this.rbtnSim.Text = "Sim";
             this.rbtnSim.UseVisualStyleBackColor = true;
             // 
+            // lblOperador
+            // 
+            this.lblOperador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblOperador.AutoSize = true;
+            this.lblOperador.BackColor = System.Drawing.Color.White;
+            this.lblOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperador.ForeColor = System.Drawing.Color.Red;
+            this.lblOperador.Location = new System.Drawing.Point(1106, 6);
+            this.lblOperador.Name = "lblOperador";
+            this.lblOperador.Size = new System.Drawing.Size(57, 13);
+            this.lblOperador.TabIndex = 84;
+            this.lblOperador.Text = "Operador: ";
+            // 
             // fCadastroVisualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -689,6 +702,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.lblOperador);
             this.Controls.Add(this.gpbBolsista);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.pctbFoto);
@@ -789,5 +803,6 @@
         private System.Windows.Forms.GroupBox gpbBolsista;
         private System.Windows.Forms.RadioButton rbtnNao;
         private System.Windows.Forms.RadioButton rbtnSim;
+        private System.Windows.Forms.Label lblOperador;
     }
 }

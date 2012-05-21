@@ -58,6 +58,9 @@
             this.txtValorASerCreditado = new System.Windows.Forms.TextBox();
             this.lblValorASerCreditado = new System.Windows.Forms.Label();
             this.btnCreditar = new System.Windows.Forms.Button();
+            this.lblOperador = new System.Windows.Forms.Label();
+            this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.lblCPF = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -89,7 +92,7 @@
             "Mestrado",
             "Doutorado",
             "Pós-Doutorado"});
-            this.cbxPeriodo.Location = new System.Drawing.Point(385, 413);
+            this.cbxPeriodo.Location = new System.Drawing.Point(385, 450);
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(120, 24);
             this.cbxPeriodo.TabIndex = 6;
@@ -99,7 +102,7 @@
             // 
             this.mtxtFone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtFone.Location = new System.Drawing.Point(385, 452);
+            this.mtxtFone.Location = new System.Drawing.Point(385, 489);
             this.mtxtFone.Mask = "(00)0000-0000";
             this.mtxtFone.Name = "mtxtFone";
             this.mtxtFone.ReadOnly = true;
@@ -166,7 +169,7 @@
             "Zootecnia",
             "Zootecnia UAG",
             "Zootecnia UAST"});
-            this.cbxCurso.Location = new System.Drawing.Point(385, 377);
+            this.cbxCurso.Location = new System.Drawing.Point(385, 414);
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(353, 24);
             this.cbxCurso.TabIndex = 5;
@@ -227,7 +230,7 @@
             this.lblFone.BackColor = System.Drawing.Color.Transparent;
             this.lblFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFone.ForeColor = System.Drawing.Color.Black;
-            this.lblFone.Location = new System.Drawing.Point(295, 453);
+            this.lblFone.Location = new System.Drawing.Point(295, 490);
             this.lblFone.Name = "lblFone";
             this.lblFone.Size = new System.Drawing.Size(90, 22);
             this.lblFone.TabIndex = 13;
@@ -239,7 +242,7 @@
             this.lblPeriodo.BackColor = System.Drawing.Color.Transparent;
             this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeriodo.ForeColor = System.Drawing.Color.Black;
-            this.lblPeriodo.Location = new System.Drawing.Point(295, 416);
+            this.lblPeriodo.Location = new System.Drawing.Point(295, 453);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(90, 22);
             this.lblPeriodo.TabIndex = 6;
@@ -252,7 +255,7 @@
             this.lblCurso.BackColor = System.Drawing.Color.Transparent;
             this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurso.ForeColor = System.Drawing.Color.Black;
-            this.lblCurso.Location = new System.Drawing.Point(295, 378);
+            this.lblCurso.Location = new System.Drawing.Point(295, 415);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(90, 22);
             this.lblCurso.TabIndex = 5;
@@ -296,7 +299,7 @@
             // msMenuCadastroVisualizar
             // 
             this.msMenuCadastroVisualizar.Name = "msMenuCadastroVisualizar";
-            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(190, 22);
+            this.msMenuCadastroVisualizar.Size = new System.Drawing.Size(213, 22);
             this.msMenuCadastroVisualizar.Text = "&Visualizar Outro Saldo";
             this.msMenuCadastroVisualizar.Click += new System.EventHandler(this.msMenuCadastroVisualizar_Click);
             // 
@@ -310,7 +313,7 @@
             // msMenuCadastroSair
             // 
             this.msMenuCadastroSair.Name = "msMenuCadastroSair";
-            this.msMenuCadastroSair.Size = new System.Drawing.Size(190, 22);
+            this.msMenuCadastroSair.Size = new System.Drawing.Size(213, 22);
             this.msMenuCadastroSair.Text = "&Fechar";
             this.msMenuCadastroSair.Click += new System.EventHandler(this.msMenuCadastroSair_Click);
             // 
@@ -401,7 +404,7 @@
             this.txtSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSaldo.BackColor = System.Drawing.Color.White;
             this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaldo.Location = new System.Drawing.Point(385, 491);
+            this.txtSaldo.Location = new System.Drawing.Point(385, 528);
             this.txtSaldo.MaxLength = 3;
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.ReadOnly = true;
@@ -416,7 +419,7 @@
             this.lblSaldo.BackColor = System.Drawing.Color.Transparent;
             this.lblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaldo.ForeColor = System.Drawing.Color.Black;
-            this.lblSaldo.Location = new System.Drawing.Point(295, 493);
+            this.lblSaldo.Location = new System.Drawing.Point(295, 530);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(90, 22);
             this.lblSaldo.TabIndex = 66;
@@ -456,6 +459,43 @@
             this.btnCreditar.UseVisualStyleBackColor = true;
             this.btnCreditar.Click += new System.EventHandler(this.btnCreditar_Click);
             // 
+            // lblOperador
+            // 
+            this.lblOperador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblOperador.AutoSize = true;
+            this.lblOperador.BackColor = System.Drawing.Color.White;
+            this.lblOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperador.ForeColor = System.Drawing.Color.Red;
+            this.lblOperador.Location = new System.Drawing.Point(1106, 6);
+            this.lblOperador.Name = "lblOperador";
+            this.lblOperador.Size = new System.Drawing.Size(57, 13);
+            this.lblOperador.TabIndex = 84;
+            this.lblOperador.Text = "Operador: ";
+            // 
+            // mtxtCPF
+            // 
+            this.mtxtCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mtxtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtCPF.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
+            this.mtxtCPF.Location = new System.Drawing.Point(385, 376);
+            this.mtxtCPF.Name = "mtxtCPF";
+            this.mtxtCPF.ReadOnly = true;
+            this.mtxtCPF.RejectInputOnFirstFailure = true;
+            this.mtxtCPF.Size = new System.Drawing.Size(100, 22);
+            this.mtxtCPF.TabIndex = 88;
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCPF.BackColor = System.Drawing.Color.Transparent;
+            this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.ForeColor = System.Drawing.Color.Black;
+            this.lblCPF.Location = new System.Drawing.Point(295, 378);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(90, 22);
+            this.lblCPF.TabIndex = 87;
+            this.lblCPF.Text = "CPF:";
+            // 
             // fCreditoCreditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,6 +504,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.mtxtCPF);
+            this.Controls.Add(this.lblCPF);
+            this.Controls.Add(this.lblOperador);
             this.Controls.Add(this.btnCreditar);
             this.Controls.Add(this.txtValorASerCreditado);
             this.Controls.Add(this.lblValorASerCreditado);
@@ -534,5 +577,8 @@
         private System.Windows.Forms.TextBox txtValorASerCreditado;
         private System.Windows.Forms.Label lblValorASerCreditado;
         private System.Windows.Forms.Button btnCreditar;
+        private System.Windows.Forms.Label lblOperador;
+        private System.Windows.Forms.MaskedTextBox mtxtCPF;
+        private System.Windows.Forms.Label lblCPF;
     }
 }

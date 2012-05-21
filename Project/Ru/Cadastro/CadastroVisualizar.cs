@@ -13,8 +13,26 @@ namespace Ru
     {
         public fCadastroVisualizar()
         {
+
             InitializeComponent();
             txtID.Text = "Ver função p/ ID";
+            lblOperador.Text += Utilidades.NomeLogin;
+
+            txtNome.Text = Utilidades.Nome();
+            txtIdenditade.Text = Utilidades.Identidade();
+            //mtxtDataNasc.Text = Utilidades.DataNasc();
+            mtxtCPF.Text = Utilidades.CpF();
+            //cbxCurso.Text = Utilidades.Curso();
+            //cbxPeriodo.Text = Utilidades.Periodo();
+            txtRua.Text = Utilidades.Rua();
+            txtN.Text = Utilidades.Numero();
+            txtBairro.Text = Utilidades.Bairro();
+            txtCidade.Text = Utilidades.Cidade();
+            cbxUF.Text = Utilidades.Uf();
+            mtxtCEP.Text = Utilidades.Cep();
+            mtxtFone.Text = Utilidades.Fone();
+            //rbtnSim.Checked = Utilidades.Bolsista();
+           
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
@@ -32,6 +50,7 @@ namespace Ru
 
         private void msMenuCadastroNovo_Click(object sender, EventArgs e)
         {
+            Utilidades.ControleDeTela = "novo";
             fCadastroNovo _fCad;
             _fCad = new fCadastroNovo();
             _fCad.Show();
@@ -40,6 +59,8 @@ namespace Ru
 
         private void msMenuCadastroAlterar_Click(object sender, EventArgs e)
         {
+            Utilidades.Cpf = mtxtCPF.Text;
+            Utilidades.ControleDeTela = "alterar";
             fCadastroNovo _fCad;
             _fCad = new fCadastroNovo();
             //chamar todos os dados do banco de dados aqui
@@ -65,6 +86,11 @@ namespace Ru
                 Close();
                 // criar função para excluir cadastro do banco de dados
             }
+        }
+
+        private void cbxCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
 

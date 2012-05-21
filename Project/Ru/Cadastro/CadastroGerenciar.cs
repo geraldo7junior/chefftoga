@@ -14,12 +14,14 @@ namespace Ru
         public fCadastroGerenciar()
         {
             InitializeComponent();
+            lblBemVindo.Text = "Olá " + Utilidades.NomeLogin + "! Seja Bem Vindo ao Sistema Cheff Toga!";
         }
 
         private void msMenuCadastroNovo_Click(object sender, EventArgs e)
         {
             fCadastroNovo _fCad;
             _fCad = new fCadastroNovo();
+            Utilidades.ControleDeTela = "novo";
             _fCad.Show();
          
             //fIndex _fLog;

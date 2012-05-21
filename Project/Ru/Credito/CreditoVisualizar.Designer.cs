@@ -55,6 +55,9 @@
             this.rbtnSim = new System.Windows.Forms.RadioButton();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.lblSaldo = new System.Windows.Forms.Label();
+            this.lblOperador = new System.Windows.Forms.Label();
+            this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.lblCPF = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -86,7 +89,7 @@
             "Mestrado",
             "Doutorado",
             "Pós-Doutorado"});
-            this.cbxPeriodo.Location = new System.Drawing.Point(385, 308);
+            this.cbxPeriodo.Location = new System.Drawing.Point(385, 340);
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(120, 24);
             this.cbxPeriodo.TabIndex = 6;
@@ -96,7 +99,7 @@
             // 
             this.mtxtFone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtFone.Location = new System.Drawing.Point(385, 347);
+            this.mtxtFone.Location = new System.Drawing.Point(385, 379);
             this.mtxtFone.Mask = "(00)0000-0000";
             this.mtxtFone.Name = "mtxtFone";
             this.mtxtFone.ReadOnly = true;
@@ -163,7 +166,7 @@
             "Zootecnia",
             "Zootecnia UAG",
             "Zootecnia UAST"});
-            this.cbxCurso.Location = new System.Drawing.Point(385, 272);
+            this.cbxCurso.Location = new System.Drawing.Point(385, 304);
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(353, 24);
             this.cbxCurso.TabIndex = 5;
@@ -223,7 +226,7 @@
             this.lblFone.BackColor = System.Drawing.Color.Transparent;
             this.lblFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFone.ForeColor = System.Drawing.Color.Black;
-            this.lblFone.Location = new System.Drawing.Point(295, 348);
+            this.lblFone.Location = new System.Drawing.Point(295, 380);
             this.lblFone.Name = "lblFone";
             this.lblFone.Size = new System.Drawing.Size(90, 22);
             this.lblFone.TabIndex = 13;
@@ -235,7 +238,7 @@
             this.lblPeriodo.BackColor = System.Drawing.Color.Transparent;
             this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeriodo.ForeColor = System.Drawing.Color.Black;
-            this.lblPeriodo.Location = new System.Drawing.Point(295, 311);
+            this.lblPeriodo.Location = new System.Drawing.Point(295, 343);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(90, 22);
             this.lblPeriodo.TabIndex = 6;
@@ -248,7 +251,7 @@
             this.lblCurso.BackColor = System.Drawing.Color.Transparent;
             this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurso.ForeColor = System.Drawing.Color.Black;
-            this.lblCurso.Location = new System.Drawing.Point(295, 273);
+            this.lblCurso.Location = new System.Drawing.Point(295, 305);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(90, 22);
             this.lblCurso.TabIndex = 5;
@@ -397,7 +400,7 @@
             this.txtSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSaldo.BackColor = System.Drawing.Color.White;
             this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaldo.Location = new System.Drawing.Point(385, 386);
+            this.txtSaldo.Location = new System.Drawing.Point(385, 418);
             this.txtSaldo.MaxLength = 3;
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.ReadOnly = true;
@@ -412,11 +415,48 @@
             this.lblSaldo.BackColor = System.Drawing.Color.Transparent;
             this.lblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaldo.ForeColor = System.Drawing.Color.Black;
-            this.lblSaldo.Location = new System.Drawing.Point(295, 388);
+            this.lblSaldo.Location = new System.Drawing.Point(295, 420);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(90, 22);
             this.lblSaldo.TabIndex = 66;
             this.lblSaldo.Text = "Saldo:";
+            // 
+            // lblOperador
+            // 
+            this.lblOperador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblOperador.AutoSize = true;
+            this.lblOperador.BackColor = System.Drawing.Color.White;
+            this.lblOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperador.ForeColor = System.Drawing.Color.Red;
+            this.lblOperador.Location = new System.Drawing.Point(1106, 6);
+            this.lblOperador.Name = "lblOperador";
+            this.lblOperador.Size = new System.Drawing.Size(57, 13);
+            this.lblOperador.TabIndex = 84;
+            this.lblOperador.Text = "Operador: ";
+            // 
+            // mtxtCPF
+            // 
+            this.mtxtCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mtxtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtCPF.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
+            this.mtxtCPF.Location = new System.Drawing.Point(385, 268);
+            this.mtxtCPF.Name = "mtxtCPF";
+            this.mtxtCPF.ReadOnly = true;
+            this.mtxtCPF.RejectInputOnFirstFailure = true;
+            this.mtxtCPF.Size = new System.Drawing.Size(100, 22);
+            this.mtxtCPF.TabIndex = 86;
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCPF.BackColor = System.Drawing.Color.Transparent;
+            this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.ForeColor = System.Drawing.Color.Black;
+            this.lblCPF.Location = new System.Drawing.Point(295, 270);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(90, 22);
+            this.lblCPF.TabIndex = 85;
+            this.lblCPF.Text = "CPF:";
             // 
             // fCreditoVisualizar
             // 
@@ -426,6 +466,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.mtxtCPF);
+            this.Controls.Add(this.lblCPF);
+            this.Controls.Add(this.lblOperador);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.gpbBolsista);
@@ -490,5 +533,8 @@
         private System.Windows.Forms.RadioButton rbtnSim;
         private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label lblSaldo;
+        private System.Windows.Forms.Label lblOperador;
+        private System.Windows.Forms.MaskedTextBox mtxtCPF;
+        private System.Windows.Forms.Label lblCPF;
     }
 }
