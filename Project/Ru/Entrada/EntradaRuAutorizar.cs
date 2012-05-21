@@ -16,6 +16,14 @@ namespace Ru
             InitializeComponent();
             txtID.Text = "Ver função p/ ID";
             lblOperador.Text += Utilidades.NomeLogin;
+
+            txtNome.Text = Utilidades.Nome();
+            mtxtCPF.Text = Utilidades.CpF();
+            //cbxCurso.Text = Utilidades.Curso();
+            //cbxPeriodo.Text = Utilidades.Periodo();
+            mtxtFone.Text = Utilidades.Fone();
+            //rbtnSim.Checked = Utilidades.Bolsista();
+            txtSaldo.Text = Utilidades.Saldo();
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
@@ -100,6 +108,19 @@ namespace Ru
 
         private void btnAutorizar_Click(object sender, EventArgs e)
         {
+            
+            string hora = DateTime.Now.ToShortTimeString();
+            string hora1 = hora[0].ToString() + hora[1].ToString();
+            int h = int.Parse(hora1);
+
+            if ((11 - h) > 6)
+            {
+                Utilidades.ValorASerCobrado = float.Parse("2.60");
+            }
+            else
+            {
+                Utilidades.ValorASerCobrado = float.Parse("3.00");
+            }
             MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             Close();
 

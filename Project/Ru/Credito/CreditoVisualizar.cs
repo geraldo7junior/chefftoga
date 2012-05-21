@@ -23,7 +23,7 @@ namespace Ru
             //cbxPeriodo.Text = Utilidades.Periodo();
             mtxtFone.Text = Utilidades.Fone();
             //rbtnSim.Checked = Utilidades.Bolsista();
-            //txtSaldo.Text = Utilidades.Saldo();
+            txtSaldo.Text = Utilidades.Saldo();
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)

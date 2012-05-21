@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using RuBiz;
 
 namespace Ru
 {
@@ -23,6 +24,7 @@ namespace Ru
             //cbxPeriodo.Text = Utilidades.Periodo();
             mtxtFone.Text = Utilidades.Fone();
             //rbtnSim.Checked = Utilidades.Bolsista();
+            txtSaldo.Text = Utilidades.Saldo();
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
@@ -116,7 +118,25 @@ namespace Ru
             
             if (MessageBox.Show("Deseja realmente creditar R$ " + txtValorASerCreditado.Text + " ao aluno " + txtNome.Text + "?", "Confirmação!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                // criar função para fazer: (saldo += txtValorASerCreditado) no banco de dados
+                /*INSERIR VALOR
+                using (CheffTogaEntities context = new CheffTogaEntities())
+                {
+                    Cartao card = new Cartao();
+
+                    var id = (from i in context.Usuario
+                              where i.CPF == Utilidades.Cpf
+                              select i.Id_Usuario).ToList();
+                    int ID = id[0];
+
+
+                    var saldo = (from j in context.Cartao
+                                 where j.Id_Usuario == ID
+                                 select j.Saldo).ToList();
+
+                    decimal SALDO = saldo[0];
+                
+                }
+                */
                 MessageBox.Show("O novo saldo do aluno " + txtNome.Text + " é " + "buscar saldo no DB" + "!", "Operação realizada com sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.Close();
                 

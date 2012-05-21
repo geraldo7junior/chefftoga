@@ -15,6 +15,8 @@ namespace Ru
         {
             InitializeComponent();
             lblBemVindo.Text = "Olá " + Utilidades.NomeLogin + "! Seja Bem Vindo ao Sistema Cheff Toga!";
+
+            
         }
 
         private void msMenuCadastroNovo_Click(object sender, EventArgs e)

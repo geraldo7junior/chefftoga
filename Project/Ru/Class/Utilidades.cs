@@ -9,6 +9,8 @@ namespace Ru
     class Utilidades
     {
         public static string ControleDeTela, asterisco, NomeLogin, Cpf;
+
+        public static float ValorASerCobrado;
     
         public static String PreencherCampos(String campo)
         {
@@ -103,19 +105,28 @@ namespace Ru
                 return item[0];
             }
         }
-        
+        */
         public static String Saldo()
-        {
+        {            
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
-                var item = (from i in context.Usuario
-                            where i.CPF == Cpf
-                            select ).ToList();
-                return item[0];
+                Cartao card = new Cartao();
+
+                var id = (from i in context.Usuario
+                            where i.CPF == Utilidades.Cpf
+                            select i.Id_Usuario).ToList();
+                int ID = id[0];
+                
+                var saldo = (from j in context.Cartao
+                             where j.Id_Usuario == ID
+                             select j.Saldo).ToList();
+                decimal SALDO = saldo[0];
+
+                return SALDO.ToString();
             }
         }
         
-        */
+        
 
         public static String Rua()
         {

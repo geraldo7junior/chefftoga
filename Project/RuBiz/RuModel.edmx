@@ -464,7 +464,7 @@
         <EntityTypeShape EntityType="RuModel.MovtoFinanceira" Width="1.5" PointX="7.5" PointY="4.75" Height="1.9802864583333335" IsExpanded="true" />
         <EntityTypeShape EntityType="RuModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" Height="1.9802864583333317" IsExpanded="true" />
         <EntityTypeShape EntityType="RuModel.TipoUsuario" Width="1.5" PointX="3" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="5.25" PointY="2.125" Height="4.8648079427083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="5.25" PointY="2.125" Height="5.057109375" IsExpanded="true" />
         <AssociationConnector Association="RuModel.FK_Cartao_Usuario" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="3.172841796875" />
           <ConnectorPoint PointX="7.5" PointY="3.172841796875" />

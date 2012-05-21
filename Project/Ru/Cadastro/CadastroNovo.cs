@@ -89,6 +89,7 @@ namespace Ru
                 using (CheffTogaEntities context = new CheffTogaEntities())
                 {   
                     Usuario user = new Usuario();
+                    Cartao card = new Cartao();
                     user.RG = this.txtIdenditade.Text;
                     user.Nome = this.txtNome.Text;
                     user.Logradouro = this.txtRua.Text;
@@ -107,6 +108,7 @@ namespace Ru
                     user.Senha = this.txtSenha.Text;
                     user.Id_TipoUsuario = 1;
                     user.UF = this.cbxUF.SelectedItem.ToString();
+                    card.Saldo = 0;
                     context.AddObject("Usuario", user);
                     context.SaveChanges();
                     MessageBox.Show("Cadastro realizado com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
