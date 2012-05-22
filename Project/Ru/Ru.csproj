@@ -54,22 +54,22 @@
     <Compile Include="Cadastro\CadastroNovo.Designer.cs">
       <DependentUpon>CadastroNovo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Alterar.cs">
+    <Compile Include="Busca CPF\Alterar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Alterar.Designer.cs">
+    <Compile Include="Busca CPF\Alterar.Designer.cs">
       <DependentUpon>Alterar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entrada\EntradaRuGerenciar.cs">
+    <Compile Include="Credito\Entrada\EntradaRuGerenciar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entrada\EntradaRuGerenciar.Designer.cs">
+    <Compile Include="Credito\Entrada\EntradaRuGerenciar.Designer.cs">
       <DependentUpon>EntradaRuGerenciar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entrada\EntradaRuAutorizar.cs">
+    <Compile Include="Credito\Entrada\EntradaRuAutorizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entrada\EntradaRuAutorizar.Designer.cs">
+    <Compile Include="Credito\Entrada\EntradaRuAutorizar.Designer.cs">
       <DependentUpon>EntradaRuAutorizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Credito\CreditoCreditar.cs">
@@ -96,10 +96,10 @@
     <Compile Include="Cadastro\CadastroVisualizar.Designer.cs">
       <DependentUpon>CadastroVisualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaLogin.cs">
+    <Compile Include="Login\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaLogin.Designer.cs">
+    <Compile Include="Login\TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="LocalDataCache1.Designer.cs">
@@ -119,13 +119,13 @@
     <EmbeddedResource Include="Cadastro\CadastroNovo.resx">
       <DependentUpon>CadastroNovo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Alterar.resx">
+    <EmbeddedResource Include="Busca CPF\Alterar.resx">
       <DependentUpon>Alterar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entrada\EntradaRuGerenciar.resx">
+    <EmbeddedResource Include="Credito\Entrada\EntradaRuGerenciar.resx">
       <DependentUpon>EntradaRuGerenciar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entrada\EntradaRuAutorizar.resx">
+    <EmbeddedResource Include="Credito\Entrada\EntradaRuAutorizar.resx">
       <DependentUpon>EntradaRuAutorizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Credito\CreditoCreditar.resx">
@@ -140,7 +140,7 @@
     <EmbeddedResource Include="Cadastro\CadastroVisualizar.resx">
       <DependentUpon>CadastroVisualizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaLogin.resx">
+    <EmbeddedResource Include="Login\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro\CadastroGerenciar.resx">

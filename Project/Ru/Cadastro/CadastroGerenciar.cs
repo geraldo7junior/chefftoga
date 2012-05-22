@@ -78,5 +78,15 @@ namespace Ru
             
         }
 
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+        }
+
+        private void msMenuImprimir_Click(object sender, EventArgs e)
+        {
+            printDialogDoc.ShowDialog();
+        }
+
     }
 }

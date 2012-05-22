@@ -106,11 +106,12 @@
             this.pctbBoasVindas.BackColor = System.Drawing.Color.Transparent;
             this.pctbBoasVindas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbBoasVindas.BackgroundImage")));
             this.pctbBoasVindas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctbBoasVindas.Location = new System.Drawing.Point(460, 160);
+            this.pctbBoasVindas.Location = new System.Drawing.Point(460, 174);
             this.pctbBoasVindas.Name = "pctbBoasVindas";
             this.pctbBoasVindas.Size = new System.Drawing.Size(465, 375);
             this.pctbBoasVindas.TabIndex = 64;
             this.pctbBoasVindas.TabStop = false;
+            this.pctbBoasVindas.Click += new System.EventHandler(this.pctbBoasVindas_Click);
             // 
             // fEntradaRuGerenciar
             // 

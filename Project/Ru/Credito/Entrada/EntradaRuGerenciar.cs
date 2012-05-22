@@ -79,5 +79,13 @@ namespace Ru
 
         }
 
+        private void pctbBoasVindas_Click(object sender, EventArgs e)
+        {
+            fAlterar _fAlt;
+            _fAlt = new fAlterar();
+            Utilidades.ControleDeTela = "autorizarporcpf";
+            _fAlt.Show();
+        }
+
     }
 }

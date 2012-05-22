@@ -96,6 +96,7 @@
             this.txtCep = new System.Windows.Forms.TextBox();
             this.txtFone = new System.Windows.Forms.TextBox();
             this.lblOperador = new System.Windows.Forms.Label();
+            this.printDialogDoc = new System.Windows.Forms.PrintDialog();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -640,6 +641,7 @@
             this.txtConfirmeSenha.Size = new System.Drawing.Size(76, 22);
             this.txtConfirmeSenha.TabIndex = 16;
             this.txtConfirmeSenha.UseSystemPasswordChar = true;
+            this.txtConfirmeSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmeSenha_KeyPress);
             // 
             // lblDataNasc
             // 
@@ -918,6 +920,10 @@
             this.lblOperador.TabIndex = 83;
             this.lblOperador.Text = "Operador: ";
             // 
+            // printDialogDoc
+            // 
+            this.printDialogDoc.UseEXDialog = true;
+            // 
             // fCadastroNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1069,5 +1075,6 @@
         private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.TextBox txtFone;
         private System.Windows.Forms.Label lblOperador;
+        private System.Windows.Forms.PrintDialog printDialogDoc;
     }
 }

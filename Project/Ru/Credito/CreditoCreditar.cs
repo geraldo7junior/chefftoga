@@ -118,26 +118,11 @@ namespace Ru
             
             if (MessageBox.Show("Deseja realmente creditar R$ " + txtValorASerCreditado.Text + " ao aluno " + txtNome.Text + "?", "Confirmação!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                /*INSERIR VALOR
-                using (CheffTogaEntities context = new CheffTogaEntities())
-                {
-                    Cartao card = new Cartao();
+                Utilidades.credito = decimal.Parse(txtValorASerCreditado.Text);
 
-                    var id = (from i in context.Usuario
-                              where i.CPF == Utilidades.Cpf
-                              select i.Id_Usuario).ToList();
-                    int ID = id[0];
-
-
-                    var saldo = (from j in context.Cartao
-                                 where j.Id_Usuario == ID
-                                 select j.Saldo).ToList();
-
-                    decimal SALDO = saldo[0];
+                Utilidades.Creditar();
                 
-                }
-                */
-                MessageBox.Show("O novo saldo do aluno " + txtNome.Text + " é " + "buscar saldo no DB" + "!", "Operação realizada com sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("O novo saldo do aluno " + txtNome.Text + " é " + Utilidades.saldo + "!", "Operação realizada com sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.Close();
                 
             }
@@ -147,6 +132,24 @@ namespace Ru
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void txtValorASerCreditado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValorASerCreditado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+               btnCreditar_Click(sender, e);
+            }
+        }
+
+        private void msMenuImprimir_Click(object sender, EventArgs e)
+        {
+            printDialogDoc.ShowDialog();
         }
      
 

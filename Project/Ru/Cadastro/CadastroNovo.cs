@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using RuBiz;
 
 namespace Ru
@@ -35,6 +36,11 @@ namespace Ru
                 txtCep.Text = Utilidades.Cep();
                 txtFone.Text = Utilidades.Fone();
                 //rbtnSim.Checked = Utilidades.Bolsista();
+
+                txtSenha.Hide();
+                txtConfirmeSenha.Hide();
+                lblSenha.Hide();
+                lblConfirmeSenha.Hide();
                
             }
         }
@@ -52,6 +58,7 @@ namespace Ru
                 
             }
         }
+
         public void btnOk_Click(object sender, EventArgs e)
         {
             lblAstID.Text = Utilidades.PreencherCampos(txtID.Text);
@@ -68,8 +75,11 @@ namespace Ru
             lblAstUf.Text = Utilidades.PreencherCampos(cbxUF.Text);
             lblAstCep.Text = Utilidades.PreencherCampos(txtCep.Text);
             lblAstFone.Text = Utilidades.PreencherCampos(txtFone.Text);
-            lblAstSenha.Text = Utilidades.PreencherCampos(txtSenha.Text);
-            lblAstConfirmeSenha.Text = Utilidades.PreencherCampos(txtConfirmeSenha.Text);
+            if (Utilidades.ControleDeTela != "alterar")
+            {
+                lblAstSenha.Text = Utilidades.PreencherCampos(txtSenha.Text);
+                lblAstConfirmeSenha.Text = Utilidades.PreencherCampos(txtConfirmeSenha.Text);
+            }
 
             //CONTROLE DA SENHA
             if (txtSenha.Text != txtConfirmeSenha.Text)
@@ -118,10 +128,20 @@ namespace Ru
 
             else if (Utilidades.ControleDeTela == "alterar")
             {
-                //funcao para alterar no DB
-                MessageBox.Show("Cadastro alterado com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                Utilidades.CpfNovo = txtCpf.Text;
+                Utilidades.nome = txtNome.Text;
+                Utilidades.identidade = txtIdenditade.Text;
+                Utilidades.rua = txtRua.Text;
+                Utilidades.numero = txtN.Text;
+                Utilidades.bairro = txtBairro.Text;
+                Utilidades.cidade = txtCidade.Text;
+                Utilidades.uf = cbxUF.SelectedItem.ToString();
+                Utilidades.cep = txtCep.Text;
+                Utilidades.fone = txtFone.Text;
+                
+                Utilidades.AlterarDados();
+
                 Close();
-               
             }
         }
 
@@ -198,7 +218,7 @@ namespace Ru
 
         private void msMenuImprimir_Click(object sender, EventArgs e)
         {
-            
+            printDialogDoc.ShowDialog();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -209,6 +229,14 @@ namespace Ru
         private void cbxCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtConfirmeSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnOk_Click(sender, e);
+            }
         }
 
 

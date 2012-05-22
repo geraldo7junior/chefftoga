@@ -36,7 +36,6 @@
             this.msMenuCadastroAlterar = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroExcluir = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroSair = new System.Windows.Forms.ToolStripMenuItem();
-            this.msMenuImprimir = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
@@ -47,8 +46,7 @@
             // msMenu
             // 
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.msMenuCadastro,
-            this.msMenuImprimir});
+            this.msMenuCadastro});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -103,12 +101,6 @@
             this.msMenuCadastroSair.Size = new System.Drawing.Size(155, 22);
             this.msMenuCadastroSair.Text = "&Encerrar Sessão";
             this.msMenuCadastroSair.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
-            // msMenuImprimir
-            // 
-            this.msMenuImprimir.Name = "msMenuImprimir";
-            this.msMenuImprimir.Size = new System.Drawing.Size(65, 20);
-            this.msMenuImprimir.Text = "&Imprimir";
             // 
             // lblBemVindo
             // 
@@ -180,7 +172,6 @@
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastro;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroNovo;
-        private System.Windows.Forms.ToolStripMenuItem msMenuImprimir;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroAlterar;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroVisualizar;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroExcluir;

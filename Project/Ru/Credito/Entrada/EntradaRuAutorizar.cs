@@ -113,42 +113,27 @@ namespace Ru
             string hora1 = hora[0].ToString() + hora[1].ToString();
             int h = int.Parse(hora1);
 
-            if ((11 - h) > 6)
+            if ((h>=17) && (h<=20))
             {
-                Utilidades.ValorASerCobrado = float.Parse("2.60");
+                Utilidades.ValorASerCobrado = decimal.Parse("2,6");
+                Utilidades.Debitar();                
+                Close();
             }
+            else if ((h >= 11) && (h <= 17))
+            {
+                Utilidades.ValorASerCobrado = decimal.Parse("3");
+                Utilidades.Debitar();
+                Close();
+            }
+
             else
             {
-                Utilidades.ValorASerCobrado = float.Parse("3.00");
+                MessageBox.Show("Não Autorizado! Fora do horário de refeição!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Close();
             }
-            MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            Close();
+            
 
             /* 
-             * valor a ser debitado dependente do horário
-             * if (saldo < valor a ser debitado)
-             * {
-             *      MessageBox.Show("Saldo insuficiente!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-             *      Close();
-             * }
-             * 
-             * else if (o campo "em_espera" do DB = "TRUE")
-             * {
-             *      MessageBox.Show("Refeição em espera!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-             *      o sistema autoriza a entrada no Ru
-             *      Close();
-             *      (depois de passar na bandeja o valor de "em_espera" volta pra "FALSE")
-             * }
-             * 
-             * else if (o campo "refeicao" do DB = "TRUE")
-             * {
-             *      MessageBox.Show("Refeição já efetuada!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-             *      Close();
-             * }
-             * 
-             * 
-             * else
-             * {
              *      função para debitar do saldo no DB
              *      o sistema autoriza a entrada no Ru
              *      torna o campo "refeicao" do DB com valor "TRUE"

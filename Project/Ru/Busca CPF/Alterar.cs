@@ -61,8 +61,10 @@ namespace Ru
                         Close();
                         if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
+
+                            Utilidades.ExcluirCadastro();
+
                             MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                            // criar função aqui para excluir cadastro do banco de dados
                             _fVCad.Close();
 
 
@@ -83,7 +85,6 @@ namespace Ru
                     {
                         fCreditoCreditar _fVCad;
                         _fVCad = new fCreditoCreditar();
-                        //chamar todos os dados de crédito do banco de dados aqui
                         _fVCad.Show();
                         Close();
                     }

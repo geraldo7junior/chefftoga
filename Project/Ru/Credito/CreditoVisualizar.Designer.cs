@@ -58,6 +58,7 @@
             this.lblOperador = new System.Windows.Forms.Label();
             this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.lblCPF = new System.Windows.Forms.Label();
+            this.printDialogDoc = new System.Windows.Forms.PrintDialog();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -318,6 +319,7 @@
             this.msMenuImprimir.Name = "msMenuImprimir";
             this.msMenuImprimir.Size = new System.Drawing.Size(65, 20);
             this.msMenuImprimir.Text = "&Imprimir";
+            this.msMenuImprimir.Click += new System.EventHandler(this.msMenuImprimir_Click);
             // 
             // pctbRU
             // 
@@ -458,6 +460,10 @@
             this.lblCPF.TabIndex = 85;
             this.lblCPF.Text = "CPF:";
             // 
+            // printDialogDoc
+            // 
+            this.printDialogDoc.UseEXDialog = true;
+            // 
             // fCreditoVisualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,5 +542,6 @@
         private System.Windows.Forms.Label lblOperador;
         private System.Windows.Forms.MaskedTextBox mtxtCPF;
         private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.PrintDialog printDialogDoc;
     }
 }

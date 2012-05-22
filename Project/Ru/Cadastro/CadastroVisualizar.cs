@@ -82,15 +82,22 @@ namespace Ru
         {
             if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                Utilidades.ExcluirCadastro();
+
                 MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Close();
-                // criar função para excluir cadastro do banco de dados
+                
             }
         }
 
         private void cbxCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void msMenuImprimir_Click(object sender, EventArgs e)
+        {
+            printDialogDoc.ShowDialog();
         }
 
 

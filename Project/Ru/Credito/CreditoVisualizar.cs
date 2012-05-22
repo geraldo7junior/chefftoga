@@ -106,6 +106,11 @@ namespace Ru
 
         }
 
+        private void msMenuImprimir_Click(object sender, EventArgs e)
+        {
+            printDialogDoc.ShowDialog();
+        }
+
 
     }
 }

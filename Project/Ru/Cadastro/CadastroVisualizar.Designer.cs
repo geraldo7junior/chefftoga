@@ -75,6 +75,7 @@
             this.rbtnNao = new System.Windows.Forms.RadioButton();
             this.rbtnSim = new System.Windows.Forms.RadioButton();
             this.lblOperador = new System.Windows.Forms.Label();
+            this.printDialogDoc = new System.Windows.Forms.PrintDialog();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -579,6 +580,7 @@
             this.msMenuImprimir.Name = "msMenuImprimir";
             this.msMenuImprimir.Size = new System.Drawing.Size(65, 20);
             this.msMenuImprimir.Text = "&Imprimir";
+            this.msMenuImprimir.Click += new System.EventHandler(this.msMenuImprimir_Click);
             // 
             // lblDataNasc
             // 
@@ -694,6 +696,10 @@
             this.lblOperador.TabIndex = 84;
             this.lblOperador.Text = "Operador: ";
             // 
+            // printDialogDoc
+            // 
+            this.printDialogDoc.UseEXDialog = true;
+            // 
             // fCadastroVisualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -804,5 +810,6 @@
         private System.Windows.Forms.RadioButton rbtnNao;
         private System.Windows.Forms.RadioButton rbtnSim;
         private System.Windows.Forms.Label lblOperador;
+        private System.Windows.Forms.PrintDialog printDialogDoc;
     }
 }
