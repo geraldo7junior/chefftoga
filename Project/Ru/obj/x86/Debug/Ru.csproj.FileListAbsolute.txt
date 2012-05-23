@@ -64,3 +64,6 @@ C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fCadastroVisualizar.resources
 C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fCadastroGerenciar.resources
 C:\chefftoga\Project\Ru\bin\Debug\RuBiz.dll
 C:\chefftoga\Project\Ru\bin\Debug\RuBiz.pdb
+C:\Users\Gera3d6\Desktop\Chefftoga\Teste 2\Project\Ru\bin\Debug\Ru.exe.config
+C:\Users\Gera3d6\Desktop\Chefftoga\Teste 2\Project\Ru\obj\x86\Debug\Ru.exe
+C:\Users\Gera3d6\Desktop\Chefftoga\Teste 2\Project\Ru\obj\x86\Debug\Ru.pdb

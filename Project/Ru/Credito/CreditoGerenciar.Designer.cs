@@ -48,7 +48,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.msMenu.Size = new System.Drawing.Size(1370, 24);
+            this.msMenu.Size = new System.Drawing.Size(1292, 24);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "Menu";
             this.msMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.msMenu_ItemClicked);
@@ -104,7 +104,7 @@
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(1157, 729);
+            this.lblCopyright.Location = new System.Drawing.Point(1118, 729);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(201, 12);
             this.lblCopyright.TabIndex = 18;
@@ -118,7 +118,7 @@
             this.pctbBoasVindas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pctbBoasVindas.Location = new System.Drawing.Point(460, 160);
             this.pctbBoasVindas.Name = "pctbBoasVindas";
-            this.pctbBoasVindas.Size = new System.Drawing.Size(465, 375);
+            this.pctbBoasVindas.Size = new System.Drawing.Size(387, 375);
             this.pctbBoasVindas.TabIndex = 64;
             this.pctbBoasVindas.TabStop = false;
             // 
@@ -129,7 +129,7 @@
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(1292, 750);
             this.Controls.Add(this.pctbBoasVindas);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.lblBemVindo);
