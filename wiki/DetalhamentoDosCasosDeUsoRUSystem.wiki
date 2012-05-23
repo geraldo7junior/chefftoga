@@ -125,7 +125,7 @@
 ||<b>Objetivos:</b>||
 ||Analisar, alterar enfim  gerenciar as informações dos estudantes e funcionários.||
 ||<b>Descrição:</b>||
-||O gerente do restaurante poderá ter acesso e controlar informações referentes aos alunos cadastrados e funcionários do sistema.||
+||O gerente do restaurante poderá ter acesso e controlar informações referentes aos alunos e funcionários cadastrados.Tal gerente poderá ter acesso privilegiado ao sistema, tendo conexões com as áreas acessadas pelos demais operadores, bem como algumas dedicadas apenas ao seu uso, como o caso de poder visualizar as entradas de alunos no restaurante em forma de relatório, com horários e nomes. Este também poderá cadastrar os demais operadores e funcionários ao sistema. ||
 ||<b>Ator:</b>|| 
 ||Gerente||
 ||<b>Prioridade:</b>||
