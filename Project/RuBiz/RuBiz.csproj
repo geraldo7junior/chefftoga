@@ -42,16 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cartao.cs">
-      <DependentUpon>RuModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Curso.cs">
       <DependentUpon>RuModel.tt</DependentUpon>
     </Compile>
     <Compile Include="InstituicaoEnsino.cs">
-      <DependentUpon>RuModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MovtoFinanceira.cs">
       <DependentUpon>RuModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

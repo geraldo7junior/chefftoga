@@ -6,50 +6,16 @@
     <edmx:StorageModels>
     <Schema Namespace="RuModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="RuModelStoreContainer">
-          <EntitySet Name="Cartao" EntityType="RuModel.Store.Cartao" store:Type="Tables" store:Schema="dbo" store:Name="Cartao">
-            <DefiningQuery>SELECT 
-      [Cartao].[Id_Usuario] AS [Id_Usuario], 
-      [Cartao].[Saldo] AS [Saldo]
-      FROM [dbo].[Cartao] AS [Cartao]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="Curso" EntityType="RuModel.Store.Curso" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="InstituicaoEnsino" EntityType="RuModel.Store.InstituicaoEnsino" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MovtoFinanceira" EntityType="RuModel.Store.MovtoFinanceira" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="RuModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TipoUsuario" EntityType="RuModel.Store.TipoUsuario" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Usuario" EntityType="RuModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_Cartao_Usuario" Association="RuModel.Store.FK_Cartao_Usuario">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Cartao" EntitySet="Cartao" />
-          </AssociationSet>
           <AssociationSet Name="FK_Curso_InstituicaoEnsino" Association="RuModel.Store.FK_Curso_InstituicaoEnsino">
             <End Role="InstituicaoEnsino" EntitySet="InstituicaoEnsino" />
             <End Role="Curso" EntitySet="Curso" />
           </AssociationSet>
-          <AssociationSet Name="FK_MovtoFinanceira_MovtoFinanceira" Association="RuModel.Store.FK_MovtoFinanceira_MovtoFinanceira">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="MovtoFinanceira" EntitySet="MovtoFinanceira" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Curso" Association="RuModel.Store.FK_Usuario_Curso">
-            <End Role="Curso" EntitySet="Curso" />
-            <End Role="Usuario" EntitySet="Usuario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_TipoUsuario" Association="RuModel.Store.FK_Usuario_TipoUsuario">
-            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
-            <End Role="Usuario" EntitySet="Usuario" />
-          </AssociationSet>
         </EntityContainer>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'CheffToga.dbo.Cartao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="Cartao">
-          <Key>
-            <PropertyRef Name="Id_Usuario" />
-            <PropertyRef Name="Saldo" />
-          </Key>
-          <Property Name="Id_Usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Saldo" Type="money" Nullable="false" />
-        </EntityType>
         <EntityType Name="Curso">
           <Key>
             <PropertyRef Name="IdCurso" />
@@ -66,15 +32,6 @@
           <Property Name="Id_Instituicao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Descricao" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="Estado" Type="char" Nullable="false" MaxLength="2" />
-        </EntityType>
-        <EntityType Name="MovtoFinanceira">
-          <Key>
-            <PropertyRef Name="Id_Movto" />
-          </Key>
-          <Property Name="Id_Movto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Id_Usuario" Type="int" Nullable="false" />
-          <Property Name="DataMovto" Type="datetime" Nullable="false" />
-          <Property Name="Valor" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -98,10 +55,11 @@
             <PropertyRef Name="Id_Usuario" />
           </Key>
           <Property Name="Id_Usuario" Type="int" Nullable="false" />
+          <Property Name="Id_Card" Type="int" Nullable="false" />
           <Property Name="Id_TipoUsuario" Type="int" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="RG" Type="nvarchar" Nullable="false" MaxLength="15" />
-          <Property Name="CPF" Type="nchar" Nullable="false" MaxLength="11" />
+          <Property Name="CPF" Type="nvarchar" Nullable="false" MaxLength="11" />
           <Property Name="Id_Curso" Type="int" />
           <Property Name="Logradouro" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Numero" Type="nvarchar" Nullable="false" MaxLength="15" />
@@ -112,21 +70,10 @@
           <Property Name="Fone" Type="nvarchar" Nullable="false" MaxLength="20" />
           <Property Name="Bolsista" Type="bit" />
           <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Periodo" Type="int" />
-          <Property Name="DataNascimento" Type="datetime" />
+          <Property Name="DataNascimento" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Periodo" Type="nchar" MaxLength="13" />
+          <Property Name="Saldo" Type="float" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Cartao_Usuario">
-          <End Role="Usuario" Type="RuModel.Store.Usuario" Multiplicity="1" />
-          <End Role="Cartao" Type="RuModel.Store.Cartao" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Id_Usuario" />
-            </Principal>
-            <Dependent Role="Cartao">
-              <PropertyRef Name="Id_Usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Curso_InstituicaoEnsino">
           <End Role="InstituicaoEnsino" Type="RuModel.Store.InstituicaoEnsino" Multiplicity="1" />
           <End Role="Curso" Type="RuModel.Store.Curso" Multiplicity="*" />
@@ -139,173 +86,91 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_MovtoFinanceira_MovtoFinanceira">
-          <End Role="Usuario" Type="RuModel.Store.Usuario" Multiplicity="1" />
-          <End Role="MovtoFinanceira" Type="RuModel.Store.MovtoFinanceira" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Id_Usuario" />
-            </Principal>
-            <Dependent Role="MovtoFinanceira">
-              <PropertyRef Name="Id_Usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Usuario_Curso">
-          <End Role="Curso" Type="RuModel.Store.Curso" Multiplicity="0..1" />
-          <End Role="Usuario" Type="RuModel.Store.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Curso">
-              <PropertyRef Name="IdCurso" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="Id_Curso" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Usuario_TipoUsuario">
-          <End Role="TipoUsuario" Type="RuModel.Store.TipoUsuario" Multiplicity="1" />
-          <End Role="Usuario" Type="RuModel.Store.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipoUsuario">
-              <PropertyRef Name="Id_TipoUsuario" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="Id_TipoUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RuModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="CheffTogaEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Cartao" EntityType="RuModel.Cartao" />
           <EntitySet Name="Curso" EntityType="RuModel.Curso" />
           <EntitySet Name="InstituicaoEnsino" EntityType="RuModel.InstituicaoEnsino" />
-          <EntitySet Name="MovtoFinanceira" EntityType="RuModel.MovtoFinanceira" />
           <EntitySet Name="sysdiagrams" EntityType="RuModel.sysdiagrams" />
           <EntitySet Name="TipoUsuario" EntityType="RuModel.TipoUsuario" />
-          <EntitySet Name="Usuario" EntityType="RuModel.Usuario" />
-          <AssociationSet Name="FK_Cartao_Usuario" Association="RuModel.FK_Cartao_Usuario">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Cartao" EntitySet="Cartao" />
-          </AssociationSet>
           <AssociationSet Name="FK_Curso_InstituicaoEnsino" Association="RuModel.FK_Curso_InstituicaoEnsino">
             <End Role="InstituicaoEnsino" EntitySet="InstituicaoEnsino" />
             <End Role="Curso" EntitySet="Curso" />
           </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Curso" Association="RuModel.FK_Usuario_Curso">
-            <End Role="Curso" EntitySet="Curso" />
-            <End Role="Usuario" EntitySet="Usuario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MovtoFinanceira_MovtoFinanceira" Association="RuModel.FK_MovtoFinanceira_MovtoFinanceira">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="MovtoFinanceira" EntitySet="MovtoFinanceira" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_TipoUsuario" Association="RuModel.FK_Usuario_TipoUsuario">
-            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
-            <End Role="Usuario" EntitySet="Usuario" />
-          </AssociationSet>
+          <EntitySet Name="Usuario" EntityType="RuModel.Usuario" />
         </EntityContainer>
-        <EntityType Name="Cartao">
-          <Key>
-            <PropertyRef Name="Id_Usuario" />
-            <PropertyRef Name="Saldo" />
-          </Key>
-          <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <NavigationProperty Name="Usuario" Relationship="RuModel.FK_Cartao_Usuario" FromRole="Cartao" ToRole="Usuario" />
-        </EntityType>
         <EntityType Name="Curso">
           <Key>
             <PropertyRef Name="IdCurso" />
           </Key>
-          <Property Name="IdCurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DescricaoCurso" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="Id_Instituicao" Type="Int32" Nullable="false" />
-          <Property Name="TotalPeriodo" Type="Int32" Nullable="false" />
+          <Property Type="Int32" Name="IdCurso" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DescricaoCurso" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Id_Instituicao" Nullable="false" />
+          <Property Type="Int32" Name="TotalPeriodo" Nullable="false" />
           <NavigationProperty Name="InstituicaoEnsino" Relationship="RuModel.FK_Curso_InstituicaoEnsino" FromRole="Curso" ToRole="InstituicaoEnsino" />
-          <NavigationProperty Name="Usuario" Relationship="RuModel.FK_Usuario_Curso" FromRole="Curso" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="InstituicaoEnsino">
           <Key>
             <PropertyRef Name="Id_Instituicao" />
           </Key>
-          <Property Name="Id_Instituicao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="Estado" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Type="Int32" Name="Id_Instituicao" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Descricao" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="Curso" Relationship="RuModel.FK_Curso_InstituicaoEnsino" FromRole="InstituicaoEnsino" ToRole="Curso" />
-        </EntityType>
-        <EntityType Name="MovtoFinanceira">
-          <Key>
-            <PropertyRef Name="Id_Movto" />
-          </Key>
-          <Property Name="Id_Movto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
-          <Property Name="DataMovto" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Valor" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <NavigationProperty Name="Usuario" Relationship="RuModel.FK_MovtoFinanceira_MovtoFinanceira" FromRole="MovtoFinanceira" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TipoUsuario">
           <Key>
             <PropertyRef Name="Id_TipoUsuario" />
           </Key>
-          <Property Name="Id_TipoUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Usuario" Relationship="RuModel.FK_Usuario_TipoUsuario" FromRole="TipoUsuario" ToRole="Usuario" />
+          <Property Type="Int32" Name="Id_TipoUsuario" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Descricao" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Usuario">
-          <Key>
-            <PropertyRef Name="Id_Usuario" />
-          </Key>
-          <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
-          <Property Name="Id_TipoUsuario" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="RG" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
-          <Property Name="CPF" Type="String" Nullable="false" MaxLength="11" Unicode="true" FixedLength="true" />
-          <Property Name="Id_Curso" Type="Int32" />
-          <Property Name="Logradouro" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Numero" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
-          <Property Name="Bairro" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Cidade" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="UF" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
-          <Property Name="CEP" Type="String" Nullable="false" MaxLength="8" Unicode="true" FixedLength="true" />
-          <Property Name="Fone" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
-          <Property Name="Bolsista" Type="Boolean" />
-          <Property Name="Senha" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Cartao" Relationship="RuModel.FK_Cartao_Usuario" FromRole="Usuario" ToRole="Cartao" />
-          <NavigationProperty Name="Curso" Relationship="RuModel.FK_Usuario_Curso" FromRole="Usuario" ToRole="Curso" />
-          <NavigationProperty Name="MovtoFinanceira" Relationship="RuModel.FK_MovtoFinanceira_MovtoFinanceira" FromRole="Usuario" ToRole="MovtoFinanceira" />
-          <NavigationProperty Name="TipoUsuario" Relationship="RuModel.FK_Usuario_TipoUsuario" FromRole="Usuario" ToRole="TipoUsuario" />
-          <Property Type="Int32" Name="Periodo" />
-          <Property Type="DateTime" Name="DataNascimento" />
-        </EntityType>
-        <Association Name="FK_Cartao_Usuario">
-          <End Role="Usuario" Type="RuModel.Usuario" Multiplicity="1" />
-          <End Role="Cartao" Type="RuModel.Cartao" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Id_Usuario" />
-            </Principal>
-            <Dependent Role="Cartao">
-              <PropertyRef Name="Id_Usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Curso_InstituicaoEnsino">
-          <End Role="InstituicaoEnsino" Type="RuModel.InstituicaoEnsino" Multiplicity="1" />
-          <End Role="Curso" Type="RuModel.Curso" Multiplicity="*" />
+          <End Type="RuModel.InstituicaoEnsino" Role="InstituicaoEnsino" Multiplicity="1" />
+          <End Type="RuModel.Curso" Role="Curso" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="InstituicaoEnsino">
               <PropertyRef Name="Id_Instituicao" />
@@ -315,124 +180,96 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Usuario_Curso">
-          <End Role="Curso" Type="RuModel.Curso" Multiplicity="0..1" />
-          <End Role="Usuario" Type="RuModel.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Curso">
-              <PropertyRef Name="IdCurso" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="Id_Curso" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MovtoFinanceira_MovtoFinanceira">
-          <End Role="Usuario" Type="RuModel.Usuario" Multiplicity="1" />
-          <End Role="MovtoFinanceira" Type="RuModel.MovtoFinanceira" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Id_Usuario" />
-            </Principal>
-            <Dependent Role="MovtoFinanceira">
-              <PropertyRef Name="Id_Usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Usuario_TipoUsuario">
-          <End Role="TipoUsuario" Type="RuModel.TipoUsuario" Multiplicity="1" />
-          <End Role="Usuario" Type="RuModel.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipoUsuario">
-              <PropertyRef Name="Id_TipoUsuario" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="Id_TipoUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Type="Int32" Name="Id_Usuario" Nullable="false" />
+          <Property Type="Int32" Name="Id_TipoUsuario" Nullable="false" />
+          <Property Type="String" Name="Nome" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RG" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CPF" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Id_Curso" />
+          <Property Type="String" Name="Logradouro" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Numero" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Bairro" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Cidade" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UF" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CEP" Nullable="false" MaxLength="8" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Fone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Bolsista" />
+          <Property Type="String" Name="Senha" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DataNascimento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Periodo" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Type="Double" Name="Saldo" Nullable="false" />
+          <Property Type="Int32" Name="Id_Card" Nullable="false" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RuModelStoreContainer" CdmEntityContainer="CheffTogaEntities">
-          <EntitySetMapping Name="Cartao">
-            <EntityTypeMapping TypeName="RuModel.Cartao">
-              <MappingFragment StoreEntitySet="Cartao">
-                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
-                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Curso">
             <EntityTypeMapping TypeName="RuModel.Curso">
               <MappingFragment StoreEntitySet="Curso">
-                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
-                <ScalarProperty Name="DescricaoCurso" ColumnName="DescricaoCurso" />
-                <ScalarProperty Name="Id_Instituicao" ColumnName="Id_Instituicao" />
                 <ScalarProperty Name="TotalPeriodo" ColumnName="TotalPeriodo" />
+                <ScalarProperty Name="Id_Instituicao" ColumnName="Id_Instituicao" />
+                <ScalarProperty Name="DescricaoCurso" ColumnName="DescricaoCurso" />
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="InstituicaoEnsino">
             <EntityTypeMapping TypeName="RuModel.InstituicaoEnsino">
               <MappingFragment StoreEntitySet="InstituicaoEnsino">
-                <ScalarProperty Name="Id_Instituicao" ColumnName="Id_Instituicao" />
-                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MovtoFinanceira">
-            <EntityTypeMapping TypeName="RuModel.MovtoFinanceira">
-              <MappingFragment StoreEntitySet="MovtoFinanceira">
-                <ScalarProperty Name="Id_Movto" ColumnName="Id_Movto" />
-                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
-                <ScalarProperty Name="DataMovto" ColumnName="DataMovto" />
-                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Id_Instituicao" ColumnName="Id_Instituicao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="RuModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TipoUsuario">
             <EntityTypeMapping TypeName="RuModel.TipoUsuario">
               <MappingFragment StoreEntitySet="TipoUsuario">
-                <ScalarProperty Name="Id_TipoUsuario" ColumnName="Id_TipoUsuario" />
                 <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Id_TipoUsuario" ColumnName="Id_TipoUsuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="RuModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
-                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Id_Card" ColumnName="Id_Card" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
                 <ScalarProperty Name="Periodo" ColumnName="Periodo" />
-                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
-                <ScalarProperty Name="Id_TipoUsuario" ColumnName="Id_TipoUsuario" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="RG" ColumnName="RG" />
-                <ScalarProperty Name="CPF" ColumnName="CPF" />
-                <ScalarProperty Name="Id_Curso" ColumnName="Id_Curso" />
-                <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
-                <ScalarProperty Name="Numero" ColumnName="Numero" />
-                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
-                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
-                <ScalarProperty Name="UF" ColumnName="UF" />
-                <ScalarProperty Name="CEP" ColumnName="CEP" />
-                <ScalarProperty Name="Fone" ColumnName="Fone" />
-                <ScalarProperty Name="Bolsista" ColumnName="Bolsista" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
                 <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Bolsista" ColumnName="Bolsista" />
+                <ScalarProperty Name="Fone" ColumnName="Fone" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
+                <ScalarProperty Name="Id_Curso" ColumnName="Id_Curso" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Id_TipoUsuario" ColumnName="Id_TipoUsuario" />
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -458,34 +295,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="RuModel">
-        <EntityTypeShape EntityType="RuModel.Cartao" Width="1.5" PointX="7.5" PointY="2.375" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="RuModel.Curso" Width="1.5" PointX="3" PointY="3.5" Height="2.172587890625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RuModel.InstituicaoEnsino" Width="1.5" PointX="0.75" PointY="3.625" Height="1.7879850260416665" IsExpanded="true" />
-        <EntityTypeShape EntityType="RuModel.MovtoFinanceira" Width="1.5" PointX="7.5" PointY="4.75" Height="1.9802864583333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="RuModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="RuModel.TipoUsuario" Width="1.5" PointX="3" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="5.25" PointY="2.125" Height="5.057109375" IsExpanded="true" />
-        <AssociationConnector Association="RuModel.FK_Cartao_Usuario" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="3.172841796875" />
-          <ConnectorPoint PointX="7.5" PointY="3.172841796875" />
+        <EntityTypeShape EntityType="RuModel.Curso" Width="1.5" PointX="3" PointY="0.875" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="RuModel.InstituicaoEnsino" Width="1.5" PointX="0.75" PointY="1" Height="1.7879850260416672" />
+        <EntityTypeShape EntityType="RuModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="RuModel.TipoUsuario" Width="1.5" PointX="2.75" PointY="3.75" Height="1.4033821614583317" />
+        <AssociationConnector Association="RuModel.FK_Curso_InstituicaoEnsino" >
+          <ConnectorPoint PointX="2.25" PointY="1.8939925130208337" />
+          <ConnectorPoint PointX="3" PointY="1.8939925130208337" />
         </AssociationConnector>
-        <AssociationConnector Association="RuModel.FK_Curso_InstituicaoEnsino" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="4.5189925130208337" />
-          <ConnectorPoint PointX="3" PointY="4.5189925130208337" />
-        </AssociationConnector>
-        <AssociationConnector Association="RuModel.FK_Usuario_Curso" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="4.5862939453125" />
-          <ConnectorPoint PointX="5.25" PointY="4.5862939453125" />
-        </AssociationConnector>
-        <AssociationConnector Association="RuModel.FK_MovtoFinanceira_MovtoFinanceira" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="5.7401432291666667" />
-          <ConnectorPoint PointX="7.5" PointY="5.7401432291666667" />
-        </AssociationConnector>
-        <AssociationConnector Association="RuModel.FK_Usuario_TipoUsuario" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="1.4374995" />
-          <ConnectorPoint PointX="6" PointY="1.4374995" />
-          <ConnectorPoint PointX="6" PointY="2.125" />
-        </AssociationConnector>
+        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="5.375" PointY="0.75" Height="4.480205078125" />
       </Diagram>
     </Diagrams>
   </Designer>

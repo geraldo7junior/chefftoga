@@ -19,63 +19,80 @@ namespace Ru
 
         public void btnEntrar_Click(object sender, EventArgs e)
         {
-            using (CheffTogaEntities context = new CheffTogaEntities())
-            {               
-                var linq = (from i in context.Usuario
-                           where i.CPF == this.mtbLogin.Text && i.Senha == this.txtSenha.Text
-                           select i.Id_TipoUsuario).ToList();
 
-                if (linq.ToList().Count() == 1)
+            string cpfSpace = this.mtbLogin.Text.Replace(" ", ".");
+            string cpfHifen = cpfSpace.Replace("-", ".");
+            Utilidades.Cpf = cpfHifen.Replace(".", "");
+
+            if (Utilidades.validaCPF(Utilidades.Cpf))
+            {
+                using (CheffTogaEntities context = new CheffTogaEntities())
                 {
-                    //aparecer o nome nas telas
-                    var lista = (from i in context.Usuario
-                                 where i.CPF == this.mtbLogin.Text && i.Senha == this.txtSenha.Text
-                                 select i.Nome).ToList();
-                    Utilidades.NomeLogin = lista[0];
 
-                    if ((linq.ToList().Count() == 1) && (linq[0] == 1))
+                    var linq = (from i in context.Usuario
+                                where i.CPF == Utilidades.Cpf && i.Senha == this.txtSenha.Text
+                                select i.Id_TipoUsuario).ToList();
+
+                    if (linq.ToList().Count() == 1)
                     {
-                        //abrir pagina dos alunos
+                        //aparecer o nome nas telas
+                        var lista = (from i in context.Usuario
+                                     where i.CPF == Utilidades.Cpf && i.Senha == this.txtSenha.Text
+                                     select i.Nome).ToList();
+                        Utilidades.NomeLogin = lista[0];
+
+                        if ((linq.ToList().Count() == 1) && (linq[0] == 1))
+                        {
+                            //abrir pagina dos alunos
+                        }
+
+                        else if ((linq.ToList().Count() == 1) && (linq[0] == 2))
+                        {
+                            fCadastroGerenciar form = new fCadastroGerenciar();
+                            form.Show();
+                            this.Hide();
+                        }
+
+                        else if ((linq.ToList().Count() == 1) && (linq[0] == 3))
+                        {
+                            fCreditoGerenciar form = new fCreditoGerenciar();
+                            form.Show();
+                            this.Hide();
+                        }
+
+                        else if ((linq.ToList().Count() == 1) && (linq[0] == 4))
+                        {
+                            fEntradaRuGerenciar form = new fEntradaRuGerenciar();
+                            form.Show();
+                            this.Hide();
+                        }
+
+                        else if ((linq.ToList().Count() == 1) && (linq[0] == 5))
+                        {
+                            //abrir pagina do Gerente
+                        }
+
+                        else if ((linq.ToList().Count() == 1) && (linq[0] == 6))
+                        {
+                            //abrir pagina dos Developers
+                        }
+
                     }
 
-                    else if ((linq.ToList().Count() == 1) && (linq[0] == 2))
+                    else
                     {
-                        fCadastroGerenciar form = new fCadastroGerenciar();
-                        form.Show();
-                        this.Hide();
+                        lblErroLogar.Text = "Usuário ou Senha incorretos!";
                     }
-
-                    else if ((linq.ToList().Count() == 1) && (linq[0] == 3))
-                    {
-                        fCreditoGerenciar form = new fCreditoGerenciar();
-                        form.Show();
-                        this.Hide();
-                    }
-
-                    else if ((linq.ToList().Count() == 1) && (linq[0] == 4))
-                    {
-                        fEntradaRuGerenciar form = new fEntradaRuGerenciar();
-                        form.Show();
-                        this.Hide();
-                    }
-
-                    else if ((linq.ToList().Count() == 1) && (linq[0] == 5))
-                    {
-                        //abrir pagina do Gerente
-                    }
-
-                    else if ((linq.ToList().Count() == 1) && (linq[0] == 6))
-                    {
-                        //abrir pagina dos Developers
-                    }
-
                 }
 
-                else
-                {
-                    lblErroLogar.Text = "Usuário ou Senha incorretos!";
-                }
             }
+
+            else
+            {
+                lblErroLogar.Text = "CPF Inválido!";
+            }
+
+            
            
         }
 

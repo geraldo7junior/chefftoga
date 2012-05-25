@@ -14,24 +14,21 @@ namespace Ru
         public fCreditoVisualizar()
         {
             InitializeComponent();
-            txtID.Text = "Ver função p/ ID";
             lblOperador.Text += Utilidades.NomeLogin;
 
+            txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             //cbxCurso.Text = Utilidades.Curso();
             //cbxPeriodo.Text = Utilidades.Periodo();
-            mtxtFone.Text = Utilidades.Fone();
+            mtxtFone.Text = Utilidades.FuncFone();
             //rbtnSim.Checked = Utilidades.Bolsista();
             txtSaldo.Text = Utilidades.Saldo();
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            this.Close();
         }
 
         private void fCadastro_Load(object sender, EventArgs e)
@@ -60,9 +57,9 @@ namespace Ru
         {
 
             this.Close();
+            Utilidades.ControleDeTela = "visualizarsaldo";
             fAlterar _fAlt;
             _fAlt = new fAlterar();
-            Utilidades.ControleDeTela = "visualizarsaldo";
             _fAlt.Show();
 
         }
@@ -109,6 +106,11 @@ namespace Ru
         private void msMenuImprimir_Click(object sender, EventArgs e)
         {
             printDialogDoc.ShowDialog();
+        }
+
+        private void lblID_Click(object sender, EventArgs e)
+        {
+
         }
 
 

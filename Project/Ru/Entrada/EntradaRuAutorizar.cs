@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Ru
 {
@@ -14,14 +15,14 @@ namespace Ru
         public fEntradaRuAutorizar()
         {
             InitializeComponent();
-            txtID.Text = "Ver função p/ ID";
             lblOperador.Text += Utilidades.NomeLogin;
 
+            txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             //cbxCurso.Text = Utilidades.Curso();
             //cbxPeriodo.Text = Utilidades.Periodo();
-            mtxtFone.Text = Utilidades.Fone();
+            mtxtFone.Text = Utilidades.FuncFone();
             //rbtnSim.Checked = Utilidades.Bolsista();
             txtSaldo.Text = Utilidades.Saldo();
         }
@@ -107,21 +108,20 @@ namespace Ru
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)
-        {
-            
+        {            
             string hora = DateTime.Now.ToShortTimeString();
             string hora1 = hora[0].ToString() + hora[1].ToString();
             int h = int.Parse(hora1);
 
-            if ((h>=17) && (h<=20))
+            if ((h>=17) && (h<=19))
             {
-                Utilidades.ValorASerCobrado = decimal.Parse("2,6");
+                Utilidades.ValorASerCobrado = float.Parse("2,6");
                 Utilidades.Debitar();                
                 Close();
             }
-            else if ((h >= 11) && (h <= 17))
+            else if ((h >= 11) && (h <= 14))
             {
-                Utilidades.ValorASerCobrado = decimal.Parse("3");
+                Utilidades.ValorASerCobrado = float.Parse("3");
                 Utilidades.Debitar();
                 Close();
             }

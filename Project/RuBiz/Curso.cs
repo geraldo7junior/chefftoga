@@ -19,7 +19,6 @@ namespace RuBiz
 {
     [DataContract(IsReference = true)]
     [KnownType(typeof(InstituicaoEnsino))]
-    [KnownType(typeof(Usuario))]
     public partial class Curso: IObjectWithChangeTracker, INotifyPropertyChanged
     {
         #region Primitive Properties
@@ -115,41 +114,6 @@ namespace RuBiz
             }
         }
         private InstituicaoEnsino _instituicaoEnsino;
-    
-        [DataMember]
-        public TrackableCollection<Usuario> Usuario
-        {
-            get
-            {
-                if (_usuario == null)
-                {
-                    _usuario = new TrackableCollection<Usuario>();
-                    _usuario.CollectionChanged += FixupUsuario;
-                }
-                return _usuario;
-            }
-            set
-            {
-                if (!ReferenceEquals(_usuario, value))
-                {
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
-                    }
-                    if (_usuario != null)
-                    {
-                        _usuario.CollectionChanged -= FixupUsuario;
-                    }
-                    _usuario = value;
-                    if (_usuario != null)
-                    {
-                        _usuario.CollectionChanged += FixupUsuario;
-                    }
-                    OnNavigationPropertyChanged("Usuario");
-                }
-            }
-        }
-        private TrackableCollection<Usuario> _usuario;
 
         #endregion
         #region ChangeTracking
@@ -230,7 +194,6 @@ namespace RuBiz
         protected virtual void ClearNavigationProperties()
         {
             InstituicaoEnsino = null;
-            Usuario.Clear();
         }
 
         #endregion
@@ -271,45 +234,6 @@ namespace RuBiz
                 if (InstituicaoEnsino != null && !InstituicaoEnsino.ChangeTracker.ChangeTrackingEnabled)
                 {
                     InstituicaoEnsino.StartTracking();
-                }
-            }
-        }
-    
-        private void FixupUsuario(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (e.NewItems != null)
-            {
-                foreach (Usuario item in e.NewItems)
-                {
-                    item.Curso = this;
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        if (!item.ChangeTracker.ChangeTrackingEnabled)
-                        {
-                            item.StartTracking();
-                        }
-                        ChangeTracker.RecordAdditionToCollectionProperties("Usuario", item);
-                    }
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (Usuario item in e.OldItems)
-                {
-                    if (ReferenceEquals(item.Curso, this))
-                    {
-                        item.Curso = null;
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("Usuario", item);
-                    }
                 }
             }
         }

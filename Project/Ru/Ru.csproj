@@ -60,16 +60,16 @@
     <Compile Include="Busca CPF\Alterar.Designer.cs">
       <DependentUpon>Alterar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Credito\Entrada\EntradaRuGerenciar.cs">
+    <Compile Include="Entrada\EntradaRuGerenciar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Credito\Entrada\EntradaRuGerenciar.Designer.cs">
+    <Compile Include="Entrada\EntradaRuGerenciar.Designer.cs">
       <DependentUpon>EntradaRuGerenciar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Credito\Entrada\EntradaRuAutorizar.cs">
+    <Compile Include="Entrada\EntradaRuAutorizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Credito\Entrada\EntradaRuAutorizar.Designer.cs">
+    <Compile Include="Entrada\EntradaRuAutorizar.Designer.cs">
       <DependentUpon>EntradaRuAutorizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Credito\CreditoCreditar.cs">
@@ -122,10 +122,10 @@
     <EmbeddedResource Include="Busca CPF\Alterar.resx">
       <DependentUpon>Alterar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Credito\Entrada\EntradaRuGerenciar.resx">
+    <EmbeddedResource Include="Entrada\EntradaRuGerenciar.resx">
       <DependentUpon>EntradaRuGerenciar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Credito\Entrada\EntradaRuAutorizar.resx">
+    <EmbeddedResource Include="Entrada\EntradaRuAutorizar.resx">
       <DependentUpon>EntradaRuAutorizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Credito\CreditoCreditar.resx">

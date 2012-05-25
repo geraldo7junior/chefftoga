@@ -59,6 +59,7 @@
             this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.lblCPF = new System.Windows.Forms.Label();
             this.printDialogDoc = new System.Windows.Forms.PrintDialog();
+            this.lblRS = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -105,7 +106,7 @@
             this.mtxtFone.Name = "mtxtFone";
             this.mtxtFone.ReadOnly = true;
             this.mtxtFone.Size = new System.Drawing.Size(100, 22);
-            this.mtxtFone.TabIndex = 13;
+            this.mtxtFone.TabIndex = 9;
             // 
             // lblFormCadastro
             // 
@@ -205,7 +206,7 @@
             this.lblFoto.Location = new System.Drawing.Point(38, 343);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(90, 22);
-            this.lblFoto.TabIndex = 14;
+            this.lblFoto.TabIndex = 13;
             this.lblFoto.Text = "Foto";
             this.lblFoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -219,7 +220,8 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(90, 22);
             this.lblID.TabIndex = 0;
-            this.lblID.Text = "ID:";
+            this.lblID.Text = "ID Card:";
+            this.lblID.Click += new System.EventHandler(this.lblID_Click);
             // 
             // lblFone
             // 
@@ -230,7 +232,7 @@
             this.lblFone.Location = new System.Drawing.Point(256, 380);
             this.lblFone.Name = "lblFone";
             this.lblFone.Size = new System.Drawing.Size(90, 22);
-            this.lblFone.TabIndex = 13;
+            this.lblFone.TabIndex = 8;
             this.lblFone.Text = "Fone:";
             // 
             // lblPeriodo
@@ -280,7 +282,7 @@
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.msMenu.Size = new System.Drawing.Size(1292, 24);
-            this.msMenu.TabIndex = 61;
+            this.msMenu.TabIndex = 14;
             this.msMenu.Text = "Menu";
             // 
             // msMenuCadastro
@@ -368,7 +370,7 @@
             this.gpbBolsista.Location = new System.Drawing.Point(27, 395);
             this.gpbBolsista.Name = "gpbBolsista";
             this.gpbBolsista.Size = new System.Drawing.Size(115, 88);
-            this.gpbBolsista.TabIndex = 65;
+            this.gpbBolsista.TabIndex = 12;
             this.gpbBolsista.TabStop = false;
             this.gpbBolsista.Text = "Gratuidade";
             // 
@@ -403,11 +405,12 @@
             this.txtSaldo.BackColor = System.Drawing.Color.White;
             this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldo.Location = new System.Drawing.Point(346, 418);
-            this.txtSaldo.MaxLength = 5;
+            this.txtSaldo.MaxLength = 6;
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.ReadOnly = true;
-            this.txtSaldo.Size = new System.Drawing.Size(120, 22);
-            this.txtSaldo.TabIndex = 67;
+            this.txtSaldo.Size = new System.Drawing.Size(86, 22);
+            this.txtSaldo.TabIndex = 11;
+            this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSaldo.FontChanged += new System.EventHandler(this.txtSaldo_FontChanged);
             this.txtSaldo.TextChanged += new System.EventHandler(this.txtSaldo_TextChanged);
             // 
@@ -420,7 +423,7 @@
             this.lblSaldo.Location = new System.Drawing.Point(256, 420);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(90, 22);
-            this.lblSaldo.TabIndex = 66;
+            this.lblSaldo.TabIndex = 10;
             this.lblSaldo.Text = "Saldo:";
             // 
             // lblOperador
@@ -442,11 +445,12 @@
             this.mtxtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtCPF.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
             this.mtxtCPF.Location = new System.Drawing.Point(346, 268);
+            this.mtxtCPF.Mask = "000,000,000-00";
             this.mtxtCPF.Name = "mtxtCPF";
             this.mtxtCPF.ReadOnly = true;
             this.mtxtCPF.RejectInputOnFirstFailure = true;
             this.mtxtCPF.Size = new System.Drawing.Size(100, 22);
-            this.mtxtCPF.TabIndex = 86;
+            this.mtxtCPF.TabIndex = 3;
             // 
             // lblCPF
             // 
@@ -457,12 +461,24 @@
             this.lblCPF.Location = new System.Drawing.Point(256, 270);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(90, 22);
-            this.lblCPF.TabIndex = 85;
+            this.lblCPF.TabIndex = 2;
             this.lblCPF.Text = "CPF:";
             // 
             // printDialogDoc
             // 
             this.printDialogDoc.UseEXDialog = true;
+            // 
+            // lblRS
+            // 
+            this.lblRS.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRS.AutoSize = true;
+            this.lblRS.BackColor = System.Drawing.Color.Transparent;
+            this.lblRS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRS.Location = new System.Drawing.Point(389, 421);
+            this.lblRS.Name = "lblRS";
+            this.lblRS.Size = new System.Drawing.Size(25, 16);
+            this.lblRS.TabIndex = 86;
+            this.lblRS.Text = "R$";
             // 
             // fCreditoVisualizar
             // 
@@ -472,6 +488,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1292, 750);
+            this.Controls.Add(this.lblRS);
             this.Controls.Add(this.mtxtCPF);
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.lblOperador);
@@ -543,5 +560,6 @@
         private System.Windows.Forms.MaskedTextBox mtxtCPF;
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.PrintDialog printDialogDoc;
+        private System.Windows.Forms.Label lblRS;
     }
 }

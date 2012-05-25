@@ -61,6 +61,7 @@
             this.mtbLogin.BackColor = System.Drawing.Color.White;
             this.mtbLogin.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
             this.mtbLogin.Location = new System.Drawing.Point(457, 310);
+            this.mtbLogin.Mask = "000,000,000-00";
             this.mtbLogin.Name = "mtbLogin";
             this.mtbLogin.Size = new System.Drawing.Size(100, 20);
             this.mtbLogin.TabIndex = 9;
@@ -83,6 +84,7 @@
             this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSenha.BackColor = System.Drawing.Color.White;
             this.txtSenha.Location = new System.Drawing.Point(457, 357);
+            this.txtSenha.MaxLength = 6;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);

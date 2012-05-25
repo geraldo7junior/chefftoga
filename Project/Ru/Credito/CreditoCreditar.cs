@@ -15,21 +15,21 @@ namespace Ru
         public fCreditoCreditar()
         {
             InitializeComponent();
-            txtID.Text = "Ver função p/ ID";
             lblOperador.Text += Utilidades.NomeLogin;
 
+            txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             //cbxCurso.Text = Utilidades.Curso();
             //cbxPeriodo.Text = Utilidades.Periodo();
-            mtxtFone.Text = Utilidades.Fone();
+            mtxtFone.Text = Utilidades.FuncFone();
             //rbtnSim.Checked = Utilidades.Bolsista();
             txtSaldo.Text = Utilidades.Saldo();
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente fechar?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente fechar SEM CREDITAR o valor?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -37,7 +37,7 @@ namespace Ru
 
         private void fCadastro_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void msMenuCadastroNovo_Click(object sender, EventArgs e)
@@ -53,9 +53,9 @@ namespace Ru
             if (MessageBox.Show("Deseja Realmente creditar em outro usuário e perder os valores não creditados no usuário atual?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
+                Utilidades.ControleDeTela = "creditar";
                 fAlterar _fAlt;
                 _fAlt = new fAlterar();
-                Utilidades.ControleDeTela = "creditar";
                 _fAlt.Show();
             }
         }
@@ -65,9 +65,9 @@ namespace Ru
             if (MessageBox.Show("Deseja Realmente visualizar outro saldo e perder os valores não creditados?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
+                Utilidades.ControleDeTela = "visualizarsaldo";
                 fAlterar _fAlt;
                 _fAlt = new fAlterar();
-                Utilidades.ControleDeTela = "visualizarsaldo";
                 _fAlt.Show();
             }
             
@@ -115,18 +115,31 @@ namespace Ru
 
         private void btnCreditar_Click(object sender, EventArgs e)
         {
-            
-            if (MessageBox.Show("Deseja realmente creditar R$ " + txtValorASerCreditado.Text + " ao aluno " + txtNome.Text + "?", "Confirmação!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            using (CheffTogaEntities context = new CheffTogaEntities())
             {
-                Utilidades.credito = decimal.Parse(txtValorASerCreditado.Text);
+                var SaldoDB = (from i in context.Usuario
+                            where i.CPF == Utilidades.Cpf
+                            select i.Saldo).ToList();
 
-                Utilidades.Creditar();
-                
-                MessageBox.Show("O novo saldo do aluno " + txtNome.Text + " é " + Utilidades.saldo + "!", "Operação realizada com sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                this.Close();
-                
+                float saldo = float.Parse(SaldoDB[0].ToString());
+
+                if ((saldo + float.Parse(txtValorASerCreditado.Text)) > 999)
+                {
+                    MessageBox.Show("NÃO AUTORIZADO! O saldo não pode exceder R$ 999,00", "Autorização!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else if (MessageBox.Show("Deseja realmente creditar R$ " + txtValorASerCreditado.Text + " ao aluno " + txtNome.Text + "?", "Confirmação!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string ValorSpace = this.txtValorASerCreditado.Text.Replace(" ", "");
+                    Utilidades.credito = float.Parse(ValorSpace);
+
+                    Utilidades.Creditar();
+
+                    MessageBox.Show("O novo saldo do aluno " + txtNome.Text + " é R$ " + Utilidades.saldo + "!", "Operação realizada com sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Close();
+
+                }
             }
-     
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
@@ -141,6 +154,8 @@ namespace Ru
 
         private void txtValorASerCreditado_KeyPress(object sender, KeyPressEventArgs e)
         {
+            e.Handled = true;
+
             if (e.KeyChar == 13)
             {
                btnCreditar_Click(sender, e);
@@ -151,8 +166,56 @@ namespace Ru
         {
             printDialogDoc.ShowDialog();
         }
-     
 
+        private void txtValorASerCreditado_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
 
+        }
+
+        string str = "";
+        private void txtValorASerCreditado_KeyDown(object sender, KeyEventArgs e)
+        {            
+            int KeyCode = e.KeyValue;
+
+            if (!IsNumeric(KeyCode))
+            {
+                e.Handled = true;
+                return;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            if (((KeyCode == 8) || (KeyCode == 46)) && (str.Length > 0))
+            {
+                str = str.Substring(0, str.Length - 1);
+            }
+            else if (!((KeyCode == 8) || (KeyCode == 46)))
+            {
+                str = str + Convert.ToChar(KeyCode);
+            }
+            if (str.Length == 0)
+            {
+                txtValorASerCreditado.Text = "";
+            }
+            if (str.Length == 1)
+            {
+                txtValorASerCreditado.Text = "0,0" + str;
+            }
+            else if (str.Length == 2)
+            {
+                txtValorASerCreditado.Text = "0," + str;
+            }
+            else if (str.Length > 2)
+            {
+                txtValorASerCreditado.Text = str.Substring(0, str.Length - 2) + "," +
+                                str.Substring(str.Length - 2);
+            }
+        }
+
+        private bool IsNumeric(int Val)
+        {
+            return ((Val >= 48 && Val <= 57) || (Val == 8) || (Val == 46));
+        }
     }
 }

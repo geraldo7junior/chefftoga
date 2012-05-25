@@ -15,12 +15,12 @@ namespace Ru
         {
 
             InitializeComponent();
-            txtID.Text = "Ver função p/ ID";
             lblOperador.Text += Utilidades.NomeLogin;
 
+            txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
-            txtIdenditade.Text = Utilidades.Identidade();
-            //mtxtDataNasc.Text = Utilidades.DataNasc();
+            txtIdentidade.Text = Utilidades.Identidade();
+            mtxtDataNasc.Text = Utilidades.FuncDataNasc();
             mtxtCPF.Text = Utilidades.CpF();
             //cbxCurso.Text = Utilidades.Curso();
             //cbxPeriodo.Text = Utilidades.Periodo();
@@ -30,17 +30,14 @@ namespace Ru
             txtCidade.Text = Utilidades.Cidade();
             cbxUF.Text = Utilidades.Uf();
             mtxtCEP.Text = Utilidades.Cep();
-            mtxtFone.Text = Utilidades.Fone();
+            mtxtFone.Text = Utilidades.FuncFone();
             //rbtnSim.Checked = Utilidades.Bolsista();
            
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
+        {            
+            this.Close();
         }
 
         private void fCadastro_Load(object sender, EventArgs e)
@@ -59,7 +56,8 @@ namespace Ru
 
         private void msMenuCadastroAlterar_Click(object sender, EventArgs e)
         {
-            Utilidades.Cpf = mtxtCPF.Text;
+            string cpf = mtxtCPF.Text.Replace("-", ".");
+            Utilidades.Cpf = cpf.Replace(".","");
             Utilidades.ControleDeTela = "alterar";
             fCadastroNovo _fCad;
             _fCad = new fCadastroNovo();
@@ -71,9 +69,9 @@ namespace Ru
         private void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
         {
             this.Close();
+            Utilidades.ControleDeTela = "visualizar";
             fAlterar _fAlt;
             _fAlt = new fAlterar();
-            Utilidades.ControleDeTela = "visualizar";
             _fAlt.Show();
 
         }

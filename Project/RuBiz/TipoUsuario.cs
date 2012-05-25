@@ -18,7 +18,6 @@ using System.Runtime.Serialization;
 namespace RuBiz
 {
     [DataContract(IsReference = true)]
-    [KnownType(typeof(Usuario))]
     public partial class TipoUsuario: IObjectWithChangeTracker, INotifyPropertyChanged
     {
         #region Primitive Properties
@@ -56,44 +55,6 @@ namespace RuBiz
             }
         }
         private string _descricao;
-
-        #endregion
-        #region Navigation Properties
-    
-        [DataMember]
-        public TrackableCollection<Usuario> Usuario
-        {
-            get
-            {
-                if (_usuario == null)
-                {
-                    _usuario = new TrackableCollection<Usuario>();
-                    _usuario.CollectionChanged += FixupUsuario;
-                }
-                return _usuario;
-            }
-            set
-            {
-                if (!ReferenceEquals(_usuario, value))
-                {
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
-                    }
-                    if (_usuario != null)
-                    {
-                        _usuario.CollectionChanged -= FixupUsuario;
-                    }
-                    _usuario = value;
-                    if (_usuario != null)
-                    {
-                        _usuario.CollectionChanged += FixupUsuario;
-                    }
-                    OnNavigationPropertyChanged("Usuario");
-                }
-            }
-        }
-        private TrackableCollection<Usuario> _usuario;
 
         #endregion
         #region ChangeTracking
@@ -173,49 +134,6 @@ namespace RuBiz
     
         protected virtual void ClearNavigationProperties()
         {
-            Usuario.Clear();
-        }
-
-        #endregion
-        #region Association Fixup
-    
-        private void FixupUsuario(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (e.NewItems != null)
-            {
-                foreach (Usuario item in e.NewItems)
-                {
-                    item.TipoUsuario = this;
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        if (!item.ChangeTracker.ChangeTrackingEnabled)
-                        {
-                            item.StartTracking();
-                        }
-                        ChangeTracker.RecordAdditionToCollectionProperties("Usuario", item);
-                    }
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (Usuario item in e.OldItems)
-                {
-                    if (ReferenceEquals(item.TipoUsuario, this))
-                    {
-                        item.TipoUsuario = null;
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("Usuario", item);
-                    }
-                }
-            }
         }
 
         #endregion

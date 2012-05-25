@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtCPF = new System.Windows.Forms.TextBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.lblCPF = new System.Windows.Forms.Label();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(73, 30);
-            this.txtCPF.MaxLength = 11;
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(126, 20);
-            this.txtCPF.TabIndex = 0;
-            this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
-            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
             // btnOk
             // 
@@ -62,14 +52,27 @@
             this.lblCPF.TabIndex = 2;
             this.lblCPF.Text = "CPF";
             // 
+            // txtCPF
+            // 
+            this.txtCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPF.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
+            this.txtCPF.Location = new System.Drawing.Point(87, 34);
+            this.txtCPF.Mask = "000,000,000-00";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.RejectInputOnFirstFailure = true;
+            this.txtCPF.Size = new System.Drawing.Size(100, 22);
+            this.txtCPF.TabIndex = 0;
+            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress_1);
+            // 
             // fAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 116);
+            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.txtCPF);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fAlterar";
@@ -83,8 +86,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
     }
 }

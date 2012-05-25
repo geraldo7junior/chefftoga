@@ -19,9 +19,9 @@ namespace Ru
 
         private void msMenuCadastroNovo_Click(object sender, EventArgs e)
         {
+            Utilidades.ControleDeTela = "novo";
             fCadastroNovo _fCad;
             _fCad = new fCadastroNovo();
-            Utilidades.ControleDeTela = "novo";
             _fCad.Show();
          
             //fIndex _fLog;
@@ -50,26 +50,26 @@ namespace Ru
 
         public void msMenuCadastroAlterar_Click(object sender, EventArgs e)
         {
+            Utilidades.ControleDeTela = "alterar";
             fAlterar _fAlt;
             _fAlt = new fAlterar();
-            Utilidades.ControleDeTela = "alterar";
             _fAlt.Show();
             
         }
 
         public void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
         {
+            Utilidades.ControleDeTela = "visualizar";
             fAlterar _fAlt;
             _fAlt = new fAlterar();
-            Utilidades.ControleDeTela = "visualizar";
             _fAlt.Show();
         }
 
         public void msMenuCadastroExcluir_Click(object sender, EventArgs e)
         {
+            Utilidades.ControleDeTela = "excluir";
             fAlterar _fAlt;
             _fAlt = new fAlterar();
-            Utilidades.ControleDeTela = "excluir";
             _fAlt.Show();
         }
 
@@ -85,7 +85,6 @@ namespace Ru
 
         private void msMenuImprimir_Click(object sender, EventArgs e)
         {
-            printDialogDoc.ShowDialog();
         }
 
     }

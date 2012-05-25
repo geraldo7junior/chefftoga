@@ -13,41 +13,44 @@ namespace Ru
 {
     class Utilidades
     {
-        public static string ControleDeTela, asterisco, NomeLogin, Cpf, CpfNovo, nome, identidade, rua, numero, bairro, cidade, uf, cep, fone;
+        public static string ControleDeTela, asterisco, NomeLogin, Cpf, CpfNovo, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "";
 
-        public static int id;
+        public static int id,IdCard;
 
-        public static decimal saldo, ValorASerCobrado, credito;
+        public static float credito,ValorASerCobrado, saldo;
+
+        public static DateTime DataNascFormato;
+
+
 
         public static void Debitar()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
 
-                var linq = (from i in context.Usuario
+                var SaldoAtual = (from i in context.Usuario
                             where i.CPF == Cpf
-                            select i.Id_Usuario).ToList();
+                            select i.Saldo).ToList();
 
-                id = linq[0];
+                saldo = float.Parse(SaldoAtual[0].ToString());
 
-                var SaldoAtual = (from j in context.Cartao
-                                 where j.Id_Usuario == id
-                                 select j.Saldo).ToList();
+                string StrResultado = Math.Round((saldo - ValorASerCobrado),2).ToString();
 
-                saldo = SaldoAtual[0];
+                float resultado = float.Parse(StrResultado);
 
                 if (ValorASerCobrado <= saldo)
                 {
+                    string desconto = resultado.ToString().Replace(",", ".");
 
-                    string strSQL = "UPDATE Cartao SET Saldo -='" + ValorASerCobrado + "' WHERE Id_Usuario=" + id + "";
+                    string strSQL = "UPDATE Usuario SET Saldo =" + desconto  + " WHERE CPF='" + Cpf + "'";
 
                     context.ExecuteStoreCommand(strSQL);
 
-                    var NovoSaldo = (from j in context.Cartao
-                                     where j.Id_Usuario == id
+                    var NovoSaldo = (from j in context.Usuario
+                                     where j.CPF == Cpf
                                      select j.Saldo).ToList();
 
-                    saldo = NovoSaldo[0];
+                    saldo = float.Parse(NovoSaldo[0].ToString());
 
                     MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
@@ -71,15 +74,27 @@ namespace Ru
 
                 id = linq[0];
 
-                string strSQL = "UPDATE Cartao SET Saldo +='" + credito + "' WHERE Id_Usuario=" + id + "";
+                var SaldoAtual = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Saldo).ToList();
+
+                saldo = float.Parse(SaldoAtual[0].ToString());
+
+                string StrResultado = Math.Round((saldo + credito), 2).ToString();
+
+                float resultado = float.Parse(StrResultado);
+
+                string strCredito = resultado.ToString().Replace(",", ".");
+
+                string strSQL = "UPDATE Usuario SET Saldo =" + strCredito + " WHERE Id_Usuario=" + id;
                 
                 context.ExecuteStoreCommand(strSQL);
 
-                var NovoSaldo = (from j in context.Cartao
-                                 where j.Id_Usuario == id
+                var NovoSaldo = (from j in context.Usuario
+                                 where j.CPF == Cpf
                                  select j.Saldo).ToList();
 
-                saldo = NovoSaldo[0];
+                saldo = float.Parse(NovoSaldo[0].ToString());
 
             }
 
@@ -96,10 +111,10 @@ namespace Ru
 
                 id = linq[0];
 
-                string strSQL = "UPDATE Usuario SET Nome +='" + nome.Replace("'", "''") + "', RG='" + identidade +
+                string strSQL = "UPDATE Usuario SET Nome ='" + nome.Replace("'", "''") + "', RG='" + identidade +
                                 "', Logradouro='" + rua + "', Numero='" + numero + "', Bairro='" + bairro +
                                 "', Cidade='" + cidade + "',CPF='" + CpfNovo + "', UF='" + uf + "', CEP='" + cep +
-                                "', Fone='" + fone + "' WHERE Id_Usuario=" + id + "";
+                                "', Fone='" + fone + "' WHERE Id_Usuario=" + id;
 
                 context.ExecuteStoreCommand(strSQL);
 
@@ -120,12 +135,24 @@ namespace Ru
 
                 id = linq[0];
 
-                string strSQLCartao = "DELETE FROM Cartao WHERE Id_Usuario=" + id + "";                
+                string strSQLCartao = "DELETE FROM Usuario WHERE Id_Usuario=" + id + "";                
                 context.ExecuteStoreCommand(strSQLCartao);
 
                 string strSQLUsuario = "DELETE FROM Usuario WHERE Id_Usuario=" + id + "";
                 context.ExecuteStoreCommand(strSQLUsuario);
             }
+        }
+
+        public static Int32 GerarIdCard(int verificador)
+        {
+            string StrVerificador = verificador.ToString();
+            string ano = DateTime.Now.Year.ToString();
+            string cpf3 = Cpf.Substring(0, 3);
+
+            IdCard = int.Parse(ano + cpf3 + StrVerificador);
+
+            return IdCard;
+
         }
 
         public static String PreencherCampos(String campo)
@@ -141,6 +168,17 @@ namespace Ru
 
             return (asterisco);
 
+        }
+
+        public static String Id_Card()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var item = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Id_Card).ToList();
+                return item[0].ToString();
+            }
         }
 
         public static String Nome()
@@ -176,18 +214,20 @@ namespace Ru
             }
         }
 
-        /*DataNasc(),Curso(),Periodo(),Bolsista()
-        public static String DataNasc()
+        public static String FuncDataNasc()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
                 var item = (from i in context.Usuario
                             where i.CPF == Cpf
                             select i.DataNascimento).ToList();
-                return item[0].ToString();
+                string DataNascSpace = item[0].Replace(" ","");
+                DataNasc = DataNascSpace.Replace("/", "");
+                return DataNasc;
             }
         }
-        
+
+        /*Curso(),Periodo(),Bolsista()
         public static String Curso()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
@@ -227,23 +267,17 @@ namespace Ru
         {            
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
-                Cartao card = new Cartao();
+                Usuario card = new Usuario();
 
-                var id = (from i in context.Usuario
+                var meusaldo = (from i in context.Usuario
                             where i.CPF == Utilidades.Cpf
-                            select i.Id_Usuario).ToList();
-                int ID = id[0];
+                            select i.Saldo).ToList();
                 
-                var saldo = (from j in context.Cartao
-                             where j.Id_Usuario == ID
-                             select j.Saldo).ToList();
-                decimal SALDO = saldo[0];
+                var SALDO = meusaldo[0];
 
                 return SALDO.ToString();
             }
         }
-        
-        
 
         public static String Rua()
         {
@@ -307,19 +341,103 @@ namespace Ru
                 var item = (from i in context.Usuario
                             where i.CPF == Cpf
                             select i.CEP).ToList();
-                return item[0];
+                string CepPonto = item[0].Replace(".", "");
+                string CepDigito = CepPonto.Replace("-", "");
+                cep = CepDigito.Replace(" ", "");
+
+                return cep;
             }
         }
 
-        public static String Fone()
+        public static String FuncFone()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
                 var item = (from i in context.Usuario
                             where i.CPF == Cpf
                             select i.Fone).ToList();
-                return item[0];
+                string foneParAberto = item[0].Replace("(","");
+                string foneParFechado = foneParAberto.Replace(")", "");
+                string foneDigito = foneParFechado.Replace("-", "");
+                fone = foneDigito.Replace(" ", "");
+                
+                return fone;
             }
+        }
+
+        public static void ValidaCampos()
+        {
+            //Controle de data de nascimento
+            if (Utilidades.validaData(DataNasc) == false)
+            {
+                ErrDataNasc = "Data de Nascimento; ";
+            }
+            else
+            {
+                ErrDataNasc = "";
+                Utilidades.DataNascFormato = DateTime.Parse(DataNasc);
+            }
+
+            if (DataNascFormato > DateTime.Now)
+            {
+                ErrDataNasc = "Data de Nascimento; ";
+            }
+
+            //Controle de Cep
+            if (validaCEP(cep) == false)
+            {
+                ErrCep = "CEP ;";
+            }
+
+            //Controle de fone
+            if (validaFone(fone) == false)
+            {
+                ErrFone = "Fone";
+            }
+
+            if ((ErrDataNasc != "") || (ErrFone != "") || (ErrCep != ""))
+            {
+                MessageBox.Show("O(s) Campo(s): " + ErrDataNasc + ErrCep + ErrFone + " está(ão) incorreto(s)!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                ControleDeValidaCampos = "N";
+            }
+            
+            //CADASTRO NOVO
+            if (Utilidades.ControleDeTela == "novo")
+            {
+                //controle de cpf válido
+                if (Utilidades.validaCPF(Utilidades.Cpf) == false)
+                {
+                    MessageBox.Show("CPF Inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ControleDeValidaCampos = "N";
+                }
+
+                //controle de cpf duplicado
+                else if (Utilidades.DuploCPF(Utilidades.Cpf) == true)
+                {
+                    MessageBox.Show("CPF já existente na Base de Dados!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ControleDeValidaCampos = "N";
+                }
+            }
+
+            //ALTERAR CADASTRO
+            if (Utilidades.ControleDeTela == "alterar")
+            {
+                //controle de cpf válido
+                if (Utilidades.validaCPF(Utilidades.CpfNovo) == false)
+                {
+                    MessageBox.Show("CPF Inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ControleDeValidaCampos = "N";
+                }
+
+                //controle de cpf duplicado
+                else if (Utilidades.DuploCPF(Utilidades.CpfNovo) == true)
+                {
+                    MessageBox.Show("CPF já existente na Base de Dados!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ControleDeValidaCampos = "N";
+                }
+
+            }
+
         }
 
         public static Boolean validaData(String data)
@@ -334,13 +452,14 @@ namespace Ru
         {
             int result;
             result = cpf.Length;
-            if (result == 14)
+            if (result == 11)
                 return true;
             else return false;
         }
 
-        public static Boolean validaFone(String fone)
+        public static Boolean validaFone(String foneParaTeste)
         {
+            fone = foneParaTeste.Replace(" ", "");
             int result;
             result = fone.Length;
             if (result == 13)
@@ -348,13 +467,31 @@ namespace Ru
             else return false;
         }
 
-        public static Boolean validaCEP(String cep)
+        public static Boolean validaCEP(String cepParaTeste)
         {
+            cep = cepParaTeste.Replace(" ", "");
             int result;
             result = cep.Length;
             if (result == 10)
                 return true;
             else return false;
+        }
+
+        public static Boolean DuploCPF(String cpfEnviado)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var list = (from i in context.Usuario
+                            where i.CPF == cpfEnviado
+                            select cpfEnviado).ToList();
+
+                if ((list.ToList().Count() > 0) && (Cpf != CpfNovo))
+                {
+                    return true;
+                }
+
+                else return false;
+            }
         }
     }
 }

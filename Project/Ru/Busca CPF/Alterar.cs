@@ -21,89 +21,99 @@ namespace Ru
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            string cpfSpace = this.txtCPF.Text.Replace(" ", ".");
+            string cpfHifen = cpfSpace.Replace("-", ".");
+            Utilidades.Cpf = cpfHifen.Replace(".", "");
+
             using (CheffTogaEntities context = new CheffTogaEntities())
-            {
-                string VerCpf = this.txtCPF.Text;
-                
+            {               
                 var ExistenciaCadastro = (from i in context.Usuario
-                                          where i.CPF == VerCpf
-                                          select VerCpf).ToList();
+                                          where i.CPF == Utilidades.Cpf
+                                          select Utilidades.Cpf).ToList();
 
-                if ((ExistenciaCadastro.ToList().Count() == 1) && (ExistenciaCadastro[0] == this.txtCPF.Text))
+                if (Utilidades.validaCPF(Utilidades.Cpf))
                 {
-                    Utilidades.Cpf = this.txtCPF.Text;
 
-                    //Operador de Cadastro          
-                    if (Utilidades.ControleDeTela == "alterar")
+                    if (ExistenciaCadastro.ToList().Count() == 1)
                     {
-                        fCadastroNovo _fCad;
-                        _fCad = new fCadastroNovo();
-                        //chamar todos os dados do banco de dados aqui
-                        _fCad.Show();
-                        Close();
-                    }
 
-                    else if (Utilidades.ControleDeTela == "visualizar")
-                    {
-                        fCadastroVisualizar _fVCad;
-                        _fVCad = new fCadastroVisualizar();
-                        //chamar todos os dados do banco de dados aqui
-                        _fVCad.Show();
-                        Close();
-                    }
-
-                    else if (Utilidades.ControleDeTela == "excluir")
-                    {
-                        fCadastroVisualizar _fVCad;
-                        _fVCad = new fCadastroVisualizar();
-                        //chamar todos os dados do banco de dados aqui
-                        _fVCad.Show();
-                        Close();
-                        if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        //Operador de Cadastro          
+                        if (Utilidades.ControleDeTela == "alterar")
                         {
-
-                            Utilidades.ExcluirCadastro();
-
-                            MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                            _fVCad.Close();
-
-
+                            fCadastroNovo _fCad;
+                            _fCad = new fCadastroNovo();
+                            //chamar todos os dados do banco de dados aqui
+                            _fCad.Show();
+                            Close();
                         }
+
+                        else if (Utilidades.ControleDeTela == "visualizar")
+                        {
+                            fCadastroVisualizar _fVCad;
+                            _fVCad = new fCadastroVisualizar();
+                            //chamar todos os dados do banco de dados aqui
+                            _fVCad.Show();
+                            Close();
+                        }
+
+                        else if (Utilidades.ControleDeTela == "excluir")
+                        {
+                            fCadastroVisualizar _fVCad;
+                            _fVCad = new fCadastroVisualizar();
+                            //chamar todos os dados do banco de dados aqui
+                            _fVCad.Show();
+                            Close();
+                            if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+
+                                Utilidades.ExcluirCadastro();
+
+                                MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                _fVCad.Close();
+
+
+                            }
+                        }
+
+                    //Operador de Credito
+                        else if (Utilidades.ControleDeTela == "visualizarsaldo")
+                        {
+                            fCreditoVisualizar _fVCad;
+                            _fVCad = new fCreditoVisualizar();
+                            //chamar todos os dados de crédito do banco de dados aqui
+                            _fVCad.Show();
+                            Close();
+                        }
+
+                        else if (Utilidades.ControleDeTela == "creditar")
+                        {
+                            fCreditoCreditar _fVCad;
+                            _fVCad = new fCreditoCreditar();
+                            _fVCad.Show();
+                            Close();
+                        }
+
+                    //Operador de Autorização
+                        else if (Utilidades.ControleDeTela == "autorizarporcpf")
+                        {
+                            fEntradaRuAutorizar _fVCad;
+                            _fVCad = new fEntradaRuAutorizar();
+                            //chamar todos os dados de crédito do banco de dados aqui
+                            _fVCad.Show();
+                            Close();
+                        }
+
                     }
 
-                //Operador de Credito
-                    else if (Utilidades.ControleDeTela == "visualizarsaldo")
+                    else
                     {
-                        fCreditoVisualizar _fVCad;
-                        _fVCad = new fCreditoVisualizar();
-                        //chamar todos os dados de crédito do banco de dados aqui
-                        _fVCad.Show();
-                        Close();
+                        MessageBox.Show("CPF não Cadastrado", "Buca de CPF", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-
-                    else if (Utilidades.ControleDeTela == "creditar")
-                    {
-                        fCreditoCreditar _fVCad;
-                        _fVCad = new fCreditoCreditar();
-                        _fVCad.Show();
-                        Close();
-                    }
-
-                //Operador de Autorização
-                    else if (Utilidades.ControleDeTela == "autorizarporcpf")
-                    {
-                        fEntradaRuAutorizar _fVCad;
-                        _fVCad = new fEntradaRuAutorizar();
-                        //chamar todos os dados de crédito do banco de dados aqui
-                        _fVCad.Show();
-                        Close();
-                    }
-
                 }
 
                 else
                 {
-                    MessageBox.Show("CPF não Cadastrado", "Buca de CPF", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("CPF Inválido!", "Validação de CPF", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             
@@ -128,6 +138,14 @@ namespace Ru
         private void txtCPF_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCPF_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnOk_Click(sender, e);
+            }
         }
     }
 }

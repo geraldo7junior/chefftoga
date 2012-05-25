@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using RuBiz;
+using System.Timers;
 
 namespace Ru
 {
@@ -16,15 +17,16 @@ namespace Ru
         public fCadastroNovo()
         {
             InitializeComponent();
-            txtID.Text = "Ver função p/ ID";
+            txtID.Text = "Sistema Gera ID";
             CarregaCombobox();
             lblOperador.Text += Utilidades.NomeLogin;
 
             if (Utilidades.ControleDeTela == "alterar")
             {
+                txtID.Text = Utilidades.Id_Card();
                 txtNome.Text = Utilidades.Nome();
-                txtIdenditade.Text = Utilidades.Identidade();
-                //txtDataNasc.Text = Utilidades.DataNasc();
+                txtIdentidade.Text = Utilidades.Identidade();
+                txtDataNasc.Text = Utilidades.FuncDataNasc();
                 txtCpf.Text = Utilidades.CpF();
                 //cbxCurso.Text = Utilidades.Curso();
                 //cbxPeriodo.Text = Utilidades.Periodo();
@@ -34,7 +36,7 @@ namespace Ru
                 txtCidade.Text = Utilidades.Cidade();
                 cbxUF.Text = Utilidades.Uf();
                 txtCep.Text = Utilidades.Cep();
-                txtFone.Text = Utilidades.Fone();
+                txtFone.Text = Utilidades.FuncFone();
                 //rbtnSim.Checked = Utilidades.Bolsista();
 
                 txtSenha.Hide();
@@ -61,9 +63,10 @@ namespace Ru
 
         public void btnOk_Click(object sender, EventArgs e)
         {
+            //põe asterisco nos campos em branco
             lblAstID.Text = Utilidades.PreencherCampos(txtID.Text);
             lblAstNome.Text = Utilidades.PreencherCampos(txtNome.Text);
-            lblAstIdentidade.Text = Utilidades.PreencherCampos(txtIdenditade.Text);
+            lblAstIdentidade.Text = Utilidades.PreencherCampos(txtIdentidade.Text);
             lblAstDataNasc.Text = Utilidades.PreencherCampos(txtDataNasc.Text);
             lblAstCpf.Text = Utilidades.PreencherCampos(txtCpf.Text);
             lblAstCurso.Text = Utilidades.PreencherCampos(cbxCurso.Text);
@@ -75,81 +78,130 @@ namespace Ru
             lblAstUf.Text = Utilidades.PreencherCampos(cbxUF.Text);
             lblAstCep.Text = Utilidades.PreencherCampos(txtCep.Text);
             lblAstFone.Text = Utilidades.PreencherCampos(txtFone.Text);
-            if (Utilidades.ControleDeTela != "alterar")
+
+            //manda de data de nascimento, fone
+            Utilidades.DataNasc = this.txtDataNasc.Text;
+            Utilidades.cep = this.txtCep.Text;
+            Utilidades.fone = this.txtFone.Text;
+            
+            //NOVO CADASTRO
+            if (Utilidades.ControleDeTela == "novo")
             {
                 lblAstSenha.Text = Utilidades.PreencherCampos(txtSenha.Text);
                 lblAstConfirmeSenha.Text = Utilidades.PreencherCampos(txtConfirmeSenha.Text);
+
+                string cpfSpace = this.txtCpf.Text.Replace(" ", ".");
+                string cpfHifen = cpfSpace.Replace("-", ".");
+                Utilidades.Cpf = cpfHifen.Replace(".", "");
+
+                //função para validar todos os campos
+                Utilidades.ValidaCampos();
+                if (Utilidades.ControleDeValidaCampos == "N")
+                {
+                    Utilidades.ControleDeValidaCampos = "";
+                    Utilidades.ErrDataNasc = "";
+                    Utilidades.ErrCep = "";
+                    Utilidades.ErrFone = "";
+                }
+
+                //CONTROLE DE CAMPOS VAZIOS
+                else if (lblAstBairro.Text == "*" || lblAstCep.Text == "*" || lblAstCidade.Text == "*" || lblAstConfirmeSenha.Text == "*" || lblAstCpf.Text == "*" || lblAstCurso.Text == "*" || lblAstDataNasc.Text == "*" || lblAstFone.Text == "*" || lblAstID.Text == "*" || lblAstIdentidade.Text == "*" || lblAstNome.Text == "*" || lblAstNum.Text == "*" || lblAstPeriodo.Text == "*" || lblAstRua.Text == "*" || lblAstSenha.Text == "*" || lblAstUf.Text == "*")
+                {
+                    MessageBox.Show("Preencha os campos em asterisco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                //CONTROLE DA SENHA
+                else if (txtSenha.Text != txtConfirmeSenha.Text)
+                {
+                    MessageBox.Show("Senhas Diferentes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else
+                {
+                    using (CheffTogaEntities context = new CheffTogaEntities())
+                    {
+                        Usuario user = new Usuario();
+                        user.RG = this.txtIdentidade.Text;
+                        user.Nome = this.txtNome.Text;
+                        user.Logradouro = this.txtRua.Text;
+                        user.CPF = Utilidades.Cpf;
+                        //user.Periodo = this.cbxPeriodo;
+                        //curso
+                        user.Bolsista = this.rbtnSim.Checked;
+                        user.DataNascimento = this.txtDataNasc.Text;
+                        var linq = (from i in context.Usuario select i.Id_Usuario).Max();
+                        user.Id_Usuario = linq + 1;
+                        user.Id_Card = Utilidades.GerarIdCard(linq + 1);
+                        user.Numero = this.txtN.Text;
+                        user.Bairro = this.txtBairro.Text;
+                        user.Cidade = this.txtCidade.Text;
+                        user.CEP = this.txtCep.Text;
+                        user.Fone = this.txtFone.Text;
+                        user.Senha = this.txtSenha.Text;
+                        user.Id_TipoUsuario = 1;
+                        user.UF = this.cbxUF.SelectedItem.ToString();
+                        user.Saldo = 0;
+                        context.AddObject("Usuario", user);
+                        context.SaveChanges();
+
+                        MessageBox.Show("Cadastro realizado com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        Close();
+                    }
+                }
             }
 
-            //CONTROLE DA SENHA
-            if (txtSenha.Text != txtConfirmeSenha.Text)
+            //ALTERAR CADASTRO
+            else
             {
-                MessageBox.Show("Senhas Diferentes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+                string cpfSpace = this.txtCpf.Text.Replace(" ", ".");
+                string cpfHifen = cpfSpace.Replace("-", ".");
+                Utilidades.CpfNovo = cpfHifen.Replace(".", "");
 
-            else if (lblAstBairro.Text == "*" || lblAstCep.Text == "*" || lblAstCidade.Text == "*" || lblAstConfirmeSenha.Text == "*" || lblAstCpf.Text == "*" || lblAstCurso.Text == "*" || lblAstDataNasc.Text == "*" || lblAstFone.Text == "*" || lblAstID.Text == "*" || lblAstIdentidade.Text == "*" || lblAstNome.Text == "*" || lblAstNum.Text == "*" || lblAstPeriodo.Text == "*" || lblAstRua.Text == "*" || lblAstSenha.Text == "*" || lblAstUf.Text == "*")
-            {
-                MessageBox.Show("Preencha os campos em asterisco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-
-            else if (Utilidades.ControleDeTela == "novo")
-            {
-
-                using (CheffTogaEntities context = new CheffTogaEntities())
-                {   
-                    Usuario user = new Usuario();
-                    Cartao card = new Cartao();
-                    user.RG = this.txtIdenditade.Text;
-                    user.Nome = this.txtNome.Text;
-                    user.Logradouro = this.txtRua.Text;
-                    user.CPF = this.txtCpf.Text;
-                    //user.Periodo = this.cbxPeriodo;
-                    //curso
-                    user.Bolsista = this.rbtnSim.Checked;
-                    //data de nascimento
-                    var linq = (from i in context.Usuario select i.Id_Usuario).Max();
-                    user.Id_Usuario = linq + 1;
-                    user.Numero = this.txtN.Text;
-                    user.Bairro = this.txtBairro.Text;
-                    user.Cidade = this.txtCidade.Text;
-                    user.CEP = this.txtCep.Text;
-                    user.Fone = this.txtFone.Text;
-                    user.Senha = this.txtSenha.Text;
-                    user.Id_TipoUsuario = 1;
-                    user.UF = this.cbxUF.SelectedItem.ToString();
-                    card.Saldo = 0;
-                    context.AddObject("Usuario", user);
-                    context.SaveChanges();
-                    MessageBox.Show("Cadastro realizado com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    Close();
-                }                
-            }
-
-            else if (Utilidades.ControleDeTela == "alterar")
-            {
-                Utilidades.CpfNovo = txtCpf.Text;
-                Utilidades.nome = txtNome.Text;
-                Utilidades.identidade = txtIdenditade.Text;
-                Utilidades.rua = txtRua.Text;
-                Utilidades.numero = txtN.Text;
-                Utilidades.bairro = txtBairro.Text;
-                Utilidades.cidade = txtCidade.Text;
-                Utilidades.uf = cbxUF.SelectedItem.ToString();
-                Utilidades.cep = txtCep.Text;
-                Utilidades.fone = txtFone.Text;
+                //função para validar todos os campos
+                Utilidades.ValidaCampos();
+                if (Utilidades.ControleDeValidaCampos == "N")
+                {
+                    Utilidades.ControleDeValidaCampos = "";
+                    Utilidades.ErrDataNasc = "";
+                    Utilidades.ErrCep = "";
+                    Utilidades.ErrFone = "";
+                }
                 
-                Utilidades.AlterarDados();
+                //CONTROLE DE CAMPOS VAZIOS
+                else if (lblAstBairro.Text == "*" || lblAstCep.Text == "*" || lblAstCidade.Text == "*" || lblAstConfirmeSenha.Text == "*" || lblAstCpf.Text == "*" || lblAstCurso.Text == "*" || lblAstDataNasc.Text == "*" || lblAstFone.Text == "*" || lblAstID.Text == "*" || lblAstIdentidade.Text == "*" || lblAstNome.Text == "*" || lblAstNum.Text == "*" || lblAstPeriodo.Text == "*" || lblAstRua.Text == "*" || lblAstSenha.Text == "*" || lblAstUf.Text == "*")
+                {
+                    MessageBox.Show("Preencha os campos em asterisco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
 
-                Close();
+                //CONTROLE DA SENHA
+                else if (txtSenha.Text != txtConfirmeSenha.Text)
+                {
+                    MessageBox.Show("Senhas Diferentes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else
+                {
+                    Utilidades.nome = txtNome.Text;
+                    Utilidades.identidade = txtIdentidade.Text;
+                    Utilidades.rua = txtRua.Text;
+                    Utilidades.numero = txtN.Text;
+                    Utilidades.bairro = txtBairro.Text;
+                    Utilidades.cidade = txtCidade.Text;
+                    Utilidades.uf = cbxUF.SelectedItem.ToString();
+                    Utilidades.cep = txtCep.Text;
+                    Utilidades.fone = txtFone.Text;
+
+                    Utilidades.AlterarDados();
+                    Close();
+                }
             }
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente fechar o formulário e perder os dados alterados?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                Close();
             }
         }
 
@@ -175,9 +227,9 @@ namespace Ru
             if (MessageBox.Show("Deseja realmente alterar outro cadastro e perder os itens que não foram validados? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
+                Utilidades.ControleDeTela = "alterar";
                 fAlterar _fAlt;
                 _fAlt = new fAlterar();
-                Utilidades.ControleDeTela = "alterar";
                 _fAlt.Show();
             }
         }
@@ -187,9 +239,9 @@ namespace Ru
             if (MessageBox.Show("Deseja realmente visualizar outro cadastro e perder os itens que não foram validados? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
+                Utilidades.ControleDeTela = "visualizar";
                 fAlterar _fAlt;
                 _fAlt = new fAlterar();
-                Utilidades.ControleDeTela = "visualizar";
                 _fAlt.Show();
             }
         }
@@ -204,9 +256,9 @@ namespace Ru
             if (MessageBox.Show("Deseja realmente excluir outro cadastro e perder os itens que não foram validados? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
+                Utilidades.ControleDeTela = "excluir";
                 fAlterar _fAlt;
                 _fAlt = new fAlterar();
-                Utilidades.ControleDeTela = "excluir";
                 _fAlt.Show();
             }
         }

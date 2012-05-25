@@ -18,10 +18,6 @@ using System.Runtime.Serialization;
 namespace RuBiz
 {
     [DataContract(IsReference = true)]
-    [KnownType(typeof(Cartao))]
-    [KnownType(typeof(Curso))]
-    [KnownType(typeof(MovtoFinanceira))]
-    [KnownType(typeof(TipoUsuario))]
     public partial class Usuario: IObjectWithChangeTracker, INotifyPropertyChanged
     {
         #region Primitive Properties
@@ -53,14 +49,6 @@ namespace RuBiz
             {
                 if (_id_TipoUsuario != value)
                 {
-                    ChangeTracker.RecordOriginalValue("Id_TipoUsuario", _id_TipoUsuario);
-                    if (!IsDeserializing)
-                    {
-                        if (TipoUsuario != null && TipoUsuario.Id_TipoUsuario != value)
-                        {
-                            TipoUsuario = null;
-                        }
-                    }
                     _id_TipoUsuario = value;
                     OnPropertyChanged("Id_TipoUsuario");
                 }
@@ -121,14 +109,6 @@ namespace RuBiz
             {
                 if (_id_Curso != value)
                 {
-                    ChangeTracker.RecordOriginalValue("Id_Curso", _id_Curso);
-                    if (!IsDeserializing)
-                    {
-                        if (Curso != null && Curso.IdCurso != value)
-                        {
-                            Curso = null;
-                        }
-                    }
                     _id_Curso = value;
                     OnPropertyChanged("Id_Curso");
                 }
@@ -272,22 +252,7 @@ namespace RuBiz
         private string _senha;
     
         [DataMember]
-        public Nullable<int> Periodo
-        {
-            get { return _periodo; }
-            set
-            {
-                if (_periodo != value)
-                {
-                    _periodo = value;
-                    OnPropertyChanged("Periodo");
-                }
-            }
-        }
-        private Nullable<int> _periodo;
-    
-        [DataMember]
-        public Nullable<System.DateTime> DataNascimento
+        public string DataNascimento
         {
             get { return _dataNascimento; }
             set
@@ -299,126 +264,52 @@ namespace RuBiz
                 }
             }
         }
-        private Nullable<System.DateTime> _dataNascimento;
-
-        #endregion
-        #region Navigation Properties
+        private string _dataNascimento;
     
         [DataMember]
-        public TrackableCollection<Cartao> Cartao
+        public string Periodo
         {
-            get
-            {
-                if (_cartao == null)
-                {
-                    _cartao = new TrackableCollection<Cartao>();
-                    _cartao.CollectionChanged += FixupCartao;
-                }
-                return _cartao;
-            }
+            get { return _periodo; }
             set
             {
-                if (!ReferenceEquals(_cartao, value))
+                if (_periodo != value)
                 {
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
-                    }
-                    if (_cartao != null)
-                    {
-                        _cartao.CollectionChanged -= FixupCartao;
-                        // This is the principal end in an association that performs cascade deletes.
-                        // Remove the cascade delete event handler for any entities in the current collection.
-                        foreach (Cartao item in _cartao)
-                        {
-                            ChangeTracker.ObjectStateChanging -= item.HandleCascadeDelete;
-                        }
-                    }
-                    _cartao = value;
-                    if (_cartao != null)
-                    {
-                        _cartao.CollectionChanged += FixupCartao;
-                        // This is the principal end in an association that performs cascade deletes.
-                        // Add the cascade delete event handler for any entities that are already in the new collection.
-                        foreach (Cartao item in _cartao)
-                        {
-                            ChangeTracker.ObjectStateChanging += item.HandleCascadeDelete;
-                        }
-                    }
-                    OnNavigationPropertyChanged("Cartao");
+                    _periodo = value;
+                    OnPropertyChanged("Periodo");
                 }
             }
         }
-        private TrackableCollection<Cartao> _cartao;
+        private string _periodo;
     
         [DataMember]
-        public Curso Curso
+        public double Saldo
         {
-            get { return _curso; }
+            get { return _saldo; }
             set
             {
-                if (!ReferenceEquals(_curso, value))
+                if (_saldo != value)
                 {
-                    var previousValue = _curso;
-                    _curso = value;
-                    FixupCurso(previousValue);
-                    OnNavigationPropertyChanged("Curso");
+                    _saldo = value;
+                    OnPropertyChanged("Saldo");
                 }
             }
         }
-        private Curso _curso;
+        private double _saldo;
     
         [DataMember]
-        public TrackableCollection<MovtoFinanceira> MovtoFinanceira
+        public int Id_Card
         {
-            get
-            {
-                if (_movtoFinanceira == null)
-                {
-                    _movtoFinanceira = new TrackableCollection<MovtoFinanceira>();
-                    _movtoFinanceira.CollectionChanged += FixupMovtoFinanceira;
-                }
-                return _movtoFinanceira;
-            }
+            get { return _id_Card; }
             set
             {
-                if (!ReferenceEquals(_movtoFinanceira, value))
+                if (_id_Card != value)
                 {
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
-                    }
-                    if (_movtoFinanceira != null)
-                    {
-                        _movtoFinanceira.CollectionChanged -= FixupMovtoFinanceira;
-                    }
-                    _movtoFinanceira = value;
-                    if (_movtoFinanceira != null)
-                    {
-                        _movtoFinanceira.CollectionChanged += FixupMovtoFinanceira;
-                    }
-                    OnNavigationPropertyChanged("MovtoFinanceira");
+                    _id_Card = value;
+                    OnPropertyChanged("Id_Card");
                 }
             }
         }
-        private TrackableCollection<MovtoFinanceira> _movtoFinanceira;
-    
-        [DataMember]
-        public TipoUsuario TipoUsuario
-        {
-            get { return _tipoUsuario; }
-            set
-            {
-                if (!ReferenceEquals(_tipoUsuario, value))
-                {
-                    var previousValue = _tipoUsuario;
-                    _tipoUsuario = value;
-                    FixupTipoUsuario(previousValue);
-                    OnNavigationPropertyChanged("TipoUsuario");
-                }
-            }
-        }
-        private TipoUsuario _tipoUsuario;
+        private int _id_Card;
 
         #endregion
         #region ChangeTracking
@@ -498,186 +389,6 @@ namespace RuBiz
     
         protected virtual void ClearNavigationProperties()
         {
-            Cartao.Clear();
-            Curso = null;
-            MovtoFinanceira.Clear();
-            TipoUsuario = null;
-        }
-
-        #endregion
-        #region Association Fixup
-    
-        private void FixupCurso(Curso previousValue, bool skipKeys = false)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (previousValue != null && previousValue.Usuario.Contains(this))
-            {
-                previousValue.Usuario.Remove(this);
-            }
-    
-            if (Curso != null)
-            {
-                if (!Curso.Usuario.Contains(this))
-                {
-                    Curso.Usuario.Add(this);
-                }
-    
-                Id_Curso = Curso.IdCurso;
-            }
-            else if (!skipKeys)
-            {
-                Id_Curso = null;
-            }
-    
-            if (ChangeTracker.ChangeTrackingEnabled)
-            {
-                if (ChangeTracker.OriginalValues.ContainsKey("Curso")
-                    && (ChangeTracker.OriginalValues["Curso"] == Curso))
-                {
-                    ChangeTracker.OriginalValues.Remove("Curso");
-                }
-                else
-                {
-                    ChangeTracker.RecordOriginalValue("Curso", previousValue);
-                }
-                if (Curso != null && !Curso.ChangeTracker.ChangeTrackingEnabled)
-                {
-                    Curso.StartTracking();
-                }
-            }
-        }
-    
-        private void FixupTipoUsuario(TipoUsuario previousValue)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (previousValue != null && previousValue.Usuario.Contains(this))
-            {
-                previousValue.Usuario.Remove(this);
-            }
-    
-            if (TipoUsuario != null)
-            {
-                if (!TipoUsuario.Usuario.Contains(this))
-                {
-                    TipoUsuario.Usuario.Add(this);
-                }
-    
-                Id_TipoUsuario = TipoUsuario.Id_TipoUsuario;
-            }
-            if (ChangeTracker.ChangeTrackingEnabled)
-            {
-                if (ChangeTracker.OriginalValues.ContainsKey("TipoUsuario")
-                    && (ChangeTracker.OriginalValues["TipoUsuario"] == TipoUsuario))
-                {
-                    ChangeTracker.OriginalValues.Remove("TipoUsuario");
-                }
-                else
-                {
-                    ChangeTracker.RecordOriginalValue("TipoUsuario", previousValue);
-                }
-                if (TipoUsuario != null && !TipoUsuario.ChangeTracker.ChangeTrackingEnabled)
-                {
-                    TipoUsuario.StartTracking();
-                }
-            }
-        }
-    
-        private void FixupCartao(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (e.NewItems != null)
-            {
-                foreach (Cartao item in e.NewItems)
-                {
-                    item.Usuario = this;
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        if (!item.ChangeTracker.ChangeTrackingEnabled)
-                        {
-                            item.StartTracking();
-                        }
-                        ChangeTracker.RecordAdditionToCollectionProperties("Cartao", item);
-                    }
-                    // This is the principal end in an association that performs cascade deletes.
-                    // Update the event listener to refer to the new dependent.
-                    ChangeTracker.ObjectStateChanging += item.HandleCascadeDelete;
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (Cartao item in e.OldItems)
-                {
-                    if (ReferenceEquals(item.Usuario, this))
-                    {
-                        item.Usuario = null;
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("Cartao", item);
-                        // Delete the dependent end of this identifying association. If the current state is Added,
-                        // allow the relationship to be changed without causing the dependent to be deleted.
-                        if (item.ChangeTracker.State != ObjectState.Added)
-                        {
-                            item.MarkAsDeleted();
-                        }
-                    }
-                    // This is the principal end in an association that performs cascade deletes.
-                    // Remove the previous dependent from the event listener.
-                    ChangeTracker.ObjectStateChanging -= item.HandleCascadeDelete;
-                }
-            }
-        }
-    
-        private void FixupMovtoFinanceira(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (e.NewItems != null)
-            {
-                foreach (MovtoFinanceira item in e.NewItems)
-                {
-                    item.Usuario = this;
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        if (!item.ChangeTracker.ChangeTrackingEnabled)
-                        {
-                            item.StartTracking();
-                        }
-                        ChangeTracker.RecordAdditionToCollectionProperties("MovtoFinanceira", item);
-                    }
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (MovtoFinanceira item in e.OldItems)
-                {
-                    if (ReferenceEquals(item.Usuario, this))
-                    {
-                        item.Usuario = null;
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("MovtoFinanceira", item);
-                    }
-                }
-            }
         }
 
         #endregion

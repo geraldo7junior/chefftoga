@@ -77,12 +77,6 @@ namespace RuBiz
     
         #region ObjectSet Properties
     
-        public ObjectSet<Cartao> Cartao
-        {
-            get { return _cartao  ?? (_cartao = CreateObjectSet<Cartao>("Cartao")); }
-        }
-        private ObjectSet<Cartao> _cartao;
-    
         public ObjectSet<Curso> Curso
         {
             get { return _curso  ?? (_curso = CreateObjectSet<Curso>("Curso")); }
@@ -94,12 +88,6 @@ namespace RuBiz
             get { return _instituicaoEnsino  ?? (_instituicaoEnsino = CreateObjectSet<InstituicaoEnsino>("InstituicaoEnsino")); }
         }
         private ObjectSet<InstituicaoEnsino> _instituicaoEnsino;
-    
-        public ObjectSet<MovtoFinanceira> MovtoFinanceira
-        {
-            get { return _movtoFinanceira  ?? (_movtoFinanceira = CreateObjectSet<MovtoFinanceira>("MovtoFinanceira")); }
-        }
-        private ObjectSet<MovtoFinanceira> _movtoFinanceira;
     
         public ObjectSet<sysdiagrams> sysdiagrams
         {
