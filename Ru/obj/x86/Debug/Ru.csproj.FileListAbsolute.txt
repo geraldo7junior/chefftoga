@@ -1,0 +1,66 @@
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\bin\Debug\Ru.exe
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\bin\Debug\Ru.pdb
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\ResolveAssemblyReference.cache
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.exe
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.pdb
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.fIndex.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.fLoginMan.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\bin\Debug\Ru.exe.config
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.fCadastro.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru\Ru\obj\x86\Debug\Ru.fTelaLogin.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\bin\Debug\Ru.exe.config
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.exe
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.pdb
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\bin\Debug\Ru.exe
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\bin\Debug\Ru.pdb
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\ResolveAssemblyReference.cache
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.fCadastro.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.fTelaLogin.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.fIndex.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.fLoginMan.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
+A:\Sistemas de Informação\C# Vídeo Aulas\Diversos\programas\Ru - Cinza\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\chefftoga\Project\Ru\bin\Debug\Ru.exe.config
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.exe
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.pdb
+C:\Arquivos\chefftoga\Project\Ru\bin\Debug\Ru.exe.config
+C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\Ru.exe
+C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\Ru.pdb
+C:\Arquivos\chefftoga\Project\Ru\bin\Debug\Ru.exe
+C:\Arquivos\chefftoga\Project\Ru\bin\Debug\Ru.pdb
+C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\Ru.fTelaLogin.resources
+C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
+C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Arquivos\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\chefftoga\Project\Ru\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fTelaLogin.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\chefftoga\Project\Ru\bin\Debug\Ru.exe
+C:\chefftoga\Project\Ru\bin\Debug\Ru.pdb
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fAlterar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCreditoVisualizar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroNovo.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCreditoGerenciar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroVisualizar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroGerenciar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCreditoCreditar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fEntradaRuGerenciar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fEntradaRuAutorizar.resources
+C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fCadastroNovo.resources
+C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fAlterar.resources
+C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fEntradaRuGerenciar.resources
+C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fEntradaRuAutorizar.resources
+C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fCreditoCreditar.resources
+C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fCreditoVisualizar.resources
+C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fCreditoGerenciar.resources
+C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fCadastroVisualizar.resources
+C:\Arquivos\CHEFFTOGA\Project\Ru\obj\x86\Debug\Ru.fCadastroGerenciar.resources
+C:\chefftoga\Project\Ru\bin\Debug\RuBiz.dll
+C:\chefftoga\Project\Ru\bin\Debug\RuBiz.pdb
