@@ -16,3 +16,9 @@ C:\chefftoga\Project\RuBiz\bin\Debug\RuBiz.pdb
 C:\chefftoga\Project\RuBiz\obj\Debug\ResolveAssemblyReference.cache
 C:\chefftoga\Project\RuBiz\obj\Debug\RuBiz.dll
 C:\chefftoga\Project\RuBiz\obj\Debug\RuBiz.pdb
+C:\chefftoga\RuBiz\bin\Debug\RuBiz.dll.config
+C:\chefftoga\RuBiz\bin\Debug\RuBiz.dll
+C:\chefftoga\RuBiz\bin\Debug\RuBiz.pdb
+C:\chefftoga\RuBiz\obj\Debug\ResolveAssemblyReference.cache
+C:\chefftoga\RuBiz\obj\Debug\RuBiz.dll
+C:\chefftoga\RuBiz\obj\Debug\RuBiz.pdb

@@ -28,8 +28,9 @@ namespace Ru
                 txtIdentidade.Text = Utilidades.Identidade();
                 txtDataNasc.Text = Utilidades.FuncDataNasc();
                 txtCpf.Text = Utilidades.CpF();
-                //cbxCurso.Text = Utilidades.Curso();
-                //cbxPeriodo.Text = Utilidades.Periodo();
+                rbtnSim.Checked = Utilidades.Bolsista();
+                cbxCurso.Text = Utilidades.Curso();
+                cbxPeriodo.Text = Utilidades.Periodo();
                 txtRua.Text = Utilidades.Rua();
                 txtN.Text = Utilidades.Numero();
                 txtBairro.Text = Utilidades.Bairro();
@@ -37,7 +38,6 @@ namespace Ru
                 cbxUF.Text = Utilidades.Uf();
                 txtCep.Text = Utilidades.Cep();
                 txtFone.Text = Utilidades.FuncFone();
-                //rbtnSim.Checked = Utilidades.Bolsista();
 
                 txtSenha.Hide();
                 txtConfirmeSenha.Hide();
@@ -57,6 +57,7 @@ namespace Ru
                 this.cbxCurso.DisplayMember = "DescricaoCurso";
                
                //Filtro de Periodo apartir do DB:
+                
                 
             }
         }
@@ -125,8 +126,8 @@ namespace Ru
                         user.Nome = this.txtNome.Text;
                         user.Logradouro = this.txtRua.Text;
                         user.CPF = Utilidades.Cpf;
-                        //user.Periodo = this.cbxPeriodo;
-                        //curso
+                        user.Periodo = this.cbxPeriodo.SelectedIndex + 1;
+                        user.Id_Curso = this.cbxCurso.SelectedIndex + 1;
                         user.Bolsista = this.rbtnSim.Checked;
                         user.DataNascimento = this.txtDataNasc.Text;
                         var linq = (from i in context.Usuario select i.Id_Usuario).Max();
@@ -141,6 +142,9 @@ namespace Ru
                         user.Id_TipoUsuario = 1;
                         user.UF = this.cbxUF.SelectedItem.ToString();
                         user.Saldo = 0;
+                        user.Data_Refeicao = DateTime.Now.ToShortDateString();
+                        user.Almoco = false;
+                        user.Jantar = false;
                         context.AddObject("Usuario", user);
                         context.SaveChanges();
 
@@ -190,6 +194,17 @@ namespace Ru
                     Utilidades.uf = cbxUF.SelectedItem.ToString();
                     Utilidades.cep = txtCep.Text;
                     Utilidades.fone = txtFone.Text;
+                    Utilidades.bolsista = rbtnSim.Checked;
+                    
+                    using (CheffTogaEntities context = new CheffTogaEntities())
+                    {
+                        var linq = (from i in context.Curso
+                                         where i.IdCurso == (this.cbxCurso.SelectedIndex + 1)
+                                         select i.IdCurso).ToList();
+                        Utilidades.IDCurso = linq[0];
+                    }
+
+                    //usar mesma lógica acima (CURSO) para PERIODO
 
                     Utilidades.AlterarDados();
                     Close();

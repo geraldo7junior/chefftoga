@@ -20,11 +20,11 @@ namespace Ru
             txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
-            //cbxCurso.Text = Utilidades.Curso();
-            //cbxPeriodo.Text = Utilidades.Periodo();
+            rbtnSim.Checked = Utilidades.Bolsista();
+            cbxCurso.Text = Utilidades.Curso();
+            cbxPeriodo.Text = Utilidades.Periodo();
             mtxtFone.Text = Utilidades.FuncFone();
-            //rbtnSim.Checked = Utilidades.Bolsista();
-            txtSaldo.Text = Utilidades.Saldo();
+            txtSaldo.Text = Utilidades.Saldo();            
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
@@ -79,7 +79,6 @@ namespace Ru
             if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
-                // criar função para excluir cadastro do banco de dados
             }
         }
 

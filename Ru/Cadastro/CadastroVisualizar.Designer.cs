@@ -116,7 +116,7 @@
             // 
             this.mtxtFone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtFone.Location = new System.Drawing.Point(385, 522);
+            this.mtxtFone.Location = new System.Drawing.Point(350, 523);
             this.mtxtFone.Mask = "(00)0000-0000";
             this.mtxtFone.Name = "mtxtFone";
             this.mtxtFone.ReadOnly = true;
@@ -127,7 +127,7 @@
             // 
             this.mtxtCEP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtCEP.Location = new System.Drawing.Point(443, 481);
+            this.mtxtCEP.Location = new System.Drawing.Point(430, 484);
             this.mtxtCEP.Mask = "00,000-000";
             this.mtxtCEP.Name = "mtxtCEP";
             this.mtxtCEP.ReadOnly = true;
@@ -403,7 +403,7 @@
             this.lblFoto.BackColor = System.Drawing.Color.Transparent;
             this.lblFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFoto.ForeColor = System.Drawing.Color.Black;
-            this.lblFoto.Location = new System.Drawing.Point(77, 343);
+            this.lblFoto.Location = new System.Drawing.Point(77, 353);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(90, 22);
             this.lblFoto.TabIndex = 15;
@@ -579,7 +579,7 @@
             this.lblDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNasc.ForeColor = System.Drawing.Color.Black;
             this.lblDataNasc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDataNasc.Location = new System.Drawing.Point(536, 275);
+            this.lblDataNasc.Location = new System.Drawing.Point(545, 275);
             this.lblDataNasc.Name = "lblDataNasc";
             this.lblDataNasc.Size = new System.Drawing.Size(117, 22);
             this.lblDataNasc.TabIndex = 3;
@@ -594,7 +594,7 @@
             this.mtxtDataNasc.Mask = "00/00/0000";
             this.mtxtDataNasc.Name = "mtxtDataNasc";
             this.mtxtDataNasc.ReadOnly = true;
-            this.mtxtDataNasc.Size = new System.Drawing.Size(91, 22);
+            this.mtxtDataNasc.Size = new System.Drawing.Size(80, 22);
             this.mtxtDataNasc.TabIndex = 3;
             this.mtxtDataNasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

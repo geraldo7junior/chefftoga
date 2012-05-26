@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
+using RuBiz;
 
 namespace Ru
 {
@@ -20,10 +21,10 @@ namespace Ru
             txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
-            //cbxCurso.Text = Utilidades.Curso();
-            //cbxPeriodo.Text = Utilidades.Periodo();
+            rbtnSim.Checked = Utilidades.Bolsista();
+            cbxCurso.Text = Utilidades.Curso();
+            cbxPeriodo.Text = Utilidades.Periodo();
             mtxtFone.Text = Utilidades.FuncFone();
-            //rbtnSim.Checked = Utilidades.Bolsista();
             txtSaldo.Text = Utilidades.Saldo();
         }
 
@@ -37,7 +38,17 @@ namespace Ru
 
         private void fCadastro_Load(object sender, EventArgs e)
         {
-            
+            if ((DateTime.Now.Hour >= 00) && (DateTime.Now.Hour <= 15))
+            {
+                Utilidades.ControleRefeicao = "almoco";
+            }
+
+            else Utilidades.ControleRefeicao = "jantar";
+
+            if (Utilidades.VerRefeicao() == true)
+            {
+                Close();
+            }
         }
 
         private void msMenuCadastroNovo_Click(object sender, EventArgs e)
@@ -73,7 +84,6 @@ namespace Ru
             if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
-                // criar função para excluir cadastro do banco de dados
             }
         }
 
@@ -108,21 +118,48 @@ namespace Ru
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)
-        {            
+        {
             string hora = DateTime.Now.ToShortTimeString();
             string hora1 = hora[0].ToString() + hora[1].ToString();
             int h = int.Parse(hora1);
+            string data = DateTime.Now.ToShortDateString();
 
             if ((h>=17) && (h<=19))
             {
                 Utilidades.ValorASerCobrado = float.Parse("2,6");
-                Utilidades.Debitar();                
+                if (Utilidades.Debitar() == true)
+                {
+                    using (CheffTogaEntities context = new CheffTogaEntities())
+                    {
+                        string strSQL = "UPDATE Usuario SET Jantar = '" + true + "' , Data_Refeicao= '" + data + "' WHERE CPF= '" + Utilidades.Cpf + "'";
+
+                        context.ExecuteStoreCommand(strSQL);
+ 
+                        MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                }
+
+                else MessageBox.Show("Não Autorizado! Crédito Insuficiente!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                 Close();
             }
-            else if ((h >= 11) && (h <= 14))
+            else if ((h >= 00) && (h <= 14))
             {
                 Utilidades.ValorASerCobrado = float.Parse("3");
-                Utilidades.Debitar();
+                if (Utilidades.Debitar() == true)
+                {
+                    using (CheffTogaEntities context = new CheffTogaEntities())
+                    {
+                        string strSQL = "UPDATE Usuario SET Almoco = '" + true + "' , Data_Refeicao= '" + data + "' WHERE CPF= '" + Utilidades.Cpf + "'";
+
+                        context.ExecuteStoreCommand(strSQL);
+
+                        MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                }
+
+                else MessageBox.Show("Não Autorizado! Crédito Insuficiente!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               
                 Close();
             }
 
@@ -132,16 +169,8 @@ namespace Ru
                 Close();
             }
             
-
-            /* 
-             *      função para debitar do saldo no DB
-             *      o sistema autoriza a entrada no Ru
-             *      torna o campo "refeicao" do DB com valor "TRUE"
-             *      torna o campo "em_espera" do DB com valor "TRUE" ==>> autorização da bandeja (depois de passar na bandeja o valor volta pra "FALSE")
-             *      MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-             *      Close();
-             * }
-             */
+                       
+             // tornar o campo "em_espera" do DB com valor "TRUE" ==>> autorização da bandeja (depois de passar na bandeja o valor volta pra "FALSE")
 
         }
 

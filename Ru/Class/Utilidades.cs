@@ -13,53 +13,59 @@ namespace Ru
 {
     class Utilidades
     {
-        public static string ControleDeTela, asterisco, NomeLogin, Cpf, CpfNovo, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "";
+        public static string ControleDeTela, asterisco, NomeLogin, Cpf, CpfNovo, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "", ControleRefeicao = "";
 
-        public static int id,IdCard;
+        public static int id,IdCard, IDCurso, IDPeriodo;
 
         public static float credito,ValorASerCobrado, saldo;
 
         public static DateTime DataNascFormato;
 
+        public static bool retorno, bolsista;
 
 
-        public static void Debitar()
+        public static Boolean Debitar()
         {
-            using (CheffTogaEntities context = new CheffTogaEntities())
+            if (Bolsista() == false)
             {
-
-                var SaldoAtual = (from i in context.Usuario
-                            where i.CPF == Cpf
-                            select i.Saldo).ToList();
-
-                saldo = float.Parse(SaldoAtual[0].ToString());
-
-                string StrResultado = Math.Round((saldo - ValorASerCobrado),2).ToString();
-
-                float resultado = float.Parse(StrResultado);
-
-                if (ValorASerCobrado <= saldo)
+                using (CheffTogaEntities context = new CheffTogaEntities())
                 {
-                    string desconto = resultado.ToString().Replace(",", ".");
 
-                    string strSQL = "UPDATE Usuario SET Saldo =" + desconto  + " WHERE CPF='" + Cpf + "'";
+                    var SaldoAtual = (from i in context.Usuario
+                                      where i.CPF == Cpf
+                                      select i.Saldo).ToList();
 
-                    context.ExecuteStoreCommand(strSQL);
+                    saldo = float.Parse(SaldoAtual[0].ToString());
 
-                    var NovoSaldo = (from j in context.Usuario
-                                     where j.CPF == Cpf
-                                     select j.Saldo).ToList();
+                    string StrResultado = Math.Round((saldo - ValorASerCobrado), 2).ToString();
 
-                    saldo = float.Parse(NovoSaldo[0].ToString());
+                    float resultado = float.Parse(StrResultado);
 
-                    MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    if (ValorASerCobrado <= saldo)
+                    {
+                        string desconto = resultado.ToString().Replace(",", ".");
+
+                        string strSQL = "UPDATE Usuario SET Saldo =" + desconto + " WHERE CPF='" + Cpf + "'";
+
+                        context.ExecuteStoreCommand(strSQL);
+
+                        var NovoSaldo = (from j in context.Usuario
+                                         where j.CPF == Cpf
+                                         select j.Saldo).ToList();
+
+                        saldo = float.Parse(NovoSaldo[0].ToString());
+
+                        return true;
+                    }
+
+                    else return false;
                 }
-
-                else
-                {
-                    MessageBox.Show("Não Autorizado! Crédito Insuficiente!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-             }
+            }
+            else
+            {
+                MessageBox.Show("Entrada sem desconto! Aluno BOLSISTA!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return true;
+            }
 
         }
 
@@ -99,6 +105,57 @@ namespace Ru
             }
 
         }
+
+        public static Boolean VerRefeicao()
+        {
+            Usuario user = new Usuario();
+
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var DataRef = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Data_Refeicao).ToList();
+                DateTime data_refeicao = DateTime.Parse(DataRef[0].ToString());
+
+                var VerAlmoco = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Almoco).ToList();
+                bool ver_almoco = bool.Parse(VerAlmoco[0].ToString());
+
+                var VerJantar = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Jantar).ToList();
+                bool ver_jantar = bool.Parse(VerJantar[0].ToString());
+
+                if (ControleRefeicao == "almoco")
+                {
+                    if ((data_refeicao.Date < DateTime.Now.Date) || (ver_almoco == false) || (data_refeicao == null))
+                    {
+                        retorno = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("O almoço já foi efetuado hoje!", "Não Autorizado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        retorno = true;
+                    }
+                }
+                
+                else if (ControleRefeicao == "jantar")
+                {
+                    if ((data_refeicao.Date < DateTime.Now.Date) || (ver_jantar == false) || (data_refeicao == null))
+                    {
+                        retorno = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("A Janta já foi efetuada hoje!", "Não Autorizado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        retorno = true;
+                    }
+                }
+            }
+
+            return retorno;
+        }
         
         public static void AlterarDados()
         {
@@ -114,7 +171,7 @@ namespace Ru
                 string strSQL = "UPDATE Usuario SET Nome ='" + nome.Replace("'", "''") + "', RG='" + identidade +
                                 "', Logradouro='" + rua + "', Numero='" + numero + "', Bairro='" + bairro +
                                 "', Cidade='" + cidade + "',CPF='" + CpfNovo + "', UF='" + uf + "', CEP='" + cep +
-                                "', Fone='" + fone + "' WHERE Id_Usuario=" + id;
+                                "', Fone='" + fone + "', Bolsista='" + bolsista + "', Id_Curso=" + IDCurso + " WHERE Id_Usuario=" + id;
 
                 context.ExecuteStoreCommand(strSQL);
 
@@ -181,6 +238,17 @@ namespace Ru
             }
         }
 
+        public static Boolean Bolsista()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var item = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Bolsista).ToList();
+                return bool.Parse(item[0].ToString());
+            }
+        }
+
         public static String Nome()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
@@ -227,41 +295,41 @@ namespace Ru
             }
         }
 
-        /*Curso(),Periodo(),Bolsista()
         public static String Curso()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
-                var item = (from i in context.Usuario
+                var IdCurso = (from i in context.Usuario
                             where i.CPF == Cpf
-                            select i.Curso).ToList();
-                return item[0];
+                            select i.Id_Curso).ToList();
+                IDCurso = int.Parse(IdCurso[0].ToString());
+
+                var Curso = (from i in context.Curso
+                             where i.IdCurso == IDCurso
+                             select i.DescricaoCurso).ToList();
+                string curso = Curso[0];
+
+                return curso;
             }
         }
 
-        
         public static String Periodo()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
-                var item = (from i in context.Usuario
-                            where i.CPF == Cpf
-                            select i.Periodo).ToList();
-                return item[0];
+                var IdPeriodo = (from i in context.Usuario
+                               where i.CPF == Cpf
+                               select i.Periodo).ToList();
+                IDPeriodo = int.Parse(IdPeriodo[0].ToString());
+
+                var Periodo = (from i in context.Curso
+                             where i.IdCurso == IDCurso
+                             select i.DescricaoCurso).ToList();
+                string periodo = Periodo[0];
+
+                return periodo;
             }
-        }
-          
-        public static String Bolsista()
-        {
-            using (CheffTogaEntities context = new CheffTogaEntities())
-            {
-                var item = (from i in context.Usuario
-                            where i.CPF == Cpf
-                            select i.Bolsista).ToList();
-                return item[0];
-            }
-        }
-        */
+        }          
 
         public static String Saldo()
         {            

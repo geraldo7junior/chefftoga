@@ -203,7 +203,7 @@
             this.lblFoto.BackColor = System.Drawing.Color.Transparent;
             this.lblFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFoto.ForeColor = System.Drawing.Color.Black;
-            this.lblFoto.Location = new System.Drawing.Point(77, 343);
+            this.lblFoto.Location = new System.Drawing.Point(77, 351);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(90, 22);
             this.lblFoto.TabIndex = 13;

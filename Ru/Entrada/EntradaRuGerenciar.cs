@@ -24,12 +24,6 @@ namespace Ru
             fCadastroNovo _fCad;
             _fCad = new fCadastroNovo();
             _fCad.Show();
-         
-            //fIndex _fLog;
-            //_fLog = new fIndex();
-            //_fLog.Show();
-            //Hide();
-
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

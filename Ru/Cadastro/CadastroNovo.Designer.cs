@@ -561,7 +561,6 @@
             "9º",
             "10º",
             "11º",
-            "12º",
             "Pós-Graduação",
             "Mestrado",
             "Doutorado",

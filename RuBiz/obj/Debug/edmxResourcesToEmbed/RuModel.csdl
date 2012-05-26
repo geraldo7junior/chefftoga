@@ -64,23 +64,26 @@
       <PropertyRef Name="Id_Usuario" />
     </Key>
     <Property Type="Int32" Name="Id_Usuario" Nullable="false" />
+    <Property Type="Int32" Name="Id_Card" Nullable="false" />
     <Property Type="Int32" Name="Id_TipoUsuario" Nullable="false" />
     <Property Type="String" Name="Nome" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="RG" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="CPF" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="Id_Curso" />
+    <Property Type="String" Name="CPF" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Id_Curso" Nullable="false" />
     <Property Type="String" Name="Logradouro" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Numero" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Bairro" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Cidade" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="UF" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
-    <Property Type="String" Name="CEP" Nullable="false" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="CEP" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Fone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Type="Boolean" Name="Bolsista" />
+    <Property Type="Boolean" Name="Bolsista" Nullable="false" />
     <Property Type="String" Name="Senha" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="DataNascimento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Periodo" MaxLength="13" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="Periodo" />
     <Property Type="Double" Name="Saldo" Nullable="false" />
-    <Property Type="Int32" Name="Id_Card" Nullable="false" />
+    <Property Type="String" Name="Data_Refeicao" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Almoco" Nullable="false" />
+    <Property Type="Boolean" Name="Jantar" Nullable="false" />
   </EntityType>
 </Schema>

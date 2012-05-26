@@ -60,19 +60,22 @@
           <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="RG" Type="nvarchar" Nullable="false" MaxLength="15" />
           <Property Name="CPF" Type="nvarchar" Nullable="false" MaxLength="11" />
-          <Property Name="Id_Curso" Type="int" />
+          <Property Name="Id_Curso" Type="int" Nullable="false" />
           <Property Name="Logradouro" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Numero" Type="nvarchar" Nullable="false" MaxLength="15" />
           <Property Name="Bairro" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Cidade" Type="nvarchar(max)" Nullable="false" />
           <Property Name="UF" Type="char" Nullable="false" MaxLength="2" />
-          <Property Name="CEP" Type="nchar" Nullable="false" MaxLength="8" />
+          <Property Name="CEP" Type="nvarchar" Nullable="false" MaxLength="20" />
           <Property Name="Fone" Type="nvarchar" Nullable="false" MaxLength="20" />
-          <Property Name="Bolsista" Type="bit" />
+          <Property Name="Bolsista" Type="bit" Nullable="false" />
           <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DataNascimento" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Periodo" Type="nchar" MaxLength="13" />
+          <Property Name="Periodo" Type="int" />
           <Property Name="Saldo" Type="float" Nullable="false" />
+          <Property Name="Data_Refeicao" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Almoco" Type="bit" Nullable="false" />
+          <Property Name="Jantar" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_Curso_InstituicaoEnsino">
           <End Role="InstituicaoEnsino" Type="RuModel.Store.InstituicaoEnsino" Multiplicity="1" />
@@ -117,6 +120,12 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'CheffToga.dbo.Periodo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Periodo">
+        <Property Name="Periodo" Type="nchar" MaxLength="13" />
+      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -185,24 +194,27 @@
             <PropertyRef Name="Id_Usuario" />
           </Key>
           <Property Type="Int32" Name="Id_Usuario" Nullable="false" />
+          <Property Type="Int32" Name="Id_Card" Nullable="false" />
           <Property Type="Int32" Name="Id_TipoUsuario" Nullable="false" />
           <Property Type="String" Name="Nome" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="RG" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="CPF" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="Id_Curso" />
+          <Property Type="String" Name="CPF" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Id_Curso" Nullable="false" />
           <Property Type="String" Name="Logradouro" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Numero" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Bairro" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Cidade" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="UF" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Type="String" Name="CEP" Nullable="false" MaxLength="8" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CEP" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Fone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Type="Boolean" Name="Bolsista" />
+          <Property Type="Boolean" Name="Bolsista" Nullable="false" />
           <Property Type="String" Name="Senha" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="DataNascimento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Periodo" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="Periodo" />
           <Property Type="Double" Name="Saldo" Nullable="false" />
-          <Property Type="Int32" Name="Id_Card" Nullable="false" />
+          <Property Type="String" Name="Data_Refeicao" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Almoco" Nullable="false" />
+          <Property Type="Boolean" Name="Jantar" Nullable="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -251,7 +263,9 @@
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="RuModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
-                <ScalarProperty Name="Id_Card" ColumnName="Id_Card" />
+                <ScalarProperty Name="Jantar" ColumnName="Jantar" />
+                <ScalarProperty Name="Almoco" ColumnName="Almoco" />
+                <ScalarProperty Name="Data_Refeicao" ColumnName="Data_Refeicao" />
                 <ScalarProperty Name="Saldo" ColumnName="Saldo" />
                 <ScalarProperty Name="Periodo" ColumnName="Periodo" />
                 <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
@@ -269,6 +283,7 @@
                 <ScalarProperty Name="RG" ColumnName="RG" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Id_TipoUsuario" ColumnName="Id_TipoUsuario" />
+                <ScalarProperty Name="Id_Card" ColumnName="Id_Card" />
                 <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -303,7 +318,7 @@
           <ConnectorPoint PointX="2.25" PointY="1.8939925130208337" />
           <ConnectorPoint PointX="3" PointY="1.8939925130208337" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="5.375" PointY="0.75" Height="4.480205078125" />
+        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="5.375" PointY="0.75" Height="5.2494108072916665" />
       </Diagram>
     </Diagrams>
   </Designer>

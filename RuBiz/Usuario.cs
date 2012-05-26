@@ -42,6 +42,21 @@ namespace RuBiz
         private int _id_Usuario;
     
         [DataMember]
+        public int Id_Card
+        {
+            get { return _id_Card; }
+            set
+            {
+                if (_id_Card != value)
+                {
+                    _id_Card = value;
+                    OnPropertyChanged("Id_Card");
+                }
+            }
+        }
+        private int _id_Card;
+    
+        [DataMember]
         public int Id_TipoUsuario
         {
             get { return _id_TipoUsuario; }
@@ -102,7 +117,7 @@ namespace RuBiz
         private string _cPF;
     
         [DataMember]
-        public Nullable<int> Id_Curso
+        public int Id_Curso
         {
             get { return _id_Curso; }
             set
@@ -114,7 +129,7 @@ namespace RuBiz
                 }
             }
         }
-        private Nullable<int> _id_Curso;
+        private int _id_Curso;
     
         [DataMember]
         public string Logradouro
@@ -222,7 +237,7 @@ namespace RuBiz
         private string _fone;
     
         [DataMember]
-        public Nullable<bool> Bolsista
+        public bool Bolsista
         {
             get { return _bolsista; }
             set
@@ -234,7 +249,7 @@ namespace RuBiz
                 }
             }
         }
-        private Nullable<bool> _bolsista;
+        private bool _bolsista;
     
         [DataMember]
         public string Senha
@@ -267,7 +282,7 @@ namespace RuBiz
         private string _dataNascimento;
     
         [DataMember]
-        public string Periodo
+        public Nullable<int> Periodo
         {
             get { return _periodo; }
             set
@@ -279,7 +294,7 @@ namespace RuBiz
                 }
             }
         }
-        private string _periodo;
+        private Nullable<int> _periodo;
     
         [DataMember]
         public double Saldo
@@ -297,19 +312,49 @@ namespace RuBiz
         private double _saldo;
     
         [DataMember]
-        public int Id_Card
+        public string Data_Refeicao
         {
-            get { return _id_Card; }
+            get { return _data_Refeicao; }
             set
             {
-                if (_id_Card != value)
+                if (_data_Refeicao != value)
                 {
-                    _id_Card = value;
-                    OnPropertyChanged("Id_Card");
+                    _data_Refeicao = value;
+                    OnPropertyChanged("Data_Refeicao");
                 }
             }
         }
-        private int _id_Card;
+        private string _data_Refeicao;
+    
+        [DataMember]
+        public bool Almoco
+        {
+            get { return _almoco; }
+            set
+            {
+                if (_almoco != value)
+                {
+                    _almoco = value;
+                    OnPropertyChanged("Almoco");
+                }
+            }
+        }
+        private bool _almoco;
+    
+        [DataMember]
+        public bool Jantar
+        {
+            get { return _jantar; }
+            set
+            {
+                if (_jantar != value)
+                {
+                    _jantar = value;
+                    OnPropertyChanged("Jantar");
+                }
+            }
+        }
+        private bool _jantar;
 
         #endregion
         #region ChangeTracking

@@ -22,17 +22,16 @@ namespace Ru
             txtIdentidade.Text = Utilidades.Identidade();
             mtxtDataNasc.Text = Utilidades.FuncDataNasc();
             mtxtCPF.Text = Utilidades.CpF();
-            //cbxCurso.Text = Utilidades.Curso();
-            //cbxPeriodo.Text = Utilidades.Periodo();
+            rbtnSim.Checked = Utilidades.Bolsista();
+            cbxCurso.Text = Utilidades.Curso();
+            cbxPeriodo.Text = Utilidades.Periodo();
             txtRua.Text = Utilidades.Rua();
             txtN.Text = Utilidades.Numero();
             txtBairro.Text = Utilidades.Bairro();
             txtCidade.Text = Utilidades.Cidade();
             cbxUF.Text = Utilidades.Uf();
             mtxtCEP.Text = Utilidades.Cep();
-            mtxtFone.Text = Utilidades.FuncFone();
-            //rbtnSim.Checked = Utilidades.Bolsista();
-           
+            mtxtFone.Text = Utilidades.FuncFone();           
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
@@ -61,7 +60,6 @@ namespace Ru
             Utilidades.ControleDeTela = "alterar";
             fCadastroNovo _fCad;
             _fCad = new fCadastroNovo();
-            //chamar todos os dados do banco de dados aqui
             _fCad.Show();
             Close();
         }

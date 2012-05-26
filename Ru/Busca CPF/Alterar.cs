@@ -96,11 +96,11 @@ namespace Ru
                     //Operador de Autorização
                         else if (Utilidades.ControleDeTela == "autorizarporcpf")
                         {
+                            Close();
                             fEntradaRuAutorizar _fVCad;
                             _fVCad = new fEntradaRuAutorizar();
-                            //chamar todos os dados de crédito do banco de dados aqui
                             _fVCad.Show();
-                            Close();
+                            
                         }
 
                     }

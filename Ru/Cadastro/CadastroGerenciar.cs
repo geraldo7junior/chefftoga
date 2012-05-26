@@ -23,12 +23,6 @@ namespace Ru
             fCadastroNovo _fCad;
             _fCad = new fCadastroNovo();
             _fCad.Show();
-         
-            //fIndex _fLog;
-            //_fLog = new fIndex();
-            //_fLog.Show();
-            //Hide();
-
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,7 +33,6 @@ namespace Ru
                 fTelaLogin _tela;
                 _tela = new fTelaLogin();
                 _tela.Show();
-
             }
         }
 
@@ -54,7 +47,6 @@ namespace Ru
             fAlterar _fAlt;
             _fAlt = new fAlterar();
             _fAlt.Show();
-            
         }
 
         public void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
