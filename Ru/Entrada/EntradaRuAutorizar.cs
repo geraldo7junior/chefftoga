@@ -143,7 +143,7 @@ namespace Ru
 
                 Close();
             }
-            else if ((h >= 00) && (h <= 14))
+            else if ((h >= 11) && (h <= 14))
             {
                 Utilidades.ValorASerCobrado = float.Parse("3");
                 if (Utilidades.Debitar() == true)
