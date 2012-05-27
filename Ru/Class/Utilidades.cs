@@ -135,7 +135,7 @@ namespace Ru
                     }
                     else
                     {
-                        MessageBox.Show("O almoço já foi efetuado hoje!", "Não Autorizado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Cartão já utilizado para Almoço!", "Não Autorizado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         retorno = true;
                     }
                 }
@@ -148,7 +148,7 @@ namespace Ru
                     }
                     else
                     {
-                        MessageBox.Show("A Janta já foi efetuada hoje!", "Não Autorizado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Cartão já utilizado para o Jantar!", "Não Autorizado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         retorno = true;
                     }
                 }

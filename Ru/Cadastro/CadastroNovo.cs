@@ -91,7 +91,7 @@ namespace Ru
                 lblAstSenha.Text = Utilidades.PreencherCampos(txtSenha.Text);
                 lblAstConfirmeSenha.Text = Utilidades.PreencherCampos(txtConfirmeSenha.Text);
 
-                string cpfSpace = this.txtCpf.Text.Replace(" ", ".");
+                string cpfSpace = this.txtCpf.Text.ToString().Replace(" ", ".");
                 string cpfHifen = cpfSpace.Replace("-", ".");
                 Utilidades.Cpf = cpfHifen.Replace(".", "");
 
@@ -157,7 +157,7 @@ namespace Ru
             //ALTERAR CADASTRO
             else
             {
-                string cpfSpace = this.txtCpf.Text.Replace(" ", ".");
+                string cpfSpace = this.txtCpf.Text.ToString().Replace(" ", ".");
                 string cpfHifen = cpfSpace.Replace("-", ".");
                 Utilidades.CpfNovo = cpfHifen.Replace(".", "");
 
