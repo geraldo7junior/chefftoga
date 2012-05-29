@@ -12,9 +12,9 @@ using RuBiz;
 
 namespace Ru
 {
-    public partial class fAlterar : Form
+    public partial class fBuscar : Form
     {
-        public fAlterar()
+        public fBuscar()
         {
             InitializeComponent();
         }
@@ -40,27 +40,32 @@ namespace Ru
                         //Operador de Cadastro          
                         if (Utilidades.ControleDeTela == "alterar")
                         {
-                            fCadastroNovo _fCad;
-                            _fCad = new fCadastroNovo();
-                            //chamar todos os dados do banco de dados aqui
-                            _fCad.Show();
-                            Close();
+                            if (Utilidades.ErrAluno(Utilidades.Cpf) == false)
+                            {
+                                fCadastroNovo _fCad;
+                                _fCad = new fCadastroNovo();
+                                _fCad.Show();
+                                Close();
+                            }
+                            else MessageBox.Show("Este cadastro pertence à um funcionário. Acesse-o através da opção Cadastro -> Operador", "Área Gerencial", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                         else if (Utilidades.ControleDeTela == "visualizar")
                         {
-                            fCadastroVisualizar _fVCad;
-                            _fVCad = new fCadastroVisualizar();
-                            //chamar todos os dados do banco de dados aqui
-                            _fVCad.Show();
-                            Close();
+                            if (Utilidades.ErrAluno(Utilidades.Cpf) == false)
+                            {
+                                fCadastroVisualizar _fCad;
+                                _fCad = new fCadastroVisualizar();
+                                _fCad.Show();
+                                Close();
+                            }
+                            else MessageBox.Show("Este cadastro pertence à um funcionário. Acesse-o através da opção Cadastro -> Operador", "Área Gerencial", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                         else if (Utilidades.ControleDeTela == "excluir")
                         {
                             fCadastroVisualizar _fVCad;
                             _fVCad = new fCadastroVisualizar();
-                            //chamar todos os dados do banco de dados aqui
                             _fVCad.Show();
                             Close();
                             if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -80,7 +85,6 @@ namespace Ru
                         {
                             fCreditoVisualizar _fVCad;
                             _fVCad = new fCreditoVisualizar();
-                            //chamar todos os dados de crédito do banco de dados aqui
                             _fVCad.Show();
                             Close();
                         }
@@ -101,6 +105,32 @@ namespace Ru
                             _fVCad = new fEntradaRuAutorizar();
                             _fVCad.Show();
                             
+                        }
+
+                        //Gerente Cadastro de Operadores ALTERAR          
+                        else if (Utilidades.ControleDeTela == "alterarOp")
+                        {
+                            if (Utilidades.ErrOperador(Utilidades.Cpf) == false)
+                            {
+                                fCadastroNovoOp _fCad;
+                                _fCad = new fCadastroNovoOp();
+                                _fCad.Show();
+                                Close();
+                            }
+                            else MessageBox.Show("Este cadastro pertence à um aluno. Acesse-o através da opção Cadastro -> Aluno", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        //Gerente Cadastro de Operadores VISUALIZAR          
+                        else if (Utilidades.ControleDeTela == "visualizarOp")
+                        {
+                            if (Utilidades.ErrOperador(Utilidades.Cpf) == false)
+                            {
+                                fCadastroVisualizarOp _fCad;
+                                _fCad = new fCadastroVisualizarOp();
+                                _fCad.Show();
+                                Close();
+                            }
+                            else MessageBox.Show("Este cadastro pertence à um aluno. Acesse-o através da opção Cadastro -> Aluno", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     }

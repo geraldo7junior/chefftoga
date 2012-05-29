@@ -1,6 +1,6 @@
 ﻿namespace Ru
 {
-    partial class fAlterar
+    partial class fBuscar
     {
         /// <summary>
         /// Required designer variable.
@@ -65,7 +65,7 @@
             this.txtCPF.TabIndex = 0;
             this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress_1);
             // 
-            // fAlterar
+            // fBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,7 +75,7 @@
             this.Controls.Add(this.btnOk);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "fAlterar";
+            this.Name = "fBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar";
             this.Load += new System.EventHandler(this.fAlterar_Load);
