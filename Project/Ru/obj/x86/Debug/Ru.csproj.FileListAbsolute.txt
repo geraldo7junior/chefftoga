@@ -44,7 +44,6 @@ C:\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\chefftoga\Project\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\chefftoga\Project\Ru\bin\Debug\Ru.exe
 C:\chefftoga\Project\Ru\bin\Debug\Ru.pdb
-C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fAlterar.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCreditoVisualizar.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroNovo.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCreditoGerenciar.resources
@@ -85,3 +84,7 @@ C:\chefftoga\Ru\obj\x86\Debug\Ru.fCadastroGerenciar.resources
 C:\chefftoga\Ru\obj\x86\Debug\Ru.Properties.Resources.resources
 C:\chefftoga\Ru\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\chefftoga\Ru\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fGerenteGerenciar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroNovoOp.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroVisualizarOp.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fBuscar.resources

@@ -67,5 +67,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Movimentacao">
+      <EntityTypeMapping TypeName="RuModel.Movimentacao">
+        <MappingFragment StoreEntitySet="Movimentacao">
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+          <ScalarProperty Name="Campos" ColumnName="Campos" />
+          <ScalarProperty Name="Tipo_Movimentacao" ColumnName="Tipo_Movimentacao" />
+          <ScalarProperty Name="Hora_Movimentacao" ColumnName="Hora_Movimentacao" />
+          <ScalarProperty Name="Data_Movimentacao" ColumnName="Data_Movimentacao" />
+          <ScalarProperty Name="Nome_Aluno" ColumnName="Nome_Aluno" />
+          <ScalarProperty Name="Id_Aluno" ColumnName="Id_Aluno" />
+          <ScalarProperty Name="Nome_Operador" ColumnName="Nome_Operador" />
+          <ScalarProperty Name="Id_Operador" ColumnName="Id_Operador" />
+          <ScalarProperty Name="Id_Movimentacao" ColumnName="Id_Movimentacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

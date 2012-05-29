@@ -3,6 +3,7 @@
   <EntityContainer Name="RuModelStoreContainer">
     <EntitySet Name="Curso" EntityType="RuModel.Store.Curso" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="InstituicaoEnsino" EntityType="RuModel.Store.InstituicaoEnsino" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Movimentacao" EntityType="RuModel.Store.Movimentacao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="RuModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TipoUsuario" EntityType="RuModel.Store.TipoUsuario" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Usuario" EntityType="RuModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
@@ -27,6 +28,22 @@
     <Property Name="Id_Instituicao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Descricao" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Estado" Type="char" Nullable="false" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="Movimentacao">
+    <Key>
+      <PropertyRef Name="Id_Movimentacao" />
+    </Key>
+    <Property Name="Id_Movimentacao" Type="int" Nullable="false" />
+    <Property Name="Id_Operador" Type="int" />
+    <Property Name="Nome_Operador" Type="varchar" MaxLength="50" />
+    <Property Name="Id_Aluno" Type="int" />
+    <Property Name="Nome_Aluno" Type="varchar" MaxLength="50" />
+    <Property Name="Data_Movimentacao" Type="varchar" MaxLength="50" />
+    <Property Name="Hora_Movimentacao" Type="varchar" MaxLength="50" />
+    <Property Name="Tipo_Movimentacao" Type="varchar" MaxLength="50" />
+    <Property Name="Campos" Type="varchar" MaxLength="50" />
+    <Property Name="Observacao" Type="text" />
+    <Property Name="Valor" Type="float" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

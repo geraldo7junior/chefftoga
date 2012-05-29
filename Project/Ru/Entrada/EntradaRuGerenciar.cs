@@ -45,8 +45,8 @@ namespace Ru
 
         public void msMenuCadastroAlterar_Click(object sender, EventArgs e)
         {
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
             Utilidades.ControleDeTela = "alterar";
             _fAlt.Show();
             
@@ -54,16 +54,16 @@ namespace Ru
 
         public void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
         {
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
             Utilidades.ControleDeTela = "autorizarporcpf";
             _fAlt.Show();
         }
 
         public void msMenuCadastroExcluir_Click(object sender, EventArgs e)
         {
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
             Utilidades.ControleDeTela = "excluir";
             _fAlt.Show();
         }
@@ -75,8 +75,8 @@ namespace Ru
 
         private void pctbBoasVindas_Click(object sender, EventArgs e)
         {
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
             Utilidades.ControleDeTela = "autorizarporcpf";
             _fAlt.Show();
         }

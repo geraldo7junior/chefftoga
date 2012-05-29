@@ -59,7 +59,7 @@
             this.msMenuCadastroSair});
             this.msMenuCadastro.Name = "msMenuCadastro";
             this.msMenuCadastro.Size = new System.Drawing.Size(59, 20);
-            this.msMenuCadastro.Text = "&Opções";
+            this.msMenuCadastro.Text = "&Entrada";
             // 
             // msMenuCadastroVisualizar
             // 

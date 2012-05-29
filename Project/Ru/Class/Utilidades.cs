@@ -15,7 +15,7 @@ namespace Ru
     {
         public static string ControleDeTela, asterisco, NomeLogin, Cpf, CpfNovo, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "", ControleRefeicao = "";
 
-        public static int id,IdCard, IDCurso, IDPeriodo;
+        public static int id,IdCard, IDCurso, IDPeriodo, TipoUser;
 
         public static float credito,ValorASerCobrado, saldo;
 
@@ -168,7 +168,7 @@ namespace Ru
 
                 id = linq[0];
 
-                string strSQL = "UPDATE Usuario SET Nome ='" + nome.Replace("'", "''") + "', RG='" + identidade +
+                string strSQL = "UPDATE Usuario SET Nome ='" + nome.Replace("'", "''") + "', Id_TipoUsuario= '" + TipoUser + "', RG='" + identidade +
                                 "', Logradouro='" + rua + "', Numero='" + numero + "', Bairro='" + bairro +
                                 "', Cidade='" + cidade + "',CPF='" + CpfNovo + "', UF='" + uf + "', CEP='" + cep +
                                 "', Fone='" + fone + "', Bolsista='" + bolsista + "', Id_Curso=" + IDCurso + " WHERE Id_Usuario=" + id;
@@ -212,6 +212,29 @@ namespace Ru
 
         }
 
+        public static Int32 SelecionaUsuario(bool gerente, bool cadastro, bool credito, bool entrada)
+        {
+            if (gerente == true) return 5;
+            else if (cadastro == true) return 2;
+            else if (credito == true) return 3;
+            else return 4;
+        }
+
+        public static String PreencherCamposVF(bool gerente, bool cadastro, bool credito, bool entrada)
+        {
+            if ((gerente == false) && (cadastro == false) && (credito == false) && (entrada == false))
+            {
+                asterisco = "*";
+            }
+            else
+            {
+                asterisco = "";
+            }
+
+            return (asterisco);
+
+        }
+
         public static String PreencherCampos(String campo)
         {
             if (campo == "")
@@ -235,6 +258,20 @@ namespace Ru
                             where i.CPF == Cpf
                             select i.Id_Card).ToList();
                 return item[0].ToString();
+            }
+        }
+
+        public static Int32 TipoOperador()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+
+                var item = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Id_TipoUsuario).ToList();
+                Int32 tipo = int.Parse(item[0].ToString());
+
+                return tipo;
             }
         }
 
@@ -559,6 +596,40 @@ namespace Ru
                 }
 
                 else return false;
+            }
+        }
+
+        public static Boolean ErrAluno(string cpf)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var linq = (from i in context.Usuario
+                            where i.CPF == cpf
+                            select i.Id_TipoUsuario).ToList();
+
+                if ((linq.ToList().Count() == 1) && (linq[0] != 1))
+                {
+                    return true;
+                }
+                else return false;
+
+            }
+        }
+
+        public static Boolean ErrOperador(string cpf)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var linq = (from i in context.Usuario
+                            where i.CPF == cpf
+                            select i.Id_TipoUsuario).ToList();
+
+                if ((linq.ToList().Count() == 1) && (linq[0] == 1))
+                {
+                    return true;
+                }
+                else return false;
+
             }
         }
     }

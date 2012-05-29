@@ -43,8 +43,8 @@ namespace Ru
         public void msMenuCadastroAlterar_Click(object sender, EventArgs e)
         {
             Utilidades.ControleDeTela = "creditar";
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
             _fAlt.Show();
             
         }
@@ -52,16 +52,16 @@ namespace Ru
         public void msMenuCadastroVisualizar_Click(object sender, EventArgs e)
         {
             Utilidades.ControleDeTela = "visualizarsaldo";
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
             _fAlt.Show();
         }
 
         public void msMenuCadastroExcluir_Click(object sender, EventArgs e)
         {
             Utilidades.ControleDeTela = "excluir";
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
             _fAlt.Show();
         }
 

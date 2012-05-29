@@ -69,7 +69,9 @@ namespace Ru
 
                         else if ((linq.ToList().Count() == 1) && (linq[0] == 5))
                         {
-                            //abrir pagina do Gerente
+                            fGerenteGerenciar form = new fGerenteGerenciar();
+                            form.Show();
+                            this.Hide();
                         }
 
                         else if ((linq.ToList().Count() == 1) && (linq[0] == 6))

@@ -68,8 +68,8 @@ namespace Ru
         {
             this.Close();
             Utilidades.ControleDeTela = "visualizar";
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
             _fAlt.Show();
 
         }

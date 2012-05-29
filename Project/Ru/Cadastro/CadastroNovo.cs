@@ -243,8 +243,8 @@ namespace Ru
             {
                 this.Close();
                 Utilidades.ControleDeTela = "alterar";
-                fAlterar _fAlt;
-                _fAlt = new fAlterar();
+                fBuscar _fAlt;
+                _fAlt = new fBuscar();
                 _fAlt.Show();
             }
         }
@@ -255,8 +255,8 @@ namespace Ru
             {
                 this.Close();
                 Utilidades.ControleDeTela = "visualizar";
-                fAlterar _fAlt;
-                _fAlt = new fAlterar();
+                fBuscar _fAlt;
+                _fAlt = new fBuscar();
                 _fAlt.Show();
             }
         }
@@ -272,8 +272,8 @@ namespace Ru
             {
                 this.Close();
                 Utilidades.ControleDeTela = "excluir";
-                fAlterar _fAlt;
-                _fAlt = new fAlterar();
+                fBuscar _fAlt;
+                _fAlt = new fBuscar();
                 _fAlt.Show();
             }
         }

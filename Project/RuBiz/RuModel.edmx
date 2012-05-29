@@ -8,6 +8,7 @@
         <EntityContainer Name="RuModelStoreContainer">
           <EntitySet Name="Curso" EntityType="RuModel.Store.Curso" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="InstituicaoEnsino" EntityType="RuModel.Store.InstituicaoEnsino" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Movimentacao" EntityType="RuModel.Store.Movimentacao" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="RuModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TipoUsuario" EntityType="RuModel.Store.TipoUsuario" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Usuario" EntityType="RuModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
@@ -32,6 +33,22 @@
           <Property Name="Id_Instituicao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Descricao" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="Estado" Type="char" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="Movimentacao">
+          <Key>
+            <PropertyRef Name="Id_Movimentacao" />
+          </Key>
+          <Property Name="Id_Movimentacao" Type="int" Nullable="false" />
+          <Property Name="Id_Operador" Type="int" />
+          <Property Name="Nome_Operador" Type="varchar" MaxLength="50" />
+          <Property Name="Id_Aluno" Type="int" />
+          <Property Name="Nome_Aluno" Type="varchar" MaxLength="50" />
+          <Property Name="Data_Movimentacao" Type="varchar" MaxLength="50" />
+          <Property Name="Hora_Movimentacao" Type="varchar" MaxLength="50" />
+          <Property Name="Tipo_Movimentacao" Type="varchar" MaxLength="50" />
+          <Property Name="Campos" Type="varchar" MaxLength="50" />
+          <Property Name="Observacao" Type="text" />
+          <Property Name="Valor" Type="float" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -140,6 +157,7 @@
             <End Role="Curso" EntitySet="Curso" />
           </AssociationSet>
           <EntitySet Name="Usuario" EntityType="RuModel.Usuario" />
+          <EntitySet Name="Movimentacao" EntityType="RuModel.Movimentacao" />
         </EntityContainer>
         <EntityType Name="Curso">
           <Key>
@@ -216,6 +234,22 @@
           <Property Type="Boolean" Name="Almoco" Nullable="false" />
           <Property Type="Boolean" Name="Jantar" Nullable="false" />
         </EntityType>
+        <EntityType Name="Movimentacao">
+          <Key>
+            <PropertyRef Name="Id_Movimentacao" />
+          </Key>
+          <Property Type="Int32" Name="Id_Movimentacao" Nullable="false" />
+          <Property Type="Int32" Name="Id_Operador" />
+          <Property Type="String" Name="Nome_Operador" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Id_Aluno" />
+          <Property Type="String" Name="Nome_Aluno" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Data_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Hora_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tipo_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Campos" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Observacao" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Valor" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -288,6 +322,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Movimentacao">
+            <EntityTypeMapping TypeName="RuModel.Movimentacao">
+              <MappingFragment StoreEntitySet="Movimentacao">
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="Campos" ColumnName="Campos" />
+                <ScalarProperty Name="Tipo_Movimentacao" ColumnName="Tipo_Movimentacao" />
+                <ScalarProperty Name="Hora_Movimentacao" ColumnName="Hora_Movimentacao" />
+                <ScalarProperty Name="Data_Movimentacao" ColumnName="Data_Movimentacao" />
+                <ScalarProperty Name="Nome_Aluno" ColumnName="Nome_Aluno" />
+                <ScalarProperty Name="Id_Aluno" ColumnName="Id_Aluno" />
+                <ScalarProperty Name="Nome_Operador" ColumnName="Nome_Operador" />
+                <ScalarProperty Name="Id_Operador" ColumnName="Id_Operador" />
+                <ScalarProperty Name="Id_Movimentacao" ColumnName="Id_Movimentacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -319,6 +370,7 @@
           <ConnectorPoint PointX="3" PointY="1.8939925130208337" />
         </AssociationConnector>
         <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="5.375" PointY="0.75" Height="5.2494108072916665" />
+        <EntityTypeShape EntityType="RuModel.Movimentacao" Width="1.5" PointX="7.75" PointY="0.75" Height="3.1340950520833317" />
       </Diagram>
     </Diagrams>
   </Designer>

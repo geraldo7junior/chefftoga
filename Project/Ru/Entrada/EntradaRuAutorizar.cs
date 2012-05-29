@@ -72,8 +72,8 @@ namespace Ru
         {
 
             this.Close();
-            fAlterar _fAlt;
-            _fAlt = new fAlterar();
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
             Utilidades.ControleDeTela = "visualizarsaldo";
             _fAlt.Show();
 

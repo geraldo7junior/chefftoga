@@ -106,6 +106,12 @@ namespace RuBiz
             get { return _usuario  ?? (_usuario = CreateObjectSet<Usuario>("Usuario")); }
         }
         private ObjectSet<Usuario> _usuario;
+    
+        public ObjectSet<Movimentacao> Movimentacao
+        {
+            get { return _movimentacao  ?? (_movimentacao = CreateObjectSet<Movimentacao>("Movimentacao")); }
+        }
+        private ObjectSet<Movimentacao> _movimentacao;
 
         #endregion
     }
