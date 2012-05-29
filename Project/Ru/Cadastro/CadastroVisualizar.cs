@@ -16,6 +16,8 @@ namespace Ru
 
             InitializeComponent();
             lblOperador.Text += Utilidades.NomeLogin;
+            fCadastroNovo fcadnovo = new fCadastroNovo();
+            Utilidades.CarregaCombobox(cbxCurso, cbxPeriodo);
 
             txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
@@ -80,7 +82,6 @@ namespace Ru
             {
                 Utilidades.ExcluirCadastro();
 
-                MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Close();
                 
             }

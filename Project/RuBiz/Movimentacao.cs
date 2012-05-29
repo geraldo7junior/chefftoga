@@ -57,6 +57,21 @@ namespace RuBiz
         private Nullable<int> _id_Operador;
     
         [DataMember]
+        public string Cpf_Operador
+        {
+            get { return _cpf_Operador; }
+            set
+            {
+                if (_cpf_Operador != value)
+                {
+                    _cpf_Operador = value;
+                    OnPropertyChanged("Cpf_Operador");
+                }
+            }
+        }
+        private string _cpf_Operador;
+    
+        [DataMember]
         public string Nome_Operador
         {
             get { return _nome_Operador; }
@@ -85,6 +100,21 @@ namespace RuBiz
             }
         }
         private Nullable<int> _id_Aluno;
+    
+        [DataMember]
+        public string Cpf_Aluno
+        {
+            get { return _cpf_Aluno; }
+            set
+            {
+                if (_cpf_Aluno != value)
+                {
+                    _cpf_Aluno = value;
+                    OnPropertyChanged("Cpf_Aluno");
+                }
+            }
+        }
+        private string _cpf_Aluno;
     
         [DataMember]
         public string Nome_Aluno

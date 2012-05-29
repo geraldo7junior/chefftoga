@@ -50,6 +50,7 @@
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
+            this.encerrarSeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbBoasVindas)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +72,8 @@
             // 
             // relatórioToolStripMenuItem
             // 
+            this.relatórioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.encerrarSeToolStripMenuItem});
             this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
             this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.relatórioToolStripMenuItem.Text = "&Gerenciar";
@@ -238,6 +241,13 @@
             this.pctbBoasVindas.TabIndex = 64;
             this.pctbBoasVindas.TabStop = false;
             // 
+            // encerrarSeToolStripMenuItem
+            // 
+            this.encerrarSeToolStripMenuItem.Name = "encerrarSeToolStripMenuItem";
+            this.encerrarSeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.encerrarSeToolStripMenuItem.Text = "&Encerrar Sessão";
+            this.encerrarSeToolStripMenuItem.Click += new System.EventHandler(this.encerrarSeToolStripMenuItem_Click);
+            // 
             // fGerenteGerenciar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +299,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem encerrarSeToolStripMenuItem;
 
 
 

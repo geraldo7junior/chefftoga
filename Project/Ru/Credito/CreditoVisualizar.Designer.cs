@@ -60,10 +60,16 @@
             this.lblCPF = new System.Windows.Forms.Label();
             this.printDialogDoc = new System.Windows.Forms.PrintDialog();
             this.lblRS = new System.Windows.Forms.Label();
+            this.gpbTipoOperador = new System.Windows.Forms.GroupBox();
+            this.rbtnGerente = new System.Windows.Forms.RadioButton();
+            this.rbtnOpEntradaRU = new System.Windows.Forms.RadioButton();
+            this.rbtnOpCredito = new System.Windows.Forms.RadioButton();
+            this.rbtnOpCadastro = new System.Windows.Forms.RadioButton();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
             this.gpbBolsista.SuspendLayout();
+            this.gpbTipoOperador.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbxPeriodo
@@ -93,7 +99,7 @@
             "Pós-Doutorado"});
             this.cbxPeriodo.Location = new System.Drawing.Point(385, 340);
             this.cbxPeriodo.Name = "cbxPeriodo";
-            this.cbxPeriodo.Size = new System.Drawing.Size(120, 24);
+            this.cbxPeriodo.Size = new System.Drawing.Size(172, 24);
             this.cbxPeriodo.TabIndex = 6;
             this.cbxPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbxPeriodo_SelectedIndexChanged);
             // 
@@ -480,6 +486,67 @@
             this.lblRS.TabIndex = 86;
             this.lblRS.Text = "R$";
             // 
+            // gpbTipoOperador
+            // 
+            this.gpbTipoOperador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gpbTipoOperador.BackColor = System.Drawing.Color.Transparent;
+            this.gpbTipoOperador.Controls.Add(this.rbtnGerente);
+            this.gpbTipoOperador.Controls.Add(this.rbtnOpEntradaRU);
+            this.gpbTipoOperador.Controls.Add(this.rbtnOpCredito);
+            this.gpbTipoOperador.Controls.Add(this.rbtnOpCadastro);
+            this.gpbTipoOperador.Enabled = false;
+            this.gpbTipoOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbTipoOperador.Location = new System.Drawing.Point(54, 395);
+            this.gpbTipoOperador.Name = "gpbTipoOperador";
+            this.gpbTipoOperador.Size = new System.Drawing.Size(145, 146);
+            this.gpbTipoOperador.TabIndex = 88;
+            this.gpbTipoOperador.TabStop = false;
+            this.gpbTipoOperador.Text = "Tipo do Operador";
+            // 
+            // rbtnGerente
+            // 
+            this.rbtnGerente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbtnGerente.AutoSize = true;
+            this.rbtnGerente.Location = new System.Drawing.Point(11, 29);
+            this.rbtnGerente.Name = "rbtnGerente";
+            this.rbtnGerente.Size = new System.Drawing.Size(76, 19);
+            this.rbtnGerente.TabIndex = 3;
+            this.rbtnGerente.Text = "Gerente";
+            this.rbtnGerente.UseVisualStyleBackColor = true;
+            // 
+            // rbtnOpEntradaRU
+            // 
+            this.rbtnOpEntradaRU.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbtnOpEntradaRU.AutoSize = true;
+            this.rbtnOpEntradaRU.Location = new System.Drawing.Point(11, 104);
+            this.rbtnOpEntradaRU.Name = "rbtnOpEntradaRU";
+            this.rbtnOpEntradaRU.Size = new System.Drawing.Size(125, 19);
+            this.rbtnOpEntradaRU.TabIndex = 2;
+            this.rbtnOpEntradaRU.Text = "Op. Entrada RU";
+            this.rbtnOpEntradaRU.UseVisualStyleBackColor = true;
+            // 
+            // rbtnOpCredito
+            // 
+            this.rbtnOpCredito.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbtnOpCredito.AutoSize = true;
+            this.rbtnOpCredito.Location = new System.Drawing.Point(11, 79);
+            this.rbtnOpCredito.Name = "rbtnOpCredito";
+            this.rbtnOpCredito.Size = new System.Drawing.Size(97, 19);
+            this.rbtnOpCredito.TabIndex = 1;
+            this.rbtnOpCredito.Text = "Op. Crédito";
+            this.rbtnOpCredito.UseVisualStyleBackColor = true;
+            // 
+            // rbtnOpCadastro
+            // 
+            this.rbtnOpCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbtnOpCadastro.AutoSize = true;
+            this.rbtnOpCadastro.Location = new System.Drawing.Point(11, 54);
+            this.rbtnOpCadastro.Name = "rbtnOpCadastro";
+            this.rbtnOpCadastro.Size = new System.Drawing.Size(108, 19);
+            this.rbtnOpCadastro.TabIndex = 0;
+            this.rbtnOpCadastro.Text = "Op. Cadastro";
+            this.rbtnOpCadastro.UseVisualStyleBackColor = true;
+            // 
             // fCreditoVisualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,6 +555,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.gpbTipoOperador);
             this.Controls.Add(this.lblRS);
             this.Controls.Add(this.mtxtCPF);
             this.Controls.Add(this.lblCPF);
@@ -523,6 +591,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).EndInit();
             this.gpbBolsista.ResumeLayout(false);
             this.gpbBolsista.PerformLayout();
+            this.gpbTipoOperador.ResumeLayout(false);
+            this.gpbTipoOperador.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,5 +631,10 @@
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.PrintDialog printDialogDoc;
         private System.Windows.Forms.Label lblRS;
+        private System.Windows.Forms.GroupBox gpbTipoOperador;
+        private System.Windows.Forms.RadioButton rbtnGerente;
+        private System.Windows.Forms.RadioButton rbtnOpEntradaRU;
+        private System.Windows.Forms.RadioButton rbtnOpCredito;
+        private System.Windows.Forms.RadioButton rbtnOpCadastro;
     }
 }

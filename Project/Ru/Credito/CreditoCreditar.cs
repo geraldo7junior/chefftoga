@@ -16,15 +16,34 @@ namespace Ru
         {
             InitializeComponent();
             lblOperador.Text += Utilidades.NomeLogin;
+            Utilidades.CarregaCombobox(cbxCurso, cbxPeriodo);
 
             txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             rbtnSim.Checked = Utilidades.Bolsista();
-            cbxCurso.Text = Utilidades.Curso();
-            cbxPeriodo.Text = Utilidades.Periodo();
             mtxtFone.Text = Utilidades.FuncFone();
-            txtSaldo.Text = Utilidades.Saldo();            
+            txtSaldo.Text = Utilidades.Saldo();    
+            if (Utilidades.ControleDeTela == "creditar")
+            {
+                cbxCurso.Text = Utilidades.Curso();
+                cbxPeriodo.Text = Utilidades.Periodo();
+                gpbTipoOperador.Hide();
+            }
+
+            else
+            {                   
+                lblPeriodo.Hide();
+                lblCurso.Hide();
+                cbxPeriodo.Hide();
+                cbxCurso.Hide();
+
+                //tipo de operador
+                if (Utilidades.TipoOperador() == 2) rbtnOpCadastro.Checked = true;
+                else if (Utilidades.TipoOperador() == 3) rbtnOpCredito.Checked = true;
+                else if (Utilidades.TipoOperador() == 4) rbtnOpEntradaRU.Checked = true;
+                else if (Utilidades.TipoOperador() == 5) rbtnGerente.Checked = true;
+            }        
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
@@ -37,6 +56,11 @@ namespace Ru
 
         private void fCadastro_Load(object sender, EventArgs e)
         {
+            if (Utilidades.ControleDeTela == "creditarOp")
+            {
+                MessageBox.Show("Operação não autorizada! Este usuário é um Operador.", "Autorização", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
 
         }
 
@@ -122,6 +146,18 @@ namespace Ru
 
                 float saldo = float.Parse(SaldoDB[0].ToString());
 
+                var listaid = (from i in context.Usuario
+                               where i.CPF == Utilidades.Cpf
+                               select i.Id_Card).ToList();
+
+                int id = listaid[0];
+
+                var listanome = (from i in context.Usuario
+                               where i.CPF == Utilidades.Cpf
+                               select i.Nome).ToList();
+
+                string nome = listanome[0];
+
                 if ((saldo + float.Parse(txtValorASerCreditado.Text)) > 999)
                 {
                     MessageBox.Show("NÃO AUTORIZADO! O saldo não pode exceder R$ 999,00", "Autorização!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -133,6 +169,8 @@ namespace Ru
                     Utilidades.credito = float.Parse(ValorSpace);
 
                     Utilidades.Creditar();
+
+                    Utilidades.Movimentacoes(id, Utilidades.Cpf, nome, "Inserir Crédito", "-", "-", float.Parse(txtValorASerCreditado.Text)); //registrador de movimentacões
 
                     MessageBox.Show("O novo saldo do aluno " + txtNome.Text + " é R$ " + Utilidades.saldo + "!", "Operação realizada com sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();

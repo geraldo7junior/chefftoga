@@ -18,7 +18,7 @@ namespace Ru
         {
             InitializeComponent();
             txtID.Text = "Sistema Gera ID";
-            CarregaCombobox();
+            Utilidades.CarregaCombobox(cbxCurso,cbxPeriodo);
             lblOperador.Text += Utilidades.NomeLogin;
 
             if (Utilidades.ControleDeTela == "alterar")
@@ -47,21 +47,7 @@ namespace Ru
             }
         }
 
-        private void CarregaCombobox()
-        {
-            using (CheffTogaEntities context = new CheffTogaEntities())
-            {
-               //Filtro de Cursos apartir do DB:
-                this.cbxCurso.DataSource = from i in context.Curso select i;
-                this.cbxCurso.ValueMember = "IdCurso";
-                this.cbxCurso.DisplayMember = "DescricaoCurso";
-               
-               //Filtro de Periodo apartir do DB:
-                
-                
-            }
-        }
-
+        
         public void btnOk_Click(object sender, EventArgs e)
         {
             //põe asterisco nos campos em branco
@@ -70,8 +56,10 @@ namespace Ru
             lblAstIdentidade.Text = Utilidades.PreencherCampos(txtIdentidade.Text);
             lblAstDataNasc.Text = Utilidades.PreencherCampos(txtDataNasc.Text);
             lblAstCpf.Text = Utilidades.PreencherCampos(txtCpf.Text);
-            lblAstCurso.Text = Utilidades.PreencherCampos(cbxCurso.Text);
-            lblAstPeriodo.Text = Utilidades.PreencherCampos(cbxPeriodo.Text);
+            if (cbxCurso.Text == "--Selecione Curso--") lblAstCurso.Text = "*";
+            else lblAstCurso.Text = "";
+            if (cbxPeriodo.Text == "--Selecione Periodo--") lblAstPeriodo.Text = "*";
+            else lblAstPeriodo.Text = "";
             lblAstRua.Text = Utilidades.PreencherCampos(txtRua.Text);
             lblAstNum.Text = Utilidades.PreencherCampos(txtN.Text);
             lblAstBairro.Text = Utilidades.PreencherCampos(txtBairro.Text);
@@ -126,7 +114,7 @@ namespace Ru
                         user.Nome = this.txtNome.Text;
                         user.Logradouro = this.txtRua.Text;
                         user.CPF = Utilidades.Cpf;
-                        user.Periodo = this.cbxPeriodo.SelectedIndex + 1;
+                        user.Id_Periodo = this.cbxPeriodo.SelectedIndex + 1;
                         user.Id_Curso = this.cbxCurso.SelectedIndex + 1;
                         user.Bolsista = this.rbtnSim.Checked;
                         user.DataNascimento = this.txtDataNasc.Text;
@@ -147,6 +135,8 @@ namespace Ru
                         user.Jantar = false;
                         context.AddObject("Usuario", user);
                         context.SaveChanges();
+                        
+                        Utilidades.Movimentacoes(user.Id_Card,Utilidades.Cpf,txtNome.Text,"Novo Cadastro de Aluno","Todos","-",0); //registrador de movimentacões
 
                         MessageBox.Show("Cadastro realizado com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         Close();
@@ -185,6 +175,7 @@ namespace Ru
 
                 else
                 {
+                    Utilidades.IdCard = int.Parse(txtID.Text);
                     Utilidades.nome = txtNome.Text;
                     Utilidades.identidade = txtIdentidade.Text;
                     Utilidades.rua = txtRua.Text;
@@ -195,6 +186,7 @@ namespace Ru
                     Utilidades.cep = txtCep.Text;
                     Utilidades.fone = txtFone.Text;
                     Utilidades.bolsista = rbtnSim.Checked;
+                    Utilidades.TipoUser = 1;
                     
                     using (CheffTogaEntities context = new CheffTogaEntities())
                     {
@@ -202,11 +194,18 @@ namespace Ru
                                          where i.IdCurso == (this.cbxCurso.SelectedIndex + 1)
                                          select i.IdCurso).ToList();
                         Utilidades.IDCurso = linq[0];
+
+                        var linqPeriodo = (from i in context.Periodo
+                                    where i.Id_Periodo == (this.cbxPeriodo.SelectedIndex + 1)
+                                    select i.Id_Periodo).ToList();
+                        Utilidades.IDPeriodo = linqPeriodo[0];
                     }
 
                     //usar mesma lógica acima (CURSO) para PERIODO
 
                     Utilidades.AlterarDados();
+                    Utilidades.Movimentacoes(Utilidades.IdCard, Utilidades.Cpf, txtNome.Text, "Alterar Cadastro de Aluno", "falta especificar", "-", 0); //registrador de movimentacões
+
                     Close();
                 }
             }

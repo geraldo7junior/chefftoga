@@ -75,7 +75,7 @@ namespace Ru
             Utilidades.fone = this.txtFone.Text;
             
             //NOVO CADASTRO
-            if (Utilidades.ControleDeTela == "novo")
+            if (Utilidades.ControleDeTela == "novoOp")
             {
                 lblAstSenha.Text = Utilidades.PreencherCampos(txtSenha.Text);
                 lblAstConfirmeSenha.Text = Utilidades.PreencherCampos(txtConfirmeSenha.Text);
@@ -135,6 +135,7 @@ namespace Ru
                         context.AddObject("Usuario", user);
                         context.SaveChanges();
 
+                        Utilidades.Movimentacoes(user.Id_Card, Utilidades.Cpf, txtNome.Text, "Novo Cadastro de Operador", "Todos", "-", 0); //registrador de movimentacões
                         MessageBox.Show("Cadastro realizado com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         Close();
                     }
@@ -189,6 +190,7 @@ namespace Ru
                     //usar mesma lógica acima (CURSO) para PERIODO
 
                     Utilidades.AlterarDados();
+                    Utilidades.Movimentacoes(Utilidades.IdCard, Utilidades.Cpf, txtNome.Text, "Alterar Cadastro de Operador", "falta especificar", "-", 0); //registrador de movimentacões
                     Close();
                 }
             }
@@ -253,7 +255,7 @@ namespace Ru
             if (MessageBox.Show("Deseja realmente excluir outro cadastro e perder os itens que não foram validados? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
-                Utilidades.ControleDeTela = "excluir";
+                Utilidades.ControleDeTela = "excluirOp";
                 fBuscar _fAlt;
                 _fAlt = new fBuscar();
                 _fAlt.Show();

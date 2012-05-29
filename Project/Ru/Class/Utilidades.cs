@@ -13,9 +13,9 @@ namespace Ru
 {
     class Utilidades
     {
-        public static string ControleDeTela, asterisco, NomeLogin, Cpf, CpfNovo, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "", ControleRefeicao = "";
+        public static string ControleDeTela, asterisco, NomeLogin, Cpf, CpfNovo, CpfOperador, NomeOperador, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "", ControleRefeicao = "", ALUNOouOPERADOR;
 
-        public static int id,IdCard, IDCurso, IDPeriodo, TipoUser;
+        public static int id,IdCard, IDCurso, IDPeriodo, TipoUser, IDOperador;
 
         public static float credito,ValorASerCobrado, saldo;
 
@@ -23,6 +23,22 @@ namespace Ru
 
         public static bool retorno, bolsista;
 
+        public static void CarregaCombobox(ComboBox cbxCurso, ComboBox cbxPeriodo)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                //Filtro de Cursos apartir do DB:
+                cbxCurso.DataSource = from i in context.Curso select i;
+                cbxCurso.ValueMember = "IdCurso";
+                cbxCurso.DisplayMember = "DescricaoCurso";
+
+                //Filtro de Periodo apartir do DB:
+                cbxPeriodo.DataSource = from i in context.Periodo select i;
+                cbxPeriodo.ValueMember = "Id_Periodo";
+                cbxPeriodo.DisplayMember = "Descricao_Periodo";
+
+            }
+        }
 
         public static Boolean Debitar()
         {
@@ -36,6 +52,19 @@ namespace Ru
                                       select i.Saldo).ToList();
 
                     saldo = float.Parse(SaldoAtual[0].ToString());
+
+                    var listid = (from i in context.Usuario
+                                      where i.CPF == Cpf
+                                      select i.Id_Card).ToList();
+
+                    id = listid[0];
+
+                    var listnome = (from i in context.Usuario
+                                  where i.CPF == Cpf
+                                  select i.Nome).ToList();
+
+                    string nomebolsa = listnome[0];
+
 
                     string StrResultado = Math.Round((saldo - ValorASerCobrado), 2).ToString();
 
@@ -55,6 +84,8 @@ namespace Ru
 
                         saldo = float.Parse(NovoSaldo[0].ToString());
 
+                        Movimentacoes(id, Utilidades.Cpf, nomebolsa, "Entrada de Aluno com Desconto", "-", "-", ValorASerCobrado); //registrador de movimentacões 
+
                         return true;
                     }
 
@@ -63,8 +94,26 @@ namespace Ru
             }
             else
             {
-                MessageBox.Show("Entrada sem desconto! Aluno BOLSISTA!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return true;
+                using (CheffTogaEntities context = new CheffTogaEntities())
+                {
+                    var listnome = (from i in context.Usuario
+                                    where i.CPF == Cpf
+                                    select i.Nome).ToList();
+
+                    string nomebolsa = listnome[0];
+
+                    if (ControleDeTela == "autorizarporcpf")
+                    {
+                        ALUNOouOPERADOR = "ALUNO";
+                    }
+                    else ALUNOouOPERADOR = "OPERADOR";
+
+
+                    Movimentacoes(id, Utilidades.Cpf, nomebolsa, "Entrada de " + ALUNOouOPERADOR + " BOLSISTA" , "-", "-", 0); //registrador de movimentacões 
+
+                    MessageBox.Show("Entrada sem desconto! " + ALUNOouOPERADOR + " BOLSISTA!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return true;
+                }
             }
 
         }
@@ -171,7 +220,7 @@ namespace Ru
                 string strSQL = "UPDATE Usuario SET Nome ='" + nome.Replace("'", "''") + "', Id_TipoUsuario= '" + TipoUser + "', RG='" + identidade +
                                 "', Logradouro='" + rua + "', Numero='" + numero + "', Bairro='" + bairro +
                                 "', Cidade='" + cidade + "',CPF='" + CpfNovo + "', UF='" + uf + "', CEP='" + cep +
-                                "', Fone='" + fone + "', Bolsista='" + bolsista + "', Id_Curso=" + IDCurso + " WHERE Id_Usuario=" + id;
+                                "', Fone='" + fone + "', Bolsista='" + bolsista + "', Id_Curso=" + IDCurso + ", Id_Periodo= " + IDPeriodo + " WHERE Id_Usuario=" + id;
 
                 context.ExecuteStoreCommand(strSQL);
 
@@ -189,14 +238,33 @@ namespace Ru
                 var linq = (from i in context.Usuario
                             where i.CPF == Cpf
                             select i.Id_Usuario).ToList();
-
                 id = linq[0];
 
-                string strSQLCartao = "DELETE FROM Usuario WHERE Id_Usuario=" + id + "";                
-                context.ExecuteStoreCommand(strSQLCartao);
+                var linqIdCard = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Id_Card).ToList();
+                IdCard = linqIdCard[0];
 
-                string strSQLUsuario = "DELETE FROM Usuario WHERE Id_Usuario=" + id + "";
-                context.ExecuteStoreCommand(strSQLUsuario);
+                var linqnome = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Nome).ToList();
+                string name = linqnome[0];
+
+                var linqTipo = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Id_TipoUsuario).ToList();
+                int TipoUser = linqTipo[0];
+
+                if (TipoUser == 1) Utilidades.Movimentacoes(IdCard, Utilidades.Cpf, name, "Exclusão de Cadastro de Aluno", "Todos", "-", 0); //registrador de movimentacões
+                else Utilidades.Movimentacoes(IdCard, Utilidades.Cpf, name, "Exclusão de Cadastro de Operador", "Todos", "-", 0); //registrador de movimentacões
+
+                if (IdCard != IDOperador)
+                {
+                    string strSQLCartao = "DELETE FROM Usuario WHERE Id_Usuario=" + id + "";
+                    context.ExecuteStoreCommand(strSQLCartao);
+                    MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else MessageBox.Show("Operação não Autorizada! Usuário Conectado ao Sistema.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -356,12 +424,12 @@ namespace Ru
             {
                 var IdPeriodo = (from i in context.Usuario
                                where i.CPF == Cpf
-                               select i.Periodo).ToList();
+                               select i.Id_Periodo).ToList();
                 IDPeriodo = int.Parse(IdPeriodo[0].ToString());
 
-                var Periodo = (from i in context.Curso
-                             where i.IdCurso == IDCurso
-                             select i.DescricaoCurso).ToList();
+                var Periodo = (from i in context.Periodo
+                             where i.Id_Periodo == IDPeriodo
+                             select i.Descricao_Periodo).ToList();
                 string periodo = Periodo[0];
 
                 return periodo;
@@ -630,6 +698,30 @@ namespace Ru
                 }
                 else return false;
 
+            }
+        }
+
+        public static void Movimentacoes(int IdAluno, string CpfAluno, string NomeAluno,string TipoMovimentacao,string Campos,string Observacao,float valor)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                Movimentacao mov = new Movimentacao();
+                var linq = (from i in context.Movimentacao select i.Id_Movimentacao).Max();
+                mov.Id_Movimentacao = linq + 1;
+                mov.Id_Operador = IDOperador;
+                mov.Cpf_Operador = CpfOperador;
+                mov.Nome_Operador = NomeOperador;
+                mov.Id_Aluno = IdAluno;
+                mov.Cpf_Aluno = CpfAluno;
+                mov.Nome_Aluno = NomeAluno;
+                mov.Data_Movimentacao = DateTime.Now.ToShortDateString();
+                mov.Hora_Movimentacao = DateTime.Now.ToShortTimeString();
+                mov.Tipo_Movimentacao = TipoMovimentacao;
+                mov.Campos = Campos;
+                mov.Observacao = Observacao;
+                mov.Valor = valor;
+                context.AddObject("Movimentacao", mov);
+                context.SaveChanges();
             }
         }
     }

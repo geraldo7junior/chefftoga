@@ -29,6 +29,7 @@ namespace Ru
         {
             if (MessageBox.Show("Deseja realmente encerrar a sessão?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                Utilidades.Movimentacoes(0, "-", "-", "Logoff", "-", "-", 0); //registrador de movimentacões
                 Close();
                 fTelaLogin _tela;
                 _tela = new fTelaLogin();

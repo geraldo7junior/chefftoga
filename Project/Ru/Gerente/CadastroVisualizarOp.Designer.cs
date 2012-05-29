@@ -606,6 +606,7 @@
             this.gpbTipoOperador.Controls.Add(this.rbtnOpEntradaRU);
             this.gpbTipoOperador.Controls.Add(this.rbtnOpCredito);
             this.gpbTipoOperador.Controls.Add(this.rbtnOpCadastro);
+            this.gpbTipoOperador.Enabled = false;
             this.gpbTipoOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbTipoOperador.Location = new System.Drawing.Point(66, 401);
             this.gpbTipoOperador.Name = "gpbTipoOperador";

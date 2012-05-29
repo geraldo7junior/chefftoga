@@ -85,7 +85,6 @@ namespace Ru
             {
                 Utilidades.ExcluirCadastro();
 
-                MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Close();
                 
             }

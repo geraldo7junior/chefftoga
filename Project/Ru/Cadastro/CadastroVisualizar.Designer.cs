@@ -90,26 +90,9 @@
             this.cbxPeriodo.Enabled = false;
             this.cbxPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPeriodo.FormattingEnabled = true;
-            this.cbxPeriodo.Items.AddRange(new object[] {
-            "1º",
-            "2º",
-            "3º",
-            "4º",
-            "5º",
-            "6º",
-            "7º",
-            "8º",
-            "9º",
-            "10º",
-            "11º",
-            "12º",
-            "Pós-Graduação",
-            "Mestrado",
-            "Doutorado",
-            "Pós-Doutorado"});
             this.cbxPeriodo.Location = new System.Drawing.Point(385, 387);
             this.cbxPeriodo.Name = "cbxPeriodo";
-            this.cbxPeriodo.Size = new System.Drawing.Size(120, 24);
+            this.cbxPeriodo.Size = new System.Drawing.Size(172, 24);
             this.cbxPeriodo.TabIndex = 6;
             // 
             // mtxtFone
@@ -166,47 +149,6 @@
             this.cbxCurso.Enabled = false;
             this.cbxCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCurso.FormattingEnabled = true;
-            this.cbxCurso.Items.AddRange(new object[] {
-            "Administração",
-            "Administração UAST",
-            "Agronomia",
-            "Agronomia UAG",
-            "Agronomia UAST",
-            "Bacharelado em Ciência da Computação",
-            "Bacharelado em Ciência da Computação UAG",
-            "Bacharelado em Ciências Biológicas",
-            "Bacharelado em Ciências Biológicas UAST",
-            "Bacharelado em Ciências Econômicas",
-            "Bacharelado em Ciências Econômicas UAST",
-            "Bacharelado em Ciências Sociais",
-            "Bacharelado em Gastronomia e Segurança Alimentar",
-            "Bacharelado em Sistemas de Informação",
-            "Bacharelado em Sistemas de Informação UAST",
-            "Economia Doméstica",
-            "Engenharia Agrícola e Ambiental",
-            "Engenharia de Alimentos UAG",
-            "Engenharia de Pesca",
-            "Engenharia de Pesca UAST",
-            "Engenharia Florestal",
-            "Licenciatura em Ciências Agrícolas",
-            "Licenciatura em Computação",
-            "Licenciatura em Educação Física",
-            "Licenciatura em Física",
-            "Licenciatura em História",
-            "Licenciatura em Letras (Português e Espanhol)",
-            "Licenciatura em Letras Português/Inglês UAG",
-            "Licenciatura em Letras UAST",
-            "Licenciatura em Matemática",
-            "Licenciatura em Pedagogia",
-            "Licenciatura em Pedagogia UAG",
-            "Licenciatura em Química",
-            "Licenciatura em Química UAST",
-            "Licenciatura Plena em Ciências Biológicas",
-            "Medicina Veterinária",
-            "Medicina Veterinária UAG",
-            "Zootecnia",
-            "Zootecnia UAG",
-            "Zootecnia UAST"});
             this.cbxCurso.Location = new System.Drawing.Point(385, 351);
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(353, 24);

@@ -17,13 +17,33 @@ namespace Ru
         {
             InitializeComponent();
             lblOperador.Text += Utilidades.NomeLogin;
+            Utilidades.CarregaCombobox(cbxCurso, cbxPeriodo);
 
             txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             rbtnSim.Checked = Utilidades.Bolsista();
-            cbxCurso.Text = Utilidades.Curso();
-            cbxPeriodo.Text = Utilidades.Periodo();
+            if (Utilidades.ControleDeTela == "autorizarporcpf")
+            {
+                cbxCurso.Text = Utilidades.Curso();
+                cbxPeriodo.Text = Utilidades.Periodo();
+                gpbTipoOperador.Hide();
+            }
+
+            else
+            {
+                lblPeriodo.Hide();
+                lblCurso.Hide();
+                cbxPeriodo.Hide();
+                cbxCurso.Hide();
+
+                //tipo de operador
+                if (Utilidades.TipoOperador() == 2) rbtnOpCadastro.Checked = true;
+                else if (Utilidades.TipoOperador() == 3) rbtnOpCredito.Checked = true;
+                else if (Utilidades.TipoOperador() == 4) rbtnOpEntradaRU.Checked = true;
+                else if (Utilidades.TipoOperador() == 5) rbtnGerente.Checked = true;
+            }
+            
             mtxtFone.Text = Utilidades.FuncFone();
             txtSaldo.Text = Utilidades.Saldo();
         }
@@ -38,7 +58,7 @@ namespace Ru
 
         private void fCadastro_Load(object sender, EventArgs e)
         {
-            if ((DateTime.Now.Hour >= 00) && (DateTime.Now.Hour <= 15))
+            if ((DateTime.Now.Hour >= 11) && (DateTime.Now.Hour <= 15))
             {
                 Utilidades.ControleRefeicao = "almoco";
             }
@@ -134,7 +154,7 @@ namespace Ru
                         string strSQL = "UPDATE Usuario SET Jantar = '" + true + "' , Data_Refeicao= '" + data + "' WHERE CPF= '" + Utilidades.Cpf + "'";
 
                         context.ExecuteStoreCommand(strSQL);
- 
+
                         MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }

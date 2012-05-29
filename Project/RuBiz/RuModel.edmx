@@ -9,6 +9,7 @@
           <EntitySet Name="Curso" EntityType="RuModel.Store.Curso" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="InstituicaoEnsino" EntityType="RuModel.Store.InstituicaoEnsino" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Movimentacao" EntityType="RuModel.Store.Movimentacao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Periodo" EntityType="RuModel.Store.Periodo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="RuModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TipoUsuario" EntityType="RuModel.Store.TipoUsuario" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Usuario" EntityType="RuModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
@@ -40,8 +41,10 @@
           </Key>
           <Property Name="Id_Movimentacao" Type="int" Nullable="false" />
           <Property Name="Id_Operador" Type="int" />
+          <Property Name="Cpf_Operador" Type="varchar" MaxLength="50" />
           <Property Name="Nome_Operador" Type="varchar" MaxLength="50" />
           <Property Name="Id_Aluno" Type="int" />
+          <Property Name="Cpf_Aluno" Type="varchar" MaxLength="50" />
           <Property Name="Nome_Aluno" Type="varchar" MaxLength="50" />
           <Property Name="Data_Movimentacao" Type="varchar" MaxLength="50" />
           <Property Name="Hora_Movimentacao" Type="varchar" MaxLength="50" />
@@ -49,6 +52,13 @@
           <Property Name="Campos" Type="varchar" MaxLength="50" />
           <Property Name="Observacao" Type="text" />
           <Property Name="Valor" Type="float" />
+        </EntityType>
+        <EntityType Name="Periodo">
+          <Key>
+            <PropertyRef Name="Id_Periodo" />
+          </Key>
+          <Property Name="Id_Periodo" Type="int" Nullable="false" />
+          <Property Name="Descricao_Periodo" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -88,7 +98,7 @@
           <Property Name="Bolsista" Type="bit" Nullable="false" />
           <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DataNascimento" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Periodo" Type="int" />
+          <Property Name="Id_Periodo" Type="int" />
           <Property Name="Saldo" Type="float" Nullable="false" />
           <Property Name="Data_Refeicao" Type="nvarchar" Nullable="false" MaxLength="20" />
           <Property Name="Almoco" Type="bit" Nullable="false" />
@@ -137,12 +147,6 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <!--Errors Found During Generation:
-      warning 6013: The table/view 'CheffToga.dbo.Periodo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="Periodo">
-        <Property Name="Periodo" Type="nchar" MaxLength="13" />
-      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -156,9 +160,10 @@
             <End Role="InstituicaoEnsino" EntitySet="InstituicaoEnsino" />
             <End Role="Curso" EntitySet="Curso" />
           </AssociationSet>
-          <EntitySet Name="Usuario" EntityType="RuModel.Usuario" />
           <EntitySet Name="Movimentacao" EntityType="RuModel.Movimentacao" />
-        </EntityContainer>
+          <EntitySet Name="Periodo" EntityType="RuModel.Periodo" />
+          <EntitySet Name="Usuario" EntityType="RuModel.Usuario" />
+          </EntityContainer>
         <EntityType Name="Curso">
           <Key>
             <PropertyRef Name="IdCurso" />
@@ -207,6 +212,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Movimentacao">
+          <Key>
+            <PropertyRef Name="Id_Movimentacao" />
+          </Key>
+          <Property Type="Int32" Name="Id_Movimentacao" Nullable="false" />
+          <Property Type="Int32" Name="Id_Operador" />
+          <Property Type="String" Name="Cpf_Operador" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nome_Operador" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Id_Aluno" />
+          <Property Type="String" Name="Cpf_Aluno" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nome_Aluno" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Data_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Hora_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tipo_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Campos" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Observacao" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Valor" />
+        </EntityType>
+        <EntityType Name="Periodo">
+          <Key>
+            <PropertyRef Name="Id_Periodo" />
+          </Key>
+          <Property Type="Int32" Name="Id_Periodo" Nullable="false" />
+          <Property Type="String" Name="Descricao_Periodo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="Id_Usuario" />
@@ -228,27 +258,11 @@
           <Property Type="Boolean" Name="Bolsista" Nullable="false" />
           <Property Type="String" Name="Senha" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="DataNascimento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="Periodo" />
+          <Property Type="Int32" Name="Id_Periodo" />
           <Property Type="Double" Name="Saldo" Nullable="false" />
           <Property Type="String" Name="Data_Refeicao" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="Almoco" Nullable="false" />
           <Property Type="Boolean" Name="Jantar" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Movimentacao">
-          <Key>
-            <PropertyRef Name="Id_Movimentacao" />
-          </Key>
-          <Property Type="Int32" Name="Id_Movimentacao" Nullable="false" />
-          <Property Type="Int32" Name="Id_Operador" />
-          <Property Type="String" Name="Nome_Operador" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="Id_Aluno" />
-          <Property Type="String" Name="Nome_Aluno" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Data_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Hora_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Tipo_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Campos" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Observacao" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="Double" Name="Valor" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -294,6 +308,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Movimentacao">
+            <EntityTypeMapping TypeName="RuModel.Movimentacao">
+              <MappingFragment StoreEntitySet="Movimentacao">
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="Campos" ColumnName="Campos" />
+                <ScalarProperty Name="Tipo_Movimentacao" ColumnName="Tipo_Movimentacao" />
+                <ScalarProperty Name="Hora_Movimentacao" ColumnName="Hora_Movimentacao" />
+                <ScalarProperty Name="Data_Movimentacao" ColumnName="Data_Movimentacao" />
+                <ScalarProperty Name="Nome_Aluno" ColumnName="Nome_Aluno" />
+                <ScalarProperty Name="Cpf_Aluno" ColumnName="Cpf_Aluno" />
+                <ScalarProperty Name="Id_Aluno" ColumnName="Id_Aluno" />
+                <ScalarProperty Name="Nome_Operador" ColumnName="Nome_Operador" />
+                <ScalarProperty Name="Cpf_Operador" ColumnName="Cpf_Operador" />
+                <ScalarProperty Name="Id_Operador" ColumnName="Id_Operador" />
+                <ScalarProperty Name="Id_Movimentacao" ColumnName="Id_Movimentacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Periodo">
+            <EntityTypeMapping TypeName="RuModel.Periodo">
+              <MappingFragment StoreEntitySet="Periodo">
+                <ScalarProperty Name="Descricao_Periodo" ColumnName="Descricao_Periodo" />
+                <ScalarProperty Name="Id_Periodo" ColumnName="Id_Periodo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="RuModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
@@ -301,7 +342,7 @@
                 <ScalarProperty Name="Almoco" ColumnName="Almoco" />
                 <ScalarProperty Name="Data_Refeicao" ColumnName="Data_Refeicao" />
                 <ScalarProperty Name="Saldo" ColumnName="Saldo" />
-                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="Id_Periodo" ColumnName="Id_Periodo" />
                 <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
                 <ScalarProperty Name="Senha" ColumnName="Senha" />
                 <ScalarProperty Name="Bolsista" ColumnName="Bolsista" />
@@ -322,24 +363,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Movimentacao">
-            <EntityTypeMapping TypeName="RuModel.Movimentacao">
-              <MappingFragment StoreEntitySet="Movimentacao">
-                <ScalarProperty Name="Valor" ColumnName="Valor" />
-                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
-                <ScalarProperty Name="Campos" ColumnName="Campos" />
-                <ScalarProperty Name="Tipo_Movimentacao" ColumnName="Tipo_Movimentacao" />
-                <ScalarProperty Name="Hora_Movimentacao" ColumnName="Hora_Movimentacao" />
-                <ScalarProperty Name="Data_Movimentacao" ColumnName="Data_Movimentacao" />
-                <ScalarProperty Name="Nome_Aluno" ColumnName="Nome_Aluno" />
-                <ScalarProperty Name="Id_Aluno" ColumnName="Id_Aluno" />
-                <ScalarProperty Name="Nome_Operador" ColumnName="Nome_Operador" />
-                <ScalarProperty Name="Id_Operador" ColumnName="Id_Operador" />
-                <ScalarProperty Name="Id_Movimentacao" ColumnName="Id_Movimentacao" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -369,8 +393,9 @@
           <ConnectorPoint PointX="2.25" PointY="1.8939925130208337" />
           <ConnectorPoint PointX="3" PointY="1.8939925130208337" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="5.375" PointY="0.75" Height="5.2494108072916665" />
-        <EntityTypeShape EntityType="RuModel.Movimentacao" Width="1.5" PointX="7.75" PointY="0.75" Height="3.1340950520833317" />
+        <EntityTypeShape EntityType="RuModel.Movimentacao" Width="1.5" PointX="5.75" PointY="0.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="RuModel.Periodo" Width="1.5" PointX="5.875" PointY="4.625" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="8.25" PointY="0.875" Height="5.2494108072916674" />
       </Diagram>
     </Diagrams>
   </Designer>

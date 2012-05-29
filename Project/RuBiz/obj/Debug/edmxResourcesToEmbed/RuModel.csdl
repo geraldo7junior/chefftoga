@@ -9,8 +9,9 @@
       <End Role="InstituicaoEnsino" EntitySet="InstituicaoEnsino" />
       <End Role="Curso" EntitySet="Curso" />
     </AssociationSet>
-    <EntitySet Name="Usuario" EntityType="RuModel.Usuario" />
     <EntitySet Name="Movimentacao" EntityType="RuModel.Movimentacao" />
+    <EntitySet Name="Periodo" EntityType="RuModel.Periodo" />
+    <EntitySet Name="Usuario" EntityType="RuModel.Usuario" />
   </EntityContainer>
   <EntityType Name="Curso">
     <Key>
@@ -60,6 +61,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Movimentacao">
+    <Key>
+      <PropertyRef Name="Id_Movimentacao" />
+    </Key>
+    <Property Type="Int32" Name="Id_Movimentacao" Nullable="false" />
+    <Property Type="Int32" Name="Id_Operador" />
+    <Property Type="String" Name="Cpf_Operador" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Nome_Operador" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Id_Aluno" />
+    <Property Type="String" Name="Cpf_Aluno" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Nome_Aluno" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Data_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Hora_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Tipo_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Campos" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Observacao" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Valor" />
+  </EntityType>
+  <EntityType Name="Periodo">
+    <Key>
+      <PropertyRef Name="Id_Periodo" />
+    </Key>
+    <Property Type="Int32" Name="Id_Periodo" Nullable="false" />
+    <Property Type="String" Name="Descricao_Periodo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
   <EntityType Name="Usuario">
     <Key>
       <PropertyRef Name="Id_Usuario" />
@@ -81,26 +107,10 @@
     <Property Type="Boolean" Name="Bolsista" Nullable="false" />
     <Property Type="String" Name="Senha" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="DataNascimento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="Periodo" />
+    <Property Type="Int32" Name="Id_Periodo" />
     <Property Type="Double" Name="Saldo" Nullable="false" />
     <Property Type="String" Name="Data_Refeicao" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="Almoco" Nullable="false" />
     <Property Type="Boolean" Name="Jantar" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Movimentacao">
-    <Key>
-      <PropertyRef Name="Id_Movimentacao" />
-    </Key>
-    <Property Type="Int32" Name="Id_Movimentacao" Nullable="false" />
-    <Property Type="Int32" Name="Id_Operador" />
-    <Property Type="String" Name="Nome_Operador" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="Id_Aluno" />
-    <Property Type="String" Name="Nome_Aluno" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Data_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Hora_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Tipo_Movimentacao" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Campos" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Observacao" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Type="Double" Name="Valor" />
   </EntityType>
 </Schema>

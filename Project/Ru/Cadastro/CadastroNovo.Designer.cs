@@ -549,25 +549,9 @@
             this.cbxPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPeriodo.FormattingEnabled = true;
-            this.cbxPeriodo.Items.AddRange(new object[] {
-            "1º",
-            "2º",
-            "3º",
-            "4º",
-            "5º",
-            "6º",
-            "7º",
-            "8º",
-            "9º",
-            "10º",
-            "11º",
-            "Pós-Graduação",
-            "Mestrado",
-            "Doutorado",
-            "Pós-Doutorado"});
             this.cbxPeriodo.Location = new System.Drawing.Point(385, 387);
             this.cbxPeriodo.Name = "cbxPeriodo";
-            this.cbxPeriodo.Size = new System.Drawing.Size(120, 24);
+            this.cbxPeriodo.Size = new System.Drawing.Size(172, 24);
             this.cbxPeriodo.TabIndex = 6;
             // 
             // lblSenha

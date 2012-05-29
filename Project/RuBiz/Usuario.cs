@@ -282,19 +282,19 @@ namespace RuBiz
         private string _dataNascimento;
     
         [DataMember]
-        public Nullable<int> Periodo
+        public Nullable<int> Id_Periodo
         {
-            get { return _periodo; }
+            get { return _id_Periodo; }
             set
             {
-                if (_periodo != value)
+                if (_id_Periodo != value)
                 {
-                    _periodo = value;
-                    OnPropertyChanged("Periodo");
+                    _id_Periodo = value;
+                    OnPropertyChanged("Id_Periodo");
                 }
             }
         }
-        private Nullable<int> _periodo;
+        private Nullable<int> _id_Periodo;
     
         [DataMember]
         public double Saldo

@@ -4,6 +4,7 @@
     <EntitySet Name="Curso" EntityType="RuModel.Store.Curso" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="InstituicaoEnsino" EntityType="RuModel.Store.InstituicaoEnsino" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Movimentacao" EntityType="RuModel.Store.Movimentacao" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Periodo" EntityType="RuModel.Store.Periodo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="RuModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TipoUsuario" EntityType="RuModel.Store.TipoUsuario" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Usuario" EntityType="RuModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
@@ -35,8 +36,10 @@
     </Key>
     <Property Name="Id_Movimentacao" Type="int" Nullable="false" />
     <Property Name="Id_Operador" Type="int" />
+    <Property Name="Cpf_Operador" Type="varchar" MaxLength="50" />
     <Property Name="Nome_Operador" Type="varchar" MaxLength="50" />
     <Property Name="Id_Aluno" Type="int" />
+    <Property Name="Cpf_Aluno" Type="varchar" MaxLength="50" />
     <Property Name="Nome_Aluno" Type="varchar" MaxLength="50" />
     <Property Name="Data_Movimentacao" Type="varchar" MaxLength="50" />
     <Property Name="Hora_Movimentacao" Type="varchar" MaxLength="50" />
@@ -44,6 +47,13 @@
     <Property Name="Campos" Type="varchar" MaxLength="50" />
     <Property Name="Observacao" Type="text" />
     <Property Name="Valor" Type="float" />
+  </EntityType>
+  <EntityType Name="Periodo">
+    <Key>
+      <PropertyRef Name="Id_Periodo" />
+    </Key>
+    <Property Name="Id_Periodo" Type="int" Nullable="false" />
+    <Property Name="Descricao_Periodo" Type="varchar" Nullable="false" MaxLength="50" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -83,7 +93,7 @@
     <Property Name="Bolsista" Type="bit" Nullable="false" />
     <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DataNascimento" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Periodo" Type="int" />
+    <Property Name="Id_Periodo" Type="int" />
     <Property Name="Saldo" Type="float" Nullable="false" />
     <Property Name="Data_Refeicao" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Almoco" Type="bit" Nullable="false" />
@@ -132,10 +142,4 @@
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <!--Errors Found During Generation:
-      warning 6013: The table/view 'CheffToga.dbo.Periodo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="Periodo">
-        <Property Name="Periodo" Type="nchar" MaxLength="13" />
-      </EntityType>-->
 </Schema>

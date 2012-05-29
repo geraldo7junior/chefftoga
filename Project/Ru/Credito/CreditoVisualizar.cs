@@ -15,13 +15,32 @@ namespace Ru
         {
             InitializeComponent();
             lblOperador.Text += Utilidades.NomeLogin;
+            Utilidades.CarregaCombobox(cbxCurso, cbxPeriodo);
 
             txtID.Text = Utilidades.Id_Card();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             rbtnSim.Checked = Utilidades.Bolsista();
-            cbxCurso.Text = Utilidades.Curso();
-            cbxPeriodo.Text = Utilidades.Periodo();
+            if (Utilidades.ControleDeTela == "visualizarsaldo")
+            {
+                cbxCurso.Text = Utilidades.Curso();
+                cbxPeriodo.Text = Utilidades.Periodo();
+                gpbTipoOperador.Hide();
+            }
+
+            else
+            {
+                lblPeriodo.Hide();
+                lblCurso.Hide();
+                cbxPeriodo.Hide();
+                cbxCurso.Hide();
+
+                //tipo de operador
+                if (Utilidades.TipoOperador() == 2) rbtnOpCadastro.Checked = true;
+                else if (Utilidades.TipoOperador() == 3) rbtnOpCredito.Checked = true;
+                else if (Utilidades.TipoOperador() == 4) rbtnOpEntradaRU.Checked = true;
+                else if (Utilidades.TipoOperador() == 5) rbtnGerente.Checked = true;
+            }
             mtxtFone.Text = Utilidades.FuncFone();
             txtSaldo.Text = Utilidades.Saldo();
         }
@@ -46,6 +65,8 @@ namespace Ru
 
         private void msMenuCadastroAlterar_Click(object sender, EventArgs e)
         {
+            if (Utilidades.ControleDeTela == "visualizarsaldo") Utilidades.ControleDeTela = "creditar";
+            else Utilidades.ControleDeTela = "creditarOp";
             fCreditoCreditar _fCad;
             _fCad = new fCreditoCreditar();
             //chamar todos os dados do banco de dados aqui

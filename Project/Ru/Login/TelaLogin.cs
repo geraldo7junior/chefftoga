@@ -22,24 +22,33 @@ namespace Ru
 
             string cpfSpace = this.mtbLogin.Text.Replace(" ", ".");
             string cpfHifen = cpfSpace.Replace("-", ".");
-            Utilidades.Cpf = cpfHifen.Replace(".", "");
+            Utilidades.CpfOperador = cpfHifen.Replace(".", "");
 
-            if (Utilidades.validaCPF(Utilidades.Cpf))
+            if (Utilidades.validaCPF(Utilidades.CpfOperador))
             {
                 using (CheffTogaEntities context = new CheffTogaEntities())
                 {
 
                     var linq = (from i in context.Usuario
-                                where i.CPF == Utilidades.Cpf && i.Senha == this.txtSenha.Text
+                                where i.CPF == Utilidades.CpfOperador && i.Senha == this.txtSenha.Text
                                 select i.Id_TipoUsuario).ToList();
 
                     if (linq.ToList().Count() == 1)
                     {
-                        //aparecer o nome nas telas
+                        //Guardar nome do operador; mostrá-lo nas telas
                         var lista = (from i in context.Usuario
-                                     where i.CPF == Utilidades.Cpf && i.Senha == this.txtSenha.Text
+                                     where i.CPF == Utilidades.CpfOperador && i.Senha == this.txtSenha.Text
                                      select i.Nome).ToList();
-                        Utilidades.NomeLogin = lista[0];
+                        Utilidades.NomeOperador = lista[0];
+                        Utilidades.NomeLogin = Utilidades.NomeOperador;
+
+                        //guardar id do Operador
+                        var listaid = (from i in context.Usuario
+                                     where i.CPF == Utilidades.CpfOperador && i.Senha == this.txtSenha.Text
+                                     select i.Id_Card).ToList();
+                        Utilidades.IDOperador = listaid[0];
+
+                        Utilidades.Movimentacoes(0, "-", "-", "Login", "-", "-", 0); //registrador de movimentacões
 
                         if ((linq.ToList().Count() == 1) && (linq[0] == 1))
                         {
@@ -91,7 +100,7 @@ namespace Ru
 
             else
             {
-                lblErroLogar.Text = "CPF Inválido!";
+                lblErroLogar.Text = "Usuário ou Senha incorretos!";
             }
 
             

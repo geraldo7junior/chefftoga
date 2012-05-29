@@ -74,7 +74,6 @@ namespace Ru
                                 {
                                     Utilidades.ExcluirCadastro();
 
-                                    MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                     _fVCad.Close();
                                 }
                             }
@@ -84,6 +83,16 @@ namespace Ru
                     //Operador de Credito
                         else if (Utilidades.ControleDeTela == "visualizarsaldo")
                         {
+                            var listaTipoUser = (from i in context.Usuario
+                                                 where i.CPF == Utilidades.Cpf
+                                                 select i.Id_TipoUsuario).ToList();
+                            int TipoUser = listaTipoUser[0];
+
+                            if (TipoUser != 1)
+                            {
+                                Utilidades.ControleDeTela = "visualizarsaldoOp";
+                            }
+
                             fCreditoVisualizar _fVCad;
                             _fVCad = new fCreditoVisualizar();
                             _fVCad.Show();
@@ -92,6 +101,16 @@ namespace Ru
 
                         else if (Utilidades.ControleDeTela == "creditar")
                         {
+                            var listaTipoUser = (from i in context.Usuario
+                                                 where i.CPF == Utilidades.Cpf
+                                                 select i.Id_TipoUsuario).ToList();
+                            int TipoUser = listaTipoUser[0];
+
+                            if (TipoUser != 1)
+                            {
+                                Utilidades.ControleDeTela = "creditarOp";
+                            }
+
                             fCreditoCreditar _fVCad;
                             _fVCad = new fCreditoCreditar();
                             _fVCad.Show();
@@ -101,13 +120,23 @@ namespace Ru
                     //Operador de Autorização
                         else if (Utilidades.ControleDeTela == "autorizarporcpf")
                         {
+                            var listaTipoUser = (from i in context.Usuario
+                                                 where i.CPF == Utilidades.Cpf
+                                                 select i.Id_TipoUsuario).ToList();
+                            int TipoUser = listaTipoUser[0];
+
+                            if (TipoUser != 1)
+                            {
+                               Utilidades.ControleDeTela = "autorizarporcpfOp";
+                            }
+
                             Close();
                             fEntradaRuAutorizar _fVCad;
                             _fVCad = new fEntradaRuAutorizar();
                             _fVCad.Show();
-                            
                         }
 
+                        
                         //Gerente Cadastro de Operadores ALTERAR          
                         else if (Utilidades.ControleDeTela == "alterarOp")
                         {
@@ -146,7 +175,6 @@ namespace Ru
                                 {
                                     Utilidades.ExcluirCadastro();
 
-                                    MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                     _fVCad.Close();
                                 }
                             }
