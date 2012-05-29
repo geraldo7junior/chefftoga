@@ -64,20 +64,21 @@ namespace Ru
 
                         else if (Utilidades.ControleDeTela == "excluir")
                         {
-                            fCadastroVisualizar _fVCad;
-                            _fVCad = new fCadastroVisualizar();
-                            _fVCad.Show();
-                            Close();
-                            if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (Utilidades.ErrAluno(Utilidades.Cpf) == false)
                             {
+                                fCadastroVisualizar _fVCad;
+                                _fVCad = new fCadastroVisualizar();
+                                _fVCad.Show();
+                                Close();
+                                if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                    Utilidades.ExcluirCadastro();
 
-                                Utilidades.ExcluirCadastro();
-
-                                MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                _fVCad.Close();
-
-
+                                    MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                    _fVCad.Close();
+                                }
                             }
+                            else MessageBox.Show("Este cadastro pertence à um funcionário. Acesse-o através da opção Cadastro -> Operador", "Área Gerencial", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     //Operador de Credito
@@ -129,6 +130,25 @@ namespace Ru
                                 _fCad = new fCadastroVisualizarOp();
                                 _fCad.Show();
                                 Close();
+                            }
+                            else MessageBox.Show("Este cadastro pertence à um aluno. Acesse-o através da opção Cadastro -> Aluno", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        else if (Utilidades.ControleDeTela == "excluirOp")
+                        {
+                            if (Utilidades.ErrOperador(Utilidades.Cpf) == false)
+                            {
+                                fCadastroVisualizarOp _fVCad;
+                                _fVCad = new fCadastroVisualizarOp();
+                                _fVCad.Show();
+                                Close();
+                                if (MessageBox.Show("Deseja Realmente Excluir este Cadastro?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                    Utilidades.ExcluirCadastro();
+
+                                    MessageBox.Show("Cadastro excluído com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                    _fVCad.Close();
+                                }
                             }
                             else MessageBox.Show("Este cadastro pertence à um aluno. Acesse-o através da opção Cadastro -> Aluno", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }

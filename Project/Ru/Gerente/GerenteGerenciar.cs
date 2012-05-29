@@ -170,7 +170,10 @@ namespace Ru
 
         private void toolStripMenuItem10_Click(object sender, EventArgs e)
         {
-
+            Utilidades.ControleDeTela = "excluirOp";
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
+            _fAlt.Show();
         }
 
 
