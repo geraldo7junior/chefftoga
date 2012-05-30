@@ -1,4 +1,4 @@
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso R.U System</p></font></b></H2>
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga System</p></font></b></H2>
 <hr>
 
 <b><H3>Número do caso de uso: UC0001</H3></b><br>
@@ -33,7 +33,7 @@
 ||<b>Descrição:</b>||
 ||O aluno entrará em contato com o operador de cadastro, onde este poderá realizar o cadastro de tal aluno no sistema. Este também pode realizar recadastro de alunos no sistema, onde por meio deste poderá alterar informações e confirmar a matricula dos universitários a cada período. Também haverá a possibilidade de visualizar dados bem como imprimi-los, como forma de comprovação de cadastramento no sistema.||
 ||_O cadastro do aluno ocorrerá frente ao fornecimento das informações:_||
-||•	ID (obrigatório);||
+||•	ID Card (obrigatório);||
 ||•	Nome (obrigatório);||
 ||•	Identidade (obrigatório);||
 ||•	Data de nascimento (obrigatório);||
@@ -43,7 +43,7 @@
 ||•	Endereço(Rua; Número; Bairro; Cidade; UF e CEP)(obrigatório);||
 ||•	Foto (obrigatório);|| 
 ||•	Fone (obrigatório);||
-||•	Bolsista (obrigatório);||
+||•	Bolsista/Gratuidade (obrigatório);||
 ||•	Senha (obrigatório);||
 ||<b>Ator:</b>||
 ||Operador de cadastro||
@@ -99,6 +99,17 @@
 ||Controle da entrada dos alunos no restaurante, bem como a autenticação destes para entrar no estabelecimento.||
 ||<b>Descrição:</b>||
 ||O operador de caixa já autenticado no sistema poderá ter acesso à uma página de autenticação, nesta quando o aluno fazer a entrada com seu Smart Card(Com um ID implícito) o operador de caixa terá algumas informações avista como, por exemplo, Nome, Curso, Período e foto, Confirmada estas informações este poderá permitir ou não a entrada do aluno no restaurante.||
+||_O Operador de entrada poderá visualizar as seguintes informações do aluno:_||
+||•	ID Card;||
+||•	Nome;||
+||•	CPF;||
+||•	Curso;||
+||•	Período;||
+||•	Saldo;||
+||•	Foto;|| 
+||•	Fone;||
+||•	Bolsista/Gratuidade;||
+
 ||<b>Ator:</b>||
 ||Operador de caixa e Aluno||
 ||<b>Prioridade:</b>|| 
@@ -125,7 +136,19 @@
 ||<b>Objetivos:</b>||
 ||Analisar, alterar enfim  gerenciar as informações dos estudantes e funcionários.||
 ||<b>Descrição:</b>||
-||O gerente do restaurante poderá ter acesso e controlar informações referentes aos alunos cadastrados e funcionários do sistema. Tal gerente possui acesso privilegiado ao sistema, podendo atuar com as mesmas funções dos demais operadores. Este ainda possui acessos exclusivos, como o cadastro de operadores nas demais atividades do sistema, como também um sistema inteligente de busca de informações, estas referentes a movimentações, financeiras e de horários por parte dos alunos, como também a segurança de saber quem era o operador em determinada ação no sistema. Tal caso de uso visa o controle e segurança das informações para o gerente. ||
+||O gerente do restaurante poderá ter acesso e controlar informações referentes aos alunos cadastrados e funcionários do sistema. Tal gerente possui acesso privilegiado ao sistema, podendo atuar com as mesmas funções dos demais operadores. Este ainda possui acessos exclusivos, como o cadastro de operadores nas demais atividades do sistema, como também um sistema inteligente de busca de informações, estas referentes a movimentações, datas e horários cabíveis aos tipos usos dos alunos, como também, funcionando como ferramenta de controle e segurança, onde se sabe quem era o operador em determinada ação no sistema. Tal caso de uso visa o estabelecimento da organização e gerencia do restaurante por parte de seu operador. ||
+||_O cadastro dos operadores ocorrerá frente ao fornecimento das informações:_||
+||•	ID Card (obrigatório);||
+||•	Nome (obrigatório);||
+||•	Identidade (obrigatório);||
+||•	Data de nascimento (obrigatório);||
+||•	CPF (obrigatório);||
+||•	Endereço(Rua; Número; Bairro; Cidade; UF e CEP)(obrigatório);||
+||•	Foto (obrigatório);|| 
+||•	Fone (obrigatório);||
+||•	Tipo de Operador (obrigatório);||
+||•	Senha (obrigatório);||
+
 ||<b>Ator:</b>|| 
 ||Gerente||
 ||<b>Prioridade:</b>||
