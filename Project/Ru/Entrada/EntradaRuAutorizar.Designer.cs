@@ -60,6 +60,10 @@
             this.rbtnOpEntradaRU = new System.Windows.Forms.RadioButton();
             this.rbtnOpCredito = new System.Windows.Forms.RadioButton();
             this.rbtnOpCadastro = new System.Windows.Forms.RadioButton();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.cbxStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
             this.gpbBolsista.SuspendLayout();
@@ -353,7 +357,7 @@
             this.txtSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSaldo.BackColor = System.Drawing.Color.White;
             this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaldo.Location = new System.Drawing.Point(563, 574);
+            this.txtSaldo.Location = new System.Drawing.Point(563, 596);
             this.txtSaldo.MaxLength = 3;
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.ReadOnly = true;
@@ -369,7 +373,7 @@
             this.lblSaldo.BackColor = System.Drawing.Color.Transparent;
             this.lblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaldo.ForeColor = System.Drawing.Color.Black;
-            this.lblSaldo.Location = new System.Drawing.Point(473, 576);
+            this.lblSaldo.Location = new System.Drawing.Point(473, 598);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(90, 22);
             this.lblSaldo.TabIndex = 13;
@@ -442,7 +446,7 @@
             this.lblRS.AutoSize = true;
             this.lblRS.BackColor = System.Drawing.Color.White;
             this.lblRS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRS.Location = new System.Drawing.Point(568, 576);
+            this.lblRS.Location = new System.Drawing.Point(568, 598);
             this.lblRS.Name = "lblRS";
             this.lblRS.Size = new System.Drawing.Size(25, 16);
             this.lblRS.TabIndex = 86;
@@ -509,6 +513,57 @@
             this.rbtnOpCadastro.Text = "Op. Cadastro";
             this.rbtnOpCadastro.UseVisualStyleBackColor = true;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(563, 565);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(132, 22);
+            this.txtEmail.TabIndex = 91;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblEmail.Location = new System.Drawing.Point(473, 565);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(60, 22);
+            this.lblEmail.TabIndex = 90;
+            this.lblEmail.Text = "E-mail:";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Black;
+            this.lblStatus.Location = new System.Drawing.Point(752, 347);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(61, 22);
+            this.lblStatus.TabIndex = 97;
+            this.lblStatus.Text = "Status:";
+            // 
+            // cbxStatus
+            // 
+            this.cbxStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxStatus.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxStatus.Enabled = false;
+            this.cbxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.Items.AddRange(new object[] {
+            "Desbloqueado",
+            "Bloqueado"});
+            this.cbxStatus.Location = new System.Drawing.Point(819, 344);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(115, 24);
+            this.cbxStatus.TabIndex = 96;
+            // 
             // fEntradaRuAutorizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,6 +572,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.cbxStatus);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.gpbTipoOperador);
             this.Controls.Add(this.lblRS);
             this.Controls.Add(this.mtxtCPF);
@@ -593,5 +652,9 @@
         private System.Windows.Forms.RadioButton rbtnOpEntradaRU;
         private System.Windows.Forms.RadioButton rbtnOpCredito;
         private System.Windows.Forms.RadioButton rbtnOpCadastro;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cbxStatus;
     }
 }

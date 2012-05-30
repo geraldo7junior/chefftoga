@@ -46,12 +46,20 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.retirarCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bandejaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
-            this.bandejaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bloquearTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desbloquearTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bloquearTodosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.desbloquearTodosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbBoasVindas)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +70,8 @@
             this.relatórioToolStripMenuItem,
             this.msMenuCadastro,
             this.toolStripMenuItem1,
-            this.toolStripMenuItem5});
+            this.toolStripMenuItem5,
+            this.statusToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -103,35 +112,35 @@
             this.alterarToolStripMenuItem,
             this.excluirToolStripMenuItem});
             this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.alunoToolStripMenuItem.Text = "A&luno";
             this.alunoToolStripMenuItem.Click += new System.EventHandler(this.alunoToolStripMenuItem_Click);
             // 
             // novoToolStripMenuItem
             // 
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.novoToolStripMenuItem.Text = "&Novo";
             this.novoToolStripMenuItem.Click += new System.EventHandler(this.novoToolStripMenuItem_Click);
             // 
             // visualizarToolStripMenuItem
             // 
             this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.visualizarToolStripMenuItem.Text = "&Visualizar";
             this.visualizarToolStripMenuItem.Click += new System.EventHandler(this.visualizarToolStripMenuItem_Click);
             // 
             // alterarToolStripMenuItem
             // 
             this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.alterarToolStripMenuItem.Text = "&Alterar";
             this.alterarToolStripMenuItem.Click += new System.EventHandler(this.alterarToolStripMenuItem_Click);
             // 
             // excluirToolStripMenuItem
             // 
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.excluirToolStripMenuItem.Text = "&Excluir";
             this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
             // 
@@ -143,7 +152,7 @@
             this.toolStripMenuItem9,
             this.toolStripMenuItem10});
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem4.Text = "&Operador";
             // 
             // toolStripMenuItem7
@@ -178,7 +187,8 @@
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
+            this.toolStripMenuItem3,
+            this.retirarCréditoToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(58, 20);
             this.toolStripMenuItem1.Text = "C&rédito";
@@ -197,6 +207,13 @@
             this.toolStripMenuItem3.Text = "&Creditar";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
+            // retirarCréditoToolStripMenuItem
+            // 
+            this.retirarCréditoToolStripMenuItem.Name = "retirarCréditoToolStripMenuItem";
+            this.retirarCréditoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.retirarCréditoToolStripMenuItem.Text = "&Retirar Crédito";
+            this.retirarCréditoToolStripMenuItem.Click += new System.EventHandler(this.retirarCréditoToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -212,6 +229,13 @@
             this.toolStripMenuItem6.Size = new System.Drawing.Size(167, 22);
             this.toolStripMenuItem6.Text = "&Autorizar por CPF";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
+            // 
+            // bandejaToolStripMenuItem
+            // 
+            this.bandejaToolStripMenuItem.Name = "bandejaToolStripMenuItem";
+            this.bandejaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.bandejaToolStripMenuItem.Text = "&Bandeja";
+            this.bandejaToolStripMenuItem.Click += new System.EventHandler(this.bandejaToolStripMenuItem_Click);
             // 
             // lblBemVindo
             // 
@@ -250,12 +274,60 @@
             this.pctbBoasVindas.TabIndex = 64;
             this.pctbBoasVindas.TabStop = false;
             // 
-            // bandejaToolStripMenuItem
+            // statusToolStripMenuItem
             // 
-            this.bandejaToolStripMenuItem.Name = "bandejaToolStripMenuItem";
-            this.bandejaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.bandejaToolStripMenuItem.Text = "&Bandeja";
-            this.bandejaToolStripMenuItem.Click += new System.EventHandler(this.bandejaToolStripMenuItem_Click);
+            this.statusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alunosToolStripMenuItem,
+            this.operadorToolStripMenuItem});
+            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
+            this.statusToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.statusToolStripMenuItem.Text = "&Status";
+            // 
+            // alunosToolStripMenuItem
+            // 
+            this.alunosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bloquearTodosToolStripMenuItem,
+            this.desbloquearTodosToolStripMenuItem});
+            this.alunosToolStripMenuItem.Name = "alunosToolStripMenuItem";
+            this.alunosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alunosToolStripMenuItem.Text = "&Aluno";
+            // 
+            // operadorToolStripMenuItem
+            // 
+            this.operadorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bloquearTodosToolStripMenuItem1,
+            this.desbloquearTodosToolStripMenuItem1});
+            this.operadorToolStripMenuItem.Name = "operadorToolStripMenuItem";
+            this.operadorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.operadorToolStripMenuItem.Text = "&Operador";
+            // 
+            // bloquearTodosToolStripMenuItem
+            // 
+            this.bloquearTodosToolStripMenuItem.Name = "bloquearTodosToolStripMenuItem";
+            this.bloquearTodosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.bloquearTodosToolStripMenuItem.Text = "&Bloquear Todos";
+            this.bloquearTodosToolStripMenuItem.Click += new System.EventHandler(this.bloquearTodosToolStripMenuItem_Click);
+            // 
+            // desbloquearTodosToolStripMenuItem
+            // 
+            this.desbloquearTodosToolStripMenuItem.Name = "desbloquearTodosToolStripMenuItem";
+            this.desbloquearTodosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.desbloquearTodosToolStripMenuItem.Text = "&Desbloquear Todos";
+            this.desbloquearTodosToolStripMenuItem.Click += new System.EventHandler(this.desbloquearTodosToolStripMenuItem_Click);
+            // 
+            // bloquearTodosToolStripMenuItem1
+            // 
+            this.bloquearTodosToolStripMenuItem1.Name = "bloquearTodosToolStripMenuItem1";
+            this.bloquearTodosToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.bloquearTodosToolStripMenuItem1.Text = "&Bloquear Todos";
+            this.bloquearTodosToolStripMenuItem1.Click += new System.EventHandler(this.bloquearTodosToolStripMenuItem1_Click);
+            // 
+            // desbloquearTodosToolStripMenuItem1
+            // 
+            this.desbloquearTodosToolStripMenuItem1.Name = "desbloquearTodosToolStripMenuItem1";
+            this.desbloquearTodosToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.desbloquearTodosToolStripMenuItem1.Text = "&Desbloquear Todos";
+            this.desbloquearTodosToolStripMenuItem1.Click += new System.EventHandler(this.desbloquearTodosToolStripMenuItem1_Click);
             // 
             // fGerenteGerenciar
             // 
@@ -310,6 +382,14 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem encerrarSeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bandejaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem retirarCréditoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alunosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem operadorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bloquearTodosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem desbloquearTodosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bloquearTodosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem desbloquearTodosToolStripMenuItem1;
 
 
 

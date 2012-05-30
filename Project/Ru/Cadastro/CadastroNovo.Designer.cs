@@ -97,6 +97,11 @@
             this.txtIdentidade = new System.Windows.Forms.MaskedTextBox();
             this.txtFone = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblAstEmail = new System.Windows.Forms.Label();
+            this.cbxStatus = new System.Windows.Forms.ComboBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -334,7 +339,7 @@
             this.lblFoto.Location = new System.Drawing.Point(77, 353);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(90, 22);
-            this.lblFoto.TabIndex = 17;
+            this.lblFoto.TabIndex = 18;
             this.lblFoto.Text = "Foto";
             this.lblFoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -563,7 +568,7 @@
             this.lblSenha.Location = new System.Drawing.Point(295, 605);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(90, 22);
-            this.lblSenha.TabIndex = 14;
+            this.lblSenha.TabIndex = 15;
             this.lblSenha.Text = "Senha:";
             // 
             // txtSenha
@@ -576,7 +581,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(76, 22);
-            this.txtSenha.TabIndex = 14;
+            this.txtSenha.TabIndex = 15;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // btnOk
@@ -585,7 +590,7 @@
             this.btnOk.Location = new System.Drawing.Point(838, 694);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(150, 23);
-            this.btnOk.TabIndex = 18;
+            this.btnOk.TabIndex = 19;
             this.btnOk.Text = "&Validar Cadastro";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -600,7 +605,7 @@
             this.lblConfirmeSenha.Location = new System.Drawing.Point(295, 636);
             this.lblConfirmeSenha.Name = "lblConfirmeSenha";
             this.lblConfirmeSenha.Size = new System.Drawing.Size(147, 22);
-            this.lblConfirmeSenha.TabIndex = 15;
+            this.lblConfirmeSenha.TabIndex = 16;
             this.lblConfirmeSenha.Text = "Comfirme a Senha:";
             // 
             // txtConfirmeSenha
@@ -613,7 +618,7 @@
             this.txtConfirmeSenha.Name = "txtConfirmeSenha";
             this.txtConfirmeSenha.PasswordChar = '*';
             this.txtConfirmeSenha.Size = new System.Drawing.Size(76, 22);
-            this.txtConfirmeSenha.TabIndex = 15;
+            this.txtConfirmeSenha.TabIndex = 16;
             this.txtConfirmeSenha.UseSystemPasswordChar = true;
             this.txtConfirmeSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmeSenha_KeyPress);
             // 
@@ -677,7 +682,7 @@
             this.gpbBolsista.Location = new System.Drawing.Point(66, 395);
             this.gpbBolsista.Name = "gpbBolsista";
             this.gpbBolsista.Size = new System.Drawing.Size(115, 88);
-            this.gpbBolsista.TabIndex = 16;
+            this.gpbBolsista.TabIndex = 17;
             this.gpbBolsista.TabStop = false;
             this.gpbBolsista.Text = "Gratuidade";
             // 
@@ -917,6 +922,67 @@
             this.txtCep.Size = new System.Drawing.Size(100, 22);
             this.txtCep.TabIndex = 13;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(353, 551);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(132, 22);
+            this.txtEmail.TabIndex = 14;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblEmail.Location = new System.Drawing.Point(292, 553);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(60, 22);
+            this.lblEmail.TabIndex = 14;
+            this.lblEmail.Text = "E-mail:";
+            // 
+            // lblAstEmail
+            // 
+            this.lblAstEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstEmail.AutoSize = true;
+            this.lblAstEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblAstEmail.Location = new System.Drawing.Point(491, 543);
+            this.lblAstEmail.Name = "lblAstEmail";
+            this.lblAstEmail.Size = new System.Drawing.Size(0, 24);
+            this.lblAstEmail.TabIndex = 86;
+            // 
+            // cbxStatus
+            // 
+            this.cbxStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxStatus.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.Items.AddRange(new object[] {
+            "Desbloqueado",
+            "Bloqueado"});
+            this.cbxStatus.Location = new System.Drawing.Point(668, 192);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(115, 24);
+            this.cbxStatus.TabIndex = 87;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Black;
+            this.lblStatus.Location = new System.Drawing.Point(601, 195);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(61, 22);
+            this.lblStatus.TabIndex = 88;
+            this.lblStatus.Text = "Status:";
+            // 
             // fCadastroNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -925,6 +991,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.cbxStatus);
+            this.Controls.Add(this.lblAstEmail);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtCep);
             this.Controls.Add(this.txtFone);
             this.Controls.Add(this.txtIdentidade);
@@ -1069,5 +1140,10 @@
         private System.Windows.Forms.MaskedTextBox txtIdentidade;
         private System.Windows.Forms.MaskedTextBox txtFone;
         private System.Windows.Forms.MaskedTextBox txtCep;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblAstEmail;
+        private System.Windows.Forms.ComboBox cbxStatus;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

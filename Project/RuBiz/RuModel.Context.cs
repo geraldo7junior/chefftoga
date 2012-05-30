@@ -101,17 +101,17 @@ namespace RuBiz
         }
         private ObjectSet<TipoUsuario> _tipoUsuario;
     
-        public ObjectSet<Movimentacao> Movimentacao
-        {
-            get { return _movimentacao  ?? (_movimentacao = CreateObjectSet<Movimentacao>("Movimentacao")); }
-        }
-        private ObjectSet<Movimentacao> _movimentacao;
-    
         public ObjectSet<Periodo> Periodo
         {
             get { return _periodo  ?? (_periodo = CreateObjectSet<Periodo>("Periodo")); }
         }
         private ObjectSet<Periodo> _periodo;
+    
+        public ObjectSet<Movimentacao> Movimentacao
+        {
+            get { return _movimentacao  ?? (_movimentacao = CreateObjectSet<Movimentacao>("Movimentacao")); }
+        }
+        private ObjectSet<Movimentacao> _movimentacao;
     
         public ObjectSet<Usuario> Usuario
         {

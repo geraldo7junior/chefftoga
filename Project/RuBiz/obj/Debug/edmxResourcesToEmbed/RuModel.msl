@@ -39,6 +39,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Periodo">
+      <EntityTypeMapping TypeName="RuModel.Periodo">
+        <MappingFragment StoreEntitySet="Periodo">
+          <ScalarProperty Name="Descricao_Periodo" ColumnName="Descricao_Periodo" />
+          <ScalarProperty Name="Id_Periodo" ColumnName="Id_Periodo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Movimentacao">
       <EntityTypeMapping TypeName="RuModel.Movimentacao">
         <MappingFragment StoreEntitySet="Movimentacao">
@@ -58,17 +66,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Periodo">
-      <EntityTypeMapping TypeName="RuModel.Periodo">
-        <MappingFragment StoreEntitySet="Periodo">
-          <ScalarProperty Name="Descricao_Periodo" ColumnName="Descricao_Periodo" />
-          <ScalarProperty Name="Id_Periodo" ColumnName="Id_Periodo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Usuario">
       <EntityTypeMapping TypeName="RuModel.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="E_mail" ColumnName="E_mail" />
           <ScalarProperty Name="Bandeja_Em_Espera" ColumnName="Bandeja_Em_Espera" />
           <ScalarProperty Name="Jantar" ColumnName="Jantar" />
           <ScalarProperty Name="Almoco" ColumnName="Almoco" />

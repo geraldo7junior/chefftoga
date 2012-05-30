@@ -385,6 +385,36 @@ namespace RuBiz
             }
         }
         private bool _bandeja_Em_Espera;
+    
+        [DataMember]
+        public string E_mail
+        {
+            get { return _e_mail; }
+            set
+            {
+                if (_e_mail != value)
+                {
+                    _e_mail = value;
+                    OnPropertyChanged("E_mail");
+                }
+            }
+        }
+        private string _e_mail;
+    
+        [DataMember]
+        public string Foto
+        {
+            get { return _foto; }
+            set
+            {
+                if (_foto != value)
+                {
+                    _foto = value;
+                    OnPropertyChanged("Foto");
+                }
+            }
+        }
+        private string _foto;
 
         #endregion
         #region ChangeTracking

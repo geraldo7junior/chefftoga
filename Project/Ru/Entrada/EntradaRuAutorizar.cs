@@ -20,6 +20,7 @@ namespace Ru
             Utilidades.CarregaCombobox(cbxCurso, cbxPeriodo);
 
             txtID.Text = Utilidades.Id_Card();
+            cbxStatus.Text = Utilidades.Status();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             rbtnSim.Checked = Utilidades.Bolsista();
@@ -45,6 +46,7 @@ namespace Ru
             }
             
             mtxtFone.Text = Utilidades.FuncFone();
+            txtEmail.Text = Utilidades.Email();
             txtSaldo.Text = Utilidades.Saldo();
         }
 

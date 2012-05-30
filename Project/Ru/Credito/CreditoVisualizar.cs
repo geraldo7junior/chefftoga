@@ -18,6 +18,7 @@ namespace Ru
             Utilidades.CarregaCombobox(cbxCurso, cbxPeriodo);
 
             txtID.Text = Utilidades.Id_Card();
+            cbxStatus.Text = Utilidades.Status();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             rbtnSim.Checked = Utilidades.Bolsista();
@@ -42,6 +43,7 @@ namespace Ru
                 else if (Utilidades.TipoOperador() == 5) rbtnGerente.Checked = true;
             }
             mtxtFone.Text = Utilidades.FuncFone();
+            txtEmail.Text = Utilidades.Email();
             txtSaldo.Text = Utilidades.Saldo();
         }
 

@@ -117,8 +117,7 @@ namespace Ru
                             Close();
                         }
 
-                    //Operador de Autorização
-                        else if (Utilidades.ControleDeTela == "autorizarporcpf")
+                        else if (Utilidades.ControleDeTela == "retirarcredito")
                         {
                             var listaTipoUser = (from i in context.Usuario
                                                  where i.CPF == Utilidades.Cpf
@@ -127,13 +126,37 @@ namespace Ru
 
                             if (TipoUser != 1)
                             {
-                               Utilidades.ControleDeTela = "autorizarporcpfOp";
+                                Utilidades.ControleDeTela = "retirarcreditoOp";
                             }
 
-                            Close();
-                            fEntradaRuAutorizar _fVCad;
-                            _fVCad = new fEntradaRuAutorizar();
+                            fCreditoCreditar _fVCad;
+                            _fVCad = new fCreditoCreditar();
                             _fVCad.Show();
+                            Close();
+                        }
+
+                    //Operador de Autorização
+                        else if (Utilidades.ControleDeTela == "autorizarporcpf")
+                        {
+                            if (Utilidades.VerStatus() == true)
+                            {
+                                var listaTipoUser = (from i in context.Usuario
+                                                     where i.CPF == Utilidades.Cpf
+                                                     select i.Id_TipoUsuario).ToList();
+                                int TipoUser = listaTipoUser[0];
+
+                                if (TipoUser != 1)
+                                {
+                                    Utilidades.ControleDeTela = "autorizarporcpfOp";
+                                }
+
+                                Close();
+                                fEntradaRuAutorizar _fVCad;
+                                _fVCad = new fEntradaRuAutorizar();
+                                _fVCad.Show();
+                            }
+                            else MessageBox.Show("Usuário Bloqueado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                          
                         }
 
                         //Operador de Bandeja

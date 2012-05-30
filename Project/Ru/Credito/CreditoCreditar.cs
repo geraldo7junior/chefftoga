@@ -19,20 +19,53 @@ namespace Ru
             Utilidades.CarregaCombobox(cbxCurso, cbxPeriodo);
 
             txtID.Text = Utilidades.Id_Card();
+            cbxStatus.Text = Utilidades.Status();
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             rbtnSim.Checked = Utilidades.Bolsista();
             mtxtFone.Text = Utilidades.FuncFone();
+            txtEmail.Text = Utilidades.Email();
             txtSaldo.Text = Utilidades.Saldo();    
             if (Utilidades.ControleDeTela == "creditar")
             {
                 cbxCurso.Text = Utilidades.Curso();
                 cbxPeriodo.Text = Utilidades.Periodo();
                 gpbTipoOperador.Hide();
+                lblValorASerDebitado.Hide();
+                lblDebitador.Hide();
+                btnDebitar.Hide();
+                txtObs.Hide();
+                lblObs.Hide();
             }
 
-            else
+            else if(Utilidades.ControleDeTela == "creditarOp")
             {                   
+                lblPeriodo.Hide();
+                lblCurso.Hide();
+                cbxPeriodo.Hide();
+                cbxCurso.Hide();
+                lblValorASerDebitado.Hide();
+                lblDebitador.Hide();
+                btnDebitar.Hide();
+                txtObs.Hide();
+                lblObs.Hide();
+
+                //tipo de operador
+                if (Utilidades.TipoOperador() == 2) rbtnOpCadastro.Checked = true;
+                else if (Utilidades.TipoOperador() == 3) rbtnOpCredito.Checked = true;
+                else if (Utilidades.TipoOperador() == 4) rbtnOpEntradaRU.Checked = true;
+                else if (Utilidades.TipoOperador() == 5) rbtnGerente.Checked = true;
+            }
+       
+            else if (Utilidades.ControleDeTela == "retirarcredito")
+            {
+                cbxCurso.Text = Utilidades.Curso();
+                cbxPeriodo.Text = Utilidades.Periodo();
+                gpbTipoOperador.Hide();
+            }
+
+            else if (Utilidades.ControleDeTela == "retirarcreditoOp")
+            {
                 lblPeriodo.Hide();
                 lblCurso.Hide();
                 cbxPeriodo.Hide();
@@ -43,7 +76,8 @@ namespace Ru
                 else if (Utilidades.TipoOperador() == 3) rbtnOpCredito.Checked = true;
                 else if (Utilidades.TipoOperador() == 4) rbtnOpEntradaRU.Checked = true;
                 else if (Utilidades.TipoOperador() == 5) rbtnGerente.Checked = true;
-            }        
+            }
+
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)
@@ -253,6 +287,55 @@ namespace Ru
         private bool IsNumeric(int Val)
         {
             return ((Val >= 48 && Val <= 57) || (Val == 8) || (Val == 46));
+        }
+
+        private void btnDebitar_Click(object sender, EventArgs e)
+        {
+            lblAstObs.Text = Utilidades.PreencherCampos(txtObs.Text);
+
+            if (lblAstObs.Text == "*") MessageBox.Show("Informe o motivo da retirada de crédito!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else
+            {
+                using (CheffTogaEntities context = new CheffTogaEntities())
+                {
+                    var SaldoDB = (from i in context.Usuario
+                                   where i.CPF == Utilidades.Cpf
+                                   select i.Saldo).ToList();
+
+                    float saldo = float.Parse(SaldoDB[0].ToString());
+
+                    var listaid = (from i in context.Usuario
+                                   where i.CPF == Utilidades.Cpf
+                                   select i.Id_Card).ToList();
+
+                    int id = listaid[0];
+
+                    var listanome = (from i in context.Usuario
+                                     where i.CPF == Utilidades.Cpf
+                                     select i.Nome).ToList();
+
+                    string nome = listanome[0];
+
+                    if ((saldo - float.Parse(txtValorASerCreditado.Text)) < 0)
+                    {
+                        MessageBox.Show("NÃO AUTORIZADO! O valor a ser debitado é maior que o Saldo existente.", "Autorização!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+                    else if (MessageBox.Show("Deseja realmente debitar R$ " + txtValorASerCreditado.Text + " ao aluno " + txtNome.Text + "?", "Confirmação!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        string ValorSpace = this.txtValorASerCreditado.Text.Replace(" ", "");
+                        Utilidades.debito = float.Parse(ValorSpace);
+
+                        Utilidades.DebitarEstorno();
+
+                        Utilidades.Movimentacoes(id, Utilidades.Cpf, nome, "Crédito Retirado", "-", txtObs.Text, Utilidades.debito); //registrador de movimentacões
+
+                        MessageBox.Show("O novo saldo do aluno " + txtNome.Text + " é R$ " + Utilidades.saldo + "!", "Operação realizada com sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        this.Close();
+
+                    }
+                }
+            }
         }
     }
 }

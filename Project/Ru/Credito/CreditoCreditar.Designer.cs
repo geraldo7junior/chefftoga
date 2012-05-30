@@ -69,6 +69,16 @@
             this.rbtnOpEntradaRU = new System.Windows.Forms.RadioButton();
             this.rbtnOpCredito = new System.Windows.Forms.RadioButton();
             this.rbtnOpCadastro = new System.Windows.Forms.RadioButton();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.btnDebitar = new System.Windows.Forms.Button();
+            this.lblValorASerDebitado = new System.Windows.Forms.Label();
+            this.lblDebitador = new System.Windows.Forms.Label();
+            this.txtObs = new System.Windows.Forms.RichTextBox();
+            this.lblObs = new System.Windows.Forms.Label();
+            this.lblAstObs = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.cbxStatus = new System.Windows.Forms.ComboBox();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -415,7 +425,7 @@
             this.lblSaldo.BackColor = System.Drawing.Color.Transparent;
             this.lblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaldo.ForeColor = System.Drawing.Color.Black;
-            this.lblSaldo.Location = new System.Drawing.Point(295, 530);
+            this.lblSaldo.Location = new System.Drawing.Point(295, 550);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(90, 22);
             this.lblSaldo.TabIndex = 10;
@@ -491,7 +501,7 @@
             this.txtSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSaldo.BackColor = System.Drawing.Color.White;
             this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaldo.Location = new System.Drawing.Point(385, 528);
+            this.txtSaldo.Location = new System.Drawing.Point(385, 548);
             this.txtSaldo.MaxLength = 6;
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.ReadOnly = true;
@@ -519,7 +529,7 @@
             this.lblRS1.AutoSize = true;
             this.lblRS1.BackColor = System.Drawing.Color.White;
             this.lblRS1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRS1.Location = new System.Drawing.Point(391, 531);
+            this.lblRS1.Location = new System.Drawing.Point(391, 551);
             this.lblRS1.Name = "lblRS1";
             this.lblRS1.Size = new System.Drawing.Size(25, 16);
             this.lblRS1.TabIndex = 86;
@@ -600,6 +610,124 @@
             this.rbtnOpCadastro.Text = "Op. Cadastro";
             this.rbtnOpCadastro.UseVisualStyleBackColor = true;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(385, 519);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(132, 22);
+            this.txtEmail.TabIndex = 89;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblEmail.Location = new System.Drawing.Point(294, 521);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(60, 22);
+            this.lblEmail.TabIndex = 88;
+            this.lblEmail.Text = "E-mail:";
+            // 
+            // btnDebitar
+            // 
+            this.btnDebitar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDebitar.Location = new System.Drawing.Point(744, 186);
+            this.btnDebitar.Name = "btnDebitar";
+            this.btnDebitar.Size = new System.Drawing.Size(75, 23);
+            this.btnDebitar.TabIndex = 92;
+            this.btnDebitar.Text = "&Debitar";
+            this.btnDebitar.UseVisualStyleBackColor = true;
+            this.btnDebitar.Click += new System.EventHandler(this.btnDebitar_Click);
+            // 
+            // lblValorASerDebitado
+            // 
+            this.lblValorASerDebitado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblValorASerDebitado.BackColor = System.Drawing.Color.Transparent;
+            this.lblValorASerDebitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorASerDebitado.ForeColor = System.Drawing.Color.Black;
+            this.lblValorASerDebitado.Location = new System.Drawing.Point(478, 190);
+            this.lblValorASerDebitado.Name = "lblValorASerDebitado";
+            this.lblValorASerDebitado.Size = new System.Drawing.Size(164, 22);
+            this.lblValorASerDebitado.TabIndex = 90;
+            this.lblValorASerDebitado.Text = "Valor a ser debitado";
+            // 
+            // lblDebitador
+            // 
+            this.lblDebitador.AutoSize = true;
+            this.lblDebitador.BackColor = System.Drawing.Color.Transparent;
+            this.lblDebitador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDebitador.Location = new System.Drawing.Point(633, 98);
+            this.lblDebitador.Name = "lblDebitador";
+            this.lblDebitador.Size = new System.Drawing.Size(100, 24);
+            this.lblDebitador.TabIndex = 91;
+            this.lblDebitador.Text = "Debitador";
+            // 
+            // txtObs
+            // 
+            this.txtObs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtObs.Location = new System.Drawing.Point(861, 322);
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(334, 245);
+            this.txtObs.TabIndex = 93;
+            this.txtObs.Text = "";
+            // 
+            // lblObs
+            // 
+            this.lblObs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblObs.BackColor = System.Drawing.Color.Transparent;
+            this.lblObs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObs.ForeColor = System.Drawing.Color.Black;
+            this.lblObs.Location = new System.Drawing.Point(923, 283);
+            this.lblObs.Name = "lblObs";
+            this.lblObs.Size = new System.Drawing.Size(220, 22);
+            this.lblObs.TabIndex = 94;
+            this.lblObs.Text = "Motivo de retirada de crédito";
+            // 
+            // lblAstObs
+            // 
+            this.lblAstObs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstObs.AutoSize = true;
+            this.lblAstObs.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstObs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstObs.ForeColor = System.Drawing.Color.Red;
+            this.lblAstObs.Location = new System.Drawing.Point(1136, 271);
+            this.lblAstObs.Name = "lblAstObs";
+            this.lblAstObs.Size = new System.Drawing.Size(0, 24);
+            this.lblAstObs.TabIndex = 95;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Black;
+            this.lblStatus.Location = new System.Drawing.Point(587, 299);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(61, 22);
+            this.lblStatus.TabIndex = 97;
+            this.lblStatus.Text = "Status:";
+            // 
+            // cbxStatus
+            // 
+            this.cbxStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxStatus.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxStatus.Enabled = false;
+            this.cbxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.Items.AddRange(new object[] {
+            "Desbloqueado",
+            "Bloqueado"});
+            this.cbxStatus.Location = new System.Drawing.Point(654, 296);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(115, 24);
+            this.cbxStatus.TabIndex = 96;
+            // 
             // fCreditoCreditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,6 +736,16 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.cbxStatus);
+            this.Controls.Add(this.lblAstObs);
+            this.Controls.Add(this.lblObs);
+            this.Controls.Add(this.txtObs);
+            this.Controls.Add(this.btnDebitar);
+            this.Controls.Add(this.lblValorASerDebitado);
+            this.Controls.Add(this.lblDebitador);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.gpbTipoOperador);
             this.Controls.Add(this.lblRS);
             this.Controls.Add(this.txtValorASerCreditado);
@@ -697,5 +835,15 @@
         private System.Windows.Forms.RadioButton rbtnOpEntradaRU;
         private System.Windows.Forms.RadioButton rbtnOpCredito;
         private System.Windows.Forms.RadioButton rbtnOpCadastro;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Button btnDebitar;
+        private System.Windows.Forms.Label lblValorASerDebitado;
+        private System.Windows.Forms.Label lblDebitador;
+        private System.Windows.Forms.RichTextBox txtObs;
+        private System.Windows.Forms.Label lblObs;
+        private System.Windows.Forms.Label lblAstObs;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cbxStatus;
     }
 }

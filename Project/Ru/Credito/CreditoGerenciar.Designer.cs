@@ -34,6 +34,7 @@
             this.msMenuCadastroVisualizar = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroAlterar = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroSair = new System.Windows.Forms.ToolStripMenuItem();
+            this.retirarCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
@@ -58,6 +59,7 @@
             this.msMenuCadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.msMenuCadastroVisualizar,
             this.msMenuCadastroAlterar,
+            this.retirarCréditoToolStripMenuItem,
             this.msMenuCadastroSair});
             this.msMenuCadastro.Name = "msMenuCadastro";
             this.msMenuCadastro.Size = new System.Drawing.Size(58, 20);
@@ -83,6 +85,13 @@
             this.msMenuCadastroSair.Size = new System.Drawing.Size(155, 22);
             this.msMenuCadastroSair.Text = "&Encerrar Sessão";
             this.msMenuCadastroSair.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // retirarCréditoToolStripMenuItem
+            // 
+            this.retirarCréditoToolStripMenuItem.Name = "retirarCréditoToolStripMenuItem";
+            this.retirarCréditoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.retirarCréditoToolStripMenuItem.Text = "&Retirar Crédito";
+            this.retirarCréditoToolStripMenuItem.Click += new System.EventHandler(this.retirarCréditoToolStripMenuItem_Click);
             // 
             // lblBemVindo
             // 
@@ -160,6 +169,7 @@
         private System.Windows.Forms.Label lblBemVindo;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.PictureBox pctbBoasVindas;
+        private System.Windows.Forms.ToolStripMenuItem retirarCréditoToolStripMenuItem;
 
 
 

@@ -66,6 +66,12 @@
     <Compile Include="Busca CPF\Buscar.Designer.cs">
       <DependentUpon>Buscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Status\Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Status\Status.Designer.cs">
+      <DependentUpon>Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gerente\CadastroNovoOp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busca CPF\Buscar.resx">
       <DependentUpon>Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Status\Status.resx">
+      <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gerente\CadastroNovoOp.resx">
       <DependentUpon>CadastroNovoOp.cs</DependentUpon>

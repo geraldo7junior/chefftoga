@@ -39,6 +39,9 @@
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
+            this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bloquearTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desbloquearTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbBoasVindas)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +49,8 @@
             // msMenu
             // 
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.msMenuCadastro});
+            this.msMenuCadastro,
+            this.statusToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -139,6 +143,29 @@
             this.pctbBoasVindas.TabIndex = 64;
             this.pctbBoasVindas.TabStop = false;
             // 
+            // statusToolStripMenuItem
+            // 
+            this.statusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bloquearTodosToolStripMenuItem,
+            this.desbloquearTodosToolStripMenuItem});
+            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
+            this.statusToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.statusToolStripMenuItem.Text = "&Status";
+            // 
+            // bloquearTodosToolStripMenuItem
+            // 
+            this.bloquearTodosToolStripMenuItem.Name = "bloquearTodosToolStripMenuItem";
+            this.bloquearTodosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.bloquearTodosToolStripMenuItem.Text = "&Bloquear Todos";
+            this.bloquearTodosToolStripMenuItem.Click += new System.EventHandler(this.bloquearTodosToolStripMenuItem_Click);
+            // 
+            // desbloquearTodosToolStripMenuItem
+            // 
+            this.desbloquearTodosToolStripMenuItem.Name = "desbloquearTodosToolStripMenuItem";
+            this.desbloquearTodosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.desbloquearTodosToolStripMenuItem.Text = "&Desbloquear Todos";
+            this.desbloquearTodosToolStripMenuItem.Click += new System.EventHandler(this.desbloquearTodosToolStripMenuItem_Click);
+            // 
             // fCadastroGerenciar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +206,9 @@
         private System.Windows.Forms.Label lblBemVindo;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.PictureBox pctbBoasVindas;
+        private System.Windows.Forms.ToolStripMenuItem statusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bloquearTodosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem desbloquearTodosToolStripMenuItem;
 
 
 

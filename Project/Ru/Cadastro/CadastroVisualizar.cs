@@ -20,6 +20,7 @@ namespace Ru
             Utilidades.CarregaCombobox(cbxCurso, cbxPeriodo);
 
             txtID.Text = Utilidades.Id_Card();
+            cbxStatus.Text = Utilidades.Status();
             txtNome.Text = Utilidades.Nome();
             txtIdentidade.Text = Utilidades.Identidade();
             mtxtDataNasc.Text = Utilidades.FuncDataNasc();
@@ -33,7 +34,8 @@ namespace Ru
             txtCidade.Text = Utilidades.Cidade();
             cbxUF.Text = Utilidades.Uf();
             mtxtCEP.Text = Utilidades.Cep();
-            mtxtFone.Text = Utilidades.FuncFone();           
+            mtxtFone.Text = Utilidades.FuncFone();
+            txtEmail.Text = Utilidades.Email();
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)

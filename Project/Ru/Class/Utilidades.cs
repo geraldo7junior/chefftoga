@@ -13,11 +13,11 @@ namespace Ru
 {
     class Utilidades
     {
-        public static string ControleDeTela, asterisco, NomeLogin, Cpf, CpfNovo, CpfOperador, NomeOperador, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "", ControleRefeicao = "", ALUNOouOPERADOR;
+        public static string DataNascCampos, CepCampos, FoneCampos, strIdCurso, strIdPeriodo, modificacao, ControleDeTela, ControleDeStatus, asterisco, NomeLogin, Cpf, CpfNovo, CpfOperador, NomeOperador, status, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, email, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "", ControleRefeicao = "", ALUNOouOPERADOR;
 
         public static int id,IdCard, IDCurso, IDPeriodo, TipoUser, IDOperador;
 
-        public static float credito,ValorASerCobrado, saldo;
+        public static float credito, debito, ValorASerCobrado, saldo;
 
         public static DateTime DataNascFormato;
 
@@ -155,6 +155,73 @@ namespace Ru
 
         }
 
+        public static void DebitarEstorno()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+
+                var linq = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Id_Usuario).ToList();
+
+                id = linq[0];
+
+                var SaldoAtual = (from i in context.Usuario
+                                  where i.CPF == Cpf
+                                  select i.Saldo).ToList();
+
+                saldo = float.Parse(SaldoAtual[0].ToString());
+
+                string StrResultado = Math.Round((saldo - debito), 2).ToString();
+
+                float resultado = float.Parse(StrResultado);
+
+                string strDebito = resultado.ToString().Replace(",", ".");
+
+                string strSQL = "UPDATE Usuario SET Saldo =" + strDebito + " WHERE Id_Usuario=" + id;
+
+                context.ExecuteStoreCommand(strSQL);
+
+                var NovoSaldo = (from j in context.Usuario
+                                 where j.CPF == Cpf
+                                 select j.Saldo).ToList();
+
+                saldo = float.Parse(NovoSaldo[0].ToString());
+
+            }
+
+        }
+
+        public static void Movimentacoes(int IdAluno, string CpfAluno, string NomeAluno, string TipoMovimentacao, string Campos, string Observacao, float valor)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                Movimentacao mov = new Movimentacao();
+                var linq = (from i in context.Movimentacao select i.Id_Movimentacao).Max();
+                mov.Id_Movimentacao = linq + 1;
+                mov.Id_Operador = IDOperador;
+                mov.Cpf_Operador = CpfOperador;
+                mov.Nome_Operador = NomeOperador;
+                mov.Id_Aluno = IdAluno;
+                mov.Cpf_Aluno = CpfAluno;
+                mov.Nome_Aluno = NomeAluno;
+                mov.Data_Movimentacao = DateTime.Now.ToShortDateString();
+                mov.Hora_Movimentacao = DateTime.Now.ToShortTimeString();
+                mov.Tipo_Movimentacao = TipoMovimentacao;
+                mov.Campos = Campos;
+                mov.Observacao = Observacao;
+                context.AddObject("Movimentacao", mov);
+                context.SaveChanges();
+
+                string strValor = valor.ToString().Replace(",", ".");
+                int locMov = linq + 1;
+
+                string SQL = "UPDATE Movimentacao SET Valor=" + strValor + " WHERE Id_Movimentacao=" + locMov;
+
+                context.ExecuteStoreCommand(SQL);
+            }
+        }
+
         public static Boolean VerRefeicao()
         {
             Usuario user = new Usuario();
@@ -206,6 +273,22 @@ namespace Ru
             return retorno;
         }
 
+        public static Boolean VerStatus()
+        {
+            Usuario user = new Usuario();
+
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var verstatus = (from i in context.Usuario
+                               where i.CPF == Cpf
+                               select i.Status).ToList();
+                string status = verstatus[0];
+
+                if (status == "Desbloqueado") return true;
+                else return false;               
+            }
+        }
+
         public static void Bandeja_Espera()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
@@ -239,22 +322,76 @@ namespace Ru
                 else MessageBox.Show("Não Autorizado! Ou já foi pego bandeja ou pagamento não efetuado", "Bandeja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
+        public static void ComparaAlteracao(string db, string txt, string campo)
+        {
+            if (db != txt) modificacao += campo + ", ";
+        }
+
+        public static void AltCampos()
+        {
+            modificacao = "";
+
+            string STATUS, NOME, IDENTIDADE, CPFVELHO, RUA, N, BAIRRO, CIDADE, UF, EMAIL;
+            bool BOLSISTA;
+            int TIPOUSUARIO;
+
+            STATUS = Status();
+            NOME = Nome();
+            IDENTIDADE = Identidade();
+            // DataNasc através de DataNascCampos;
+            CPFVELHO = CpF();
+            BOLSISTA = Bolsista();
+            // Curso através da strIdCurso
+            // Periodo através de strIdPeriodo
+            RUA = Rua();
+            N = Numero();
+            BAIRRO = Bairro();
+            CIDADE = Cidade();
+            UF = Uf();
+            //CEP através de CepCampos;
+            //Fone através de FoneCampos;
+            EMAIL = Email();
+            TIPOUSUARIO = TipoOperador();
+
+            ComparaAlteracao(STATUS, status, "Status");
+            ComparaAlteracao(NOME, nome.Replace("'", "''"), "Nome");
+            ComparaAlteracao(IDENTIDADE, identidade, "RG");
+            ComparaAlteracao(DataNascCampos, DataNasc, "Data de Nascimento");
+            ComparaAlteracao(CPFVELHO, CpfNovo, "CPF");
+            ComparaAlteracao(BOLSISTA.ToString(), bolsista.ToString(), "Bolsista");
+            ComparaAlteracao(RUA, rua, "Rua");
+            ComparaAlteracao(N, numero, "Número");
+            ComparaAlteracao(BAIRRO, bairro, "Bairro");
+            ComparaAlteracao(CIDADE, cidade, "Cidade");
+            ComparaAlteracao(UF, uf, "UF");
+            ComparaAlteracao(CepCampos, cep, "CEP");
+            ComparaAlteracao(FoneCampos, fone, "Fone");
+            ComparaAlteracao(EMAIL, email, "E-Mail");
+            ComparaAlteracao(TIPOUSUARIO.ToString(), TipoUser.ToString(), "Tipo do Usuário");
+            if (ControleDeTela != "alterarOp")
+            {
+                ComparaAlteracao(strIdCurso, IDCurso.ToString(), "Curso");
+                ComparaAlteracao(strIdPeriodo, IDPeriodo.ToString(), "Período");
+            }
+
+
+        }        
+
         public static void AlterarDados()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
-
                 var linq = (from i in context.Usuario
                             where i.CPF == Cpf
                             select i.Id_Usuario).ToList();
 
                 id = linq[0];
 
-                string strSQL = "UPDATE Usuario SET Nome ='" + nome.Replace("'", "''") + "', Id_TipoUsuario= '" + TipoUser + "', RG='" + identidade +
-                                "', Logradouro='" + rua + "', Numero='" + numero + "', Bairro='" + bairro +
-                                "', Cidade='" + cidade + "',CPF='" + CpfNovo + "', UF='" + uf + "', CEP='" + cep +
-                                "', Fone='" + fone + "', Bolsista='" + bolsista + "', Id_Curso=" + IDCurso + ", Id_Periodo= " + IDPeriodo + " WHERE Id_Usuario=" + id;
+                string strSQL = "UPDATE Usuario SET Nome ='" + nome.Replace("'", "''") + "', Status= '" + status + "', Id_TipoUsuario= '" + TipoUser +
+                                "', RG='" + identidade + "', Logradouro='" + rua + "', Numero='" + numero + "', Bairro='" + bairro + "', Cidade='" + cidade + 
+                                "',CPF='" + CpfNovo + "', UF='" + uf + "', CEP='" + cep + "', Fone='" + fone + "', E_mail='" + email + "', Bolsista='" + bolsista + 
+                                "', DataNascimento='" + DataNasc + "', Id_Curso=" + IDCurso + ", Id_Periodo= " + IDPeriodo + " WHERE Id_Usuario=" + id;
 
                 context.ExecuteStoreCommand(strSQL);
 
@@ -263,6 +400,30 @@ namespace Ru
                 MessageBox.Show("Cadastro alterado com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
+
+        public static void ModStatus(string estado, string obs)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                string SQL = "UPDATE Usuario SET Status='" + estado + "' WHERE Id_TipoUsuario=1";
+                context.ExecuteStoreCommand(SQL);
+                Movimentacoes(0, "-", "-", "Status de todos os Alunos " + estado + "s" , "-", obs, 0); //registrador de movimentacões
+            }
+
+            MessageBox.Show("Operação realizada com sucesso! Todos os alunos foram " + estado + "s!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void ModStatusOp(string estado, string obs)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                string SQL = "UPDATE Usuario SET Status='" + estado + "' WHERE ((Id_TipoUsuario>1) and (Id_TipoUsuario<5))";
+                context.ExecuteStoreCommand(SQL);
+                Movimentacoes(0, "-", "-", "Status de todos os Operadores " + estado + "s", "-", obs, 0); //registrador de movimentacões
+            }
+
+            MessageBox.Show("Operação realizada com sucesso! Todos os Operadores foram " + estado + "s!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }         
 
         public static void ExcluirCadastro()
         {
@@ -363,6 +524,17 @@ namespace Ru
             }
         }
 
+        public static String Status()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var item = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Status).ToList();
+                return item[0];
+            }
+        }
+
         public static Int32 TipoOperador()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
@@ -395,6 +567,17 @@ namespace Ru
                 var item = (from i in context.Usuario
                             where i.CPF == Cpf
                             select i.Nome).ToList();
+                return item[0];
+            }
+        }
+
+        public static String Email()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var item = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.E_mail).ToList();
                 return item[0];
             }
         }
@@ -448,6 +631,8 @@ namespace Ru
                              select i.DescricaoCurso).ToList();
                 string curso = Curso[0];
 
+                strIdCurso = IDCurso.ToString(); //modificação de campos
+
                 return curso;
             }
         }
@@ -465,6 +650,8 @@ namespace Ru
                              where i.Id_Periodo == IDPeriodo
                              select i.Descricao_Periodo).ToList();
                 string periodo = Periodo[0];
+
+                strIdPeriodo = IDPeriodo.ToString(); //modificação de campos
 
                 return periodo;
             }
@@ -732,30 +919,6 @@ namespace Ru
                 }
                 else return false;
 
-            }
-        }
-
-        public static void Movimentacoes(int IdAluno, string CpfAluno, string NomeAluno,string TipoMovimentacao,string Campos,string Observacao,float valor)
-        {
-            using (CheffTogaEntities context = new CheffTogaEntities())
-            {
-                Movimentacao mov = new Movimentacao();
-                var linq = (from i in context.Movimentacao select i.Id_Movimentacao).Max();
-                mov.Id_Movimentacao = linq + 1;
-                mov.Id_Operador = IDOperador;
-                mov.Cpf_Operador = CpfOperador;
-                mov.Nome_Operador = NomeOperador;
-                mov.Id_Aluno = IdAluno;
-                mov.Cpf_Aluno = CpfAluno;
-                mov.Nome_Aluno = NomeAluno;
-                mov.Data_Movimentacao = DateTime.Now.ToShortDateString();
-                mov.Hora_Movimentacao = DateTime.Now.ToShortTimeString();
-                mov.Tipo_Movimentacao = TipoMovimentacao;
-                mov.Campos = Campos;
-                mov.Observacao = Observacao;
-                mov.Valor = valor;
-                context.AddObject("Movimentacao", mov);
-                context.SaveChanges();
             }
         }
     }

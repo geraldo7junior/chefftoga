@@ -76,5 +76,14 @@ namespace Ru
 
         }
 
+        private void retirarCréditoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.ControleDeTela = "retirarcredito";
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
+            _fAlt.Show();
+
+        }
+
     }
 }

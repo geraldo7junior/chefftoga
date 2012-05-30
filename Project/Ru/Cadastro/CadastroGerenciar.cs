@@ -80,5 +80,19 @@ namespace Ru
         {
         }
 
+        private void bloquearTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.ControleDeStatus = "bloquear";
+            fStatus _fst = new fStatus();
+            _fst.Show();            
+        }
+
+        private void desbloquearTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.ControleDeStatus = "desbloquear";
+            fStatus _fst = new fStatus();
+            _fst.Show();
+        }
+
     }
 }

@@ -20,10 +20,12 @@ namespace Ru
             txtID.Text = "Sistema Gera ID";
             Utilidades.CarregaCombobox(cbxCurso,cbxPeriodo);
             lblOperador.Text += Utilidades.NomeLogin;
+            cbxStatus.Text = "Desbloqueado";
 
             if (Utilidades.ControleDeTela == "alterar")
             {
                 txtID.Text = Utilidades.Id_Card();
+                cbxStatus.Text = Utilidades.Status();
                 txtNome.Text = Utilidades.Nome();
                 txtIdentidade.Text = Utilidades.Identidade();
                 txtDataNasc.Text = Utilidades.FuncDataNasc();
@@ -38,12 +40,17 @@ namespace Ru
                 cbxUF.Text = Utilidades.Uf();
                 txtCep.Text = Utilidades.Cep();
                 txtFone.Text = Utilidades.FuncFone();
+                txtEmail.Text = Utilidades.Email();
 
                 txtSenha.Hide();
                 txtConfirmeSenha.Hide();
                 lblSenha.Hide();
                 lblConfirmeSenha.Hide();
-               
+
+                //Variáveis para verificar alterações em Campos
+                Utilidades.DataNascCampos = this.txtDataNasc.Text;
+                Utilidades.CepCampos = this.txtCep.Text;
+                Utilidades.FoneCampos = this.txtFone.Text;               
             }
         }
 
@@ -67,6 +74,7 @@ namespace Ru
             lblAstUf.Text = Utilidades.PreencherCampos(cbxUF.Text);
             lblAstCep.Text = Utilidades.PreencherCampos(txtCep.Text);
             lblAstFone.Text = Utilidades.PreencherCampos(txtFone.Text);
+            lblAstEmail.Text = Utilidades.PreencherCampos(txtEmail.Text);
 
             //manda de data de nascimento, fone
             Utilidades.DataNasc = this.txtDataNasc.Text;
@@ -94,7 +102,7 @@ namespace Ru
                 }
 
                 //CONTROLE DE CAMPOS VAZIOS
-                else if (lblAstBairro.Text == "*" || lblAstCep.Text == "*" || lblAstCidade.Text == "*" || lblAstConfirmeSenha.Text == "*" || lblAstCpf.Text == "*" || lblAstCurso.Text == "*" || lblAstDataNasc.Text == "*" || lblAstFone.Text == "*" || lblAstID.Text == "*" || lblAstIdentidade.Text == "*" || lblAstNome.Text == "*" || lblAstNum.Text == "*" || lblAstPeriodo.Text == "*" || lblAstRua.Text == "*" || lblAstSenha.Text == "*" || lblAstUf.Text == "*")
+                else if (lblAstBairro.Text == "*" || lblAstCep.Text == "*" || lblAstCidade.Text == "*" || lblAstConfirmeSenha.Text == "*" || lblAstCpf.Text == "*" || lblAstCurso.Text == "*" || lblAstDataNasc.Text == "*" || lblAstFone.Text == "*" || lblAstID.Text == "*" || lblAstEmail.Text == "*" || lblAstIdentidade.Text == "*" || lblAstNome.Text == "*" || lblAstNum.Text == "*" || lblAstPeriodo.Text == "*" || lblAstRua.Text == "*" || lblAstSenha.Text == "*" || lblAstUf.Text == "*")
                 {
                     MessageBox.Show("Preencha os campos em asterisco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -110,6 +118,7 @@ namespace Ru
                     using (CheffTogaEntities context = new CheffTogaEntities())
                     {
                         Usuario user = new Usuario();
+                        user.Status = cbxStatus.Text;
                         user.RG = this.txtIdentidade.Text;
                         user.Nome = this.txtNome.Text;
                         user.Logradouro = this.txtRua.Text;
@@ -126,6 +135,7 @@ namespace Ru
                         user.Cidade = this.txtCidade.Text;
                         user.CEP = this.txtCep.Text;
                         user.Fone = this.txtFone.Text;
+                        user.E_mail = this.txtEmail.Text;
                         user.Senha = this.txtSenha.Text;
                         user.Id_TipoUsuario = 1;
                         user.UF = this.cbxUF.SelectedItem.ToString();
@@ -163,7 +173,7 @@ namespace Ru
                 }
                 
                 //CONTROLE DE CAMPOS VAZIOS
-                else if (lblAstBairro.Text == "*" || lblAstCep.Text == "*" || lblAstCidade.Text == "*" || lblAstConfirmeSenha.Text == "*" || lblAstCpf.Text == "*" || lblAstCurso.Text == "*" || lblAstDataNasc.Text == "*" || lblAstFone.Text == "*" || lblAstID.Text == "*" || lblAstIdentidade.Text == "*" || lblAstNome.Text == "*" || lblAstNum.Text == "*" || lblAstPeriodo.Text == "*" || lblAstRua.Text == "*" || lblAstSenha.Text == "*" || lblAstUf.Text == "*")
+                else if (lblAstBairro.Text == "*" || lblAstCep.Text == "*" || lblAstCidade.Text == "*" || lblAstConfirmeSenha.Text == "*" || lblAstCpf.Text == "*" || lblAstCurso.Text == "*" || lblAstDataNasc.Text == "*" || lblAstFone.Text == "*" || lblAstEmail.Text == "*" || lblAstID.Text == "*" || lblAstIdentidade.Text == "*" || lblAstNome.Text == "*" || lblAstNum.Text == "*" || lblAstPeriodo.Text == "*" || lblAstRua.Text == "*" || lblAstSenha.Text == "*" || lblAstUf.Text == "*")
                 {
                     MessageBox.Show("Preencha os campos em asterisco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -176,6 +186,7 @@ namespace Ru
 
                 else
                 {
+                    Utilidades.status = cbxStatus.Text;
                     Utilidades.IdCard = int.Parse(txtID.Text);
                     Utilidades.nome = txtNome.Text;
                     Utilidades.identidade = txtIdentidade.Text;
@@ -188,6 +199,8 @@ namespace Ru
                     Utilidades.fone = txtFone.Text;
                     Utilidades.bolsista = rbtnSim.Checked;
                     Utilidades.TipoUser = 1;
+                    Utilidades.email = txtEmail.Text;
+                    Utilidades.DataNasc = txtDataNasc.Text;
                     
                     using (CheffTogaEntities context = new CheffTogaEntities())
                     {
@@ -202,10 +215,10 @@ namespace Ru
                         Utilidades.IDPeriodo = linqPeriodo[0];
                     }
 
-                    //usar mesma lógica acima (CURSO) para PERIODO
-
+                    //Verificar campos alterados, alterar dados, informar movimentações                   
+                    Utilidades.AltCampos();
                     Utilidades.AlterarDados();
-                    Utilidades.Movimentacoes(Utilidades.IdCard, Utilidades.Cpf, txtNome.Text, "Alterar Cadastro de Aluno", "falta especificar", "-", 0); //registrador de movimentacões
+                    Utilidades.Movimentacoes(Utilidades.IdCard, Utilidades.Cpf, txtNome.Text, "Alterar Cadastro de Aluno", Utilidades.modificacao, "-", 0); //registrador de movimentacões
 
                     Close();
                 }

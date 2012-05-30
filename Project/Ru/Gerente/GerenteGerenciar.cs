@@ -196,6 +196,42 @@ namespace Ru
             _fAlt.Show();
         }
 
+        private void retirarCréditoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.ControleDeTela = "retirarcredito";
+            fBuscar _fAlt;
+            _fAlt = new fBuscar();
+            _fAlt.Show();
+        }
+
+        private void bloquearTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.ControleDeStatus = "bloquear";
+            fStatus _fst = new fStatus();
+            _fst.Show(); 
+        }
+
+        private void desbloquearTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.ControleDeStatus = "desbloquear";
+            fStatus _fst = new fStatus();
+            _fst.Show(); 
+        }
+
+        private void bloquearTodosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Utilidades.ControleDeStatus = "bloquearOp";
+            fStatus _fst = new fStatus();
+            _fst.Show(); 
+        }
+
+        private void desbloquearTodosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Utilidades.ControleDeStatus = "desbloquearOp";
+            fStatus _fst = new fStatus();
+            _fst.Show(); 
+        }
+
 
 
     }
