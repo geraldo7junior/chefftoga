@@ -10,4 +10,3 @@
 <p>2.	Booch, Grady; Rumbaugh, James; Jacobson, Ivar; Casos de uso; Diagrama de casos de uso. IN: Booch, Grady; Rumbaugh, James; Jacobson, Ivar(Org.). UML: Guia do Usuário. Rio de Janeiro: Elsevier, 2005, p. 227-242.<br>
 <br>
 <hr>
-<hr>
