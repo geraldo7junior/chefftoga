@@ -130,6 +130,7 @@ namespace Ru
                         user.Id_TipoUsuario = 1;
                         user.UF = this.cbxUF.SelectedItem.ToString();
                         user.Saldo = 0;
+                        user.Bandeja_Em_Espera = false;
                         user.Data_Refeicao = DateTime.Now.ToShortDateString();
                         user.Almoco = false;
                         user.Jantar = false;

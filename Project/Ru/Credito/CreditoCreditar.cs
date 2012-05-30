@@ -170,7 +170,7 @@ namespace Ru
 
                     Utilidades.Creditar();
 
-                    Utilidades.Movimentacoes(id, Utilidades.Cpf, nome, "Inserir Crédito", "-", "-", float.Parse(txtValorASerCreditado.Text)); //registrador de movimentacões
+                    Utilidades.Movimentacoes(id, Utilidades.Cpf, nome, "Inserir Crédito", "-", "-", Utilidades.credito); //registrador de movimentacões
 
                     MessageBox.Show("O novo saldo do aluno " + txtNome.Text + " é R$ " + Utilidades.saldo + "!", "Operação realizada com sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();

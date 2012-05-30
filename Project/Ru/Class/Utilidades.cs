@@ -205,6 +205,40 @@ namespace Ru
 
             return retorno;
         }
+
+        public static void Bandeja_Espera()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                string strSQL = "UPDATE Usuario SET Bandeja_Em_Espera ='" + true + "' WHERE CPF='" + Cpf + "'";
+                context.ExecuteStoreCommand(strSQL);                
+            }
+        }
+
+        public static void PegarBandeja()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var listData = (from i in context.Usuario
+                                where i.CPF == Cpf
+                                select i.Data_Refeicao).ToList();
+                DateTime dataRef = DateTime.Parse(listData[0]);
+
+                var listBandeja = (from i in context.Usuario
+                                where i.CPF == Cpf
+                                select i.Bandeja_Em_Espera).ToList();
+                bool bandejaEspera = bool.Parse(listBandeja[0].ToString());
+
+                if ((dataRef.Date == DateTime.Now.Date) && (bandejaEspera == true))
+                {
+                    string strSQL = "UPDATE Usuario SET Bandeja_Em_Espera ='" + false + "' WHERE CPF='" + Cpf + "'";
+                    context.ExecuteStoreCommand(strSQL);
+                    MessageBox.Show("Autorizado!", "Bandeja", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+                else MessageBox.Show("Não Autorizado! Ou já foi pego bandeja ou pagamento não efetuado", "Bandeja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         
         public static void AlterarDados()
         {

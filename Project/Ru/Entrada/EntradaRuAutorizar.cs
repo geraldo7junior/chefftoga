@@ -155,6 +155,8 @@ namespace Ru
 
                         context.ExecuteStoreCommand(strSQL);
 
+                        Utilidades.Bandeja_Espera();
+
                         MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
@@ -173,6 +175,8 @@ namespace Ru
                         string strSQL = "UPDATE Usuario SET Almoco = '" + true + "' , Data_Refeicao= '" + data + "' WHERE CPF= '" + Utilidades.Cpf + "'";
 
                         context.ExecuteStoreCommand(strSQL);
+
+                        Utilidades.Bandeja_Espera();
 
                         MessageBox.Show("Autorizado!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }

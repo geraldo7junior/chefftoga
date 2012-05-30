@@ -96,6 +96,7 @@
           <Property Name="CEP" Type="nvarchar" Nullable="false" MaxLength="20" />
           <Property Name="Fone" Type="nvarchar" Nullable="false" MaxLength="20" />
           <Property Name="Bolsista" Type="bit" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
           <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DataNascimento" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Id_Periodo" Type="int" />
@@ -103,6 +104,7 @@
           <Property Name="Data_Refeicao" Type="nvarchar" Nullable="false" MaxLength="20" />
           <Property Name="Almoco" Type="bit" Nullable="false" />
           <Property Name="Jantar" Type="bit" Nullable="false" />
+          <Property Name="Bandeja_Em_Espera" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_Curso_InstituicaoEnsino">
           <End Role="InstituicaoEnsino" Type="RuModel.Store.InstituicaoEnsino" Multiplicity="1" />
@@ -256,6 +258,7 @@
           <Property Type="String" Name="CEP" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Fone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="Bolsista" Nullable="false" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Senha" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="DataNascimento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="Id_Periodo" />
@@ -263,6 +266,7 @@
           <Property Type="String" Name="Data_Refeicao" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="Almoco" Nullable="false" />
           <Property Type="Boolean" Name="Jantar" Nullable="false" />
+          <Property Type="Boolean" Name="Bandeja_Em_Espera" Nullable="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -338,6 +342,7 @@
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="RuModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Bandeja_Em_Espera" ColumnName="Bandeja_Em_Espera" />
                 <ScalarProperty Name="Jantar" ColumnName="Jantar" />
                 <ScalarProperty Name="Almoco" ColumnName="Almoco" />
                 <ScalarProperty Name="Data_Refeicao" ColumnName="Data_Refeicao" />
@@ -345,6 +350,7 @@
                 <ScalarProperty Name="Id_Periodo" ColumnName="Id_Periodo" />
                 <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
                 <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Bolsista" ColumnName="Bolsista" />
                 <ScalarProperty Name="Fone" ColumnName="Fone" />
                 <ScalarProperty Name="CEP" ColumnName="CEP" />
@@ -394,8 +400,8 @@
           <ConnectorPoint PointX="3" PointY="1.8939925130208337" />
         </AssociationConnector>
         <EntityTypeShape EntityType="RuModel.Movimentacao" Width="1.5" PointX="5.75" PointY="0.75" Height="3.5186979166666674" />
-        <EntityTypeShape EntityType="RuModel.Periodo" Width="1.5" PointX="5.875" PointY="4.625" Height="1.4033821614583317" />
-        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="8.25" PointY="0.875" Height="5.2494108072916674" />
+        <EntityTypeShape EntityType="RuModel.Periodo" Width="1.5" PointX="5.75" PointY="4.5" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="RuModel.Usuario" Width="1.5" PointX="7.875" PointY="0.5" Height="5.6340136718750031" />
       </Diagram>
     </Diagrams>
   </Designer>

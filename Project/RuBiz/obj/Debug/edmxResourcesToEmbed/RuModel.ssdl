@@ -91,6 +91,7 @@
     <Property Name="CEP" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Fone" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Bolsista" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
     <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DataNascimento" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Id_Periodo" Type="int" />
@@ -98,6 +99,7 @@
     <Property Name="Data_Refeicao" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Almoco" Type="bit" Nullable="false" />
     <Property Name="Jantar" Type="bit" Nullable="false" />
+    <Property Name="Bandeja_Em_Espera" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="FK_Curso_InstituicaoEnsino">
     <End Role="InstituicaoEnsino" Type="RuModel.Store.InstituicaoEnsino" Multiplicity="1" />

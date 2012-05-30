@@ -82,5 +82,12 @@ namespace Ru
             _fAlt.Show();
         }
 
+        private void bandejaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fBandeja _fAlt;
+            _fAlt = new fBandeja();
+            _fAlt.Show();
+        }
+
     }
 }

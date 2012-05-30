@@ -88,3 +88,4 @@ C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fGerenteGerenciar.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroNovoOp.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroVisualizarOp.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fBuscar.resources
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fBandeja.resources

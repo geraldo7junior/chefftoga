@@ -136,6 +136,12 @@ namespace Ru
                             _fVCad.Show();
                         }
 
+                        //Operador de Bandeja
+                        else if (Utilidades.ControleDeTela == "pegarbandeja")
+                        {
+                            Utilidades.PegarBandeja();
+                            Close();
+                        }
                         
                         //Gerente Cadastro de Operadores ALTERAR          
                         else if (Utilidades.ControleDeTela == "alterarOp")

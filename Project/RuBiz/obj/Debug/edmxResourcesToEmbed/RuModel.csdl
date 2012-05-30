@@ -105,6 +105,7 @@
     <Property Type="String" Name="CEP" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Fone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="Bolsista" Nullable="false" />
+    <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="Senha" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="DataNascimento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="Id_Periodo" />
@@ -112,5 +113,6 @@
     <Property Type="String" Name="Data_Refeicao" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="Almoco" Nullable="false" />
     <Property Type="Boolean" Name="Jantar" Nullable="false" />
+    <Property Type="Boolean" Name="Bandeja_Em_Espera" Nullable="false" />
   </EntityType>
 </Schema>

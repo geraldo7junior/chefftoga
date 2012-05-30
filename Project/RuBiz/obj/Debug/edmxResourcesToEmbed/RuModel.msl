@@ -69,6 +69,7 @@
     <EntitySetMapping Name="Usuario">
       <EntityTypeMapping TypeName="RuModel.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Bandeja_Em_Espera" ColumnName="Bandeja_Em_Espera" />
           <ScalarProperty Name="Jantar" ColumnName="Jantar" />
           <ScalarProperty Name="Almoco" ColumnName="Almoco" />
           <ScalarProperty Name="Data_Refeicao" ColumnName="Data_Refeicao" />
@@ -76,6 +77,7 @@
           <ScalarProperty Name="Id_Periodo" ColumnName="Id_Periodo" />
           <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
           <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Bolsista" ColumnName="Bolsista" />
           <ScalarProperty Name="Fone" ColumnName="Fone" />
           <ScalarProperty Name="CEP" ColumnName="CEP" />

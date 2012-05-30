@@ -252,6 +252,21 @@ namespace RuBiz
         private bool _bolsista;
     
         [DataMember]
+        public string Status
+        {
+            get { return _status; }
+            set
+            {
+                if (_status != value)
+                {
+                    _status = value;
+                    OnPropertyChanged("Status");
+                }
+            }
+        }
+        private string _status;
+    
+        [DataMember]
         public string Senha
         {
             get { return _senha; }
@@ -355,6 +370,21 @@ namespace RuBiz
             }
         }
         private bool _jantar;
+    
+        [DataMember]
+        public bool Bandeja_Em_Espera
+        {
+            get { return _bandeja_Em_Espera; }
+            set
+            {
+                if (_bandeja_Em_Espera != value)
+                {
+                    _bandeja_Em_Espera = value;
+                    OnPropertyChanged("Bandeja_Em_Espera");
+                }
+            }
+        }
+        private bool _bandeja_Em_Espera;
 
         #endregion
         #region ChangeTracking

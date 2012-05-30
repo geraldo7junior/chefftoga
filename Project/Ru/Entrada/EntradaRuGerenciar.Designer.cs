@@ -36,6 +36,7 @@
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
+            this.bandejaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbBoasVindas)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +44,8 @@
             // msMenu
             // 
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.msMenuCadastro});
+            this.msMenuCadastro,
+            this.bandejaToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -113,6 +115,13 @@
             this.pctbBoasVindas.TabStop = false;
             this.pctbBoasVindas.Click += new System.EventHandler(this.pctbBoasVindas_Click);
             // 
+            // bandejaToolStripMenuItem
+            // 
+            this.bandejaToolStripMenuItem.Name = "bandejaToolStripMenuItem";
+            this.bandejaToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.bandejaToolStripMenuItem.Text = "&Bandeja";
+            this.bandejaToolStripMenuItem.Click += new System.EventHandler(this.bandejaToolStripMenuItem_Click);
+            // 
             // fEntradaRuGerenciar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +159,7 @@
         private System.Windows.Forms.Label lblBemVindo;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.PictureBox pctbBoasVindas;
+        private System.Windows.Forms.ToolStripMenuItem bandejaToolStripMenuItem;
 
 
 

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGerenteGerenciar));
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.encerrarSeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,7 @@
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
-            this.encerrarSeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bandejaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbBoasVindas)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +78,13 @@
             this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
             this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.relatórioToolStripMenuItem.Text = "&Gerenciar";
+            // 
+            // encerrarSeToolStripMenuItem
+            // 
+            this.encerrarSeToolStripMenuItem.Name = "encerrarSeToolStripMenuItem";
+            this.encerrarSeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.encerrarSeToolStripMenuItem.Text = "&Encerrar Sessão";
+            this.encerrarSeToolStripMenuItem.Click += new System.EventHandler(this.encerrarSeToolStripMenuItem_Click);
             // 
             // msMenuCadastro
             // 
@@ -192,7 +200,8 @@
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem6});
+            this.toolStripMenuItem6,
+            this.bandejaToolStripMenuItem});
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(59, 20);
             this.toolStripMenuItem5.Text = "&Entrada";
@@ -241,12 +250,12 @@
             this.pctbBoasVindas.TabIndex = 64;
             this.pctbBoasVindas.TabStop = false;
             // 
-            // encerrarSeToolStripMenuItem
+            // bandejaToolStripMenuItem
             // 
-            this.encerrarSeToolStripMenuItem.Name = "encerrarSeToolStripMenuItem";
-            this.encerrarSeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.encerrarSeToolStripMenuItem.Text = "&Encerrar Sessão";
-            this.encerrarSeToolStripMenuItem.Click += new System.EventHandler(this.encerrarSeToolStripMenuItem_Click);
+            this.bandejaToolStripMenuItem.Name = "bandejaToolStripMenuItem";
+            this.bandejaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.bandejaToolStripMenuItem.Text = "&Bandeja";
+            this.bandejaToolStripMenuItem.Click += new System.EventHandler(this.bandejaToolStripMenuItem_Click);
             // 
             // fGerenteGerenciar
             // 
@@ -300,6 +309,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem encerrarSeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bandejaToolStripMenuItem;
 
 
 
