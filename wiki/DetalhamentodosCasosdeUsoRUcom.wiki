@@ -1,4 +1,4 @@
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso R.U.com</p></font></b></H2>
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso Cheff Toga.com</p></font></b></H2>
 <hr>
 
 <b><H3>Número do caso de uso: UC0001</H3></b><br>
