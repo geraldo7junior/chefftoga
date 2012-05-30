@@ -109,7 +109,6 @@
 ||•	Foto;|| 
 ||•	Fone;||
 ||•	Bolsista/Gratuidade;||
-
 ||<b>Ator:</b>||
 ||Operador de caixa e Aluno||
 ||<b>Prioridade:</b>|| 
@@ -148,7 +147,6 @@
 ||•	Fone (obrigatório);||
 ||•	Tipo de Operador (obrigatório);||
 ||•	Senha (obrigatório);||
-
 ||<b>Ator:</b>|| 
 ||Gerente||
 ||<b>Prioridade:</b>||
