@@ -3,6 +3,7 @@
 
 
 <H2 TEXT-ALIGN='CENTER'><b><FONT FACE="TIMES" SIZE="3"><p align='center'>Bibliografia</p></font></b></H2>
+<hr>
 
 
 <p>1.	Sommerville, Ian. Requisitos de software. In: Ian Sommerville(Org.). Engenharia de Software. São Paulo: Pearson Addison - Wesley, 2007, p. 79-82.<br>
