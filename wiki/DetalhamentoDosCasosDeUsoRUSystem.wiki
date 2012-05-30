@@ -136,7 +136,7 @@
 ||<b>Objetivos:</b>||
 ||Analisar, alterar enfim  gerenciar as informações dos estudantes e funcionários.||
 ||<b>Descrição:</b>||
-||O gerente do restaurante poderá ter acesso e controlar informações referentes aos alunos cadastrados e funcionários do sistema. Tal gerente possui acesso privilegiado ao sistema, podendo atuar com as mesmas funções dos demais operadores. Este ainda possui acessos exclusivos, como o cadastro de operadores nas demais atividades do sistema, como também um sistema inteligente de busca de informações, estas referentes a movimentações, datas e horários cabíveis aos tipos usos dos alunos, como também, funcionando como ferramenta de controle e segurança, onde se sabe quem era o operador em determinada ação no sistema. Tal caso de uso visa o estabelecimento da organização e gerencia do restaurante por parte de seu operador. ||
+||O gerente do restaurante poderá ter acesso e controlar informações referentes aos alunos cadastrados e funcionários do sistema. Tal gerente possui acesso privilegiado ao sistema, podendo atuar com as mesmas funções dos demais operadores. Este ainda possui acessos exclusivos, como o cadastro de operadores nas demais atividades do sistema, como também um sistema inteligente de busca de informações, estas referentes a movimentações, datas e horários cabíveis aos tipos de entradas dos alunos, como também, funcionando como ferramenta de controle e segurança, onde se sabe quem era o operador em determinada ação no sistema. Tal caso de uso visa o estabelecimento da organização e gerencia do restaurante por parte de seu operador. ||
 ||_O cadastro dos operadores ocorrerá frente ao fornecimento das informações:_||
 ||•	ID Card (obrigatório);||
 ||•	Nome (obrigatório);||
