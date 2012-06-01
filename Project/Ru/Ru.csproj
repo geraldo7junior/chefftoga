@@ -34,10 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>A:\Programas\Prog de Programação\Libraries\itextsharp-all-5.2.1\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,6 +70,12 @@
     </Compile>
     <Compile Include="Busca CPF\Buscar.Designer.cs">
       <DependentUpon>Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\FiltroRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerente\Copy of CadastroNovoOp.Designer.cs">
+      <DependentUpon>FiltroRelatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Status\Status.cs">
       <SubType>Form</SubType>
@@ -155,6 +166,9 @@
     <EmbeddedResource Include="Busca CPF\Buscar.resx">
       <DependentUpon>Buscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gerente\FiltroRelatorio.resx">
+      <DependentUpon>FiltroRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Status\Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,7 +238,9 @@
       <Name>RuBiz</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -16,6 +16,7 @@ namespace Ru
             InitializeComponent();
             if ((Utilidades.ControleDeStatus == "bloquear") || (Utilidades.ControleDeStatus == "bloquearOp")) btnDesbloquear.Hide();
             else btnBloquear.Hide();
+            lblInforme.Text = "Informe o motivo:";
         }
 
         private void fStatus_Load(object sender, EventArgs e)

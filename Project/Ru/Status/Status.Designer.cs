@@ -31,14 +31,15 @@
             this.txtTodosStatus = new System.Windows.Forms.RichTextBox();
             this.btnBloquear = new System.Windows.Forms.Button();
             this.btnDesbloquear = new System.Windows.Forms.Button();
+            this.lblInforme = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTodosStatus
             // 
             this.txtTodosStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTodosStatus.Location = new System.Drawing.Point(-2, 0);
+            this.txtTodosStatus.Location = new System.Drawing.Point(-2, 27);
             this.txtTodosStatus.Name = "txtTodosStatus";
-            this.txtTodosStatus.Size = new System.Drawing.Size(287, 210);
+            this.txtTodosStatus.Size = new System.Drawing.Size(287, 183);
             this.txtTodosStatus.TabIndex = 0;
             this.txtTodosStatus.Text = "";
             // 
@@ -64,11 +65,23 @@
             this.btnDesbloquear.UseVisualStyleBackColor = true;
             this.btnDesbloquear.Click += new System.EventHandler(this.btnDesbloquear_Click);
             // 
+            // lblInforme
+            // 
+            this.lblInforme.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblInforme.AutoSize = true;
+            this.lblInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInforme.Location = new System.Drawing.Point(0, 4);
+            this.lblInforme.Name = "lblInforme";
+            this.lblInforme.Size = new System.Drawing.Size(35, 13);
+            this.lblInforme.TabIndex = 3;
+            this.lblInforme.Text = "label1";
+            // 
             // fStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.lblInforme);
             this.Controls.Add(this.btnDesbloquear);
             this.Controls.Add(this.btnBloquear);
             this.Controls.Add(this.txtTodosStatus);
@@ -79,6 +92,7 @@
             this.Text = "Alteração de Status";
             this.Load += new System.EventHandler(this.fStatus_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,5 +101,6 @@
         private System.Windows.Forms.RichTextBox txtTodosStatus;
         private System.Windows.Forms.Button btnBloquear;
         private System.Windows.Forms.Button btnDesbloquear;
+        private System.Windows.Forms.Label lblInforme;
     }
 }

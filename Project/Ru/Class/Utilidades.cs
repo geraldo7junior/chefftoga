@@ -8,6 +8,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace Ru
 {
@@ -15,13 +18,184 @@ namespace Ru
     {
         public static string DataNascCampos, CepCampos, FoneCampos, strIdCurso, strIdPeriodo, modificacao, ControleDeTela, ControleDeStatus, asterisco, NomeLogin, Cpf, CpfNovo, CpfOperador, NomeOperador, status, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, email, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "", ControleRefeicao = "", ALUNOouOPERADOR;
 
-        public static int id,IdCard, IDCurso, IDPeriodo, TipoUser, IDOperador;
+        public static int IdMoviment, CtrlIdMov, id, IdCard, IDCurso, IDPeriodo, TipoUser, IDOperador;
 
         public static float credito, debito, ValorASerCobrado, saldo;
 
         public static DateTime DataNascFormato;
 
         public static bool retorno, bolsista;
+
+        public static void GerarPdf()
+        {
+            // Variavel do Nome e caminho do arquivo; Pegando DataHora Atual.
+            string nome_arquivo = "";
+            string DataHora = DateTime.Now.ToShortDateString().Replace("/", ".") + "_" + DateTime.Now.ToShortTimeString().Replace(":", "h");
+
+            // Abre janela para usuário escolher a pasta onde o arquivo será gerado
+            FolderBrowserDialog vSalvar = new FolderBrowserDialog();
+
+            // Verifica se o usuário clicou em ok ou cancelar na janela de seleção da pasta
+            if (vSalvar.ShowDialog() == DialogResult.Cancel) return; // Cancela todo processo
+
+            // Insere na variavel o caminho selecionado pelo usuário e concatena com o nome do arquivo
+            nome_arquivo = vSalvar.SelectedPath + "\\Relatório_" + DataHora + ".pdf";
+
+            //Gerando arquivo...
+            Document doc = new Document(iTextSharp.text.PageSize.A4.Rotate(), 3, 2, 30, 20);
+
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(nome_arquivo, FileMode.Create));
+            doc.Open();
+
+            Paragraph nomeSistema = new Paragraph("CheffToga System", FontFactory.GetFont(FontFactory.TIMES_BOLDITALIC, 20));
+            Paragraph titulo = new Paragraph("Relatório Geral", FontFactory.GetFont(FontFactory.TIMES_BOLD, 14));
+            Paragraph datahora = new Paragraph("DataHora de Geração: " + DataHora, FontFactory.GetFont(FontFactory.TIMES, 10));
+            Paragraph CardOp = new Paragraph("ID_Card: " + IDOperador.ToString(), FontFactory.GetFont(FontFactory.TIMES, 10));
+            Paragraph NomeOp = new Paragraph("Operador: " + NomeOperador, FontFactory.GetFont(FontFactory.TIMES, 10));
+            Paragraph pularLinha = new Paragraph(" ");
+
+            doc.Add(nomeSistema);
+            doc.Add(pularLinha);
+            doc.Add(titulo);
+            doc.Add(datahora);
+            doc.Add(CardOp);
+            doc.Add(NomeOp);
+            doc.Add(pularLinha);
+            doc.Add(pularLinha);
+
+            //Gerando a Tabela de Relatório...
+            PdfPTable tabela = new PdfPTable(13);
+            PdfPCell celula = new PdfPCell();
+
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Id_Moviment.");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Card_Operad");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Cpf_Operad");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Nome_Opera");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Card_Aluno");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Cpf_Aluno");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Nome_Aluno");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Data_Movmnt");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Hora_Movmnt");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Tipo_Movmnt");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Cad_Alterad");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Observacoes");
+            Utilidades.MontaInicioRelatorio(tabela, celula, "Valor");
+
+            Utilidades.GerarRelatorio(doc, tabela, celula);
+
+            doc.Add(tabela);
+            doc.Close();
+
+            if (MessageBox.Show("Relatório Gerado com Sucesso e Salvo em " + nome_arquivo + ". Deseja Visualizá-lo?", "Relatório", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(nome_arquivo);
+            }
+        }
+
+        public static void MontaInicioRelatorio(PdfPTable tabela, PdfPCell celula, string nome)
+        {
+            celula.Phrase = new Phrase(nome);
+            celula.Phrase.Font.Size = float.Parse((7.5).ToString());
+            tabela.AddCell(celula);
+        }
+
+        public static void GerarRelatorio(Document doc, PdfPTable tabela, PdfPCell celula)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+           
+                var listaMoviment = (from i in context.Movimentacao
+                                where (i.Id_Movimentacao == CtrlIdMov)
+                                select i.Id_Movimentacao).ToList();
+                IdMoviment = listaMoviment.ToList().Count();
+
+                if (IdMoviment != 0)
+                {
+
+                    var idmov = (from i in context.Movimentacao
+                                 where i.Id_Movimentacao == CtrlIdMov
+                                 select i.Id_Movimentacao).ToList();
+                    string stridmov = idmov[0].ToString();
+
+                    var idop = (from i in context.Movimentacao
+                                where i.Id_Movimentacao == CtrlIdMov
+                                select i.Id_Operador).ToList();
+                    string stridop = idop[0].ToString();
+
+                    var cpfop = (from i in context.Movimentacao
+                                 where i.Id_Movimentacao == CtrlIdMov
+                                 select i.Cpf_Operador).ToList();
+                    string strcpfop = cpfop[0].ToString();
+
+                    var nomeop = (from i in context.Movimentacao
+                                  where i.Id_Movimentacao == CtrlIdMov
+                                  select i.Nome_Operador).ToList();
+                    string strnomeop = nomeop[0].ToString();
+
+                    var idal = (from i in context.Movimentacao
+                                where i.Id_Movimentacao == CtrlIdMov
+                                select i.Id_Aluno).ToList();
+                    string stridal = idal[0].ToString();
+
+                    var cpfal = (from i in context.Movimentacao
+                                 where i.Id_Movimentacao == CtrlIdMov
+                                 select i.Cpf_Aluno).ToList();
+                    string strcpfal = cpfal[0].ToString();
+
+                    var nomeal = (from i in context.Movimentacao
+                                  where i.Id_Movimentacao == CtrlIdMov
+                                  select i.Nome_Aluno).ToList();
+                    string strnomeal = nomeal[0].ToString();
+
+                    var datamov = (from i in context.Movimentacao
+                                   where i.Id_Movimentacao == CtrlIdMov
+                                   select i.Data_Movimentacao).ToList();
+                    string strdatamov = datamov[0].ToString();
+
+                    var horamov = (from i in context.Movimentacao
+                                   where i.Id_Movimentacao == CtrlIdMov
+                                   select i.Hora_Movimentacao).ToList();
+                    string strhoramov = horamov[0].ToString();
+
+                    var tipomov = (from i in context.Movimentacao
+                                   where i.Id_Movimentacao == CtrlIdMov
+                                   select i.Tipo_Movimentacao).ToList();
+                    string strtipomov = tipomov[0].ToString();
+
+                    var campos = (from i in context.Movimentacao
+                                  where i.Id_Movimentacao == CtrlIdMov
+                                  select i.Campos).ToList();
+                    string strcampos = campos[0].ToString();
+
+                    var obs = (from i in context.Movimentacao
+                               where i.Id_Movimentacao == CtrlIdMov
+                               select i.Observacao).ToList();
+                    string strobs = obs[0].ToString();
+
+                    var valor = (from i in context.Movimentacao
+                                 where i.Id_Movimentacao == CtrlIdMov
+                                 select i.Valor).ToList();
+                    string strvalor = valor[0].ToString();
+
+                    MontaInicioRelatorio(tabela, celula, stridmov);
+                    MontaInicioRelatorio(tabela, celula, stridop);
+                    MontaInicioRelatorio(tabela, celula, strcpfop);
+                    MontaInicioRelatorio(tabela, celula, strnomeop);
+                    MontaInicioRelatorio(tabela, celula, stridal);
+                    MontaInicioRelatorio(tabela, celula, strcpfal);
+                    MontaInicioRelatorio(tabela, celula, strnomeal);
+                    MontaInicioRelatorio(tabela, celula, strdatamov);
+                    MontaInicioRelatorio(tabela, celula, strhoramov);
+                    MontaInicioRelatorio(tabela, celula, strtipomov);
+                    MontaInicioRelatorio(tabela, celula, strcampos);
+                    MontaInicioRelatorio(tabela, celula, strobs);
+                    MontaInicioRelatorio(tabela, celula, strvalor);
+
+                    CtrlIdMov += 1;
+                    GerarRelatorio(doc, tabela, celula);
+                }
+            }           
+        }
 
         public static void CarregaCombobox(ComboBox cbxCurso, ComboBox cbxPeriodo)
         {

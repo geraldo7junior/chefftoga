@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace Ru
 {
@@ -230,6 +233,18 @@ namespace Ru
             Utilidades.ControleDeStatus = "desbloquearOp";
             fStatus _fst = new fStatus();
             _fst.Show(); 
+        }
+
+        private void gerarRelatórioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void relatórioGeralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fFiltroRelatorio _Rel;
+            _Rel = new fFiltroRelatorio();
+            _Rel.Show();
         }
 
 

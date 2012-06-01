@@ -90,3 +90,5 @@ C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fCadastroVisualizarOp.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fBuscar.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fBandeja.resources
 C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fStatus.resources
+C:\chefftoga\Project\Ru\bin\Debug\itextsharp.dll
+C:\chefftoga\Project\Ru\obj\x86\Debug\Ru.fFiltroRelatorio.resources
