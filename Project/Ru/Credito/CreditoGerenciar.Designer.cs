@@ -33,8 +33,8 @@
             this.msMenuCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroVisualizar = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroAlterar = new System.Windows.Forms.ToolStripMenuItem();
-            this.msMenuCadastroSair = new System.Windows.Forms.ToolStripMenuItem();
             this.retirarCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msMenuCadastroSair = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
@@ -79,19 +79,19 @@
             this.msMenuCadastroAlterar.Text = "&Creditar";
             this.msMenuCadastroAlterar.Click += new System.EventHandler(this.msMenuCadastroAlterar_Click);
             // 
-            // msMenuCadastroSair
-            // 
-            this.msMenuCadastroSair.Name = "msMenuCadastroSair";
-            this.msMenuCadastroSair.Size = new System.Drawing.Size(155, 22);
-            this.msMenuCadastroSair.Text = "&Encerrar Sessão";
-            this.msMenuCadastroSair.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
             // retirarCréditoToolStripMenuItem
             // 
             this.retirarCréditoToolStripMenuItem.Name = "retirarCréditoToolStripMenuItem";
             this.retirarCréditoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.retirarCréditoToolStripMenuItem.Text = "&Retirar Crédito";
             this.retirarCréditoToolStripMenuItem.Click += new System.EventHandler(this.retirarCréditoToolStripMenuItem_Click);
+            // 
+            // msMenuCadastroSair
+            // 
+            this.msMenuCadastroSair.Name = "msMenuCadastroSair";
+            this.msMenuCadastroSair.Size = new System.Drawing.Size(155, 22);
+            this.msMenuCadastroSair.Text = "&Encerrar Sessão";
+            this.msMenuCadastroSair.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // lblBemVindo
             // 

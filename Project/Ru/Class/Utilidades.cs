@@ -231,7 +231,7 @@ namespace Ru
                                       where i.CPF == Cpf
                                       select i.Id_Card).ToList();
 
-                    id = listid[0];
+                    IdCard = listid[0];
 
                     var listnome = (from i in context.Usuario
                                   where i.CPF == Cpf
@@ -258,7 +258,7 @@ namespace Ru
 
                         saldo = float.Parse(NovoSaldo[0].ToString());
 
-                        Movimentacoes(id, Utilidades.Cpf, nomebolsa, "Entrada de Aluno com Desconto", "-", "-", ValorASerCobrado); //registrador de movimentacões 
+                        Movimentacoes(IdCard, Utilidades.Cpf, nomebolsa, "Entrada de Aluno com Desconto", "-", "-", ValorASerCobrado); //registrador de movimentacões 
 
                         return true;
                     }
@@ -283,7 +283,7 @@ namespace Ru
                     else ALUNOouOPERADOR = "OPERADOR";
 
 
-                    Movimentacoes(id, Utilidades.Cpf, nomebolsa, "Entrada de " + ALUNOouOPERADOR + " BOLSISTA" , "-", "-", 0); //registrador de movimentacões 
+                    Movimentacoes(IdCard, Utilidades.Cpf, nomebolsa, "Entrada de " + ALUNOouOPERADOR + " BOLSISTA" , "-", "-", 0); //registrador de movimentacões 
 
                     MessageBox.Show("Entrada sem desconto! " + ALUNOouOPERADOR + " BOLSISTA!", "Entrada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return true;

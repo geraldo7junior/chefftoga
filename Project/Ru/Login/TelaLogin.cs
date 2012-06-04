@@ -56,6 +56,7 @@ namespace Ru
                             if ((linq.ToList().Count() == 1) && (linq[0] == 1))
                             {
                                 //abrir pagina dos alunos
+                                lblErroLogar.Text = "Não há acesso para Alunos neste Sistema!";
                             }
 
                             else if ((linq.ToList().Count() == 1) && (linq[0] == 2))

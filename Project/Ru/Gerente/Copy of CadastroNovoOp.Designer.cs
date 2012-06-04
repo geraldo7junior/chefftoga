@@ -60,7 +60,6 @@
             this.txtCardOperador = new System.Windows.Forms.MaskedTextBox();
             this.txtIdMovimentacao = new System.Windows.Forms.MaskedTextBox();
             this.lblInforme = new System.Windows.Forms.Label();
-            this.lblAstTipoOperador = new System.Windows.Forms.Label();
             this.pctbRU = new System.Windows.Forms.PictureBox();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.lblGeradorRelatorio = new System.Windows.Forms.Label();
@@ -80,7 +79,7 @@
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.msMenu.Size = new System.Drawing.Size(1370, 24);
-            this.msMenu.TabIndex = 61;
+            this.msMenu.TabIndex = 16;
             this.msMenu.Text = "Menu";
             // 
             // msMenuCadastro
@@ -140,7 +139,7 @@
             this.txtObs.Location = new System.Drawing.Point(333, 408);
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(177, 96);
-            this.txtObs.TabIndex = 149;
+            this.txtObs.TabIndex = 7;
             this.txtObs.Text = "";
             // 
             // txtValor
@@ -151,7 +150,7 @@
             this.txtValor.Location = new System.Drawing.Point(298, 510);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(173, 22);
-            this.txtValor.TabIndex = 148;
+            this.txtValor.TabIndex = 8;
             // 
             // txtCamposAlterados
             // 
@@ -161,7 +160,7 @@
             this.txtCamposAlterados.Location = new System.Drawing.Point(387, 377);
             this.txtCamposAlterados.Name = "txtCamposAlterados";
             this.txtCamposAlterados.Size = new System.Drawing.Size(173, 22);
-            this.txtCamposAlterados.TabIndex = 147;
+            this.txtCamposAlterados.TabIndex = 6;
             // 
             // lblValor
             // 
@@ -217,6 +216,9 @@
             "Exclusão de Cadastro de Operador",
             "Crédito Retirado",
             "Crédito Inserido",
+            "Entrada de Aluno com Desconto",
+            "Entrada de ALUNO BOLSISTA",
+            "Entrada de OPERADOR BOLSISTA",
             "Status de todos os Alunos Desbloqueados",
             "Status de todos os Alunos Bloqueados",
             "Status de todos os Operadores Desbloqueados",
@@ -225,7 +227,7 @@
             this.cbxTipoMovimentacao.Location = new System.Drawing.Point(409, 341);
             this.cbxTipoMovimentacao.Name = "cbxTipoMovimentacao";
             this.cbxTipoMovimentacao.Size = new System.Drawing.Size(298, 24);
-            this.cbxTipoMovimentacao.TabIndex = 143;
+            this.cbxTipoMovimentacao.TabIndex = 5;
             // 
             // lblTipoMovimentacao
             // 
@@ -261,7 +263,7 @@
             this.txtHoraMovimentacao.Name = "txtHoraMovimentacao";
             this.txtHoraMovimentacao.RejectInputOnFirstFailure = true;
             this.txtHoraMovimentacao.Size = new System.Drawing.Size(80, 22);
-            this.txtHoraMovimentacao.TabIndex = 140;
+            this.txtHoraMovimentacao.TabIndex = 4;
             this.txtHoraMovimentacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblDataMovimentacao
@@ -286,7 +288,7 @@
             this.maskedTextBox6.Name = "maskedTextBox6";
             this.maskedTextBox6.RejectInputOnFirstFailure = true;
             this.maskedTextBox6.Size = new System.Drawing.Size(80, 22);
-            this.maskedTextBox6.TabIndex = 138;
+            this.maskedTextBox6.TabIndex = 3;
             this.maskedTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNomeAluno
@@ -297,7 +299,7 @@
             this.txtNomeAluno.Location = new System.Drawing.Point(896, 474);
             this.txtNomeAluno.Name = "txtNomeAluno";
             this.txtNomeAluno.Size = new System.Drawing.Size(173, 22);
-            this.txtNomeAluno.TabIndex = 137;
+            this.txtNomeAluno.TabIndex = 14;
             // 
             // lblNomeAluno
             // 
@@ -321,7 +323,7 @@
             this.txtCpfAluno.Name = "txtCpfAluno";
             this.txtCpfAluno.RejectInputOnFirstFailure = true;
             this.txtCpfAluno.Size = new System.Drawing.Size(91, 22);
-            this.txtCpfAluno.TabIndex = 135;
+            this.txtCpfAluno.TabIndex = 13;
             this.txtCpfAluno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCardAluno
@@ -334,7 +336,7 @@
             this.txtCardAluno.Name = "txtCardAluno";
             this.txtCardAluno.RejectInputOnFirstFailure = true;
             this.txtCardAluno.Size = new System.Drawing.Size(119, 22);
-            this.txtCardAluno.TabIndex = 134;
+            this.txtCardAluno.TabIndex = 12;
             this.txtCardAluno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblCpfAluno
@@ -369,7 +371,7 @@
             this.txtNomeOperador.Location = new System.Drawing.Point(907, 338);
             this.txtNomeOperador.Name = "txtNomeOperador";
             this.txtNomeOperador.Size = new System.Drawing.Size(173, 22);
-            this.txtNomeOperador.TabIndex = 131;
+            this.txtNomeOperador.TabIndex = 11;
             // 
             // lblNomeOperador
             // 
@@ -393,7 +395,7 @@
             this.txtCpfOperador.Name = "txtCpfOperador";
             this.txtCpfOperador.RejectInputOnFirstFailure = true;
             this.txtCpfOperador.Size = new System.Drawing.Size(92, 22);
-            this.txtCpfOperador.TabIndex = 129;
+            this.txtCpfOperador.TabIndex = 10;
             this.txtCpfOperador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCardOperador
@@ -406,7 +408,7 @@
             this.txtCardOperador.Name = "txtCardOperador";
             this.txtCardOperador.RejectInputOnFirstFailure = true;
             this.txtCardOperador.Size = new System.Drawing.Size(115, 22);
-            this.txtCardOperador.TabIndex = 128;
+            this.txtCardOperador.TabIndex = 9;
             this.txtCardOperador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtIdMovimentacao
@@ -419,7 +421,7 @@
             this.txtIdMovimentacao.Name = "txtIdMovimentacao";
             this.txtIdMovimentacao.RejectInputOnFirstFailure = true;
             this.txtIdMovimentacao.Size = new System.Drawing.Size(80, 22);
-            this.txtIdMovimentacao.TabIndex = 127;
+            this.txtIdMovimentacao.TabIndex = 2;
             this.txtIdMovimentacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblInforme
@@ -430,21 +432,9 @@
             this.lblInforme.Location = new System.Drawing.Point(326, 170);
             this.lblInforme.Name = "lblInforme";
             this.lblInforme.Size = new System.Drawing.Size(600, 16);
-            this.lblInforme.TabIndex = 126;
+            this.lblInforme.TabIndex = 1;
             this.lblInforme.Text = "Informe os valores dos campos abaixo que deseja filtrar para poder gerar um Relat" +
     "ório do Sistema:";
-            // 
-            // lblAstTipoOperador
-            // 
-            this.lblAstTipoOperador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAstTipoOperador.AutoSize = true;
-            this.lblAstTipoOperador.BackColor = System.Drawing.Color.Transparent;
-            this.lblAstTipoOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAstTipoOperador.ForeColor = System.Drawing.Color.Red;
-            this.lblAstTipoOperador.Location = new System.Drawing.Point(877, 336);
-            this.lblAstTipoOperador.Name = "lblAstTipoOperador";
-            this.lblAstTipoOperador.Size = new System.Drawing.Size(0, 24);
-            this.lblAstTipoOperador.TabIndex = 125;
             // 
             // pctbRU
             // 
@@ -464,7 +454,7 @@
             this.btnRelatorio.Location = new System.Drawing.Point(608, 589);
             this.btnRelatorio.Name = "btnRelatorio";
             this.btnRelatorio.Size = new System.Drawing.Size(150, 23);
-            this.btnRelatorio.TabIndex = 121;
+            this.btnRelatorio.TabIndex = 15;
             this.btnRelatorio.Text = "&Gerar Relatório";
             this.btnRelatorio.UseVisualStyleBackColor = true;
             this.btnRelatorio.Click += new System.EventHandler(this.btnOk_Click_1);
@@ -477,7 +467,7 @@
             this.lblGeradorRelatorio.Location = new System.Drawing.Point(514, 99);
             this.lblGeradorRelatorio.Name = "lblGeradorRelatorio";
             this.lblGeradorRelatorio.Size = new System.Drawing.Size(205, 24);
-            this.lblGeradorRelatorio.TabIndex = 118;
+            this.lblGeradorRelatorio.TabIndex = 0;
             this.lblGeradorRelatorio.Text = "Gerador de Relatório";
             // 
             // lblIdMovimentacao
@@ -548,7 +538,6 @@
             this.Controls.Add(this.txtCardOperador);
             this.Controls.Add(this.txtIdMovimentacao);
             this.Controls.Add(this.lblInforme);
-            this.Controls.Add(this.lblAstTipoOperador);
             this.Controls.Add(this.pctbRU);
             this.Controls.Add(this.btnRelatorio);
             this.Controls.Add(this.lblGeradorRelatorio);
@@ -604,7 +593,6 @@
         private System.Windows.Forms.MaskedTextBox txtCardOperador;
         private System.Windows.Forms.MaskedTextBox txtIdMovimentacao;
         private System.Windows.Forms.Label lblInforme;
-        private System.Windows.Forms.Label lblAstTipoOperador;
         private System.Windows.Forms.PictureBox pctbRU;
         private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Label lblGeradorRelatorio;
