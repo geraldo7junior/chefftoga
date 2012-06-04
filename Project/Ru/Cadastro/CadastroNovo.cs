@@ -234,8 +234,8 @@ namespace Ru
         }
 
         private void fCadastro_Load(object sender, EventArgs e)
-        {
-            
+        {    
+       
         }
 
         private void msMenuCadastroNovo_Click(object sender, EventArgs e)

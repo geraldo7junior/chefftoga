@@ -73,7 +73,6 @@
             this.lblConfirmeSenha = new System.Windows.Forms.Label();
             this.txtConfirmeSenha = new System.Windows.Forms.TextBox();
             this.lblDataNasc = new System.Windows.Forms.Label();
-            this.pctbRU = new System.Windows.Forms.PictureBox();
             this.pctbFoto = new System.Windows.Forms.PictureBox();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.gpbBolsista = new System.Windows.Forms.GroupBox();
@@ -102,10 +101,11 @@
             this.lblAstEmail = new System.Windows.Forms.Label();
             this.cbxStatus = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.pctbRU = new System.Windows.Forms.PictureBox();
             this.msMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
             this.gpbBolsista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             this.SuspendLayout();
             // 
             // msMenu
@@ -116,7 +116,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.msMenu.Size = new System.Drawing.Size(1370, 24);
+            this.msMenu.Size = new System.Drawing.Size(800, 24);
             this.msMenu.TabIndex = 61;
             this.msMenu.Text = "Menu";
             // 
@@ -181,7 +181,7 @@
             this.lblAstFone.BackColor = System.Drawing.Color.Transparent;
             this.lblAstFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstFone.ForeColor = System.Drawing.Color.Red;
-            this.lblAstFone.Location = new System.Drawing.Point(471, 521);
+            this.lblAstFone.Location = new System.Drawing.Point(304, 462);
             this.lblAstFone.Name = "lblAstFone";
             this.lblAstFone.Size = new System.Drawing.Size(0, 24);
             this.lblAstFone.TabIndex = 80;
@@ -193,7 +193,7 @@
             this.lblAstCep.BackColor = System.Drawing.Color.Transparent;
             this.lblAstCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstCep.ForeColor = System.Drawing.Color.Red;
-            this.lblAstCep.Location = new System.Drawing.Point(539, 482);
+            this.lblAstCep.Location = new System.Drawing.Point(372, 423);
             this.lblAstCep.Name = "lblAstCep";
             this.lblAstCep.Size = new System.Drawing.Size(0, 24);
             this.lblAstCep.TabIndex = 79;
@@ -205,7 +205,7 @@
             this.lblAstCidade.BackColor = System.Drawing.Color.Transparent;
             this.lblAstCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstCidade.ForeColor = System.Drawing.Color.Red;
-            this.lblAstCidade.Location = new System.Drawing.Point(875, 445);
+            this.lblAstCidade.Location = new System.Drawing.Point(673, 386);
             this.lblAstCidade.Name = "lblAstCidade";
             this.lblAstCidade.Size = new System.Drawing.Size(0, 24);
             this.lblAstCidade.TabIndex = 77;
@@ -217,7 +217,7 @@
             this.lblAstBairro.BackColor = System.Drawing.Color.Transparent;
             this.lblAstBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstBairro.ForeColor = System.Drawing.Color.Red;
-            this.lblAstBairro.Location = new System.Drawing.Point(612, 445);
+            this.lblAstBairro.Location = new System.Drawing.Point(445, 386);
             this.lblAstBairro.Name = "lblAstBairro";
             this.lblAstBairro.Size = new System.Drawing.Size(0, 24);
             this.lblAstBairro.TabIndex = 76;
@@ -229,7 +229,7 @@
             this.lblAstRua.BackColor = System.Drawing.Color.Transparent;
             this.lblAstRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstRua.ForeColor = System.Drawing.Color.Red;
-            this.lblAstRua.Location = new System.Drawing.Point(874, 413);
+            this.lblAstRua.Location = new System.Drawing.Point(672, 354);
             this.lblAstRua.Name = "lblAstRua";
             this.lblAstRua.Size = new System.Drawing.Size(0, 24);
             this.lblAstRua.TabIndex = 74;
@@ -240,7 +240,7 @@
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.Black;
-            this.lblNome.Location = new System.Drawing.Point(295, 235);
+            this.lblNome.Location = new System.Drawing.Point(128, 176);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(90, 22);
             this.lblNome.TabIndex = 1;
@@ -252,7 +252,7 @@
             this.lblIdentidade.BackColor = System.Drawing.Color.Transparent;
             this.lblIdentidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdentidade.ForeColor = System.Drawing.Color.Black;
-            this.lblIdentidade.Location = new System.Drawing.Point(295, 274);
+            this.lblIdentidade.Location = new System.Drawing.Point(128, 215);
             this.lblIdentidade.Name = "lblIdentidade";
             this.lblIdentidade.Size = new System.Drawing.Size(90, 22);
             this.lblIdentidade.TabIndex = 2;
@@ -264,7 +264,7 @@
             this.lblCPF.BackColor = System.Drawing.Color.Transparent;
             this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPF.ForeColor = System.Drawing.Color.Black;
-            this.lblCPF.Location = new System.Drawing.Point(295, 314);
+            this.lblCPF.Location = new System.Drawing.Point(128, 255);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(90, 22);
             this.lblCPF.TabIndex = 4;
@@ -276,7 +276,7 @@
             this.lblCurso.BackColor = System.Drawing.Color.Transparent;
             this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurso.ForeColor = System.Drawing.Color.Black;
-            this.lblCurso.Location = new System.Drawing.Point(295, 352);
+            this.lblCurso.Location = new System.Drawing.Point(128, 293);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(90, 22);
             this.lblCurso.TabIndex = 5;
@@ -288,7 +288,7 @@
             this.lblPeriodo.BackColor = System.Drawing.Color.Transparent;
             this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeriodo.ForeColor = System.Drawing.Color.Black;
-            this.lblPeriodo.Location = new System.Drawing.Point(295, 390);
+            this.lblPeriodo.Location = new System.Drawing.Point(128, 331);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(90, 22);
             this.lblPeriodo.TabIndex = 6;
@@ -300,7 +300,7 @@
             this.lblEndereço.BackColor = System.Drawing.Color.Transparent;
             this.lblEndereço.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndereço.ForeColor = System.Drawing.Color.Black;
-            this.lblEndereço.Location = new System.Drawing.Point(295, 427);
+            this.lblEndereço.Location = new System.Drawing.Point(128, 368);
             this.lblEndereço.Name = "lblEndereço";
             this.lblEndereço.Size = new System.Drawing.Size(90, 22);
             this.lblEndereço.TabIndex = 7;
@@ -312,7 +312,7 @@
             this.lblFone.BackColor = System.Drawing.Color.Transparent;
             this.lblFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFone.ForeColor = System.Drawing.Color.Black;
-            this.lblFone.Location = new System.Drawing.Point(295, 523);
+            this.lblFone.Location = new System.Drawing.Point(128, 464);
             this.lblFone.Name = "lblFone";
             this.lblFone.Size = new System.Drawing.Size(90, 22);
             this.lblFone.TabIndex = 13;
@@ -324,7 +324,7 @@
             this.lblID.BackColor = System.Drawing.Color.Transparent;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.Color.Black;
-            this.lblID.Location = new System.Drawing.Point(295, 195);
+            this.lblID.Location = new System.Drawing.Point(128, 136);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(90, 22);
             this.lblID.TabIndex = 0;
@@ -332,11 +332,11 @@
             // 
             // lblFoto
             // 
-            this.lblFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFoto.BackColor = System.Drawing.Color.Transparent;
             this.lblFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFoto.ForeColor = System.Drawing.Color.Black;
-            this.lblFoto.Location = new System.Drawing.Point(77, 353);
+            this.lblFoto.Location = new System.Drawing.Point(15, 279);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(90, 22);
             this.lblFoto.TabIndex = 18;
@@ -349,7 +349,7 @@
             this.txtID.BackColor = System.Drawing.Color.White;
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(385, 193);
+            this.txtID.Location = new System.Drawing.Point(218, 134);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(136, 22);
@@ -360,7 +360,7 @@
             this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNome.BackColor = System.Drawing.Color.White;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(385, 233);
+            this.txtNome.Location = new System.Drawing.Point(218, 174);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(448, 22);
             this.txtNome.TabIndex = 1;
@@ -371,9 +371,9 @@
             this.txtRua.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRua.BackColor = System.Drawing.Color.White;
             this.txtRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRua.Location = new System.Drawing.Point(431, 425);
+            this.txtRua.Location = new System.Drawing.Point(264, 366);
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(448, 22);
+            this.txtRua.Size = new System.Drawing.Size(402, 22);
             this.txtRua.TabIndex = 7;
             // 
             // lblRua
@@ -382,7 +382,7 @@
             this.lblRua.BackColor = System.Drawing.Color.Transparent;
             this.lblRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRua.ForeColor = System.Drawing.Color.Black;
-            this.lblRua.Location = new System.Drawing.Point(382, 427);
+            this.lblRua.Location = new System.Drawing.Point(215, 368);
             this.lblRua.Name = "lblRua";
             this.lblRua.Size = new System.Drawing.Size(43, 22);
             this.lblRua.TabIndex = 7;
@@ -394,7 +394,7 @@
             this.lblBairrro.BackColor = System.Drawing.Color.Transparent;
             this.lblBairrro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBairrro.ForeColor = System.Drawing.Color.Black;
-            this.lblBairrro.Location = new System.Drawing.Point(382, 455);
+            this.lblBairrro.Location = new System.Drawing.Point(215, 396);
             this.lblBairrro.Name = "lblBairrro";
             this.lblBairrro.Size = new System.Drawing.Size(60, 22);
             this.lblBairrro.TabIndex = 9;
@@ -405,7 +405,7 @@
             this.txtBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBairro.BackColor = System.Drawing.Color.White;
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairro.Location = new System.Drawing.Point(443, 453);
+            this.txtBairro.Location = new System.Drawing.Point(276, 394);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(173, 22);
             this.txtBairro.TabIndex = 9;
@@ -417,7 +417,7 @@
             this.lblN.BackColor = System.Drawing.Color.Transparent;
             this.lblN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblN.ForeColor = System.Drawing.Color.Black;
-            this.lblN.Location = new System.Drawing.Point(885, 425);
+            this.lblN.Location = new System.Drawing.Point(680, 366);
             this.lblN.Name = "lblN";
             this.lblN.Size = new System.Drawing.Size(29, 16);
             this.lblN.TabIndex = 8;
@@ -428,7 +428,7 @@
             this.txtN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtN.BackColor = System.Drawing.Color.White;
             this.txtN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtN.Location = new System.Drawing.Point(915, 425);
+            this.txtN.Location = new System.Drawing.Point(710, 366);
             this.txtN.MaxLength = 10;
             this.txtN.Name = "txtN";
             this.txtN.Size = new System.Drawing.Size(73, 22);
@@ -441,7 +441,7 @@
             this.lblCidade.BackColor = System.Drawing.Color.Transparent;
             this.lblCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCidade.ForeColor = System.Drawing.Color.Black;
-            this.lblCidade.Location = new System.Drawing.Point(623, 455);
+            this.lblCidade.Location = new System.Drawing.Point(456, 396);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(62, 16);
             this.lblCidade.TabIndex = 10;
@@ -452,9 +452,9 @@
             this.txtCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCidade.BackColor = System.Drawing.Color.White;
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(684, 453);
+            this.txtCidade.Location = new System.Drawing.Point(517, 394);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(195, 22);
+            this.txtCidade.Size = new System.Drawing.Size(149, 22);
             this.txtCidade.TabIndex = 10;
             // 
             // lblUF
@@ -464,7 +464,7 @@
             this.lblUF.BackColor = System.Drawing.Color.Transparent;
             this.lblUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUF.ForeColor = System.Drawing.Color.Black;
-            this.lblUF.Location = new System.Drawing.Point(885, 455);
+            this.lblUF.Location = new System.Drawing.Point(680, 396);
             this.lblUF.Name = "lblUF";
             this.lblUF.Size = new System.Drawing.Size(32, 16);
             this.lblUF.TabIndex = 11;
@@ -477,7 +477,7 @@
             this.lblCEP.BackColor = System.Drawing.Color.Transparent;
             this.lblCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCEP.ForeColor = System.Drawing.Color.Black;
-            this.lblCEP.Location = new System.Drawing.Point(382, 484);
+            this.lblCEP.Location = new System.Drawing.Point(215, 425);
             this.lblCEP.Name = "lblCEP";
             this.lblCEP.Size = new System.Drawing.Size(42, 16);
             this.lblCEP.TabIndex = 12;
@@ -518,7 +518,7 @@
             "SE",
             "SP",
             "TO"});
-            this.cbxUF.Location = new System.Drawing.Point(915, 453);
+            this.cbxUF.Location = new System.Drawing.Point(710, 394);
             this.cbxUF.Name = "cbxUF";
             this.cbxUF.Size = new System.Drawing.Size(48, 24);
             this.cbxUF.TabIndex = 11;
@@ -530,7 +530,7 @@
             this.cbxCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCurso.FormattingEnabled = true;
-            this.cbxCurso.Location = new System.Drawing.Point(385, 351);
+            this.cbxCurso.Location = new System.Drawing.Point(218, 292);
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(353, 24);
             this.cbxCurso.TabIndex = 5;
@@ -538,10 +538,11 @@
             // 
             // lblFormCadastro
             // 
+            this.lblFormCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFormCadastro.AutoSize = true;
             this.lblFormCadastro.BackColor = System.Drawing.Color.Transparent;
             this.lblFormCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormCadastro.Location = new System.Drawing.Point(631, 98);
+            this.lblFormCadastro.Location = new System.Drawing.Point(254, 21);
             this.lblFormCadastro.Name = "lblFormCadastro";
             this.lblFormCadastro.Size = new System.Drawing.Size(229, 24);
             this.lblFormCadastro.TabIndex = 0;
@@ -554,7 +555,7 @@
             this.cbxPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPeriodo.FormattingEnabled = true;
-            this.cbxPeriodo.Location = new System.Drawing.Point(385, 387);
+            this.cbxPeriodo.Location = new System.Drawing.Point(218, 328);
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(172, 24);
             this.cbxPeriodo.TabIndex = 6;
@@ -565,7 +566,7 @@
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.Black;
-            this.lblSenha.Location = new System.Drawing.Point(295, 605);
+            this.lblSenha.Location = new System.Drawing.Point(128, 546);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(90, 22);
             this.lblSenha.TabIndex = 15;
@@ -576,7 +577,7 @@
             this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSenha.BackColor = System.Drawing.Color.White;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(385, 603);
+            this.txtSenha.Location = new System.Drawing.Point(218, 544);
             this.txtSenha.MaxLength = 6;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -586,8 +587,8 @@
             // 
             // btnOk
             // 
-            this.btnOk.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOk.Location = new System.Drawing.Point(838, 694);
+            this.btnOk.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnOk.Location = new System.Drawing.Point(553, 544);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(150, 23);
             this.btnOk.TabIndex = 19;
@@ -602,7 +603,7 @@
             this.lblConfirmeSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmeSenha.ForeColor = System.Drawing.Color.Black;
             this.lblConfirmeSenha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblConfirmeSenha.Location = new System.Drawing.Point(295, 636);
+            this.lblConfirmeSenha.Location = new System.Drawing.Point(128, 577);
             this.lblConfirmeSenha.Name = "lblConfirmeSenha";
             this.lblConfirmeSenha.Size = new System.Drawing.Size(147, 22);
             this.lblConfirmeSenha.TabIndex = 16;
@@ -613,7 +614,7 @@
             this.txtConfirmeSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtConfirmeSenha.BackColor = System.Drawing.Color.White;
             this.txtConfirmeSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmeSenha.Location = new System.Drawing.Point(431, 636);
+            this.txtConfirmeSenha.Location = new System.Drawing.Point(264, 577);
             this.txtConfirmeSenha.MaxLength = 6;
             this.txtConfirmeSenha.Name = "txtConfirmeSenha";
             this.txtConfirmeSenha.PasswordChar = '*';
@@ -629,32 +630,19 @@
             this.lblDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNasc.ForeColor = System.Drawing.Color.Black;
             this.lblDataNasc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDataNasc.Location = new System.Drawing.Point(545, 275);
+            this.lblDataNasc.Location = new System.Drawing.Point(378, 216);
             this.lblDataNasc.Name = "lblDataNasc";
             this.lblDataNasc.Size = new System.Drawing.Size(117, 22);
             this.lblDataNasc.TabIndex = 3;
             this.lblDataNasc.Text = "Data de Nasc.:";
             // 
-            // pctbRU
-            // 
-            this.pctbRU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pctbRU.BackColor = System.Drawing.Color.Transparent;
-            this.pctbRU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbRU.BackgroundImage")));
-            this.pctbRU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctbRU.Location = new System.Drawing.Point(1168, 27);
-            this.pctbRU.Name = "pctbRU";
-            this.pctbRU.Size = new System.Drawing.Size(180, 194);
-            this.pctbRU.TabIndex = 62;
-            this.pctbRU.TabStop = false;
-            this.pctbRU.Click += new System.EventHandler(this.pctbRU_Click);
-            // 
             // pctbFoto
             // 
-            this.pctbFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctbFoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pctbFoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbFoto.BackgroundImage")));
             this.pctbFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pctbFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pctbFoto.Location = new System.Drawing.Point(66, 195);
+            this.pctbFoto.Location = new System.Drawing.Point(4, 121);
             this.pctbFoto.Name = "pctbFoto";
             this.pctbFoto.Size = new System.Drawing.Size(118, 150);
             this.pctbFoto.TabIndex = 63;
@@ -662,11 +650,11 @@
             // 
             // lblCopyright
             // 
-            this.lblCopyright.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCopyright.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(1157, 729);
+            this.lblCopyright.Location = new System.Drawing.Point(587, 579);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(201, 12);
             this.lblCopyright.TabIndex = 64;
@@ -674,12 +662,12 @@
             // 
             // gpbBolsista
             // 
-            this.gpbBolsista.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gpbBolsista.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gpbBolsista.BackColor = System.Drawing.Color.Transparent;
             this.gpbBolsista.Controls.Add(this.rbtnNao);
             this.gpbBolsista.Controls.Add(this.rbtnSim);
             this.gpbBolsista.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbBolsista.Location = new System.Drawing.Point(66, 395);
+            this.gpbBolsista.Location = new System.Drawing.Point(4, 321);
             this.gpbBolsista.Name = "gpbBolsista";
             this.gpbBolsista.Size = new System.Drawing.Size(115, 88);
             this.gpbBolsista.TabIndex = 17;
@@ -718,7 +706,7 @@
             this.lblAstNome.BackColor = System.Drawing.Color.Transparent;
             this.lblAstNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstNome.ForeColor = System.Drawing.Color.Red;
-            this.lblAstNome.Location = new System.Drawing.Point(837, 223);
+            this.lblAstNome.Location = new System.Drawing.Point(670, 164);
             this.lblAstNome.Name = "lblAstNome";
             this.lblAstNome.Size = new System.Drawing.Size(0, 24);
             this.lblAstNome.TabIndex = 67;
@@ -730,7 +718,7 @@
             this.lblAstID.BackColor = System.Drawing.Color.Transparent;
             this.lblAstID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstID.ForeColor = System.Drawing.Color.Red;
-            this.lblAstID.Location = new System.Drawing.Point(526, 184);
+            this.lblAstID.Location = new System.Drawing.Point(359, 125);
             this.lblAstID.Name = "lblAstID";
             this.lblAstID.Size = new System.Drawing.Size(0, 24);
             this.lblAstID.TabIndex = 68;
@@ -742,7 +730,7 @@
             this.lblAstIdentidade.BackColor = System.Drawing.Color.Transparent;
             this.lblAstIdentidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstIdentidade.ForeColor = System.Drawing.Color.Red;
-            this.lblAstIdentidade.Location = new System.Drawing.Point(474, 262);
+            this.lblAstIdentidade.Location = new System.Drawing.Point(307, 203);
             this.lblAstIdentidade.Name = "lblAstIdentidade";
             this.lblAstIdentidade.Size = new System.Drawing.Size(0, 24);
             this.lblAstIdentidade.TabIndex = 69;
@@ -754,7 +742,7 @@
             this.lblAstDataNasc.BackColor = System.Drawing.Color.Transparent;
             this.lblAstDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstDataNasc.ForeColor = System.Drawing.Color.Red;
-            this.lblAstDataNasc.Location = new System.Drawing.Point(757, 264);
+            this.lblAstDataNasc.Location = new System.Drawing.Point(590, 205);
             this.lblAstDataNasc.Name = "lblAstDataNasc";
             this.lblAstDataNasc.Size = new System.Drawing.Size(0, 24);
             this.lblAstDataNasc.TabIndex = 70;
@@ -766,7 +754,7 @@
             this.lblAstCpf.BackColor = System.Drawing.Color.Transparent;
             this.lblAstCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstCpf.ForeColor = System.Drawing.Color.Red;
-            this.lblAstCpf.Location = new System.Drawing.Point(506, 306);
+            this.lblAstCpf.Location = new System.Drawing.Point(339, 247);
             this.lblAstCpf.Name = "lblAstCpf";
             this.lblAstCpf.Size = new System.Drawing.Size(0, 24);
             this.lblAstCpf.TabIndex = 71;
@@ -778,7 +766,7 @@
             this.lblAstCurso.BackColor = System.Drawing.Color.Transparent;
             this.lblAstCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstCurso.ForeColor = System.Drawing.Color.Red;
-            this.lblAstCurso.Location = new System.Drawing.Point(743, 344);
+            this.lblAstCurso.Location = new System.Drawing.Point(576, 285);
             this.lblAstCurso.Name = "lblAstCurso";
             this.lblAstCurso.Size = new System.Drawing.Size(0, 24);
             this.lblAstCurso.TabIndex = 72;
@@ -790,7 +778,7 @@
             this.lblAstPeriodo.BackColor = System.Drawing.Color.Transparent;
             this.lblAstPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstPeriodo.ForeColor = System.Drawing.Color.Red;
-            this.lblAstPeriodo.Location = new System.Drawing.Point(510, 379);
+            this.lblAstPeriodo.Location = new System.Drawing.Point(343, 320);
             this.lblAstPeriodo.Name = "lblAstPeriodo";
             this.lblAstPeriodo.Size = new System.Drawing.Size(0, 24);
             this.lblAstPeriodo.TabIndex = 73;
@@ -802,7 +790,7 @@
             this.lblAstNum.BackColor = System.Drawing.Color.Transparent;
             this.lblAstNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstNum.ForeColor = System.Drawing.Color.Red;
-            this.lblAstNum.Location = new System.Drawing.Point(992, 420);
+            this.lblAstNum.Location = new System.Drawing.Point(792, 362);
             this.lblAstNum.Name = "lblAstNum";
             this.lblAstNum.Size = new System.Drawing.Size(0, 24);
             this.lblAstNum.TabIndex = 75;
@@ -814,7 +802,7 @@
             this.lblAstUf.BackColor = System.Drawing.Color.Transparent;
             this.lblAstUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstUf.ForeColor = System.Drawing.Color.Red;
-            this.lblAstUf.Location = new System.Drawing.Point(968, 453);
+            this.lblAstUf.Location = new System.Drawing.Point(768, 395);
             this.lblAstUf.Name = "lblAstUf";
             this.lblAstUf.Size = new System.Drawing.Size(0, 24);
             this.lblAstUf.TabIndex = 78;
@@ -826,7 +814,7 @@
             this.lblAstSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblAstSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstSenha.ForeColor = System.Drawing.Color.Red;
-            this.lblAstSenha.Location = new System.Drawing.Point(466, 594);
+            this.lblAstSenha.Location = new System.Drawing.Point(299, 535);
             this.lblAstSenha.Name = "lblAstSenha";
             this.lblAstSenha.Size = new System.Drawing.Size(0, 24);
             this.lblAstSenha.TabIndex = 81;
@@ -838,7 +826,7 @@
             this.lblAstConfirmeSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblAstConfirmeSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstConfirmeSenha.ForeColor = System.Drawing.Color.Red;
-            this.lblAstConfirmeSenha.Location = new System.Drawing.Point(512, 626);
+            this.lblAstConfirmeSenha.Location = new System.Drawing.Point(345, 567);
             this.lblAstConfirmeSenha.Name = "lblAstConfirmeSenha";
             this.lblAstConfirmeSenha.Size = new System.Drawing.Size(0, 24);
             this.lblAstConfirmeSenha.TabIndex = 82;
@@ -850,7 +838,7 @@
             this.lblOperador.BackColor = System.Drawing.Color.White;
             this.lblOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperador.ForeColor = System.Drawing.Color.Red;
-            this.lblOperador.Location = new System.Drawing.Point(1106, 6);
+            this.lblOperador.Location = new System.Drawing.Point(536, 6);
             this.lblOperador.Name = "lblOperador";
             this.lblOperador.Size = new System.Drawing.Size(57, 13);
             this.lblOperador.TabIndex = 83;
@@ -865,7 +853,7 @@
             this.txtCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpf.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.txtCpf.Location = new System.Drawing.Point(385, 311);
+            this.txtCpf.Location = new System.Drawing.Point(218, 252);
             this.txtCpf.Mask = "000,000,000-00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.RejectInputOnFirstFailure = true;
@@ -877,7 +865,7 @@
             this.txtDataNasc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDataNasc.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.txtDataNasc.Location = new System.Drawing.Point(668, 272);
+            this.txtDataNasc.Location = new System.Drawing.Point(501, 213);
             this.txtDataNasc.Mask = "00/00/0000";
             this.txtDataNasc.Name = "txtDataNasc";
             this.txtDataNasc.RejectInputOnFirstFailure = true;
@@ -890,7 +878,7 @@
             this.txtIdentidade.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtIdentidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentidade.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.txtIdentidade.Location = new System.Drawing.Point(385, 272);
+            this.txtIdentidade.Location = new System.Drawing.Point(218, 213);
             this.txtIdentidade.Mask = "0000000000";
             this.txtIdentidade.Name = "txtIdentidade";
             this.txtIdentidade.RejectInputOnFirstFailure = true;
@@ -903,7 +891,7 @@
             this.txtFone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFone.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.txtFone.Location = new System.Drawing.Point(350, 523);
+            this.txtFone.Location = new System.Drawing.Point(183, 464);
             this.txtFone.Mask = "(00)0000-0000";
             this.txtFone.Name = "txtFone";
             this.txtFone.RejectInputOnFirstFailure = true;
@@ -915,7 +903,7 @@
             this.txtCep.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCep.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.txtCep.Location = new System.Drawing.Point(430, 484);
+            this.txtCep.Location = new System.Drawing.Point(263, 425);
             this.txtCep.Mask = "00,000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.RejectInputOnFirstFailure = true;
@@ -927,7 +915,7 @@
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(353, 551);
+            this.txtEmail.Location = new System.Drawing.Point(186, 492);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(132, 22);
             this.txtEmail.TabIndex = 14;
@@ -938,7 +926,7 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(292, 553);
+            this.lblEmail.Location = new System.Drawing.Point(125, 494);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(60, 22);
             this.lblEmail.TabIndex = 14;
@@ -951,7 +939,7 @@
             this.lblAstEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblAstEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstEmail.ForeColor = System.Drawing.Color.Red;
-            this.lblAstEmail.Location = new System.Drawing.Point(491, 543);
+            this.lblAstEmail.Location = new System.Drawing.Point(324, 484);
             this.lblAstEmail.Name = "lblAstEmail";
             this.lblAstEmail.Size = new System.Drawing.Size(0, 24);
             this.lblAstEmail.TabIndex = 86;
@@ -966,7 +954,7 @@
             this.cbxStatus.Items.AddRange(new object[] {
             "Desbloqueado",
             "Bloqueado"});
-            this.cbxStatus.Location = new System.Drawing.Point(668, 192);
+            this.cbxStatus.Location = new System.Drawing.Point(501, 133);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(115, 24);
             this.cbxStatus.TabIndex = 87;
@@ -977,11 +965,23 @@
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Black;
-            this.lblStatus.Location = new System.Drawing.Point(601, 195);
+            this.lblStatus.Location = new System.Drawing.Point(434, 136);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(61, 22);
             this.lblStatus.TabIndex = 88;
             this.lblStatus.Text = "Status:";
+            // 
+            // pctbRU
+            // 
+            this.pctbRU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctbRU.BackColor = System.Drawing.Color.Transparent;
+            this.pctbRU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbRU.BackgroundImage")));
+            this.pctbRU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pctbRU.Location = new System.Drawing.Point(661, 27);
+            this.pctbRU.Name = "pctbRU";
+            this.pctbRU.Size = new System.Drawing.Size(127, 129);
+            this.pctbRU.TabIndex = 93;
+            this.pctbRU.TabStop = false;
             // 
             // fCadastroNovo
             // 
@@ -990,7 +990,8 @@
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.pctbRU);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.cbxStatus);
             this.Controls.Add(this.lblAstEmail);
@@ -1013,10 +1014,7 @@
             this.Controls.Add(this.lblAstIdentidade);
             this.Controls.Add(this.lblAstID);
             this.Controls.Add(this.lblAstNome);
-            this.Controls.Add(this.gpbBolsista);
             this.Controls.Add(this.lblCopyright);
-            this.Controls.Add(this.pctbFoto);
-            this.Controls.Add(this.pctbRU);
             this.Controls.Add(this.lblDataNasc);
             this.Controls.Add(this.txtConfirmeSenha);
             this.Controls.Add(this.lblConfirmeSenha);
@@ -1040,7 +1038,6 @@
             this.Controls.Add(this.txtRua);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtID);
-            this.Controls.Add(this.lblFoto);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblFone);
             this.Controls.Add(this.lblEndereço);
@@ -1054,6 +1051,9 @@
             this.Controls.Add(this.lblAstCidade);
             this.Controls.Add(this.lblAstCep);
             this.Controls.Add(this.lblAstFone);
+            this.Controls.Add(this.gpbBolsista);
+            this.Controls.Add(this.pctbFoto);
+            this.Controls.Add(this.lblFoto);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fCadastroNovo";
@@ -1062,10 +1062,10 @@
             this.Load += new System.EventHandler(this.fCadastro_Load);
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).EndInit();
             this.gpbBolsista.ResumeLayout(false);
             this.gpbBolsista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1116,7 +1116,6 @@
         private System.Windows.Forms.Label lblConfirmeSenha;
         private System.Windows.Forms.TextBox txtConfirmeSenha;
         private System.Windows.Forms.Label lblDataNasc;
-        private System.Windows.Forms.PictureBox pctbRU;
         private System.Windows.Forms.PictureBox pctbFoto;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.GroupBox gpbBolsista;
@@ -1145,5 +1144,6 @@
         private System.Windows.Forms.Label lblAstEmail;
         private System.Windows.Forms.ComboBox cbxStatus;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.PictureBox pctbRU;
     }
 }

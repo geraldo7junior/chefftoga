@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGerenteGerenciar));
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerarRelatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatórioGeralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encerrarSeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +62,6 @@
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
-            this.gerarRelatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatórioGeralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbBoasVindas)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +77,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.msMenu.Size = new System.Drawing.Size(1300, 24);
+            this.msMenu.Size = new System.Drawing.Size(800, 24);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "Menu";
             this.msMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.msMenu_ItemClicked);
@@ -90,6 +90,22 @@
             this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
             this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.relatórioToolStripMenuItem.Text = "&Gerenciar";
+            // 
+            // gerarRelatórioToolStripMenuItem
+            // 
+            this.gerarRelatórioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.relatórioGeralToolStripMenuItem});
+            this.gerarRelatórioToolStripMenuItem.Name = "gerarRelatórioToolStripMenuItem";
+            this.gerarRelatórioToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.gerarRelatórioToolStripMenuItem.Text = "Gerar &Relatório";
+            this.gerarRelatórioToolStripMenuItem.Click += new System.EventHandler(this.gerarRelatórioToolStripMenuItem_Click);
+            // 
+            // relatórioGeralToolStripMenuItem
+            // 
+            this.relatórioGeralToolStripMenuItem.Name = "relatórioGeralToolStripMenuItem";
+            this.relatórioGeralToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.relatórioGeralToolStripMenuItem.Text = "&Relatório Geral";
+            this.relatórioGeralToolStripMenuItem.Click += new System.EventHandler(this.relatórioGeralToolStripMenuItem_Click);
             // 
             // encerrarSeToolStripMenuItem
             // 
@@ -297,12 +313,12 @@
             // 
             // lblBemVindo
             // 
-            this.lblBemVindo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBemVindo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblBemVindo.AutoSize = true;
             this.lblBemVindo.BackColor = System.Drawing.Color.Transparent;
             this.lblBemVindo.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBemVindo.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblBemVindo.Location = new System.Drawing.Point(470, 89);
+            this.lblBemVindo.Location = new System.Drawing.Point(162, 24);
             this.lblBemVindo.Name = "lblBemVindo";
             this.lblBemVindo.Size = new System.Drawing.Size(449, 27);
             this.lblBemVindo.TabIndex = 4;
@@ -310,11 +326,11 @@
             // 
             // lblCopyright
             // 
-            this.lblCopyright.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCopyright.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(1122, 729);
+            this.lblCopyright.Location = new System.Drawing.Point(599, 579);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(201, 12);
             this.lblCopyright.TabIndex = 18;
@@ -322,31 +338,15 @@
             // 
             // pctbBoasVindas
             // 
-            this.pctbBoasVindas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctbBoasVindas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctbBoasVindas.BackColor = System.Drawing.Color.Transparent;
             this.pctbBoasVindas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbBoasVindas.BackgroundImage")));
             this.pctbBoasVindas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctbBoasVindas.Location = new System.Drawing.Point(460, 160);
+            this.pctbBoasVindas.Location = new System.Drawing.Point(146, 110);
             this.pctbBoasVindas.Name = "pctbBoasVindas";
             this.pctbBoasVindas.Size = new System.Drawing.Size(465, 375);
             this.pctbBoasVindas.TabIndex = 64;
             this.pctbBoasVindas.TabStop = false;
-            // 
-            // gerarRelatórioToolStripMenuItem
-            // 
-            this.gerarRelatórioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relatórioGeralToolStripMenuItem});
-            this.gerarRelatórioToolStripMenuItem.Name = "gerarRelatórioToolStripMenuItem";
-            this.gerarRelatórioToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.gerarRelatórioToolStripMenuItem.Text = "Gerar &Relatório";
-            this.gerarRelatórioToolStripMenuItem.Click += new System.EventHandler(this.gerarRelatórioToolStripMenuItem_Click);
-            // 
-            // relatórioGeralToolStripMenuItem
-            // 
-            this.relatórioGeralToolStripMenuItem.Name = "relatórioGeralToolStripMenuItem";
-            this.relatórioGeralToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.relatórioGeralToolStripMenuItem.Text = "&Relatório Geral";
-            this.relatórioGeralToolStripMenuItem.Click += new System.EventHandler(this.relatórioGeralToolStripMenuItem_Click);
             // 
             // fGerenteGerenciar
             // 
@@ -355,7 +355,7 @@
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1300, 750);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.pctbBoasVindas);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.lblBemVindo);

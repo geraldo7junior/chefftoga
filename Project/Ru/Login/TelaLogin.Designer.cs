@@ -47,7 +47,7 @@
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelar.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(484, 424);
+            this.btnCancelar.Location = new System.Drawing.Point(234, 349);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(64, 23);
             this.btnCancelar.TabIndex = 15;
@@ -60,7 +60,7 @@
             this.mtbLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtbLogin.BackColor = System.Drawing.Color.White;
             this.mtbLogin.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.mtbLogin.Location = new System.Drawing.Point(457, 310);
+            this.mtbLogin.Location = new System.Drawing.Point(207, 235);
             this.mtbLogin.Mask = "000,000,000-00";
             this.mtbLogin.Name = "mtbLogin";
             this.mtbLogin.Size = new System.Drawing.Size(100, 20);
@@ -74,7 +74,7 @@
             this.lblErroLogar.BackColor = System.Drawing.Color.Transparent;
             this.lblErroLogar.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErroLogar.ForeColor = System.Drawing.Color.Red;
-            this.lblErroLogar.Location = new System.Drawing.Point(396, 257);
+            this.lblErroLogar.Location = new System.Drawing.Point(146, 182);
             this.lblErroLogar.Name = "lblErroLogar";
             this.lblErroLogar.Size = new System.Drawing.Size(0, 11);
             this.lblErroLogar.TabIndex = 13;
@@ -83,7 +83,7 @@
             // 
             this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSenha.BackColor = System.Drawing.Color.White;
-            this.txtSenha.Location = new System.Drawing.Point(457, 357);
+            this.txtSenha.Location = new System.Drawing.Point(207, 282);
             this.txtSenha.MaxLength = 6;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -98,7 +98,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(453, 333);
+            this.lblSenha.Location = new System.Drawing.Point(203, 258);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(51, 21);
             this.lblSenha.TabIndex = 11;
@@ -109,7 +109,7 @@
             this.btnEntrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEntrar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEntrar.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(419, 424);
+            this.btnEntrar.Location = new System.Drawing.Point(169, 349);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(59, 23);
             this.btnEntrar.TabIndex = 12;
@@ -123,7 +123,7 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(453, 286);
+            this.lblLogin.Location = new System.Drawing.Point(203, 211);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(44, 21);
             this.lblLogin.TabIndex = 8;
@@ -131,11 +131,11 @@
             // 
             // lblCopyright
             // 
-            this.lblCopyright.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCopyright.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(1122, 729);
+            this.lblCopyright.Location = new System.Drawing.Point(587, 579);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(201, 12);
             this.lblCopyright.TabIndex = 17;
@@ -147,7 +147,7 @@
             this.pctbRU.BackColor = System.Drawing.Color.Transparent;
             this.pctbRU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbRU.BackgroundImage")));
             this.pctbRU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctbRU.Location = new System.Drawing.Point(372, 181);
+            this.pctbRU.Location = new System.Drawing.Point(122, 106);
             this.pctbRU.Name = "pctbRU";
             this.pctbRU.Size = new System.Drawing.Size(502, 457);
             this.pctbRU.TabIndex = 64;
@@ -155,11 +155,12 @@
             // 
             // lblCheffToga
             // 
+            this.lblCheffToga.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCheffToga.AutoSize = true;
             this.lblCheffToga.BackColor = System.Drawing.Color.Transparent;
             this.lblCheffToga.Font = new System.Drawing.Font("Freestyle Script", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCheffToga.ForeColor = System.Drawing.Color.Maroon;
-            this.lblCheffToga.Location = new System.Drawing.Point(514, 9);
+            this.lblCheffToga.Location = new System.Drawing.Point(215, -9);
             this.lblCheffToga.Name = "lblCheffToga";
             this.lblCheffToga.Size = new System.Drawing.Size(338, 112);
             this.lblCheffToga.TabIndex = 65;
@@ -172,7 +173,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1300, 750);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.lblCheffToga);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.btnCancelar);

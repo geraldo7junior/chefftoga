@@ -35,7 +35,6 @@
             this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.lblFoto = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.lblFone = new System.Windows.Forms.Label();
             this.lblPeriodo = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.msMenuCadastroAlterar = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastroSair = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuImprimir = new System.Windows.Forms.ToolStripMenuItem();
-            this.pctbRU = new System.Windows.Forms.PictureBox();
             this.pctbFoto = new System.Windows.Forms.PictureBox();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.gpbBolsista = new System.Windows.Forms.GroupBox();
@@ -79,11 +77,12 @@
             this.lblAstObs = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.cbxStatus = new System.Windows.Forms.ComboBox();
+            this.pctbRU = new System.Windows.Forms.PictureBox();
             this.msMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
             this.gpbBolsista.SuspendLayout();
             this.gpbTipoOperador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxPeriodo
@@ -111,7 +110,7 @@
             "Mestrado",
             "Doutorado",
             "Pós-Doutorado"});
-            this.cbxPeriodo.Location = new System.Drawing.Point(385, 450);
+            this.cbxPeriodo.Location = new System.Drawing.Point(221, 329);
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(172, 24);
             this.cbxPeriodo.TabIndex = 6;
@@ -121,7 +120,7 @@
             // 
             this.mtxtFone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtFone.Location = new System.Drawing.Point(385, 489);
+            this.mtxtFone.Location = new System.Drawing.Point(221, 368);
             this.mtxtFone.Mask = "(00)0000-0000";
             this.mtxtFone.Name = "mtxtFone";
             this.mtxtFone.ReadOnly = true;
@@ -130,10 +129,11 @@
             // 
             // lblFormCadastro
             // 
+            this.lblFormCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFormCadastro.AutoSize = true;
             this.lblFormCadastro.BackColor = System.Drawing.Color.Transparent;
             this.lblFormCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormCadastro.Location = new System.Drawing.Point(631, 98);
+            this.lblFormCadastro.Location = new System.Drawing.Point(346, 26);
             this.lblFormCadastro.Name = "lblFormCadastro";
             this.lblFormCadastro.Size = new System.Drawing.Size(107, 24);
             this.lblFormCadastro.TabIndex = 0;
@@ -188,7 +188,7 @@
             "Zootecnia",
             "Zootecnia UAG",
             "Zootecnia UAST"});
-            this.cbxCurso.Location = new System.Drawing.Point(385, 414);
+            this.cbxCurso.Location = new System.Drawing.Point(221, 293);
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(353, 24);
             this.cbxCurso.TabIndex = 5;
@@ -199,7 +199,7 @@
             this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNome.BackColor = System.Drawing.Color.White;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(385, 338);
+            this.txtNome.Location = new System.Drawing.Point(221, 217);
             this.txtNome.Name = "txtNome";
             this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(448, 22);
@@ -212,24 +212,11 @@
             this.txtID.BackColor = System.Drawing.Color.White;
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(385, 298);
+            this.txtID.Location = new System.Drawing.Point(221, 177);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(136, 22);
             this.txtID.TabIndex = 0;
-            // 
-            // lblFoto
-            // 
-            this.lblFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFoto.BackColor = System.Drawing.Color.Transparent;
-            this.lblFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFoto.ForeColor = System.Drawing.Color.Black;
-            this.lblFoto.Location = new System.Drawing.Point(77, 351);
-            this.lblFoto.Name = "lblFoto";
-            this.lblFoto.Size = new System.Drawing.Size(90, 22);
-            this.lblFoto.TabIndex = 13;
-            this.lblFoto.Text = "Foto";
-            this.lblFoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblID
             // 
@@ -237,7 +224,7 @@
             this.lblID.BackColor = System.Drawing.Color.Transparent;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.Color.Black;
-            this.lblID.Location = new System.Drawing.Point(295, 300);
+            this.lblID.Location = new System.Drawing.Point(131, 179);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(90, 22);
             this.lblID.TabIndex = 0;
@@ -249,7 +236,7 @@
             this.lblFone.BackColor = System.Drawing.Color.Transparent;
             this.lblFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFone.ForeColor = System.Drawing.Color.Black;
-            this.lblFone.Location = new System.Drawing.Point(295, 490);
+            this.lblFone.Location = new System.Drawing.Point(131, 369);
             this.lblFone.Name = "lblFone";
             this.lblFone.Size = new System.Drawing.Size(90, 22);
             this.lblFone.TabIndex = 8;
@@ -261,7 +248,7 @@
             this.lblPeriodo.BackColor = System.Drawing.Color.Transparent;
             this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeriodo.ForeColor = System.Drawing.Color.Black;
-            this.lblPeriodo.Location = new System.Drawing.Point(295, 453);
+            this.lblPeriodo.Location = new System.Drawing.Point(131, 332);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(90, 22);
             this.lblPeriodo.TabIndex = 6;
@@ -274,7 +261,7 @@
             this.lblCurso.BackColor = System.Drawing.Color.Transparent;
             this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurso.ForeColor = System.Drawing.Color.Black;
-            this.lblCurso.Location = new System.Drawing.Point(295, 415);
+            this.lblCurso.Location = new System.Drawing.Point(131, 294);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(90, 22);
             this.lblCurso.TabIndex = 5;
@@ -287,7 +274,7 @@
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.Black;
-            this.lblNome.Location = new System.Drawing.Point(295, 340);
+            this.lblNome.Location = new System.Drawing.Point(131, 219);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(90, 22);
             this.lblNome.TabIndex = 1;
@@ -301,7 +288,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.msMenu.Size = new System.Drawing.Size(1370, 24);
+            this.msMenu.Size = new System.Drawing.Size(800, 24);
             this.msMenu.TabIndex = 61;
             this.msMenu.Text = "Menu";
             // 
@@ -343,25 +330,13 @@
             this.msMenuImprimir.Text = "&Imprimir";
             this.msMenuImprimir.Click += new System.EventHandler(this.msMenuImprimir_Click);
             // 
-            // pctbRU
-            // 
-            this.pctbRU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pctbRU.BackColor = System.Drawing.Color.Transparent;
-            this.pctbRU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbRU.BackgroundImage")));
-            this.pctbRU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctbRU.Location = new System.Drawing.Point(1168, 27);
-            this.pctbRU.Name = "pctbRU";
-            this.pctbRU.Size = new System.Drawing.Size(180, 194);
-            this.pctbRU.TabIndex = 62;
-            this.pctbRU.TabStop = false;
-            // 
             // pctbFoto
             // 
-            this.pctbFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctbFoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pctbFoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbFoto.BackgroundImage")));
             this.pctbFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pctbFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pctbFoto.Location = new System.Drawing.Point(66, 195);
+            this.pctbFoto.Location = new System.Drawing.Point(4, 121);
             this.pctbFoto.Name = "pctbFoto";
             this.pctbFoto.Size = new System.Drawing.Size(118, 150);
             this.pctbFoto.TabIndex = 63;
@@ -369,11 +344,11 @@
             // 
             // lblCopyright
             // 
-            this.lblCopyright.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCopyright.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(1157, 729);
+            this.lblCopyright.Location = new System.Drawing.Point(587, 579);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(201, 12);
             this.lblCopyright.TabIndex = 64;
@@ -381,13 +356,13 @@
             // 
             // gpbBolsista
             // 
-            this.gpbBolsista.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gpbBolsista.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gpbBolsista.BackColor = System.Drawing.Color.Transparent;
             this.gpbBolsista.Controls.Add(this.rbtnNao);
             this.gpbBolsista.Controls.Add(this.rbtnSim);
             this.gpbBolsista.Enabled = false;
             this.gpbBolsista.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbBolsista.Location = new System.Drawing.Point(66, 395);
+            this.gpbBolsista.Location = new System.Drawing.Point(9, 307);
             this.gpbBolsista.Name = "gpbBolsista";
             this.gpbBolsista.Size = new System.Drawing.Size(115, 88);
             this.gpbBolsista.TabIndex = 12;
@@ -425,7 +400,7 @@
             this.lblSaldo.BackColor = System.Drawing.Color.Transparent;
             this.lblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaldo.ForeColor = System.Drawing.Color.Black;
-            this.lblSaldo.Location = new System.Drawing.Point(295, 550);
+            this.lblSaldo.Location = new System.Drawing.Point(131, 429);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(90, 22);
             this.lblSaldo.TabIndex = 10;
@@ -437,7 +412,7 @@
             this.lblValorASerCreditado.BackColor = System.Drawing.Color.Transparent;
             this.lblValorASerCreditado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorASerCreditado.ForeColor = System.Drawing.Color.Black;
-            this.lblValorASerCreditado.Location = new System.Drawing.Point(478, 190);
+            this.lblValorASerCreditado.Location = new System.Drawing.Point(215, 124);
             this.lblValorASerCreditado.Name = "lblValorASerCreditado";
             this.lblValorASerCreditado.Size = new System.Drawing.Size(164, 22);
             this.lblValorASerCreditado.TabIndex = 0;
@@ -446,7 +421,7 @@
             // btnCreditar
             // 
             this.btnCreditar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreditar.Location = new System.Drawing.Point(744, 186);
+            this.btnCreditar.Location = new System.Drawing.Point(481, 120);
             this.btnCreditar.Name = "btnCreditar";
             this.btnCreditar.Size = new System.Drawing.Size(75, 23);
             this.btnCreditar.TabIndex = 1;
@@ -461,7 +436,7 @@
             this.lblOperador.BackColor = System.Drawing.Color.White;
             this.lblOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperador.ForeColor = System.Drawing.Color.Red;
-            this.lblOperador.Location = new System.Drawing.Point(1106, 6);
+            this.lblOperador.Location = new System.Drawing.Point(536, 6);
             this.lblOperador.Name = "lblOperador";
             this.lblOperador.Size = new System.Drawing.Size(57, 13);
             this.lblOperador.TabIndex = 84;
@@ -472,7 +447,7 @@
             this.mtxtCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtCPF.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.mtxtCPF.Location = new System.Drawing.Point(385, 376);
+            this.mtxtCPF.Location = new System.Drawing.Point(221, 255);
             this.mtxtCPF.Mask = "000,000,000-00";
             this.mtxtCPF.Name = "mtxtCPF";
             this.mtxtCPF.ReadOnly = true;
@@ -486,7 +461,7 @@
             this.lblCPF.BackColor = System.Drawing.Color.Transparent;
             this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPF.ForeColor = System.Drawing.Color.Black;
-            this.lblCPF.Location = new System.Drawing.Point(295, 378);
+            this.lblCPF.Location = new System.Drawing.Point(131, 257);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(90, 22);
             this.lblCPF.TabIndex = 2;
@@ -501,7 +476,7 @@
             this.txtSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSaldo.BackColor = System.Drawing.Color.White;
             this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaldo.Location = new System.Drawing.Point(385, 548);
+            this.txtSaldo.Location = new System.Drawing.Point(221, 427);
             this.txtSaldo.MaxLength = 6;
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.ReadOnly = true;
@@ -517,7 +492,7 @@
             this.lblRS.AutoSize = true;
             this.lblRS.BackColor = System.Drawing.Color.White;
             this.lblRS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRS.Location = new System.Drawing.Point(638, 190);
+            this.lblRS.Location = new System.Drawing.Point(375, 124);
             this.lblRS.Name = "lblRS";
             this.lblRS.Size = new System.Drawing.Size(25, 16);
             this.lblRS.TabIndex = 85;
@@ -529,7 +504,7 @@
             this.lblRS1.AutoSize = true;
             this.lblRS1.BackColor = System.Drawing.Color.White;
             this.lblRS1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRS1.Location = new System.Drawing.Point(391, 551);
+            this.lblRS1.Location = new System.Drawing.Point(227, 430);
             this.lblRS1.Name = "lblRS1";
             this.lblRS1.Size = new System.Drawing.Size(25, 16);
             this.lblRS1.TabIndex = 86;
@@ -540,7 +515,7 @@
             this.txtValorASerCreditado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtValorASerCreditado.BackColor = System.Drawing.Color.White;
             this.txtValorASerCreditado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorASerCreditado.Location = new System.Drawing.Point(664, 187);
+            this.txtValorASerCreditado.Location = new System.Drawing.Point(401, 121);
             this.txtValorASerCreditado.MaxLength = 5;
             this.txtValorASerCreditado.Name = "txtValorASerCreditado";
             this.txtValorASerCreditado.Size = new System.Drawing.Size(73, 22);
@@ -551,7 +526,7 @@
             // 
             // gpbTipoOperador
             // 
-            this.gpbTipoOperador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gpbTipoOperador.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gpbTipoOperador.BackColor = System.Drawing.Color.Transparent;
             this.gpbTipoOperador.Controls.Add(this.rbtnGerente);
             this.gpbTipoOperador.Controls.Add(this.rbtnOpEntradaRU);
@@ -559,9 +534,9 @@
             this.gpbTipoOperador.Controls.Add(this.rbtnOpCadastro);
             this.gpbTipoOperador.Enabled = false;
             this.gpbTipoOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbTipoOperador.Location = new System.Drawing.Point(66, 395);
+            this.gpbTipoOperador.Location = new System.Drawing.Point(0, 307);
             this.gpbTipoOperador.Name = "gpbTipoOperador";
-            this.gpbTipoOperador.Size = new System.Drawing.Size(145, 146);
+            this.gpbTipoOperador.Size = new System.Drawing.Size(133, 116);
             this.gpbTipoOperador.TabIndex = 87;
             this.gpbTipoOperador.TabStop = false;
             this.gpbTipoOperador.Text = "Tipo do Operador";
@@ -570,7 +545,7 @@
             // 
             this.rbtnGerente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnGerente.AutoSize = true;
-            this.rbtnGerente.Location = new System.Drawing.Point(11, 29);
+            this.rbtnGerente.Location = new System.Drawing.Point(5, 14);
             this.rbtnGerente.Name = "rbtnGerente";
             this.rbtnGerente.Size = new System.Drawing.Size(76, 19);
             this.rbtnGerente.TabIndex = 3;
@@ -581,7 +556,7 @@
             // 
             this.rbtnOpEntradaRU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnOpEntradaRU.AutoSize = true;
-            this.rbtnOpEntradaRU.Location = new System.Drawing.Point(11, 104);
+            this.rbtnOpEntradaRU.Location = new System.Drawing.Point(5, 89);
             this.rbtnOpEntradaRU.Name = "rbtnOpEntradaRU";
             this.rbtnOpEntradaRU.Size = new System.Drawing.Size(125, 19);
             this.rbtnOpEntradaRU.TabIndex = 2;
@@ -592,7 +567,7 @@
             // 
             this.rbtnOpCredito.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnOpCredito.AutoSize = true;
-            this.rbtnOpCredito.Location = new System.Drawing.Point(11, 79);
+            this.rbtnOpCredito.Location = new System.Drawing.Point(5, 64);
             this.rbtnOpCredito.Name = "rbtnOpCredito";
             this.rbtnOpCredito.Size = new System.Drawing.Size(97, 19);
             this.rbtnOpCredito.TabIndex = 1;
@@ -603,7 +578,7 @@
             // 
             this.rbtnOpCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnOpCadastro.AutoSize = true;
-            this.rbtnOpCadastro.Location = new System.Drawing.Point(11, 54);
+            this.rbtnOpCadastro.Location = new System.Drawing.Point(5, 39);
             this.rbtnOpCadastro.Name = "rbtnOpCadastro";
             this.rbtnOpCadastro.Size = new System.Drawing.Size(108, 19);
             this.rbtnOpCadastro.TabIndex = 0;
@@ -616,7 +591,7 @@
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(385, 519);
+            this.txtEmail.Location = new System.Drawing.Point(221, 398);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(132, 22);
             this.txtEmail.TabIndex = 89;
@@ -627,7 +602,7 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(294, 521);
+            this.lblEmail.Location = new System.Drawing.Point(130, 400);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(60, 22);
             this.lblEmail.TabIndex = 88;
@@ -636,7 +611,7 @@
             // btnDebitar
             // 
             this.btnDebitar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDebitar.Location = new System.Drawing.Point(744, 186);
+            this.btnDebitar.Location = new System.Drawing.Point(481, 120);
             this.btnDebitar.Name = "btnDebitar";
             this.btnDebitar.Size = new System.Drawing.Size(75, 23);
             this.btnDebitar.TabIndex = 92;
@@ -650,7 +625,7 @@
             this.lblValorASerDebitado.BackColor = System.Drawing.Color.Transparent;
             this.lblValorASerDebitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorASerDebitado.ForeColor = System.Drawing.Color.Black;
-            this.lblValorASerDebitado.Location = new System.Drawing.Point(478, 190);
+            this.lblValorASerDebitado.Location = new System.Drawing.Point(215, 124);
             this.lblValorASerDebitado.Name = "lblValorASerDebitado";
             this.lblValorASerDebitado.Size = new System.Drawing.Size(164, 22);
             this.lblValorASerDebitado.TabIndex = 90;
@@ -658,10 +633,11 @@
             // 
             // lblDebitador
             // 
+            this.lblDebitador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDebitador.AutoSize = true;
             this.lblDebitador.BackColor = System.Drawing.Color.Transparent;
             this.lblDebitador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDebitador.Location = new System.Drawing.Point(633, 98);
+            this.lblDebitador.Location = new System.Drawing.Point(348, 26);
             this.lblDebitador.Name = "lblDebitador";
             this.lblDebitador.Size = new System.Drawing.Size(100, 24);
             this.lblDebitador.TabIndex = 91;
@@ -669,33 +645,34 @@
             // 
             // txtObs
             // 
-            this.txtObs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObs.Location = new System.Drawing.Point(861, 322);
+            this.txtObs.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtObs.Location = new System.Drawing.Point(385, 353);
             this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(334, 245);
+            this.txtObs.Size = new System.Drawing.Size(218, 219);
             this.txtObs.TabIndex = 93;
             this.txtObs.Text = "";
             // 
             // lblObs
             // 
-            this.lblObs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblObs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblObs.BackColor = System.Drawing.Color.Transparent;
             this.lblObs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObs.ForeColor = System.Drawing.Color.Black;
-            this.lblObs.Location = new System.Drawing.Point(923, 283);
+            this.lblObs.Location = new System.Drawing.Point(423, 312);
             this.lblObs.Name = "lblObs";
-            this.lblObs.Size = new System.Drawing.Size(220, 22);
+            this.lblObs.Size = new System.Drawing.Size(146, 38);
             this.lblObs.TabIndex = 94;
             this.lblObs.Text = "Motivo de retirada de crédito";
+            this.lblObs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblAstObs
             // 
-            this.lblAstObs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstObs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblAstObs.AutoSize = true;
             this.lblAstObs.BackColor = System.Drawing.Color.Transparent;
             this.lblAstObs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAstObs.ForeColor = System.Drawing.Color.Red;
-            this.lblAstObs.Location = new System.Drawing.Point(1136, 271);
+            this.lblAstObs.Location = new System.Drawing.Point(569, 312);
             this.lblAstObs.Name = "lblAstObs";
             this.lblAstObs.Size = new System.Drawing.Size(0, 24);
             this.lblAstObs.TabIndex = 95;
@@ -706,7 +683,7 @@
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Black;
-            this.lblStatus.Location = new System.Drawing.Point(587, 299);
+            this.lblStatus.Location = new System.Drawing.Point(423, 178);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(61, 22);
             this.lblStatus.TabIndex = 97;
@@ -723,10 +700,22 @@
             this.cbxStatus.Items.AddRange(new object[] {
             "Desbloqueado",
             "Bloqueado"});
-            this.cbxStatus.Location = new System.Drawing.Point(654, 296);
+            this.cbxStatus.Location = new System.Drawing.Point(490, 175);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(115, 24);
             this.cbxStatus.TabIndex = 96;
+            // 
+            // pctbRU
+            // 
+            this.pctbRU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctbRU.BackColor = System.Drawing.Color.Transparent;
+            this.pctbRU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbRU.BackgroundImage")));
+            this.pctbRU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pctbRU.Location = new System.Drawing.Point(661, 27);
+            this.pctbRU.Name = "pctbRU";
+            this.pctbRU.Size = new System.Drawing.Size(127, 129);
+            this.pctbRU.TabIndex = 98;
+            this.pctbRU.TabStop = false;
             // 
             // fCreditoCreditar
             // 
@@ -735,18 +724,17 @@
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.pctbRU);
+            this.Controls.Add(this.gpbTipoOperador);
+            this.Controls.Add(this.pctbFoto);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.cbxStatus);
-            this.Controls.Add(this.lblAstObs);
-            this.Controls.Add(this.lblObs);
-            this.Controls.Add(this.txtObs);
             this.Controls.Add(this.btnDebitar);
             this.Controls.Add(this.lblValorASerDebitado);
             this.Controls.Add(this.lblDebitador);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.gpbTipoOperador);
             this.Controls.Add(this.lblRS);
             this.Controls.Add(this.txtValorASerCreditado);
             this.Controls.Add(this.lblRS1);
@@ -757,10 +745,7 @@
             this.Controls.Add(this.lblValorASerCreditado);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.lblSaldo);
-            this.Controls.Add(this.gpbBolsista);
             this.Controls.Add(this.lblCopyright);
-            this.Controls.Add(this.pctbFoto);
-            this.Controls.Add(this.pctbRU);
             this.Controls.Add(this.msMenu);
             this.Controls.Add(this.cbxPeriodo);
             this.Controls.Add(this.mtxtFone);
@@ -768,12 +753,15 @@
             this.Controls.Add(this.cbxCurso);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtID);
-            this.Controls.Add(this.lblFoto);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblFone);
             this.Controls.Add(this.lblPeriodo);
             this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.gpbBolsista);
+            this.Controls.Add(this.lblAstObs);
+            this.Controls.Add(this.lblObs);
+            this.Controls.Add(this.txtObs);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fCreditoCreditar";
@@ -782,12 +770,12 @@
             this.Load += new System.EventHandler(this.fCadastro_Load);
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).EndInit();
             this.gpbBolsista.ResumeLayout(false);
             this.gpbBolsista.PerformLayout();
             this.gpbTipoOperador.ResumeLayout(false);
             this.gpbTipoOperador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -801,7 +789,6 @@
         private System.Windows.Forms.ComboBox cbxCurso;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblFone;
         private System.Windows.Forms.Label lblPeriodo;
@@ -813,7 +800,6 @@
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroVisualizar;
         private System.Windows.Forms.ToolStripMenuItem msMenuImprimir;
         private System.Windows.Forms.ToolStripMenuItem msMenuCadastroSair;
-        private System.Windows.Forms.PictureBox pctbRU;
         private System.Windows.Forms.PictureBox pctbFoto;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.GroupBox gpbBolsista;
@@ -845,5 +831,6 @@
         private System.Windows.Forms.Label lblAstObs;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox cbxStatus;
+        private System.Windows.Forms.PictureBox pctbRU;
     }
 }
