@@ -141,9 +141,7 @@ namespace Ru
             {
                 btnEntrar_Click(sender, e);
             }
-        }
-
-        
+        }       
 
     }
 }

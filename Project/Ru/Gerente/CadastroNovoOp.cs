@@ -311,6 +311,11 @@ namespace Ru
 
         }
 
+        private void pctbFoto_Click(object sender, EventArgs e)
+        {
+            if ((Utilidades.ControleDeTela == "novo") || (Utilidades.ControleDeTela == "alterar")) System.Diagnostics.Process.Start(@"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe");           
+        }
+
 
     }
 }

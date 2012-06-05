@@ -647,6 +647,7 @@
             this.pctbFoto.Size = new System.Drawing.Size(118, 150);
             this.pctbFoto.TabIndex = 63;
             this.pctbFoto.TabStop = false;
+            this.pctbFoto.Click += new System.EventHandler(this.pctbFoto_Click);
             // 
             // lblCopyright
             // 

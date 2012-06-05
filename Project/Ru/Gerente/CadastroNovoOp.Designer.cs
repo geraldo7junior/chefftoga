@@ -92,9 +92,9 @@
             this.gpbTipoOperador = new System.Windows.Forms.GroupBox();
             this.rbtnGerente = new System.Windows.Forms.RadioButton();
             this.rbtnOpEntradaRU = new System.Windows.Forms.RadioButton();
+            this.lblAstTipoOperador = new System.Windows.Forms.Label();
             this.rbtnOpCredito = new System.Windows.Forms.RadioButton();
             this.rbtnOpCadastro = new System.Windows.Forms.RadioButton();
-            this.lblAstTipoOperador = new System.Windows.Forms.Label();
             this.lblAstEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -521,7 +521,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(76, 22);
-            this.txtSenha.TabIndex = 14;
+            this.txtSenha.TabIndex = 15;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // btnOk
@@ -558,7 +558,7 @@
             this.txtConfirmeSenha.Name = "txtConfirmeSenha";
             this.txtConfirmeSenha.PasswordChar = '*';
             this.txtConfirmeSenha.Size = new System.Drawing.Size(76, 22);
-            this.txtConfirmeSenha.TabIndex = 15;
+            this.txtConfirmeSenha.TabIndex = 16;
             this.txtConfirmeSenha.UseSystemPasswordChar = true;
             this.txtConfirmeSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmeSenha_KeyPress);
             // 
@@ -586,6 +586,7 @@
             this.pctbFoto.Size = new System.Drawing.Size(118, 150);
             this.pctbFoto.TabIndex = 63;
             this.pctbFoto.TabStop = false;
+            this.pctbFoto.Click += new System.EventHandler(this.pctbFoto_Click);
             // 
             // lblCopyright
             // 
@@ -832,6 +833,7 @@
             this.gpbTipoOperador.BackColor = System.Drawing.Color.Transparent;
             this.gpbTipoOperador.Controls.Add(this.rbtnGerente);
             this.gpbTipoOperador.Controls.Add(this.rbtnOpEntradaRU);
+            this.gpbTipoOperador.Controls.Add(this.lblAstTipoOperador);
             this.gpbTipoOperador.Controls.Add(this.rbtnOpCredito);
             this.gpbTipoOperador.Controls.Add(this.rbtnOpCadastro);
             this.gpbTipoOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -864,6 +866,18 @@
             this.rbtnOpEntradaRU.Text = "Op. Entrada RU";
             this.rbtnOpEntradaRU.UseVisualStyleBackColor = true;
             // 
+            // lblAstTipoOperador
+            // 
+            this.lblAstTipoOperador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAstTipoOperador.AutoSize = true;
+            this.lblAstTipoOperador.BackColor = System.Drawing.Color.Transparent;
+            this.lblAstTipoOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAstTipoOperador.ForeColor = System.Drawing.Color.Red;
+            this.lblAstTipoOperador.Location = new System.Drawing.Point(129, -7);
+            this.lblAstTipoOperador.Name = "lblAstTipoOperador";
+            this.lblAstTipoOperador.Size = new System.Drawing.Size(0, 24);
+            this.lblAstTipoOperador.TabIndex = 84;
+            // 
             // rbtnOpCredito
             // 
             this.rbtnOpCredito.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -886,18 +900,6 @@
             this.rbtnOpCadastro.Text = "Op. Cadastro";
             this.rbtnOpCadastro.UseVisualStyleBackColor = true;
             // 
-            // lblAstTipoOperador
-            // 
-            this.lblAstTipoOperador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAstTipoOperador.AutoSize = true;
-            this.lblAstTipoOperador.BackColor = System.Drawing.Color.Transparent;
-            this.lblAstTipoOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAstTipoOperador.ForeColor = System.Drawing.Color.Red;
-            this.lblAstTipoOperador.Location = new System.Drawing.Point(657, 27);
-            this.lblAstTipoOperador.Name = "lblAstTipoOperador";
-            this.lblAstTipoOperador.Size = new System.Drawing.Size(0, 24);
-            this.lblAstTipoOperador.TabIndex = 84;
-            // 
             // lblAstEmail
             // 
             this.lblAstEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -918,7 +920,7 @@
             this.txtEmail.Location = new System.Drawing.Point(186, 433);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(132, 22);
-            this.txtEmail.TabIndex = 88;
+            this.txtEmail.TabIndex = 14;
             // 
             // lblEmail
             // 
@@ -929,7 +931,7 @@
             this.lblEmail.Location = new System.Drawing.Point(125, 435);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(60, 22);
-            this.lblEmail.TabIndex = 87;
+            this.lblEmail.TabIndex = 14;
             this.lblEmail.Text = "E-mail:";
             // 
             // lblStatus
@@ -994,7 +996,6 @@
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.lblFoto);
             this.Controls.Add(this.pctbRU);
-            this.Controls.Add(this.lblAstTipoOperador);
             this.Controls.Add(this.lblFormCadastro);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.cbxStatus);

@@ -97,7 +97,7 @@
             this.mtxtFone.Name = "mtxtFone";
             this.mtxtFone.ReadOnly = true;
             this.mtxtFone.Size = new System.Drawing.Size(100, 22);
-            this.mtxtFone.TabIndex = 13;
+            this.mtxtFone.TabIndex = 14;
             // 
             // mtxtCEP
             // 
@@ -108,7 +108,7 @@
             this.mtxtCEP.Name = "mtxtCEP";
             this.mtxtCEP.ReadOnly = true;
             this.mtxtCEP.Size = new System.Drawing.Size(100, 22);
-            this.mtxtCEP.TabIndex = 12;
+            this.mtxtCEP.TabIndex = 13;
             // 
             // mtxtCPF
             // 
@@ -121,7 +121,7 @@
             this.mtxtCPF.ReadOnly = true;
             this.mtxtCPF.RejectInputOnFirstFailure = true;
             this.mtxtCPF.Size = new System.Drawing.Size(100, 22);
-            this.mtxtCPF.TabIndex = 4;
+            this.mtxtCPF.TabIndex = 5;
             // 
             // lblFormCadastro
             // 
@@ -174,7 +174,7 @@
             this.cbxUF.Location = new System.Drawing.Point(715, 323);
             this.cbxUF.Name = "cbxUF";
             this.cbxUF.Size = new System.Drawing.Size(48, 24);
-            this.cbxUF.TabIndex = 11;
+            this.cbxUF.TabIndex = 10;
             // 
             // lblCEP
             // 
@@ -211,7 +211,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.ReadOnly = true;
             this.txtCidade.Size = new System.Drawing.Size(153, 22);
-            this.txtCidade.TabIndex = 10;
+            this.txtCidade.TabIndex = 9;
             // 
             // lblCidade
             // 
@@ -235,7 +235,7 @@
             this.txtN.Name = "txtN";
             this.txtN.ReadOnly = true;
             this.txtN.Size = new System.Drawing.Size(73, 22);
-            this.txtN.TabIndex = 8;
+            this.txtN.TabIndex = 7;
             // 
             // lblN
             // 
@@ -259,7 +259,7 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.ReadOnly = true;
             this.txtBairro.Size = new System.Drawing.Size(173, 22);
-            this.txtBairro.TabIndex = 9;
+            this.txtBairro.TabIndex = 8;
             // 
             // lblBairrro
             // 
@@ -294,7 +294,7 @@
             this.txtRua.Name = "txtRua";
             this.txtRua.ReadOnly = true;
             this.txtRua.Size = new System.Drawing.Size(406, 22);
-            this.txtRua.TabIndex = 7;
+            this.txtRua.TabIndex = 6;
             // 
             // txtNome
             // 
@@ -305,7 +305,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(448, 22);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 2;
             // 
             // txtID
             // 
@@ -328,7 +328,7 @@
             this.lblFoto.Location = new System.Drawing.Point(15, 279);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(90, 22);
-            this.lblFoto.TabIndex = 15;
+            this.lblFoto.TabIndex = 16;
             this.lblFoto.Text = "Foto";
             this.lblFoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -493,7 +493,7 @@
             this.mtxtDataNasc.Name = "mtxtDataNasc";
             this.mtxtDataNasc.ReadOnly = true;
             this.mtxtDataNasc.Size = new System.Drawing.Size(80, 22);
-            this.mtxtDataNasc.TabIndex = 3;
+            this.mtxtDataNasc.TabIndex = 4;
             this.mtxtDataNasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pctbFoto
@@ -531,7 +531,7 @@
             this.gpbBolsista.Location = new System.Drawing.Point(4, 430);
             this.gpbBolsista.Name = "gpbBolsista";
             this.gpbBolsista.Size = new System.Drawing.Size(115, 88);
-            this.gpbBolsista.TabIndex = 14;
+            this.gpbBolsista.TabIndex = 18;
             this.gpbBolsista.TabStop = false;
             this.gpbBolsista.Text = "Gratuidade";
             this.gpbBolsista.Visible = false;
@@ -588,7 +588,7 @@
             this.txtIdentidade.ReadOnly = true;
             this.txtIdentidade.RejectInputOnFirstFailure = true;
             this.txtIdentidade.Size = new System.Drawing.Size(80, 22);
-            this.txtIdentidade.TabIndex = 2;
+            this.txtIdentidade.TabIndex = 3;
             this.txtIdentidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gpbTipoOperador
@@ -604,7 +604,7 @@
             this.gpbTipoOperador.Location = new System.Drawing.Point(0, 307);
             this.gpbTipoOperador.Name = "gpbTipoOperador";
             this.gpbTipoOperador.Size = new System.Drawing.Size(133, 116);
-            this.gpbTipoOperador.TabIndex = 85;
+            this.gpbTipoOperador.TabIndex = 17;
             this.gpbTipoOperador.TabStop = false;
             this.gpbTipoOperador.Text = "Tipo do Operador";
             // 
@@ -661,7 +661,7 @@
             this.txtEmail.Location = new System.Drawing.Point(186, 433);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(132, 22);
-            this.txtEmail.TabIndex = 91;
+            this.txtEmail.TabIndex = 15;
             // 
             // lblEmail
             // 
@@ -672,7 +672,7 @@
             this.lblEmail.Location = new System.Drawing.Point(125, 435);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(60, 22);
-            this.lblEmail.TabIndex = 90;
+            this.lblEmail.TabIndex = 13;
             this.lblEmail.Text = "E-mail:";
             // 
             // lblStatus
@@ -684,7 +684,7 @@
             this.lblStatus.Location = new System.Drawing.Point(434, 136);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(61, 22);
-            this.lblStatus.TabIndex = 93;
+            this.lblStatus.TabIndex = 1;
             this.lblStatus.Text = "Status:";
             // 
             // cbxStatus
@@ -701,7 +701,7 @@
             this.cbxStatus.Location = new System.Drawing.Point(501, 133);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(115, 24);
-            this.cbxStatus.TabIndex = 92;
+            this.cbxStatus.TabIndex = 1;
             // 
             // pctbRU
             // 
