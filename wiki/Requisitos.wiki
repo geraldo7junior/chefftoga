@@ -10,7 +10,7 @@ Os requisitos funcionais do sistema têm como meta:<br>
 •	RF001: Permitir o cadastro de dados pessoais dos clientes;<br>
 •	RF002: Recadastramento destes;<br>
 •	RF003: Recarga do smart card;<br>
-•	RF04: Ter a opção de imprimir boleto para o pagamento da recarga em local cadastrado ou efetuá-lo on-line;<br>
+•	RF004: Ter a opção de imprimir boleto para o pagamento da recarga em local cadastrado ou efetuá-lo on-line;<br>
 •	RF005: Fornecer ao usuário seu saldo atual;<br>
 •	RF006: Informações sobre o cardápio;<br>
 •	RF007: Permitir o contato entre cliente e restaurante;<br>
