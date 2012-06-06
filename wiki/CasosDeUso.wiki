@@ -184,7 +184,7 @@
 ||<b>Objetivos:</b>||
 ||Relatar movimentações financeiras periódicas ao gerente.||
 ||<b>Descrição:</b>||
-||O gerente do restaurante poderá gerenciar os ganhos do estabelecimento a partir de diversos filtros, poderá analisar ganhos por aluno, por dia, mês, dentre outros.||
+||O gerente do restaurante poderá gerenciar os ganhos do estabelecimento a partir de diversos filtros, poderá analisar ganhos por aluno, por dia, mês, dentre outros.Este caso de uso visa um controle de porte financeiro, informando ao gerente quais os horários de maior arrecadação, quais os alunos com maiores e menores gastos, enfim um sistema inteligente de relatórios financeiros.  ||
 ||<b>Ator:</b>|| 
 ||Gerente||
 ||<b>Prioridade:</b>||
