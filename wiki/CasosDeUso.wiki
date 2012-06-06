@@ -150,6 +150,17 @@
 ||•	Fone (obrigatório);||
 ||•	Tipo de Operador (obrigatório);||
 ||•	Senha (obrigatório);||
+||_A geração de relatórios será realizada frente aos filtros:_||
+||•	Id da movimentação;||
+||•	Data da movimentação;||
+||•	Hora da movimentação;||
+||•	Tipo de movimentação;||
+||•	Campos alterados;||
+||•	Observações;||
+||•	Valores;||
+||•	Card Operador/Aluno;||
+||•	Cpf Operador/Aluno;||
+||•	Nome Operador/Aluno;||
 ||<b>Ator:</b>|| 
 ||Gerente||
 ||<b>Prioridade:</b>||
