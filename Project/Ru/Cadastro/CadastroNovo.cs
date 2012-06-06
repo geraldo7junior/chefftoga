@@ -327,7 +327,8 @@ namespace Ru
         {            
             if ((Utilidades.ControleDeTela == "novo") || (Utilidades.ControleDeTela == "alterar"))
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe");
+                try { System.Diagnostics.Process.Start(Utilidades.pasta_cam()); }
+                catch { MessageBox.Show("Web Cam não encontrada! Entre em contato com o Administrador do Sistema", "WebCam", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
 

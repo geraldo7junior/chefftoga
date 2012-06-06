@@ -316,7 +316,11 @@ namespace Ru
 
         private void pctbFoto_Click(object sender, EventArgs e)
         {
-            if ((Utilidades.ControleDeTela == "novoOp") || (Utilidades.ControleDeTela == "alterarOp")) System.Diagnostics.Process.Start(@"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe");           
+            if ((Utilidades.ControleDeTela == "novoOp") || (Utilidades.ControleDeTela == "alterarOp"))
+            {
+                try { System.Diagnostics.Process.Start(Utilidades.pasta_cam()); }
+                catch { MessageBox.Show("Web Cam não encontrada! Entre em contato com o Administrador do Sistema", "WebCam", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
         }
 
 

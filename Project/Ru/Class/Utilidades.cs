@@ -26,6 +26,12 @@ namespace Ru
 
         public static bool retorno, bolsista;
 
+        public static String pasta_cam()
+        {
+            string destino = @"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe";
+            return destino;
+        }
+
         public static void GerarPdf()
         {
             // Variavel do Nome e caminho do arquivo; Pegando DataHora Atual.
