@@ -5,11 +5,11 @@
 <H2 TEXT-ALIGN='CENTER'><b><FONT FACE="TIMES" SIZE="1"><p align="center">Desenvolvedores</p></font></b></H2>
 <hr>
 
-Carlos César Bezerra Fonseca;<br>
-Cybele Félix Amorim Veríssimo;<br>
+Carlos César Bezerra Fonseca (Developer);<br>
+Cybele Félix Amorim Veríssimo (DBA);<br>
 Edmiel Leandro Bandeira da Silva;<br>
-Geraldo Gomes da Cruz Júnior;<br> 
-Larissa Karollyne de Melo Ferreira;<br>
-Mário Gomes de Melo.<br>
+Geraldo Gomes da Cruz Júnior (Project Manager);<br> 
+Larissa Karollyne de Melo Ferreira (DBA);<br>
+Mário Gomes de Melo (Developer).<br>
 <br>
 <hr>
