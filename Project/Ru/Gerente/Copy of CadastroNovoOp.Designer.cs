@@ -59,13 +59,13 @@
             this.txtCpfOperador = new System.Windows.Forms.MaskedTextBox();
             this.txtCardOperador = new System.Windows.Forms.MaskedTextBox();
             this.txtIdMovimentacao = new System.Windows.Forms.MaskedTextBox();
-            this.lblInforme = new System.Windows.Forms.Label();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.lblGeradorRelatorio = new System.Windows.Forms.Label();
             this.lblIdMovimentacao = new System.Windows.Forms.Label();
             this.lblCpfOperador = new System.Windows.Forms.Label();
             this.lblCardOperador = new System.Windows.Forms.Label();
             this.pctbRU = new System.Windows.Forms.PictureBox();
+            this.lblInforme = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbRU)).BeginInit();
             this.SuspendLayout();
@@ -424,19 +424,6 @@
             this.txtIdMovimentacao.TabIndex = 2;
             this.txtIdMovimentacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblInforme
-            // 
-            this.lblInforme.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblInforme.AutoSize = true;
-            this.lblInforme.BackColor = System.Drawing.Color.Transparent;
-            this.lblInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInforme.Location = new System.Drawing.Point(45, 70);
-            this.lblInforme.Name = "lblInforme";
-            this.lblInforme.Size = new System.Drawing.Size(600, 16);
-            this.lblInforme.TabIndex = 1;
-            this.lblInforme.Text = "Informe os valores dos campos abaixo que deseja filtrar para poder gerar um Relat" +
-    "ório do Sistema:";
-            // 
             // btnRelatorio
             // 
             this.btnRelatorio.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -508,6 +495,19 @@
             this.pctbRU.TabIndex = 147;
             this.pctbRU.TabStop = false;
             // 
+            // lblInforme
+            // 
+            this.lblInforme.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblInforme.AutoSize = true;
+            this.lblInforme.BackColor = System.Drawing.Color.Transparent;
+            this.lblInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInforme.Location = new System.Drawing.Point(45, 70);
+            this.lblInforme.Name = "lblInforme";
+            this.lblInforme.Size = new System.Drawing.Size(600, 16);
+            this.lblInforme.TabIndex = 1;
+            this.lblInforme.Text = "Informe os valores dos campos abaixo que deseja filtrar para poder gerar um Relat" +
+    "ório do Sistema:";
+            // 
             // fFiltroRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,6 +516,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.btnRelatorio);
             this.Controls.Add(this.pctbRU);
             this.Controls.Add(this.txtObs);
             this.Controls.Add(this.txtValor);
@@ -541,7 +542,6 @@
             this.Controls.Add(this.txtCardOperador);
             this.Controls.Add(this.txtIdMovimentacao);
             this.Controls.Add(this.lblInforme);
-            this.Controls.Add(this.btnRelatorio);
             this.Controls.Add(this.lblGeradorRelatorio);
             this.Controls.Add(this.lblIdMovimentacao);
             this.Controls.Add(this.lblCpfOperador);
@@ -594,12 +594,12 @@
         private System.Windows.Forms.MaskedTextBox txtCpfOperador;
         private System.Windows.Forms.MaskedTextBox txtCardOperador;
         private System.Windows.Forms.MaskedTextBox txtIdMovimentacao;
-        private System.Windows.Forms.Label lblInforme;
         private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Label lblGeradorRelatorio;
         private System.Windows.Forms.Label lblIdMovimentacao;
         private System.Windows.Forms.Label lblCpfOperador;
         private System.Windows.Forms.Label lblCardOperador;
         private System.Windows.Forms.PictureBox pctbRU;
+        private System.Windows.Forms.Label lblInforme;
     }
 }
