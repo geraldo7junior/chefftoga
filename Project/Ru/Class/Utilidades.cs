@@ -668,7 +668,7 @@ namespace Ru
                 asterisco = "";
             }
 
-            return (asterisco);
+            return asterisco;
 
         }
 
@@ -756,6 +756,23 @@ namespace Ru
             }
         }
 
+        public static String Foto()
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var item = (from i in context.Usuario
+                            where i.CPF == Cpf
+                            select i.Foto).ToList();
+                return item[0];
+            }
+        }
+
+        public static String pasta_fotos(Int32 txtid)
+        {
+            string destino = @"C:\CheffTogaFotos\" + txtid.ToString() + ".jpg";
+
+            return destino;
+        }
         public static String Identidade()
         {
             using (CheffTogaEntities context = new CheffTogaEntities())

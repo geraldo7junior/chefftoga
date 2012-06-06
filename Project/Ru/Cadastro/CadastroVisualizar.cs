@@ -36,6 +36,8 @@ namespace Ru
             mtxtCEP.Text = Utilidades.Cep();
             mtxtFone.Text = Utilidades.FuncFone();
             txtEmail.Text = Utilidades.Email();
+            try { pctbFoto.Image = Image.FromFile(Utilidades.Foto() + txtID.Text + ".jpg"); }
+            catch { MessageBox.Show("Imagem não encontrada. Verifique o nome da imagem e seu local. Deve estar em (C:->Users->Mário->Pictures) e seu nome deve ser o número do Cartão do Cliente", "Imagem não encontrada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
         }
 
         private void msMenuCadastroSair_Click(object sender, EventArgs e)

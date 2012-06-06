@@ -24,6 +24,9 @@ namespace Ru
             txtNome.Text = Utilidades.Nome();
             mtxtCPF.Text = Utilidades.CpF();
             rbtnSim.Checked = Utilidades.Bolsista();
+            try { pctbFoto.Image = Image.FromFile(Utilidades.Foto()); }
+            catch { MessageBox.Show("Imagem não encontrada. Verifique o nome da imagem e seu local. Deve estar em (C:->CheffTogaFotos) e seu nome deve ser o número do Cartão do Cliente", "Imagem não encontrada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+
             if (Utilidades.ControleDeTela == "autorizarporcpf")
             {
                 cbxCurso.Text = Utilidades.Curso();

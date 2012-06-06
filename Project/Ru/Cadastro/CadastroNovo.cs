@@ -41,6 +41,9 @@ namespace Ru
                 txtCep.Text = Utilidades.Cep();
                 txtFone.Text = Utilidades.FuncFone();
                 txtEmail.Text = Utilidades.Email();
+                try { pctbFoto.Image = Image.FromFile(Utilidades.Foto()); }
+                catch { MessageBox.Show("Imagem não encontrada. Verifique o nome da imagem e seu local. Deve estar em (C:->CheffTogaFotos) e seu nome deve ser o número do Cartão do Cliente", "Imagem não encontrada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+
 
                 txtSenha.Hide();
                 txtConfirmeSenha.Hide();
@@ -144,6 +147,7 @@ namespace Ru
                         user.Data_Refeicao = DateTime.Now.ToShortDateString();
                         user.Almoco = false;
                         user.Jantar = false;
+                        user.Foto = Utilidades.pasta_fotos(Utilidades.GerarIdCard(linq + 1));
                         context.AddObject("Usuario", user);
                         context.SaveChanges();
                         
@@ -200,7 +204,7 @@ namespace Ru
                     Utilidades.bolsista = rbtnSim.Checked;
                     Utilidades.TipoUser = 1;
                     Utilidades.email = txtEmail.Text;
-                    Utilidades.DataNasc = txtDataNasc.Text;
+                    Utilidades.DataNasc = txtDataNasc.Text;                    
                     
                     using (CheffTogaEntities context = new CheffTogaEntities())
                     {
@@ -320,9 +324,13 @@ namespace Ru
         }
 
         private void pctbFoto_Click(object sender, EventArgs e)
-        {
-            if ((Utilidades.ControleDeTela == "novo") || (Utilidades.ControleDeTela == "alterar")) System.Diagnostics.Process.Start(@"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe");           
+        {            
+            if ((Utilidades.ControleDeTela == "novo") || (Utilidades.ControleDeTela == "alterar"))
+            {
+                System.Diagnostics.Process.Start(@"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe");
+            }
         }
+
 
 
     }

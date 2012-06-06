@@ -30,6 +30,8 @@ namespace Ru
                 txtDataNasc.Text = Utilidades.FuncDataNasc();
                 txtCpf.Text = Utilidades.CpF();
                 rbtnSim.Checked = Utilidades.Bolsista();
+                try { pctbFoto.Image = Image.FromFile(Utilidades.Foto()); }
+                catch { MessageBox.Show("Imagem não encontrada. Verifique o nome da imagem e seu local. Deve estar em (C:->CheffTogaFotos) e seu nome deve ser o número do Cartão do Cliente", "Imagem não encontrada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
 
                 //tipo de operador
                 if (Utilidades.TipoOperador() == 2) rbtnOpCadastro.Checked = true;
@@ -145,6 +147,7 @@ namespace Ru
                         user.Data_Refeicao = DateTime.Now.ToShortDateString();
                         user.Almoco = false;
                         user.Jantar = false;
+                        user.Foto = Utilidades.pasta_fotos(Utilidades.GerarIdCard(linq + 1));
                         context.AddObject("Usuario", user);
                         context.SaveChanges();
 

@@ -25,7 +25,10 @@ namespace Ru
             rbtnSim.Checked = Utilidades.Bolsista();
             mtxtFone.Text = Utilidades.FuncFone();
             txtEmail.Text = Utilidades.Email();
-            txtSaldo.Text = Utilidades.Saldo();    
+            txtSaldo.Text = Utilidades.Saldo();
+            try { pctbFoto.Image = Image.FromFile(Utilidades.Foto()); }
+            catch { MessageBox.Show("Imagem não encontrada. Verifique o nome da imagem e seu local. Deve estar em (C:->CheffTogaFotos) e seu nome deve ser o número do Cartão do Cliente", "Imagem não encontrada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+
             if (Utilidades.ControleDeTela == "creditar")
             {
                 cbxCurso.Text = Utilidades.Curso();
