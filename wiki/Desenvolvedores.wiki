@@ -6,10 +6,10 @@
 <hr>
 
 Carlos César Bezerra Fonseca (Developer);<br>
-Cybele Félix Amorim Veríssimo (DBA);<br>
-Edmiel Leandro Bandeira da Silva;<br>
-Geraldo Gomes da Cruz Júnior (Project Manager);<br> 
-Larissa Karollyne de Melo Ferreira (DBA);<br>
+Cybele Félix Amorim Veríssimo (DBA, Tester);<br>
+Edmiel Leandro Bandeira da Silva (Design);<br>
+Geraldo Gomes da Cruz Júnior (Project Manager, Documentation, Design);<br> 
+Larissa Karollyne de Melo Ferreira (DBA, Tester);<br>
 Mário Gomes de Melo (Developer).<br>
 <br>
 <hr>
