@@ -16,7 +16,7 @@ namespace Ru
 {
     class Utilidades
     {
-        public static string DataNascCampos, CepCampos, FoneCampos, strIdCurso, strIdPeriodo, modificacao, ControleDeTela, ControleDeStatus, asterisco, NomeLogin, Cpf, CpfNovo, CpfOperador, NomeOperador, status, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, email, ControleDeValidaCampos="", ErrDataNasc = "" , ErrCep = "", ErrFone = "", ControleRefeicao = "", ALUNOouOPERADOR;
+        public static string destino_cam = @"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe", DataNascCampos, CepCampos, FoneCampos, strIdCurso, strIdPeriodo, modificacao, ControleDeTela, ControleDeStatus, asterisco, NomeLogin, Cpf, CpfNovo, CpfOperador, NomeOperador, status, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, email, ControleDeValidaCampos = "", ErrDataNasc = "", ErrCep = "", ErrFone = "", ControleRefeicao = "", ALUNOouOPERADOR;
 
         public static int IdMoviment, CtrlIdMov, id, IdCard, IDCurso, IDPeriodo, TipoUser, IDOperador;
 
@@ -27,9 +27,8 @@ namespace Ru
         public static bool retorno, bolsista;
 
         public static String pasta_cam()
-        {
-            string destino = @"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe";
-            return destino;
+        {            
+            return destino_cam;
         }
 
         public static void GerarPdf()
