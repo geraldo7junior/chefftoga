@@ -5,11 +5,11 @@
 <H2 TEXT-ALIGN='CENTER'><b><FONT FACE="TIMES" SIZE="1"><p align="center">Desenvolvedores</p></font></b></H2>
 <hr>
 
-Carlos César Bezerra Fonseca (Developer);<br>
-Cybele Félix Amorim Veríssimo (DBA, Tester);<br>
-Edmiel Leandro Bandeira da Silva (Design);<br>
-Geraldo Gomes da Cruz Júnior (Project Manager, Documentation, Design);<br> 
-Larissa Karollyne de Melo Ferreira (DBA, Tester);<br>
-Mário Gomes de Melo (Developer).<br>
+Carlos César Bezerra Fonseca (Developer)cc_bf@hotmail.com ;<br>
+Cybele Félix Amorim Veríssimo (DBA, Tester)cybeleamorissimo@yahoo.com.br;<br>
+Edmiel Leandro Bandeira da Silva (Design)edmielleandro@gmail.com;<br>
+Geraldo Gomes da Cruz Júnior (Project Manager, Documentation, Design)geraldoj8@gmail.com ;<br> 
+Larissa Karollyne de Melo Ferreira (DBA, Tester)larissakarollyne@gmail.com ;<br>
+Mário Gomes de Melo (Developer)infoninja@hotmail.com .<br>
 <br>
 <hr>
