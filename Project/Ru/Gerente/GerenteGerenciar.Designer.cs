@@ -32,7 +32,6 @@
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerarRelatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatórioGeralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encerrarSeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +61,11 @@
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pctbBoasVindas = new System.Windows.Forms.PictureBox();
+            this.porDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porCPFDoOperadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porCPFDoAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porTipoDeMovimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.geralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbBoasVindas)).BeginInit();
             this.SuspendLayout();
@@ -94,18 +98,15 @@
             // gerarRelatórioToolStripMenuItem
             // 
             this.gerarRelatórioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relatórioGeralToolStripMenuItem});
+            this.porDataToolStripMenuItem,
+            this.porCPFDoOperadorToolStripMenuItem,
+            this.porCPFDoAlunoToolStripMenuItem,
+            this.porTipoDeMovimentaçãoToolStripMenuItem,
+            this.geralToolStripMenuItem});
             this.gerarRelatórioToolStripMenuItem.Name = "gerarRelatórioToolStripMenuItem";
             this.gerarRelatórioToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.gerarRelatórioToolStripMenuItem.Text = "Gerar &Relatório";
             this.gerarRelatórioToolStripMenuItem.Click += new System.EventHandler(this.gerarRelatórioToolStripMenuItem_Click);
-            // 
-            // relatórioGeralToolStripMenuItem
-            // 
-            this.relatórioGeralToolStripMenuItem.Name = "relatórioGeralToolStripMenuItem";
-            this.relatórioGeralToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.relatórioGeralToolStripMenuItem.Text = "&Relatório Geral";
-            this.relatórioGeralToolStripMenuItem.Click += new System.EventHandler(this.relatórioGeralToolStripMenuItem_Click);
             // 
             // encerrarSeToolStripMenuItem
             // 
@@ -348,6 +349,41 @@
             this.pctbBoasVindas.TabIndex = 64;
             this.pctbBoasVindas.TabStop = false;
             // 
+            // porDataToolStripMenuItem
+            // 
+            this.porDataToolStripMenuItem.Name = "porDataToolStripMenuItem";
+            this.porDataToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.porDataToolStripMenuItem.Text = "Por &Data";
+            this.porDataToolStripMenuItem.Click += new System.EventHandler(this.porDataToolStripMenuItem_Click);
+            // 
+            // porCPFDoOperadorToolStripMenuItem
+            // 
+            this.porCPFDoOperadorToolStripMenuItem.Name = "porCPFDoOperadorToolStripMenuItem";
+            this.porCPFDoOperadorToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.porCPFDoOperadorToolStripMenuItem.Text = "Por CPF do &Operador";
+            this.porCPFDoOperadorToolStripMenuItem.Click += new System.EventHandler(this.porCPFDoOperadorToolStripMenuItem_Click);
+            // 
+            // porCPFDoAlunoToolStripMenuItem
+            // 
+            this.porCPFDoAlunoToolStripMenuItem.Name = "porCPFDoAlunoToolStripMenuItem";
+            this.porCPFDoAlunoToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.porCPFDoAlunoToolStripMenuItem.Text = "Por CPF do &Aluno";
+            this.porCPFDoAlunoToolStripMenuItem.Click += new System.EventHandler(this.porCPFDoAlunoToolStripMenuItem_Click);
+            // 
+            // porTipoDeMovimentaçãoToolStripMenuItem
+            // 
+            this.porTipoDeMovimentaçãoToolStripMenuItem.Name = "porTipoDeMovimentaçãoToolStripMenuItem";
+            this.porTipoDeMovimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.porTipoDeMovimentaçãoToolStripMenuItem.Text = "Por &Tipo de Movimentação";
+            this.porTipoDeMovimentaçãoToolStripMenuItem.Click += new System.EventHandler(this.porTipoDeMovimentaçãoToolStripMenuItem_Click);
+            // 
+            // geralToolStripMenuItem
+            // 
+            this.geralToolStripMenuItem.Name = "geralToolStripMenuItem";
+            this.geralToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.geralToolStripMenuItem.Text = "&Geral";
+            this.geralToolStripMenuItem.Click += new System.EventHandler(this.geralToolStripMenuItem_Click);
+            // 
             // fGerenteGerenciar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,7 +446,11 @@
         private System.Windows.Forms.ToolStripMenuItem bloquearTodosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem desbloquearTodosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gerarRelatórioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatórioGeralToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porDataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porCPFDoOperadorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porCPFDoAlunoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porTipoDeMovimentaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem geralToolStripMenuItem;
 
 
 

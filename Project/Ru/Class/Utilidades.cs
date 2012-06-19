@@ -16,9 +16,9 @@ namespace Ru
 {
     class Utilidades
     {
-        public static string destino_cam = @"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe", DataNascCampos, CepCampos, FoneCampos, strIdCurso, strIdPeriodo, modificacao, ControleDeTela, ControleDeStatus, asterisco, NomeLogin, Cpf, CpfNovo, CpfOperador, NomeOperador, status, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, email, ControleDeValidaCampos = "", ErrDataNasc = "", ErrCep = "", ErrFone = "", ControleRefeicao = "", ALUNOouOPERADOR;
+        public static string TipoMov, Operador, Aluno, Data, filtro, destino_cam = @"C:\Program Files\Acer Crystal Eye webcam\CrystalEye.exe", DataNascCampos, CepCampos, FoneCampos, strIdCurso, strIdPeriodo, modificacao, ControleDeTela, ControleDeStatus, asterisco, NomeLogin, Cpf, CpfNovo, CpfOperador, NomeOperador, status, nome, identidade, DataNasc, rua, numero, bairro, cidade, uf, cep, fone, email, ControleDeValidaCampos = "", ErrDataNasc = "", ErrCep = "", ErrFone = "", ControleRefeicao = "", ALUNOouOPERADOR;
 
-        public static int IdMoviment, CtrlIdMov, id, IdCard, IDCurso, IDPeriodo, TipoUser, IDOperador;
+        public static int id, IdCard, IDCurso, IDPeriodo, TipoUser, IDOperador;
 
         public static float credito, debito, ValorASerCobrado, saldo;
 
@@ -86,7 +86,32 @@ namespace Ru
             Utilidades.MontaInicioRelatorio(tabela, celula, "Observacoes");
             Utilidades.MontaInicioRelatorio(tabela, celula, "Valor");
 
-            Utilidades.GerarRelatorio(doc, tabela, celula);
+            if (filtro == "movimentacao")
+            {
+                GerarRelatorioMov(doc, tabela, celula, TipoMov);
+            }
+
+            else if (filtro == "operador")
+            {
+                GerarRelatorioOp(doc, tabela, celula, Operador);
+            }
+
+            else if (filtro == "aluno")
+            {
+                GerarRelatorioAl(doc, tabela, celula, Aluno);
+            }
+
+            else if (filtro == "data")
+            {
+                if (validaData(Data))
+                {
+                    GerarRelatorioData(doc, tabela, celula, Data);
+                }
+                else MessageBox.Show("ERRO! Data Inválida!", "Validação de Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            else GerarRelatorioGeral(doc, tabela, celula);
+            
 
             doc.Add(tabela);
             doc.Close();
@@ -104,83 +129,66 @@ namespace Ru
             tabela.AddCell(celula);
         }
 
-        public static void GerarRelatorio(Document doc, PdfPTable tabela, PdfPCell celula)
+        public static void GerarRelatorioGeral(Document doc, PdfPTable tabela, PdfPCell celula)
         {
             using (CheffTogaEntities context = new CheffTogaEntities())
             {
-           
-                var listaMoviment = (from i in context.Movimentacao
-                                where (i.Id_Movimentacao == CtrlIdMov)
-                                select i.Id_Movimentacao).ToList();
-                IdMoviment = listaMoviment.ToList().Count();
+                var idmov = (from i in context.Movimentacao
+                             select i.Id_Movimentacao).ToList();
 
-                if (IdMoviment != 0)
+                var idop = (from i in context.Movimentacao
+                            select i.Id_Operador).ToList();
+
+                var cpfop = (from i in context.Movimentacao
+                             select i.Cpf_Operador).ToList();
+
+                var nomeop = (from i in context.Movimentacao
+                              select i.Nome_Operador).ToList();
+
+                var idal = (from i in context.Movimentacao
+                            select i.Id_Aluno).ToList();
+
+                var cpfal = (from i in context.Movimentacao
+                             select i.Cpf_Aluno).ToList();
+
+                var nomeal = (from i in context.Movimentacao
+                              select i.Nome_Aluno).ToList();
+
+                var datamov = (from i in context.Movimentacao
+                               select i.Data_Movimentacao).ToList();
+
+                var horamov = (from i in context.Movimentacao
+                               select i.Hora_Movimentacao).ToList();
+
+                var tipomov = (from i in context.Movimentacao
+                               select i.Tipo_Movimentacao).ToList();
+
+                var campos = (from i in context.Movimentacao
+                              select i.Campos).ToList();
+
+                var obs = (from i in context.Movimentacao
+                           select i.Observacao).ToList();
+
+                var valor = (from i in context.Movimentacao
+                             select i.Valor).ToList();
+
+                Int32 j = 0;
+                Int32 total = idmov.Count();
+                while (j < total)
                 {
-
-                    var idmov = (from i in context.Movimentacao
-                                 where i.Id_Movimentacao == CtrlIdMov
-                                 select i.Id_Movimentacao).ToList();
-                    string stridmov = idmov[0].ToString();
-
-                    var idop = (from i in context.Movimentacao
-                                where i.Id_Movimentacao == CtrlIdMov
-                                select i.Id_Operador).ToList();
-                    string stridop = idop[0].ToString();
-
-                    var cpfop = (from i in context.Movimentacao
-                                 where i.Id_Movimentacao == CtrlIdMov
-                                 select i.Cpf_Operador).ToList();
-                    string strcpfop = cpfop[0].ToString();
-
-                    var nomeop = (from i in context.Movimentacao
-                                  where i.Id_Movimentacao == CtrlIdMov
-                                  select i.Nome_Operador).ToList();
-                    string strnomeop = nomeop[0].ToString();
-
-                    var idal = (from i in context.Movimentacao
-                                where i.Id_Movimentacao == CtrlIdMov
-                                select i.Id_Aluno).ToList();
-                    string stridal = idal[0].ToString();
-
-                    var cpfal = (from i in context.Movimentacao
-                                 where i.Id_Movimentacao == CtrlIdMov
-                                 select i.Cpf_Aluno).ToList();
-                    string strcpfal = cpfal[0].ToString();
-
-                    var nomeal = (from i in context.Movimentacao
-                                  where i.Id_Movimentacao == CtrlIdMov
-                                  select i.Nome_Aluno).ToList();
-                    string strnomeal = nomeal[0].ToString();
-
-                    var datamov = (from i in context.Movimentacao
-                                   where i.Id_Movimentacao == CtrlIdMov
-                                   select i.Data_Movimentacao).ToList();
-                    string strdatamov = datamov[0].ToString();
-
-                    var horamov = (from i in context.Movimentacao
-                                   where i.Id_Movimentacao == CtrlIdMov
-                                   select i.Hora_Movimentacao).ToList();
-                    string strhoramov = horamov[0].ToString();
-
-                    var tipomov = (from i in context.Movimentacao
-                                   where i.Id_Movimentacao == CtrlIdMov
-                                   select i.Tipo_Movimentacao).ToList();
-                    string strtipomov = tipomov[0].ToString();
-
-                    var campos = (from i in context.Movimentacao
-                                  where i.Id_Movimentacao == CtrlIdMov
-                                  select i.Campos).ToList();
-                    string strcampos = campos[0].ToString();
-
-                    var obs = (from i in context.Movimentacao
-                               where i.Id_Movimentacao == CtrlIdMov
-                               select i.Observacao).ToList();
-                    string strobs = obs[0].ToString();
-
-                    var valor = (from i in context.Movimentacao
-                                 where i.Id_Movimentacao == CtrlIdMov
-                                 select i.Valor).ToList();
-                    string strvalor = valor[0].ToString();
+                    string stridmov = idmov[j].ToString();
+                    string stridop = idop[j].ToString();
+                    string strcpfop = cpfop[j].ToString();
+                    string strnomeop = nomeop[j].ToString();
+                    string stridal = idal[j].ToString();
+                    string strcpfal = cpfal[j].ToString();
+                    string strnomeal = nomeal[j].ToString();
+                    string strdatamov = datamov[j].ToString();
+                    string strhoramov = horamov[j].ToString();
+                    string strtipomov = tipomov[j].ToString();
+                    string strcampos = campos[j].ToString();
+                    string strobs = obs[j].ToString();
+                    string strvalor = valor[j].ToString();
 
                     MontaInicioRelatorio(tabela, celula, stridmov);
                     MontaInicioRelatorio(tabela, celula, stridop);
@@ -196,10 +204,381 @@ namespace Ru
                     MontaInicioRelatorio(tabela, celula, strobs);
                     MontaInicioRelatorio(tabela, celula, strvalor);
 
-                    CtrlIdMov += 1;
-                    GerarRelatorio(doc, tabela, celula);
+                    j += 1;
+                }
+            }
+        }
+
+        public static void GerarRelatorioMov(Document doc, PdfPTable tabela, PdfPCell celula, String item)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var idmov = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Id_Movimentacao).ToList();                                        
+
+                var idop = (from i in context.Movimentacao
+                            where (i.Tipo_Movimentacao == item)
+                            select i.Id_Operador).ToList();
+
+                var cpfop = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Cpf_Operador).ToList();
+
+                var nomeop = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Nome_Operador).ToList();
+
+                var idal = (from i in context.Movimentacao
+                            where (i.Tipo_Movimentacao == item)
+                            select i.Id_Aluno).ToList();
+
+                var cpfal = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Cpf_Aluno).ToList();
+
+                var nomeal = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Nome_Aluno).ToList();
+
+                var datamov = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Data_Movimentacao).ToList();
+
+                var horamov = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Hora_Movimentacao).ToList();
+
+                var tipomov = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Tipo_Movimentacao).ToList();
+
+                var campos = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Campos).ToList();
+
+                var obs = (from i in context.Movimentacao
+                            where (i.Tipo_Movimentacao == item)
+                            select i.Observacao).ToList();
+
+                var valor = (from i in context.Movimentacao
+                                where (i.Tipo_Movimentacao == item)
+                                select i.Valor).ToList();
+
+                Int32 j=0;
+                Int32 total = idmov.Count();
+                while (j < total)
+                {
+                    string stridmov = idmov[j].ToString();
+                    string stridop = idop[j].ToString();
+                    string strcpfop = cpfop[j].ToString();
+                    string strnomeop = nomeop[j].ToString();
+                    string stridal = idal[j].ToString();
+                    string strcpfal = cpfal[j].ToString();
+                    string strnomeal = nomeal[j].ToString();
+                    string strdatamov = datamov[j].ToString();
+                    string strhoramov = horamov[j].ToString();
+                    string strtipomov = tipomov[j].ToString();
+                    string strcampos = campos[j].ToString();
+                    string strobs = obs[j].ToString();
+                    string strvalor = valor[j].ToString();
+
+                    MontaInicioRelatorio(tabela, celula, stridmov);
+                    MontaInicioRelatorio(tabela, celula, stridop);
+                    MontaInicioRelatorio(tabela, celula, strcpfop);
+                    MontaInicioRelatorio(tabela, celula, strnomeop);
+                    MontaInicioRelatorio(tabela, celula, stridal);
+                    MontaInicioRelatorio(tabela, celula, strcpfal);
+                    MontaInicioRelatorio(tabela, celula, strnomeal);
+                    MontaInicioRelatorio(tabela, celula, strdatamov);
+                    MontaInicioRelatorio(tabela, celula, strhoramov);
+                    MontaInicioRelatorio(tabela, celula, strtipomov);
+                    MontaInicioRelatorio(tabela, celula, strcampos);
+                    MontaInicioRelatorio(tabela, celula, strobs);
+                    MontaInicioRelatorio(tabela, celula, strvalor);
+
+                    j += 1;
                 }
             }           
+        }
+
+        public static void GerarRelatorioOp(Document doc, PdfPTable tabela, PdfPCell celula, String item)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var idmov = (from i in context.Movimentacao
+                             where (i.Cpf_Operador == item)
+                             select i.Id_Movimentacao).ToList();
+
+                var idop = (from i in context.Movimentacao
+                            where (i.Cpf_Operador == item)
+                            select i.Id_Operador).ToList();
+
+                var cpfop = (from i in context.Movimentacao
+                             where (i.Cpf_Operador == item)
+                             select i.Cpf_Operador).ToList();
+
+                var nomeop = (from i in context.Movimentacao
+                              where (i.Cpf_Operador == item)
+                              select i.Nome_Operador).ToList();
+
+                var idal = (from i in context.Movimentacao
+                            where (i.Cpf_Operador == item)
+                            select i.Id_Aluno).ToList();
+
+                var cpfal = (from i in context.Movimentacao
+                             where (i.Cpf_Operador == item)
+                             select i.Cpf_Aluno).ToList();
+
+                var nomeal = (from i in context.Movimentacao
+                              where (i.Cpf_Operador == item)
+                              select i.Nome_Aluno).ToList();
+
+                var datamov = (from i in context.Movimentacao
+                               where (i.Cpf_Operador == item)
+                               select i.Data_Movimentacao).ToList();
+
+                var horamov = (from i in context.Movimentacao
+                               where (i.Cpf_Operador == item)
+                               select i.Hora_Movimentacao).ToList();
+
+                var tipomov = (from i in context.Movimentacao
+                               where (i.Cpf_Operador == item)
+                               select i.Tipo_Movimentacao).ToList();
+
+                var campos = (from i in context.Movimentacao
+                              where (i.Cpf_Operador == item)
+                              select i.Campos).ToList();
+
+                var obs = (from i in context.Movimentacao
+                           where (i.Cpf_Operador == item)
+                           select i.Observacao).ToList();
+
+                var valor = (from i in context.Movimentacao
+                             where (i.Cpf_Operador == item)
+                             select i.Valor).ToList();
+
+                Int32 j = 0;
+                Int32 total = idmov.Count();
+                while (j < total)
+                {
+                    string stridmov = idmov[j].ToString();
+                    string stridop = idop[j].ToString();
+                    string strcpfop = cpfop[j].ToString();
+                    string strnomeop = nomeop[j].ToString();
+                    string stridal = idal[j].ToString();
+                    string strcpfal = cpfal[j].ToString();
+                    string strnomeal = nomeal[j].ToString();
+                    string strdatamov = datamov[j].ToString();
+                    string strhoramov = horamov[j].ToString();
+                    string strtipomov = tipomov[j].ToString();
+                    string strcampos = campos[j].ToString();
+                    string strobs = obs[j].ToString();
+                    string strvalor = valor[j].ToString();
+
+                    MontaInicioRelatorio(tabela, celula, stridmov);
+                    MontaInicioRelatorio(tabela, celula, stridop);
+                    MontaInicioRelatorio(tabela, celula, strcpfop);
+                    MontaInicioRelatorio(tabela, celula, strnomeop);
+                    MontaInicioRelatorio(tabela, celula, stridal);
+                    MontaInicioRelatorio(tabela, celula, strcpfal);
+                    MontaInicioRelatorio(tabela, celula, strnomeal);
+                    MontaInicioRelatorio(tabela, celula, strdatamov);
+                    MontaInicioRelatorio(tabela, celula, strhoramov);
+                    MontaInicioRelatorio(tabela, celula, strtipomov);
+                    MontaInicioRelatorio(tabela, celula, strcampos);
+                    MontaInicioRelatorio(tabela, celula, strobs);
+                    MontaInicioRelatorio(tabela, celula, strvalor);
+
+                    j += 1;
+                }
+            }
+        }
+
+        public static void GerarRelatorioAl(Document doc, PdfPTable tabela, PdfPCell celula, String item)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var idmov = (from i in context.Movimentacao
+                             where (i.Cpf_Aluno == item)
+                             select i.Id_Movimentacao).ToList();
+
+                var idop = (from i in context.Movimentacao
+                            where (i.Cpf_Aluno == item)
+                            select i.Id_Operador).ToList();
+
+                var cpfop = (from i in context.Movimentacao
+                             where (i.Cpf_Aluno == item)
+                             select i.Cpf_Operador).ToList();
+
+                var nomeop = (from i in context.Movimentacao
+                              where (i.Cpf_Aluno == item)
+                              select i.Nome_Operador).ToList();
+
+                var idal = (from i in context.Movimentacao
+                            where (i.Cpf_Aluno == item)
+                            select i.Id_Aluno).ToList();
+
+                var cpfal = (from i in context.Movimentacao
+                             where (i.Cpf_Aluno == item)
+                             select i.Cpf_Aluno).ToList();
+
+                var nomeal = (from i in context.Movimentacao
+                              where (i.Cpf_Aluno == item)
+                              select i.Nome_Aluno).ToList();
+
+                var datamov = (from i in context.Movimentacao
+                               where (i.Cpf_Aluno == item)
+                               select i.Data_Movimentacao).ToList();
+
+                var horamov = (from i in context.Movimentacao
+                               where (i.Cpf_Aluno == item)
+                               select i.Hora_Movimentacao).ToList();
+
+                var tipomov = (from i in context.Movimentacao
+                               where (i.Cpf_Aluno == item)
+                               select i.Tipo_Movimentacao).ToList();
+
+                var campos = (from i in context.Movimentacao
+                              where (i.Cpf_Aluno == item)
+                              select i.Campos).ToList();
+
+                var obs = (from i in context.Movimentacao
+                           where (i.Cpf_Aluno == item)
+                           select i.Observacao).ToList();
+
+                var valor = (from i in context.Movimentacao
+                             where (i.Cpf_Aluno == item)
+                             select i.Valor).ToList();
+
+                Int32 j = 0;
+                Int32 total = idmov.Count();
+                while (j < total)
+                {
+                    string stridmov = idmov[j].ToString();
+                    string stridop = idop[j].ToString();
+                    string strcpfop = cpfop[j].ToString();
+                    string strnomeop = nomeop[j].ToString();
+                    string stridal = idal[j].ToString();
+                    string strcpfal = cpfal[j].ToString();
+                    string strnomeal = nomeal[j].ToString();
+                    string strdatamov = datamov[j].ToString();
+                    string strhoramov = horamov[j].ToString();
+                    string strtipomov = tipomov[j].ToString();
+                    string strcampos = campos[j].ToString();
+                    string strobs = obs[j].ToString();
+                    string strvalor = valor[j].ToString();
+
+                    MontaInicioRelatorio(tabela, celula, stridmov);
+                    MontaInicioRelatorio(tabela, celula, stridop);
+                    MontaInicioRelatorio(tabela, celula, strcpfop);
+                    MontaInicioRelatorio(tabela, celula, strnomeop);
+                    MontaInicioRelatorio(tabela, celula, stridal);
+                    MontaInicioRelatorio(tabela, celula, strcpfal);
+                    MontaInicioRelatorio(tabela, celula, strnomeal);
+                    MontaInicioRelatorio(tabela, celula, strdatamov);
+                    MontaInicioRelatorio(tabela, celula, strhoramov);
+                    MontaInicioRelatorio(tabela, celula, strtipomov);
+                    MontaInicioRelatorio(tabela, celula, strcampos);
+                    MontaInicioRelatorio(tabela, celula, strobs);
+                    MontaInicioRelatorio(tabela, celula, strvalor);
+
+                    j += 1;
+                }
+            }
+        }
+
+        public static void GerarRelatorioData(Document doc, PdfPTable tabela, PdfPCell celula, String DataOcorreu)
+        {
+            using (CheffTogaEntities context = new CheffTogaEntities())
+            {
+                var idmov = (from i in context.Movimentacao
+                             where (i.Data_Movimentacao == DataOcorreu)
+                             select i.Id_Movimentacao).ToList();
+
+                var idop = (from i in context.Movimentacao
+                            where (i.Data_Movimentacao == DataOcorreu)
+                            select i.Id_Operador).ToList();
+
+                var cpfop = (from i in context.Movimentacao
+                             where (i.Data_Movimentacao == DataOcorreu)
+                             select i.Cpf_Operador).ToList();
+
+                var nomeop = (from i in context.Movimentacao
+                              where (i.Data_Movimentacao == DataOcorreu)
+                              select i.Nome_Operador).ToList();
+
+                var idal = (from i in context.Movimentacao
+                            where (i.Data_Movimentacao == DataOcorreu)
+                            select i.Id_Aluno).ToList();
+
+                var cpfal = (from i in context.Movimentacao
+                             where (i.Data_Movimentacao == DataOcorreu)
+                             select i.Cpf_Aluno).ToList();
+
+                var nomeal = (from i in context.Movimentacao
+                              where (i.Data_Movimentacao == DataOcorreu)
+                              select i.Nome_Aluno).ToList();
+
+                var datamov = (from i in context.Movimentacao
+                               where (i.Data_Movimentacao == DataOcorreu)
+                               select i.Data_Movimentacao).ToList();
+
+                var horamov = (from i in context.Movimentacao
+                               where (i.Data_Movimentacao == DataOcorreu)
+                               select i.Hora_Movimentacao).ToList();
+
+                var tipomov = (from i in context.Movimentacao
+                               where (i.Data_Movimentacao == DataOcorreu)
+                               select i.Tipo_Movimentacao).ToList();
+
+                var campos = (from i in context.Movimentacao
+                              where (i.Data_Movimentacao == DataOcorreu)
+                              select i.Campos).ToList();
+
+                var obs = (from i in context.Movimentacao
+                           where (i.Data_Movimentacao == DataOcorreu)
+                           select i.Observacao).ToList();
+
+                var valor = (from i in context.Movimentacao
+                             where (i.Data_Movimentacao == DataOcorreu)
+                             select i.Valor).ToList();
+
+                Int32 j = 0;
+                Int32 total = idmov.Count();
+                while (j < total)
+                {
+                    string stridmov = idmov[j].ToString();
+                    string stridop = idop[j].ToString();
+                    string strcpfop = cpfop[j].ToString();
+                    string strnomeop = nomeop[j].ToString();
+                    string stridal = idal[j].ToString();
+                    string strcpfal = cpfal[j].ToString();
+                    string strnomeal = nomeal[j].ToString();
+                    string strdatamov = datamov[j].ToString();
+                    string strhoramov = horamov[j].ToString();
+                    string strtipomov = tipomov[j].ToString();
+                    string strcampos = campos[j].ToString();
+                    string strobs = obs[j].ToString();
+                    string strvalor = valor[j].ToString();
+
+                    MontaInicioRelatorio(tabela, celula, stridmov);
+                    MontaInicioRelatorio(tabela, celula, stridop);
+                    MontaInicioRelatorio(tabela, celula, strcpfop);
+                    MontaInicioRelatorio(tabela, celula, strnomeop);
+                    MontaInicioRelatorio(tabela, celula, stridal);
+                    MontaInicioRelatorio(tabela, celula, strcpfal);
+                    MontaInicioRelatorio(tabela, celula, strnomeal);
+                    MontaInicioRelatorio(tabela, celula, strdatamov);
+                    MontaInicioRelatorio(tabela, celula, strhoramov);
+                    MontaInicioRelatorio(tabela, celula, strtipomov);
+                    MontaInicioRelatorio(tabela, celula, strcampos);
+                    MontaInicioRelatorio(tabela, celula, strobs);
+                    MontaInicioRelatorio(tabela, celula, strvalor);
+
+                    j += 1;
+                }
+            }
         }
 
         public static void CarregaCombobox(ComboBox cbxCurso, ComboBox cbxPeriodo)

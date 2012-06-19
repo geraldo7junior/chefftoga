@@ -280,8 +280,9 @@
             // pctbFoto
             // 
             this.pctbFoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pctbFoto.BackColor = System.Drawing.Color.Lavender;
-            this.pctbFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctbFoto.BackColor = System.Drawing.Color.Transparent;
+            this.pctbFoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctbFoto.BackgroundImage")));
+            this.pctbFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pctbFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pctbFoto.Location = new System.Drawing.Point(12, 91);
             this.pctbFoto.Name = "pctbFoto";

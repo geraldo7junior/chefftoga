@@ -242,9 +242,42 @@ namespace Ru
 
         private void relatórioGeralToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fFiltroRelatorio _Rel;
-            _Rel = new fFiltroRelatorio();
-            _Rel.Show();
+            
+        }
+
+        private void porDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.filtro = "data";
+            fFiltroRelatorio _fAlt = new fFiltroRelatorio();
+            _fAlt.Show();
+        }
+
+        private void porCPFDoOperadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.filtro = "operador";
+            fFiltroRelatorio _fAlt = new fFiltroRelatorio();
+            _fAlt.Show();
+        }
+
+        private void porCPFDoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.filtro = "aluno";
+            fFiltroRelatorio _fAlt = new fFiltroRelatorio();
+            _fAlt.Show();
+        }
+
+        private void porTipoDeMovimentaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.filtro = "movimentacao";
+            fFiltroRelatorio _fAlt = new fFiltroRelatorio();
+            _fAlt.Show();
+        }
+
+        private void geralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilidades.filtro = "geral";
+            fFiltroRelatorio _fAlt = new fFiltroRelatorio();
+            _fAlt.Show();
         }
 
 
