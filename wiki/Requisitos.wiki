@@ -45,7 +45,7 @@ Os requisitos funcionais do sistema têm como meta:<br>
 <hr>
 <br>
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga.comm</p></font></b></H2>
+<h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Cheff Toga.com</p></font></b></h2>
 <hr> 
 
 <h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
@@ -88,7 +88,7 @@ Os requisitos funcionais do sistema têm como meta:<br>
 <hr>
 <br>
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga Aplicativo:Cardápio</p></font></b></H2>
+<h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Cheff Toga Aplicativo: Cardápio</p></font></b></h2>
 <hr> 
 
 <h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
@@ -122,8 +122,7 @@ Os requisitos funcionais do sistema têm como meta:<br>
 <br>  
 
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga Aplicativo:Gerente</p></font></b></H2>
-<hr> 
+<h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Cheff Toga Aplicativo: Gerente</p></font></b></h2><hr> 
 
 <h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
 <hr>
