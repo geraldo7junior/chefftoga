@@ -14,18 +14,18 @@
 <br>
 <hr>
 
-<b><H4><p align="center">Diagrama Casos de Uso CheffToga Aplicativo: Cardápio</p></H4></b><br>
 
-<p align="center"><img src="
-https://lh6.googleusercontent.com/-Z1kNKEhGiOc/T-DDXRdkqiI/AAAAAAAAAGg/JXucS4aynPc/s800/diagrama%2520card.jpg">
+
+<h4><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Diagrama Casos de Uso CheffToga Aplicativo: Cardápio</p></font></b></h4>
+
+<p align="center"><img src="https://lh6.googleusercontent.com/-Z1kNKEhGiOc/T-DDXRdkqiI/AAAAAAAAAGg/JXucS4aynPc/s800/diagrama%2520card.jpg">
 <br>
 <hr>
 
 
 <b><H4><p align="center">Diagrama Casos de Uso CheffToga Aplicativo: Gerente</p></H4></b><br>
 
-<p align="center"><img src=
-"https://lh4.googleusercontent.com/-rEiI31mQVko/T-DDXUqSfnI/AAAAAAAAAGk/E4HMUrg34fg/s800/diagrama%2520ger.jpg.jpg" 
+<p align="center"><img src="https://lh4.googleusercontent.com/-rEiI31mQVko/T-DDXUqSfnI/AAAAAAAAAGk/E4HMUrg34fg/s800/diagrama%2520ger.jpg.jpg" 
 >
 <br>
 <hr>
