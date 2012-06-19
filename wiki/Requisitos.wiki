@@ -1,7 +1,7 @@
 ||<a href="http://code.google.com/p/chefftoga">Home</a>||<a href="http://code.google.com/p/chefftoga/wiki/DescricaoDoProjeto">Descrição Do Sistema</a>||<a href="http://code.google.com/p/chefftoga/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/chefftoga/wiki/CasosDeUso">Casos de Uso</a>||<a href="http://code.google.com/p/chefftoga/wiki/DiagramasDeCasosDeUso">Diagramas</a>||<a href="http://code.google.com/p/chefftoga/wiki/ModeloDeEntidadeRelacional">Modelo de Entidade Relacional</a>||<a href="http://code.google.com/p/chefftoga/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="http://code.google.com/p/chefftoga/wiki/Bibliografia">Bibliografia</a>||
 
 
-<h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais Cheff Toga System</p></font></b></h2>
+<h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Cheff Toga System</p></font></b></h2>
 <hr>
 
 <h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
