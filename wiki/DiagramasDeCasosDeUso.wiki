@@ -1,31 +1,31 @@
 ||<a href="http://code.google.com/p/chefftoga">Home</a>||<a href="http://code.google.com/p/chefftoga/wiki/DescricaoDoProjeto">Descrição Do Sistema</a>||<a href="http://code.google.com/p/chefftoga/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/chefftoga/wiki/CasosDeUso">Casos de Uso</a>||<a href="http://code.google.com/p/chefftoga/wiki/DiagramasDeCasosDeUso">Diagramas</a>||<a href="http://code.google.com/p/chefftoga/wiki/ModeloDeEntidadeRelacional">Modelo de Entidade Relacional</a>||<a href="http://code.google.com/p/chefftoga/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="http://code.google.com/p/chefftoga/wiki/Bibliografia">Bibliografia</a>||
 
 
-<H2><b><FONT FACE="TIMES" SIZE="5"><p align="center">Diagramas De Casos De Uso</p></font></b></H2>
+<h2><b><FONT FACE="TIMES" SIZE="5"><p align="center">Diagramas De Casos De Uso</p></font></b></h2>
 <hr>
-<b><H4><p align="center">Diagrama Casos de Uso CheffToga System</p></H4></b><br>
+
+<h3><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Diagrama Casos de Uso CheffToga System</p></font></b></h3><br>
 <p align="center"><img src="https://lh6.googleusercontent.com/-zGDxSJXp6ZQ/T9uGjng0t4I/AAAAAAAAAGM/fqOL03GiwTQ/s640/CheffToga%2520System_UC.jpg"><br>
 
 <hr>
-<b><H4><p align="center">Diagrama Casos de Uso CheffToga.com</p></H4></b><br>
+<h3><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Diagrama Casos de Uso CheffToga.com</p></font></b></h3><br>
+
 
 <p align="center"><img src=img src="https://lh5.googleusercontent.com/-N542CbaB-6A/T-DDXWoPe0I/AAAAAAAAAGw/HTFJX_L38bM/s800/diagrama%2520site.jpg" 
->
-<br>
+><br>
 <hr>
 
+<h3><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Diagrama Casos de Uso CheffToga Aplicativo: Cardápio</p></font></b></h3><br>
 
-
-<h4><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Diagrama Casos de Uso CheffToga Aplicativo: Cardápio</p></font></b></h4>
 
 <p align="center"><img src="https://lh6.googleusercontent.com/-Z1kNKEhGiOc/T-DDXRdkqiI/AAAAAAAAAGg/JXucS4aynPc/s800/diagrama%2520card.jpg">
 <br>
 <hr>
 
+<h3><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Diagrama Casos de Uso CheffToga Aplicativo: Gerente</p></font></b></h3><br>
 
-<b><H4><p align="center">Diagrama Casos de Uso CheffToga Aplicativo: Gerente</p></H4></b><br>
 
-<p align="center"><img src="https://lh4.googleusercontent.com/-rEiI31mQVko/T-DDXUqSfnI/AAAAAAAAAGk/E4HMUrg34fg/s800/diagrama%2520ger.jpg.jpg" 
->
+
+<p align="center"><img src="https://lh4.googleusercontent.com/-rEiI31mQVko/T-DDXUqSfnI/AAAAAAAAAGk/E4HMUrg34fg/s800/diagrama%2520ger.jpg">
 <br>
 <hr>
