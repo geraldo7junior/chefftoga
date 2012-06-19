@@ -1,10 +1,10 @@
 ||<a href="http://code.google.com/p/chefftoga">Home</a>||<a href="http://code.google.com/p/chefftoga/wiki/DescricaoDoProjeto">Descrição Do Sistema</a>||<a href="http://code.google.com/p/chefftoga/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/chefftoga/wiki/CasosDeUso">Casos de Uso</a>||<a href="http://code.google.com/p/chefftoga/wiki/DiagramasDeCasosDeUso">Diagramas</a>||<a href="http://code.google.com/p/chefftoga/wiki/ModeloDeEntidadeRelacional">Modelo de Entidade Relacional</a>||<a href="http://code.google.com/p/chefftoga/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="http://code.google.com/p/chefftoga/wiki/Bibliografia">Bibliografia</a>||
 
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso Cheff Toga System</p></font></b></H2>
+<h2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso Cheff Toga System</p></font></b></h2>
 <hr>
 
-<b><H3>Número do caso de uso: UC0001</H3></b><br>
+<b><h3>Número do caso de uso: UC0001</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Gerenciar Autenticação||
 ||<b>Objetivos:</b>||
@@ -28,7 +28,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0002</H3></b><br>
+<b><h3>Número do caso de uso: UC0002</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Gerenciar Cadastro||
 ||<b>Objetivos:</b>||
@@ -66,7 +66,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0003</H3></b><br>
+<b><h3>Número do caso de uso: UC0003</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Gerenciamento de Crédito Financeiro do Usuário||
 ||<b>Objetivos:</b>||
@@ -95,7 +95,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0004</H3></b><br>
+<b><h3>Número do caso de uso: UC0004</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Gerenciar Entrada no Restaurante||
 ||<b>Objetivos:</b>||
@@ -132,7 +132,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0005</H3></b><br>
+<b><h3>Número do caso de uso: UC0005</h3></b><br>
 ||<b>Nome do caso de uso:</b>|| 
 ||Gerenciar Informações||
 ||<b>Objetivos:</b>||
@@ -178,7 +178,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0006</H3></b><br>
+<b><h3>Número do caso de uso: UC0006</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Gerenciar Finanças||
 ||<b>Objetivos:</b>||
@@ -207,10 +207,10 @@
 
 
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso Cheff Toga.com</p></font></b></H2>
+<h2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso Cheff Toga.com</p></font></b></h2>
 <hr>
 
-<b><H3>Número do caso de uso: UC0001</H3></b><br>
+<b><h3>Número do caso de uso: UC0001</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Cardápios||
 ||<b>Objetivos:</b>||
@@ -235,7 +235,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0002</H3></b><br>
+<b><h3>Número do caso de uso: UC0002</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Sugestões||
 ||<b>Objetivos:</b>||
@@ -259,7 +259,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0003</H3></b><br>
+<b><h3>Número do caso de uso: UC0003</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Questionário||
 ||<b>Objetivos:</b>||
@@ -283,7 +283,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0004</H3></b><br>
+<b><h3>Número do caso de uso: UC0004</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Login||
 ||<b>Objetivos:</b>||
@@ -308,7 +308,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0005</H3></b><br>
+<b><h3>Número do caso de uso: UC0005</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Saldo||
 ||<b>Objetivos:</b>||
@@ -333,7 +333,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0006</H3></b><br>
+<b><h3>Número do caso de uso: UC0006</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Gerenciar Recarga||
 ||<b>Objetivos:</b>||
@@ -357,7 +357,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0007</H3></b><br>
+<b><h3>Número do caso de uso: UC0007</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Dados Pessoais||
 ||<b>Objetivos:</b>||
@@ -381,7 +381,7 @@
 <hr>
 
 <br>
-<b><H3>Número do caso de uso: UC0008</H3></b><br>
+<b><h3>Número do caso de uso: UC0008</h3></b><br>
 ||<b>Nome do caso de uso:</b>|| 
 ||Contato||
 ||<b>Objetivos:</b>||
@@ -406,10 +406,10 @@
 
 
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga Aplicativo:Cardápio</p></font></b></H2>
+<h2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga Aplicativo:Cardápio</p></font></b></h2>
 <hr>
 
-<b><H3>Número do caso de uso: UC0001</H3></b><br>
+<b><h3>Número do caso de uso: UC0001</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Gerenciar cardapio||
 ||<b>Objetivos:</b>||
@@ -435,10 +435,10 @@
 
 <br>
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga Aplicativo:Gerente</p></font></b></H2>
+<h2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga Aplicativo:Gerente</p></font></b></h2>
 <hr>
 
-<b><H3>Número do caso de uso: UC0001</H3></b><br>
+<b><h3>Número do caso de uso: UC0001</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
 ||Gerenciar Geração de Relatório||
 ||<b>Objetivos:</b>||
