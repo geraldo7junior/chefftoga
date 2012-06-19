@@ -1,7 +1,7 @@
 ||<a href="http://code.google.com/p/chefftoga">Home</a>||<a href="http://code.google.com/p/chefftoga/wiki/DescricaoDoProjeto">Descrição Do Sistema</a>||<a href="http://code.google.com/p/chefftoga/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/chefftoga/wiki/CasosDeUso">Casos de Uso</a>||<a href="http://code.google.com/p/chefftoga/wiki/DiagramasDeCasosDeUso">Diagramas</a>||<a href="http://code.google.com/p/chefftoga/wiki/ModeloDeEntidadeRelacional">Modelo de Entidade Relacional</a>||<a href="http://code.google.com/p/chefftoga/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="http://code.google.com/p/chefftoga/wiki/Bibliografia">Bibliografia</a>||
 
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga_System</p></font></b></H2>
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffTogaSystem</p></font></b></H2>
 <hr>
 
 <h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
@@ -20,7 +20,6 @@ Os requisitos funcionais do sistema têm como meta:<br>
 •	RF008: Permitir a autenticação por meio de login;<br>
 •	RF009: Gerenciar a parte financeira.<br>
 <br>
-<hr>
 <hr>
 <br>
 
@@ -46,7 +45,7 @@ Os requisitos funcionais do sistema têm como meta:<br>
 <hr>
 <br>
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga.com</p></font></b></H2>
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga.comm</p></font></b></H2>
 <hr> 
 
 <h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
@@ -64,7 +63,6 @@ Os requisitos funcionais do sistema têm como meta:<br>
 •	RF007: Diferenciar alunos bolsistas dos outros alunos;<br>
 •	RF008: Permitir a autenticação por meio de login.<br>
 <br>
-<hr>
 <hr>
 <br>
 
@@ -90,7 +88,7 @@ Os requisitos funcionais do sistema têm como meta:<br>
 <hr>
 <br>
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga App cardápio</p></font></b></H2>
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga Aplicativo:Cardápio</p></font></b></H2>
 <hr> 
 
 <h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
@@ -103,7 +101,6 @@ Os requisitos funcionais do sistema têm como meta:<br>
 •	RF003: O aplicativo deve permitir a auteração do cardapio pelos operadores.<br>
 
 <br>
-<hr>
 <hr>
 <br>
 
@@ -125,7 +122,7 @@ Os requisitos funcionais do sistema têm como meta:<br>
 <br>  
 
 
-<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga App gerente</p></font></b></H2>
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga Aplicativo:Gerente</p></font></b></H2>
 <hr> 
 
 <h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
@@ -138,7 +135,6 @@ Os requisitos funcionais do sistema têm como meta:<br>
 
 
 <br>
-<hr>
 <hr>
 <br>
 
