@@ -403,3 +403,66 @@
 <br>
 <br>
 <hr>
+
+
+
+
+
+
+
+<h2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga Aplicativo:Cardápio</p></font></b></h2>
+<hr>
+
+<b><H3>Número do caso de uso: UC0001</H3></b><br>
+||<b>Nome do caso de uso:</b>||
+||Gerenciar cardapio||
+||<b>Objetivos:</b>||
+||Informar e controlar o cardapio da semana no restaurante.||
+||<b>Descrição:</b>||
+||O operador responsável por atualizar o cardápio deve atualizar este no final de semana e assim este ser atualizado e visualizado pelos usuários do aplicativo.||
+||<b>Ator:</b>||
+||Operador do Cardápio, Usuário.||
+||<b>Prioridade:</b>|| 
+||Alta||
+||<b>Pré-condição:</b>||
+||1. Para o operador de cardapio; está cadastrado no sistema||
+||2. Para o usuário; Ter o aplicativo instalado no seu smartphone ||
+||<b>Pós-condição:</b>||
+||Acessar o cardápio.||
+||<b>Cenários Principais dos casos de uso:</b>||
+||O usuário consegue visualizar o cardápio||
+||<b>Fluxos Alternativos:</b>||
+||1. O operador não cadastrado deve procurar o gerente.||
+<br>
+
+<hr>
+
+<br>
+
+<h2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga Aplicativo:gerente</p></font></b></h2>
+<hr>
+
+<b><H3>Número do caso de uso: UC0001</H3></b><br>
+||<b>Nome do caso de uso:</b>||
+||Gerenciar Geração de Relatório||
+||<b>Objetivos:</b>||
+||Informar as movimentações do dia.||
+||<b>Descrição:</b>||
+||O gerente poderá por meio do aplicativo ter acesso a todas as movimentações ocorridas no dia por meio de relatório em seu smartphone.||
+||<b>Ator:</b>||
+||Gerente.||
+||<b>Prioridade:</b>|| 
+||Alta||
+||<b>Pré-condição:</b>||
+||1. o gerente ter o aplicativo instalado no seu smartphone||
+||<b>Pós-condição:</b>||
+||Visualizar o relatório.||
+||<b>Cenários Principais dos casos de uso:</b>||
+||O gerente consegue Visualizar o relatório.||
+||<b>Fluxos Alternativos:</b>||
+|| - ||
+<br>
+
+<hr>
+
+<br>
