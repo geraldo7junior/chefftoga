@@ -1,6 +1,9 @@
 ||<a href="http://code.google.com/p/chefftoga">Home</a>||<a href="http://code.google.com/p/chefftoga/wiki/DescricaoDoProjeto">Descrição Do Sistema</a>||<a href="http://code.google.com/p/chefftoga/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/chefftoga/wiki/CasosDeUso">Casos de Uso</a>||<a href="http://code.google.com/p/chefftoga/wiki/DiagramasDeCasosDeUso">Diagramas</a>||<a href="http://code.google.com/p/chefftoga/wiki/ModeloDeEntidadeRelacional">Modelo de Entidade Relacional</a>||<a href="http://code.google.com/p/chefftoga/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="http://code.google.com/p/chefftoga/wiki/Bibliografia">Bibliografia</a>||
 
 
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga System</p></font></b></H2>
+<hr>
+
 <h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
 <hr>
 
@@ -10,20 +13,18 @@ Os requisitos funcionais do sistema têm como meta:<br>
 •	RF001: Permitir o cadastro de dados pessoais dos clientes;<br>
 •	RF002: Recadastramento destes;<br>
 •	RF003: Recarga do smart card;<br>
-•	RF004: Ter a opção de imprimir boleto para o pagamento da recarga em local cadastrado ou efetuá-lo on-line;<br>
+•	RF004: Ter a opção de imprimir comprovantes;<br>
 •	RF005: Fornecer ao usuário seu saldo atual;<br>
-•	RF006: Informações sobre o cardápio;<br>
-•	RF007: Permitir o contato entre cliente e restaurante;<br>
-•	RF008: Conter espaço para sugestões e críticas;<br>
-•	RF009: Diferenciar alunos bolsistas dos outros alunos;<br>
-•	RF0010: Limitar a quantidade de uso diário;<br>
-•	RF0011: Permitir a autenticação por meio de login;<br>
-•	RF0012: Gerenciar a parte financeira.<br>
+•	RF006: Diferenciar alunos bolsistas dos outros alunos;<br>
+•	RF007: Limitar a quantidade de uso diário;<br>
+•	RF008: Permitir a autenticação por meio de login;<br>
+•	RF009: Gerenciar a parte financeira.<br>
+<br>
+<hr>
+<hr>
+<br>
 
-<br>
-<hr>
-<hr>
-<br>
+
 
 
 <H2 TEXT-ALIGN='CENTER'><b><FONT FACE="TIMES" SIZE="5"><p align="center">Requisitos Não Funcionais</p></font></b></H2>
@@ -41,4 +42,119 @@ Os requisitos funcionais do sistema têm como meta:<br>
 •	RNF007: Deve ser atrativo, simples e harmonioso para seus usuários e operadores.
 <br>
 <br>
+<hr>
+<hr>
+<br>
+
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga.com</p></font></b></H2>
 <hr> 
+
+<h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
+<hr>
+
+
+Os requisitos funcionais do sistema têm como meta:<br>
+
+•	RF001: Recarga do smart card;<br>
+•	RF002: Ter a opção de imprimir boleto para o pagamento da recarga em local cadastrado ou efetuá-lo on-line;<br>
+•	RF003: Fornecer ao usuário seu saldo atual;<br>
+•	RF004: Informações sobre o cardápio;<br>
+•	RF005: Permitir o contato entre cliente e restaurante;<br>
+•	RF006: Conter espaço para sugestões e críticas;<br>
+•	RF007: Diferenciar alunos bolsistas dos outros alunos;<br>
+•	RF008: Permitir a autenticação por meio de login.<br>
+<br>
+<hr>
+<hr>
+<br>
+
+
+
+
+
+<H2 TEXT-ALIGN='CENTER'><b><FONT FACE="TIMES" SIZE="5"><p align="center">Requisitos Não Funcionais</p></font></b></H2>
+<hr>
+
+
+<p>Os requisitos não-funcionais do sistema têm como meta:<br>
+•	RNF001: Ser simples para o operador;<br>
+•	RNF002: O leitor do Smart card, autenticação, deve realizar tal leitura rapidamente;<br>
+•	RNF003: O banco de dados deve ser atualizado em tempo real;<br>
+•	RNF004: O sistema deve ser seguro;<br>
+•	RNF005: O hardware do sistema deve ser assegurado por um gerador (no-break);<br>
+•	RNF006: Não deve revelar aos operadores todos os dados pessoais do cliente;<br>
+•	RNF007: Deve ser atrativo, simples e harmonioso para seus usuários e operadores.
+<br>
+<br>
+<hr>
+<hr>
+<br>
+
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga App cardápio</p></font></b></H2>
+<hr> 
+
+<h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
+<hr>
+
+
+Os requisitos funcionais do sistema têm como meta:<br>
+•	RF001: Permitir a visualização do cardápio da semana;<br>
+•	RF002: As páginas devem ser divididas pelos dias úteis.<br>
+•	RF003: O aplicativo deve permitir a auteração do cardapio pelos operadores.<br>
+
+<br>
+<hr>
+<hr>
+<br>
+
+
+
+
+
+<H2 TEXT-ALIGN='CENTER'><b><FONT FACE="TIMES" SIZE="5"><p align="center">Requisitos Não Funcionais</p></font></b></H2>
+<hr>
+
+
+<p>Os requisitos não-funcionais do sistema têm como meta:<br>
+•	RNF001: O aplicativo deve ser simples e atrativo;<br>
+•	RNF002: O aplicativo deve ser leve.<br>
+<br>
+<br>
+<hr>
+<hr>
+<br>  
+
+
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Requisitos CheffToga App gerente</p></font></b></H2>
+<hr> 
+
+<h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Requisitos Funcionais</p></font></b></h2>
+<hr>
+
+
+Os requisitos funcionais do sistema têm como meta:<br>
+•	RF001: Permitir a visualização do relatório movimentações do dia;<br>
+•	RF002: o aplicativo deve buscar o relatório das ultimas ocorrências no banco de dados.<br>
+
+
+<br>
+<hr>
+<hr>
+<br>
+
+
+
+
+
+<H2 TEXT-ALIGN='CENTER'><b><FONT FACE="TIMES" SIZE="5"><p align="center">Requisitos Não Funcionais</p></font></b></H2>
+<hr>
+
+
+<p>Os requisitos não-funcionais do sistema têm como meta:<br>
+•	RNF001: O aplicativo deve ser simples e atrativo;<br>
+•	RNF002: O aplicativo deve ser leve.<br>
+<br>
+<br>
+<hr>
+<hr>
+<br>  
