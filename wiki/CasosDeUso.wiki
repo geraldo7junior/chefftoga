@@ -435,8 +435,8 @@
 
 <br>
 
-<h2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga Aplicativo</p></font></b></h2>
-<hr>
+<h2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Cheff Toga Aplicativo: Gerente</p></font></b></h2><hr>
+
 
 <b><h3>Número do caso de uso: UC0001</h3></b><br>
 ||<b>Nome do caso de uso:</b>||
