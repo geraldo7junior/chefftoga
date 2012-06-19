@@ -406,9 +406,7 @@
 
 
 
-
-
-<H2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Detalhamento dos Casos de Uso CheffToga Aplicativo Cardápio</p></font></b></H2>
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga Aplicativo:Cardápio</p></font></b></H2>
 <hr>
 
 <b><H3>Número do caso de uso: UC0001</H3></b><br>
@@ -437,7 +435,7 @@
 
 <br>
 
-<H2><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Detalhamento dos Casos de Uso CheffToga Aplicativo Gerente</p></font></b></H2>
+<H2><b><FONT FACE="TIMES" SIZE="1"><p align="right">Detalhamento dos Casos de Uso CheffToga Aplicativo:Gerente</p></font></b></H2>
 <hr>
 
 <b><H3>Número do caso de uso: UC0001</H3></b><br>
