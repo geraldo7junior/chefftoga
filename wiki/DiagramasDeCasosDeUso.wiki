@@ -11,8 +11,7 @@
 <h3><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Diagrama Casos de Uso CheffToga.com</p></font></b></h3><br>
 
 
-<p align="center"><img src=img src="https://lh5.googleusercontent.com/-N542CbaB-6A/T-DDXWoPe0I/AAAAAAAAAGw/HTFJX_L38bM/s800/diagrama%2520site.jpg" 
-><br>
+<p align="center"><img src=img src="https://lh5.googleusercontent.com/-N542CbaB-6A/T-DDXWoPe0I/AAAAAAAAAGw/HTFJX_L38bM/s800/diagrama%2520site.jpg"><br>
 <hr>
 
 <h3><b><FONT FACE="TIMES" SIZE="5"><p align="CENTER">Diagrama Casos de Uso CheffToga Aplicativo: Cardápio</p></font></b></h3><br>
