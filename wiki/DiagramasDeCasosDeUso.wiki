@@ -9,7 +9,7 @@
 <hr>
 <b><H4><p align="center">Diagrama Casos de Uso CheffToga.com</p></H4></b><br>
 
-<p align="center"><img src="https://lh5.googleusercontent.com/-N542CbaB-6A/T-DDXWoPe0I/AAAAAAAAAGw/HTFJX_L38bM/s640/diagrama%2520site.jpg" 
+<p align="center"><img src=img src="https://lh5.googleusercontent.com/-N542CbaB-6A/T-DDXWoPe0I/AAAAAAAAAGw/HTFJX_L38bM/s800/diagrama%2520site.jpg" 
 >
 <br>
 <hr>
@@ -17,7 +17,7 @@
 <b><H4><p align="center">Diagrama Casos de Uso CheffToga Aplicativo: Cardápio</p></H4></b><br>
 
 <p align="center"><img src="
-https://lh6.googleusercontent.com/-Z1kNKEhGiOc/T-DDXRdkqiI/AAAAAAAAAGg/JXucS4aynPc/s400/diagrama%2520card.jpg">
+https://lh6.googleusercontent.com/-Z1kNKEhGiOc/T-DDXRdkqiI/AAAAAAAAAGg/JXucS4aynPc/s800/diagrama%2520card.jpg">
 <br>
 <hr>
 
@@ -25,7 +25,7 @@ https://lh6.googleusercontent.com/-Z1kNKEhGiOc/T-DDXRdkqiI/AAAAAAAAAGg/JXucS4ayn
 <b><H4><p align="center">Diagrama Casos de Uso CheffToga Aplicativo: Gerente</p></H4></b><br>
 
 <p align="center"><img src=
-"https://lh4.googleusercontent.com/-rEiI31mQVko/T-DDXUqSfnI/AAAAAAAAAGk/E4HMUrg34fg/s400/diagrama%2520ger.jpg" 
+"https://lh4.googleusercontent.com/-rEiI31mQVko/T-DDXUqSfnI/AAAAAAAAAGk/E4HMUrg34fg/s800/diagrama%2520ger.jpg.jpg" 
 >
 <br>
 <hr>
