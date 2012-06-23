@@ -1,6 +1,7 @@
 ||<a href="http://code.google.com/p/chefftoga">Home</a>||<a href="http://code.google.com/p/chefftoga/wiki/DescricaoDoProjeto">Descrição Do Sistema</a>||<a href="http://code.google.com/p/chefftoga/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/chefftoga/wiki/CasosDeUso">Casos de Uso</a>||<a href="http://code.google.com/p/chefftoga/wiki/DiagramasDeCasosDeUso">Diagramas</a>||<a href="http://code.google.com/p/chefftoga/wiki/ModeloDeEntidadeRelacional">Modelo de Entidade Relacional</a>||<a href="http://code.google.com/p/chefftoga/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="http://code.google.com/p/chefftoga/wiki/Bibliografia">Bibliografia</a>||||<a href="http://code.google.com/p/chefftoga/wiki/video">Vídeos</a>||
 
-
+<center>
 <H2 TEXT-ALIGN='CENTER'><b><FONT FACE="TIMES" SIZE="3"><p align='center'>Cheff Toga - Vídeos do Sistema</p></font></b></H2>
 <hr>
-||<a href="http://www.youtube.com/watch?v=bzR-OV_92tM">Cheff Toga System</a>||<a href="http://www.youtube.com/watch?v=usxnV7jl2mE&feature=related">Cheff Toga.com</a>||<a href="http://www.youtube.com/watch?v=6yNTZ98bScg&feature=related">Cheff TogaApp</a>||
+||<a href="http://www.youtube.com/watch?v=bzR-OV_92tM">Cheff Toga System</a>||<a href="http://www.youtube.com/watch?v=usxnV7jl2mE&feature=related">Cheff Toga.com</a>||<a href="http://www.youtube.com/watch?v=6yNTZ98bScg&feature=related">Cheff Toga App</a>||
+</center>
